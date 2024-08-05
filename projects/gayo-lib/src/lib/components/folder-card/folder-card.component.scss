@@ -1,0 +1,39 @@
+@import "../../styles/global.scss";
+
+#folder-card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+
+  .tabs-container {
+    display: flex;
+    flex-direction: row;
+    padding: 0 28px;
+    cursor: grab;
+
+
+    div {
+      height: 50px;
+      min-width: 70px;
+      background-color: plum;
+      border-radius: 20px 20px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      cursor: grab;
+      position: relative;
+      &:active {
+        cursor: grabbing;
+      }
+    }
+  }
+
+  .content {
+    height: 300px;
+    border-radius: 28px;
+    font-size: 20px;
+    padding: 40px;
+    filter: drop-shadow(0 -2px 4px rgba(0, 0, 0, 0.1));
+  }
+}

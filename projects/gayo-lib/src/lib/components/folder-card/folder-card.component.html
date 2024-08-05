@@ -1,0 +1,20 @@
+<div id="folder-card">
+  <div class="tabs-container">
+    @for (tab of tabs; track $index) {
+      <div
+        [attr.dragable]="true"
+        (dragstart)="onTabDragStart($event)"
+        (dragover)="onTabDragOver($event)"
+        (drop)="onTabDrop($event)"
+        (click)="tabClick($index)"
+        [ngStyle]="{ background: colors[$index], zIndex: tabsActiveIndex === $index ? 1 : 0 }"
+      >
+        {{ tab.title }}
+      </div>
+    }
+  </div>
+
+  <div class="content" [ngStyle]="{ background: colors[tabsActiveIndex] }">
+    {{ tabs[tabsActiveIndex].content }}
+  </div>
+</div>
