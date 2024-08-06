@@ -1,0 +1,69 @@
+@import "../../styles/global.scss";
+
+@mixin user-card($width) {
+  max-width: $width;
+  display: flex;
+  gap: 16px;
+  border-radius: 12px;
+  padding: 12px;
+  border: 1px solid transparent;
+
+  &:hover {
+    animation: border-apear 1s ease-in-out forwards; // comment faire l'animation inverse quand ont sort du hover ?
+    
+  }
+
+//   &:not(:hover) {
+//     animation: border-apear 1s ease-in-out backwards;
+//   }
+
+
+  img {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    p {
+      grid-column: 2;
+      color: $dark-gray-500;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      max-width: calc($width - (80px + 16px));
+    }
+
+    .username {
+      overflow: visible;
+      font-weight: 800;
+      font-size: 24px;
+      line-height: 24px;
+      color: $dark-gray-800;
+    }
+  }
+}
+
+.user-card-small {
+  @include user-card(150px);
+  flex-direction: column;
+}
+
+.user-card-medium {
+  @include user-card(300px);
+}
+
+@keyframes border-apear {
+  100%,0% {
+    border: 1px solid #ffffff00;
+  }
+  100% {
+    border: 1px solid $dark-gray-100;
+  }
+}
