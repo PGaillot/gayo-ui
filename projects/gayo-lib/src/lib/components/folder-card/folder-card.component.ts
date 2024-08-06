@@ -35,8 +35,6 @@ export class FolderCardComponent {
     event.preventDefault();
     const targetTab:any = event.target;
     targetTab.innerText = this.dragData;
-  
-  
-  
+
   }
 }
