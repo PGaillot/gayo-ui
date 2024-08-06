@@ -40,6 +40,6 @@ export const Default: Story = {
 export const colors: Story = {
   args: {
     ...Default.args,
-    colors: ['#ff595e', '#ffca3a', '#8ac926', '#1982c4', '#6a4c93']
+    colors: ['#f2f7f2', '#d9e6d9', '#c0d6c0', '#a7c5a7', '#8eb58e']
   } 
 }

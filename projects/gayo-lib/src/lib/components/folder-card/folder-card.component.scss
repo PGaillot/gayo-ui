@@ -16,6 +16,8 @@
 
     .tab {
       margin-top: 12px;
+      flex-direction: column;
+      gap: 4px;
       padding: 0 28px;
       height: 50px;
       min-width: 70px;
@@ -24,7 +26,7 @@
       justify-content: center;
       font-weight: 600;
       text-align: center;
-      color: $retro-800;
+      color: $dark-gray-600;
       transition: all 0.2s ease-in-out;
       cursor: grab;
       position: relative;
@@ -34,19 +36,22 @@
       &:focus{
         z-index: 1;
       }
-
       &:hover {
-        color: $retro-700;
+        color: $dark-gray-600;
         margin-top: 8px;
         padding-bottom: 4px;
       }
+
+
     }
 
     .active-tab{
       position: relative;
-      color: $retro-700;
+      color: $dark-gray-600;
       margin-top: 4px;
       padding-bottom: 8px;
+      $active-tab-color: var(--active-tab-color);
+
       &::before{
         content: "";
         position: absolute;
@@ -54,17 +59,43 @@
         width: 100%;
         height: 8px;
         z-index: 1;
-        // background-color: #ffd699
+        background: inherit;
+      }
+
+
+      &::after{
+        content: '';
+        background: $dark-gray-300;
+        mix-blend-mode: multiply;
+        height: 2px;
+        width: 80%;
+        animation:bar-apear 0.2s ease-in-out forwards;
       }
     }
   }
-
+  .hidden {
+    visibility: hidden;
+  }
   .content {
     height: 300px;
     border-radius: 28px;
     font-size: 20px;
     padding: 40px;
-    color: $retro-800;
+    color: $dark-gray-800;
     filter: drop-shadow(0 -2px 4px rgba(0, 0, 0, 0.1));
+  }
+
+
+  @keyframes bar-apear {
+
+    0% {
+      opacity: 0;
+      margin-top: 16px;
+    }
+    100% {
+      margin-top: 0;
+      opacity: 0.5;
+    }
+    
   }
 }

@@ -15,8 +15,6 @@ export interface FolderTab {
   templateUrl: './folder-card.component.html',
   styleUrl: './folder-card.component.scss',
 })
-
-
 export class FolderCardComponent {
   @Input() tabs!: FolderTab[];
   @Input() colors: string[] = [
@@ -27,13 +25,11 @@ export class FolderCardComponent {
     '#ff9900',
   ];
 
+  constructor() {}
 
-  constructor(){
-  }
+  activeTabs!: BehaviorSubject<FolderTab>;
 
-  activeTabs!:BehaviorSubject<FolderTab>;
-
-  activeTabId: number | null = null;
+  activeTabId: number = 0;
   draggedTabId: number | null = null;
 
   onTabDragStart(event: DragEvent, tabId: number) {
@@ -47,24 +43,21 @@ export class FolderCardComponent {
   onTabDrop(event: DragEvent, targetTabId: number) {
     event.preventDefault();
     if (this.draggedTabId === null || this.draggedTabId === targetTabId) return;
-
     const draggedIndex = this.tabs.findIndex(
       (tab) => tab.id === this.draggedTabId,
     );
     const targetIndex = this.tabs.findIndex((tab) => tab.id === targetTabId);
-
     // Retirer l'onglet déplacé de sa position initiale
-    const draggedTab = this.tabs[draggedIndex];
+    const draggedTab: FolderTab = this.tabs[draggedIndex];
+    this.setActiveTab(draggedTab.id);
     this.tabs.splice(draggedIndex, 1);
-
     // Insérer l'onglet à sa nouvelle position
     this.tabs.splice(targetIndex, 0, draggedTab);
-
     this.draggedTabId = null;
   }
 
   onTabClick(tabId: number) {
-    this.activeTabId = tabId;
+    this.setActiveTab(tabId);
   }
 
   getTabColor(tabId: number): string {
@@ -74,6 +67,18 @@ export class FolderCardComponent {
   getActiveTabContent(): string {
     const activeTab = this.tabs.find((tab) => tab.id === this.activeTabId);
     return activeTab ? activeTab.content : this.tabs[0].content;
+  }
+
+  setActiveTab(tabId: number) {
+    this.activeTabId = tabId;
+    this.getActiveTabContent();
+    document.querySelectorAll('.tab').forEach((tab) => {
+      if (tab instanceof HTMLElement) {
+        tab.classList.remove('active-tab');
+        if(tab.style.getPropertyValue('--active-tab-color') === this.colors[tabId]) return
+        tab.style.setProperty('--active-tab-color',this.colors[tabId]);
+      }
+    });
   }
 
   ngOnInit(): void {

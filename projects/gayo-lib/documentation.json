@@ -18,7 +18,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    ...Default.args,\r\n    colors: ['#ff595e', '#ffca3a', '#8ac926', '#1982c4', '#6a4c93']\r\n  } \r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    ...Default.args,\r\n    colors: ['#f2f7f2', '#d9e6d9', '#c0d6c0', '#a7c5a7', '#8eb58e']\r\n  } \r\n}"
             },
             {
                 "name": "Default",
@@ -76,7 +76,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    ...Default.args,\r\n    colors: ['#ff595e', '#ffca3a', '#8ac926', '#1982c4', '#6a4c93']\r\n  } \r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    ...Default.args,\r\n    colors: ['#f2f7f2', '#d9e6d9', '#c0d6c0', '#a7c5a7', '#8eb58e']\r\n  } \r\n}"
                 },
                 {
                     "name": "Default",
