@@ -11,6 +11,16 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "colors",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/folder-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    ...Default.args,\r\n    colors: ['#ff595e', '#ffca3a', '#8ac926', '#1982c4', '#6a4c93']\r\n  } \r\n}"
+            },
+            {
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -18,7 +28,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n    args: {\r\n        tabs: [\r\n            {\r\n                title: 'Tab 1',\r\n                content: 'laborum maiores mollitia dignissimos dolorum ullam atque. Velit totam explicabo at dignissimos eligendi amet reiciendis, quidem quasi repellendus?'\r\n            },\r\n            {\r\n                title: 'Tab 2',\r\n                content: 'molestiae corporis error quas quo sapiente vitae tenetur doloremque sunt suscipit fugit dicta. Perferendis cumque repellendus eaque totam tempore nesciunt nulla reiciendis. '\r\n            },\r\n            {\r\n                title: 'Tab 3',\r\n                content: 'Ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !'\r\n            }\r\n        ]\r\n    }\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    tabs: [\r\n      {\r\n        title: 'Histoires',\r\n        content:\r\n          'Histoires laborum maiores mollitia dignissimos dolorum ullam atque. Velit totam explicabo at dignissimos eligendi amet reiciendis, quidem quasi repellendus?',\r\n        id: 0,\r\n      },\r\n      {\r\n        title: 'Secrets',\r\n        content:\r\n          'Secrets molestiae corporis error quas quo sapiente vitae tenetur doloremque sunt suscipit fugit dicta. Perferendis cumque repellendus eaque totam tempore nesciunt nulla reiciendis.',\r\n        id: 1,\r\n      },\r\n      {\r\n        title: 'Paléontologie',\r\n        content:\r\n          'Paléontologie Ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\r\n        id: 2,\r\n      },\r\n    ],\r\n  },\r\n}"
             },
             {
                 "name": "meta",
@@ -28,7 +38,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<FolderCardComponent>",
-                "defaultValue": "{\r\n    title: 'FolderApp/FolderCard',\r\n    component: FolderCardComponent,\r\n    tags: ['autodocs'],\r\n}"
+                "defaultValue": "{\r\n  title: 'FolderApp/FolderCard',\r\n  component: FolderCardComponent,\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "preview",
@@ -59,6 +69,16 @@
         "groupedVariables": {
             "projects/gayo-lib/src/stories/folder-card.stories.ts": [
                 {
+                    "name": "colors",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/folder-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    ...Default.args,\r\n    colors: ['#ff595e', '#ffca3a', '#8ac926', '#1982c4', '#6a4c93']\r\n  } \r\n}"
+                },
+                {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -66,7 +86,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n    args: {\r\n        tabs: [\r\n            {\r\n                title: 'Tab 1',\r\n                content: 'laborum maiores mollitia dignissimos dolorum ullam atque. Velit totam explicabo at dignissimos eligendi amet reiciendis, quidem quasi repellendus?'\r\n            },\r\n            {\r\n                title: 'Tab 2',\r\n                content: 'molestiae corporis error quas quo sapiente vitae tenetur doloremque sunt suscipit fugit dicta. Perferendis cumque repellendus eaque totam tempore nesciunt nulla reiciendis. '\r\n            },\r\n            {\r\n                title: 'Tab 3',\r\n                content: 'Ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !'\r\n            }\r\n        ]\r\n    }\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    tabs: [\r\n      {\r\n        title: 'Histoires',\r\n        content:\r\n          'Histoires laborum maiores mollitia dignissimos dolorum ullam atque. Velit totam explicabo at dignissimos eligendi amet reiciendis, quidem quasi repellendus?',\r\n        id: 0,\r\n      },\r\n      {\r\n        title: 'Secrets',\r\n        content:\r\n          'Secrets molestiae corporis error quas quo sapiente vitae tenetur doloremque sunt suscipit fugit dicta. Perferendis cumque repellendus eaque totam tempore nesciunt nulla reiciendis.',\r\n        id: 1,\r\n      },\r\n      {\r\n        title: 'Paléontologie',\r\n        content:\r\n          'Paléontologie Ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\r\n        id: 2,\r\n      },\r\n    ],\r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -76,7 +96,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<FolderCardComponent>",
-                    "defaultValue": "{\r\n    title: 'FolderApp/FolderCard',\r\n    component: FolderCardComponent,\r\n    tags: ['autodocs'],\r\n}"
+                    "defaultValue": "{\r\n  title: 'FolderApp/FolderCard',\r\n  component: FolderCardComponent,\r\n  tags: ['autodocs'],\r\n}"
                 }
             ],
             "projects/gayo-lib/.storybook/preview.ts": [
@@ -121,6 +141,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "preview",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/folder-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "colors",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

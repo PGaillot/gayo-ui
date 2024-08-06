@@ -1,3 +1,56 @@
-*{
-    font-family:  Helvetica, Arial,sans-serif;
+@font-face {
+  font-family: "Noto Serif", serif;
+  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Share+Tech&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 }
+
+* {
+  font-family: "Noto Serif", serif;
+}
+
+// 🎨 Palette Rétro Pastel
+$retro-050: #fff5e6;
+$retro-100: #ffe8cc;
+$retro-200: #ffd699;
+$retro-300: #ffc266;
+$retro-400: #ffad33;
+$retro-500: #ff9900;
+$retro-600: #cc7a00;
+$retro-700: #995c00;
+$retro-800: #663d00;
+$retro-900: #331f00;
+
+// 🎨 Palette Vintage Terracotta
+$vintage-050: #fdf0eb;
+$vintage-100: #f9d5c8;
+$vintage-200: #f5bba5;
+$vintage-300: #f1a182;
+$vintage-400: #ed875f;
+$vintage-500: #e96d3c;
+$vintage-600: #ba5730;
+$vintage-700: #8c4124;
+$vintage-800: #5d2b18;
+$vintage-900: #2f160c;
+
+// 🎨 Palette Retro Green
+$retro-green-050: #f2f7f2;
+$retro-green-100: #d9e6d9;
+$retro-green-200: #c0d6c0;
+$retro-green-300: #a7c5a7;
+$retro-green-400: #8eb58e;
+$retro-green-500: #75a475;
+$retro-green-600: #5e835e;
+$retro-green-700: #476247;
+$retro-green-800: #2f422f;
+$retro-green-900: #182118;
+
+// 🎨 Palette Vintage Cafe
+$vintage-cafe-050: #f6f1e7;
+$vintage-cafe-100: #e6d8c0;
+$vintage-cafe-200: #d6bf99;
+$vintage-cafe-300: #c6a672;
+$vintage-cafe-400: #b68d4b;
+$vintage-cafe-500: #a67424;
+$vintage-cafe-600: #855d1d;
+$vintage-cafe-700: #644616;
+$vintage-cafe-800: #432f0f;
+$vintage-cafe-900: #211708;
