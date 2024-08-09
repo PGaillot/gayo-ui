@@ -11,6 +11,16 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "CheckedCheckbox",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...SimpleCheckbox.args,\n    checked: true,\n  },\n}"
+            },
+            {
                 "name": "colors",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -71,6 +81,16 @@
                 "defaultValue": "{\r\n    args:{\r\n        label:'Disabled',\r\n        disabled:true,\r\n    }\r\n}"
             },
             {
+                "name": "DisabledCheckbox",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...SimpleCheckbox.args,\n    disabled: true,\n  },\n}"
+            },
+            {
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -124,11 +144,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/gayo-lib/src/stories/vault-tec/test.stories.ts",
+                "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<TestComponent>",
-                "defaultValue": "{\n  title:'Vault-Tec/Test',\n  component:TestComponent,\n  tags: ['autodocs'],\n}"
+                "type": "Meta<CheckboxComponent>",
+                "defaultValue": "{\n  title: 'Vault-Tec/Checkbox',\n  component: CheckboxComponent,\n  tags: ['autodocs'],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<RadioComponent>",
+                "defaultValue": "{\n  title:'Vault-Tec/Radio',\n  component:RadioComponent,\n  tags: ['autodocs'],\n}"
             },
             {
                 "name": "preview",
@@ -161,10 +191,20 @@
                 "defaultValue": "{\r\n    args:{\r\n        label:'Super Test 42',\r\n        size:'medium',\r\n        color:undefined,\r\n    }\r\n}"
             },
             {
-                "name": "SimpleTest",
+                "name": "SimpleCheckbox",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/gayo-lib/src/stories/vault-tec/test.stories.ts",
+                "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'Simple Checkbox',\n    checked: false,\n  },\n}"
+            },
+            {
+                "name": "SimpleRadio",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -189,6 +229,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n    args:{\r\n        label:'Subscribe',\r\n    }\r\n}"
+            },
+            {
+                "name": "WitoutLabel",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {},\n}"
             }
         ],
         "functions": [],
@@ -263,8 +313,19 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<TestComponent>",
-                "file": "projects/gayo-lib/src/stories/vault-tec/test.stories.ts",
+                "rawtype": "StoryObj<CheckboxComponent>",
+                "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<RadioComponent>",
+                "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -273,6 +334,58 @@
         ],
         "enumerations": [],
         "groupedVariables": {
+            "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts": [
+                {
+                    "name": "CheckedCheckbox",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...SimpleCheckbox.args,\n    checked: true,\n  },\n}"
+                },
+                {
+                    "name": "DisabledCheckbox",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...SimpleCheckbox.args,\n    disabled: true,\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<CheckboxComponent>",
+                    "defaultValue": "{\n  title: 'Vault-Tec/Checkbox',\n  component: CheckboxComponent,\n  tags: ['autodocs'],\n}"
+                },
+                {
+                    "name": "SimpleCheckbox",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'Simple Checkbox',\n    checked: false,\n  },\n}"
+                },
+                {
+                    "name": "WitoutLabel",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {},\n}"
+                }
+            ],
             "projects/gayo-lib/src/stories/folder-card.stories.ts": [
                 {
                     "name": "colors",
@@ -431,22 +544,22 @@
                     "defaultValue": "{\r\n    args:{\r\n        title:'Super Test 42',\r\n        content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\r\n        // size:'medium',\r\n        // color:undefined,\r\n    }\r\n}"
                 }
             ],
-            "projects/gayo-lib/src/stories/vault-tec/test.stories.ts": [
+            "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts": [
                 {
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/gayo-lib/src/stories/vault-tec/test.stories.ts",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Meta<TestComponent>",
-                    "defaultValue": "{\n  title:'Vault-Tec/Test',\n  component:TestComponent,\n  tags: ['autodocs'],\n}"
+                    "type": "Meta<RadioComponent>",
+                    "defaultValue": "{\n  title:'Vault-Tec/Radio',\n  component:RadioComponent,\n  tags: ['autodocs'],\n}"
                 },
                 {
-                    "name": "SimpleTest",
+                    "name": "SimpleRadio",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/gayo-lib/src/stories/vault-tec/test.stories.ts",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -543,13 +656,26 @@
                     "kind": 183
                 }
             ],
-            "projects/gayo-lib/src/stories/vault-tec/test.stories.ts": [
+            "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<TestComponent>",
-                    "file": "projects/gayo-lib/src/stories/vault-tec/test.stories.ts",
+                    "rawtype": "StoryObj<CheckboxComponent>",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<RadioComponent>",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -724,7 +850,27 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/gayo-lib/src/stories/vault-tec/test.stories.ts",
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CheckedCheckbox",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DisabledCheckbox",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -734,11 +880,41 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/gayo-lib/src/stories/vault-tec/test.stories.ts",
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "SimpleTest",
+                "name": "SimpleCheckbox",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WitoutLabel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SimpleRadio",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

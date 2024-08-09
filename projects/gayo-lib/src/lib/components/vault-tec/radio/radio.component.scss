@@ -1,0 +1,51 @@
+/* Component radio was generated on Sat Aug 10 2024 01:00:20 GMT+0200 (heure d’été d’Europe centrale) */
+    
+@import '../../../../lib/styles/vault-tec.scss';
+
+    #radio-container{
+
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        label{
+            margin-bottom: 2px;
+        
+            &.disabled{
+              cursor: not-allowed;
+              &::before {
+                content: url('../../../../assets/lock-icon-8.svg');
+                height: 1rem;
+                padding-right: 0.5rem;
+              }
+            }
+          }
+
+        input[type='radio'] {
+          cursor: pointer;
+          appearance: none;
+          border: 3px solid $pipboy;
+          height: 1.5rem;
+          width: 1.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 100%;
+          &::before {
+            content: '';
+            display: block;
+            height: 0.5rem;
+            width: 0.5rem;
+            background: $pipboy;
+            opacity: 0;
+          }
+          &:checked::before {
+            opacity: 1;
+            border-radius: 100%;
+          }
+
+          &:disabled {
+            cursor: not-allowed;
+          }
+        }
+    }
