@@ -121,6 +121,16 @@
                 "defaultValue": "{\r\n    title:'Vault-Tec/Button',\r\n    component:ButtonComponent,\r\n    tags: ['autodocs'],\r\n    render: ({ label, ...args}) => ({\r\n        props:{\r\n            ...args,\r\n        },\r\n        template: `<vt-btn ${argsToTemplate(args)}>${label}</vt-btn>`,\r\n    })\r\n}"
             },
             {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/test.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<TestComponent>",
+                "defaultValue": "{\n  title:'Vault-Tec/Test',\n  component:TestComponent,\n  tags: ['autodocs'],\n}"
+            },
+            {
                 "name": "preview",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -149,6 +159,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n    args:{\r\n        label:'Super Test 42',\r\n        size:'medium',\r\n        color:undefined,\r\n    }\r\n}"
+            },
+            {
+                "name": "SimpleTest",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/test.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args:{\n      // vos arguments ici\n  }\n}"
             },
             {
                 "name": "Small",
@@ -234,6 +254,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<BtnPropsAndCustomArgs>",
                 "file": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<TestComponent>",
+                "file": "projects/gayo-lib/src/stories/vault-tec/test.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -400,6 +431,28 @@
                     "defaultValue": "{\r\n    args:{\r\n        title:'Super Test 42',\r\n        content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\r\n        // size:'medium',\r\n        // color:undefined,\r\n    }\r\n}"
                 }
             ],
+            "projects/gayo-lib/src/stories/vault-tec/test.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/test.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<TestComponent>",
+                    "defaultValue": "{\n  title:'Vault-Tec/Test',\n  component:TestComponent,\n  tags: ['autodocs'],\n}"
+                },
+                {
+                    "name": "SimpleTest",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/test.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args:{\n      // vos arguments ici\n  }\n}"
+                }
+            ],
             "projects/gayo-lib/.storybook/preview.ts": [
                 {
                     "name": "preview",
@@ -484,6 +537,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<UserCardComponent>",
                     "file": "projects/gayo-lib/src/stories/user-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/test.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<TestComponent>",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/test.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -653,6 +719,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "SubcribeButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/test.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/test.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SimpleTest",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
