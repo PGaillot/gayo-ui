@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/angular";
-import { UserCardComponent } from "../lib/components/user-card/user-card.component";
+import { UserCardComponent } from "../lib/components/folder-app/user-card/user-card.component";
 
 const meta:Meta<UserCardComponent> = {
     title: 'FolderApp/UserCard',

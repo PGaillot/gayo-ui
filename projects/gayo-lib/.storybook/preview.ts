@@ -5,6 +5,15 @@ setCompodocJson(docJson);
 
 const preview: Preview = {
   parameters: {
+    backgrounds: {
+      default: 'vault-tec',
+      values: [
+        {
+          name: 'vault-tec',
+          value: '#1a1a1a',
+        },
+      ],
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,

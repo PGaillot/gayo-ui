@@ -1,0 +1,24 @@
+@import '../../../styles/vault-tec.scss';
+
+$title: var(--title, "Advice");
+
+#advice-block{
+    position: relative;
+    border: 2px solid $pipboy;
+    padding: 12px;
+    margin-top: 28px;
+
+
+    &::before{
+        content:  'test';
+        position: absolute;
+        background: $pipboy;
+        color: $background;
+        font-size: $font-size-medium;
+        font-weight: 600;
+        top: -30px ;
+        left: 32px;
+        border: inherit;
+        display: block;
+    }
+}
