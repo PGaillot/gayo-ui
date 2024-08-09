@@ -1,0 +1,55 @@
+/* Component loader was generated on Sat Aug 10 2024 01:33:59 GMT+0200 (heure d’été d’Europe centrale) */
+
+@import "../../../../lib/styles/vault-tec.scss";
+
+
+#loader {
+    position: relative;
+    width: min-content;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      border-radius: 100%;
+      top: 46.5%;
+      left: 50%;
+      height: 6px;
+      width: 6px;
+      background: $pipboy;
+      z-index: 10;
+    }
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      border-radius: 100%;
+      top: 46.5%;
+      left: 50%;
+      z-index: 10;
+      border: 3px solid $pipboy;
+      animation: circle 1.5s ease-out infinite;
+    }
+  }
+  
+  @keyframes circle {
+    0% {
+      opacity: 1;
+      height: 0px;
+      width: 0px;
+    }
+    15% {
+      height: 0px;
+      width: 0px;
+    }
+    80% {
+      opacity: 1;
+      height: 40px;
+      width: 40px;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  

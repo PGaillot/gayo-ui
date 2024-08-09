@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'lib-checkbox',
+  selector: 'vt-checkbox',
   standalone: true,
   imports: [],
   styleUrl: './checkbox.component.scss',
