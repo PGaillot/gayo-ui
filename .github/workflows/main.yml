@@ -22,7 +22,6 @@ jobs:
           - name: 🚀 Update version
             run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
             env:
-             NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
              commitmsg: ${{ github.event.head_commit.message }}
           
           - name: Extract owner and repo
@@ -39,13 +38,19 @@ jobs:
                npm ci
                npm install @octokit/rest
   
+          - name: Configure npm
+            run: |
+              npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
+            env:
+              NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
           - name: 📦 Publish lib
             run: npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN} && node scripts/publish-package.cjs
             env:
               GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               OWNER: ${{ env.OWNER }}
               REPO: ${{ env.REPO_NAME }}
-            # working-directory: ./projects/gayo-lib/
+              NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
           - name: 🤖 Commit new version.
             uses: stefanzweifel/git-auto-commit-action@v5
