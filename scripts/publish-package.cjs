@@ -6,8 +6,8 @@ const owner = process.env.OWNER;
 const repo = process.env.REPO;
 const fs = require('fs');
 const { readFileSync, writeFileSync } = fs;
-
 (async () => {
+    const libPath = path.join(process.cwd(), 'projects', 'gayo-lib');
     const { Octokit } = await import("octokit");
     const octokit = new Octokit({ auth: githubToken });
     publishLib();
@@ -20,7 +20,7 @@ const { readFileSync, writeFileSync } = fs;
             console.log('publishing lib...');
             const pullRequests = await getPullRequests();
             await writeChanges(pullRequests[0]);
-            await execSync("npm publish",
+            await execSync("cd " + libPath + "npm publish",
                 {
                     stdio: "inherit",
                 });
@@ -42,7 +42,6 @@ const { readFileSync, writeFileSync } = fs;
      */
     async function updateVersion() {
         try {
-            const libPath = path.join(process.cwd(), 'projects', 'gayo-lib');
             execSync("cd " + libPath + " && npm version patch",
                 {
                     stdio: "inherit",
