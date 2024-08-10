@@ -42,8 +42,13 @@ const { readFileSync, writeFileSync } = fs;
 
 
             console.log('publishing lib...');
+
+
             try {
-                await execSync("cd " + path.join(+ process.cwd() , 'dist') + " && npm publish",
+
+                const distPath = path.join(process.cwd(), 'dist');
+
+                await execSync("cd " + distPath + " && npm publish",
                     {
                         stdio: "inherit",
                     });
