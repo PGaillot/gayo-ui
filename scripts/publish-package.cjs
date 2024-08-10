@@ -13,18 +13,17 @@ const { readFileSync, writeFileSync } = fs;
     publishLib();
 
     async function publishLib() {
-
-
         try {
             await updateVersion();
-            console.log('publishing lib...');
             const pullRequests = await getPullRequests();
-            await writeChanges(pullRequests[0]);
+            console.log('publishing lib...');
             try {
                 await execSync("cd " + libPath + "&& npm publish",
                     {
                         stdio: "inherit",
                     });
+                console.log('writing changes...');
+                await writeChanges(pullRequests[0]);
 
                 console.log('🎊 publishing lib done 🎊');
             } catch (error) {
@@ -32,7 +31,7 @@ const { readFileSync, writeFileSync } = fs;
             }
 
         } catch (error) {
-            console.error('❌ publish lib error :', error);
+            console.error('❌ updateVersion or getPullRequests error :', error);
         }
     }
 
@@ -93,18 +92,27 @@ const { readFileSync, writeFileSync } = fs;
         try {
             const changesLogPath = path.join(process.cwd(), 'projects', 'gayo-lib', 'CHANGELOG.md');
             const changesLogContent = fs.readFileSync(changesLogPath, 'utf-8');
-            const newChangeLog = `
-
-### [ ${version} ] - ${pullRequest.closed_at.split('T')[0]}
-author: ${pullRequest.user.login} 
-${pullRequest.body}
-
----`;
+            const newChangeLog = getChangesLog(pullRequest);
             const newChangesLogContent = changesLogContent + newChangeLog;
             await writeFileSync(changesLogPath, newChangesLogContent, "utf8");
+            
+            try
+
+
         } catch (error) {
             console.error('❌ write changes error :', error);
         }
     }
 
 })();
+
+
+function getChangesLog(pullRequest) {
+   return = `
+
+    ### [ ${version} ] - ${pullRequest.closed_at.split('T')[0]}
+    author: ${pullRequest.user.login} 
+    ${pullRequest.body}
+    
+    ---`;
+}
