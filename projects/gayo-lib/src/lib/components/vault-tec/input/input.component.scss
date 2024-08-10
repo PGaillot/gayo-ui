@@ -1,0 +1,39 @@
+/* Component input was generated on Sat Aug 10 2024 11:11:14 GMT+0200 (heure d’été d’Europe centrale) */
+    
+@import '../../../../lib/styles/vault-tec.scss';
+
+#input-container{
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    
+    
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: $pipboy;
+        transition: background-color 5000s ease-in-out 0s;
+        box-shadow: inset 0 0 20px 20px #23232329;
+    }
+    textarea,
+    input[type='text'],
+    input[type='number'],
+    input[type='email'],
+    input[type='password'] {
+        background: none;
+        border: $pipboy 3px solid;
+        resize: none;
+        color: $pipboy;
+        padding: 0.5rem;
+        font-size: 1.05rem;
+        font-family: 'Space Mono', monospace;
+        
+        &:focus {
+            outline: none;
+            border: $pipboy 3px solid;
+        }
+    }
+}
