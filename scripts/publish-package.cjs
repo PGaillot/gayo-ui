@@ -16,7 +16,9 @@ const repo = process.env.REPO;
 
         try {
             await updateVersion();
+            console.log('publishing lib...');
             const pullRequests = await getPullRequests();
+            console.log('getPullRequests ...');
             console.log(pullRequests[0]);
 
         } catch (error) {
@@ -55,6 +57,13 @@ const repo = process.env.REPO;
             direction: "desc",
             per_page: 1, 
         });
+
+
+        console.log('data.pullRequests');
+        console.log(data.pullRequests);
+        console.log('pullRequests');
+        console.log(pullRequests);
+        
 
         return pullRequests;
     }
