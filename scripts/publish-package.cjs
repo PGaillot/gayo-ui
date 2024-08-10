@@ -21,7 +21,7 @@ const { readFileSync, writeFileSync } = fs;
             const pullRequests = await getPullRequests();
             await writeChanges(pullRequests[0]);
             try {
-                await execSync("cd " + libPath + " npm publish",
+                await execSync("cd " + libPath + "&& npm publish",
                     {
                         stdio: "inherit",
                     });
