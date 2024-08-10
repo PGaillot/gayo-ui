@@ -13,12 +13,37 @@ const { readFileSync, writeFileSync } = fs;
     publishLib();
 
     async function publishLib() {
+        
         try {
-            await updateVersion();
-            const pullRequests = await getPullRequests();
+
+            console.log('build lib...');
+            try {
+                await execSync("cd " + process.cwd() + " && npm run build",
+                {
+                    stdio: "inherit",
+                });
+                
+                
+                console.log('getting pull requests...');
+                const pullRequests = await getPullRequests();
+                
+                console.log('updating version...');
+                await updateVersion();
+                
+            } catch (error) {
+                console.error('❌ build lib error :', error);
+            }
+
+
+
+
+
+
+
+
             console.log('publishing lib...');
             try {
-                await execSync("cd " + libPath + "&& npm publish",
+                await execSync("cd " + path.join(+ process.cwd() , 'dist') + " && npm publish",
                     {
                         stdio: "inherit",
                     });
@@ -105,7 +130,7 @@ const { readFileSync, writeFileSync } = fs;
 
 
 function getChangesLog(pullRequest) {
-   return `
+    return `
 
     ### [ ${version} ] - ${pullRequest.closed_at.split('T')[0]}
     author: ${pullRequest.user.login} 
