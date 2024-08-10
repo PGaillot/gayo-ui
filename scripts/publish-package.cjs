@@ -7,6 +7,7 @@ const { Octokit } = require("@octokit/rest");
 
 
 (async () => {
+    const { Octokit } = await import("octokit");
     const octokit = new Octokit({ auth: githubToken });
     publishLib();
 
