@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'lib-input',
+  selector: 'vt-input',
   standalone: true,
   imports: [],
   styleUrl: './input.component.scss',

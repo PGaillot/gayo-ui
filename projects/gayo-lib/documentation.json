@@ -134,6 +134,26 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<InputComponent>",
+                "defaultValue": "{\r\n  title:'Vault-Tec/Input',\r\n  component:InputComponent,\r\n  tags: ['autodocs'],\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/loader.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<LoaderComponent>",
+                "defaultValue": "{\r\n  title:'Vault-Tec/Loader',\r\n  component:LoaderComponent,\r\n  tags: ['autodocs'],\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -179,6 +199,26 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    label: 'Simple Checkbox',\r\n    checked: false,\r\n  },\r\n}"
+            },
+            {
+                "name": "SimpleInput",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args:{\r\n      id:'default',\r\n      label:'Entrez un texte',\r\n      inputType:'text',\r\n  }\r\n}"
+            },
+            {
+                "name": "SimpleLoader",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/loader.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args:{\r\n      // vos arguments ici\r\n  }\r\n}"
             },
             {
                 "name": "SimpleRadio",
@@ -294,6 +334,28 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<CheckboxComponent>",
                 "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<InputComponent>",
+                "file": "projects/gayo-lib/src/stories/vault-tec/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<LoaderComponent>",
+                "file": "projects/gayo-lib/src/stories/vault-tec/loader.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -533,6 +595,50 @@
                     "defaultValue": "{\r\n    args:{\r\n        title:'Super Test 42',\r\n        content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\r\n        // size:'medium',\r\n        // color:undefined,\r\n    }\r\n}"
                 }
             ],
+            "projects/gayo-lib/src/stories/vault-tec/input.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<InputComponent>",
+                    "defaultValue": "{\r\n  title:'Vault-Tec/Input',\r\n  component:InputComponent,\r\n  tags: ['autodocs'],\r\n}"
+                },
+                {
+                    "name": "SimpleInput",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args:{\r\n      id:'default',\r\n      label:'Entrez un texte',\r\n      inputType:'text',\r\n  }\r\n}"
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/loader.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/loader.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<LoaderComponent>",
+                    "defaultValue": "{\r\n  title:'Vault-Tec/Loader',\r\n  component:LoaderComponent,\r\n  tags: ['autodocs'],\r\n}"
+                },
+                {
+                    "name": "SimpleLoader",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/loader.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args:{\r\n      // vos arguments ici\r\n  }\r\n}"
+                }
+            ],
             "projects/gayo-lib/.storybook/preview.ts": [
                 {
                     "name": "preview",
@@ -617,6 +723,32 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<CheckboxComponent>",
                     "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/input.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<InputComponent>",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/loader.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<LoaderComponent>",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/loader.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -809,6 +941,46 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "WitoutLabel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SimpleInput",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/loader.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/loader.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SimpleLoader",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

@@ -10,27 +10,36 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-            - uses: actions/checkout@v3
+          - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+          - uses: actions/checkout@v3
 
-            - name: 🪢 Use Node.js 18
-              uses: actions/setup-node@v3
-              with:
-                node-version: 18.x
+          - name: 🪢 Use Node.js 18
+            uses: actions/setup-node@v3
+            with:
+              node-version: 18.x
 
-            - name: 🛠️ Install dependencies
-              run: npm ci
-
-            - name: 🏗️ Build Website
-              run: npm run build-storybook
-
-            - name: 🤝 Deploy on Server 
+          - name: 🚀 Update version
+            run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+            env:
+             NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+             GH_TOKEN: ${{ secrets.GH_TOKEN }}
             
-              uses: appleboy/scp-action@v0.1.7
-              with:
-                host: ${{ secrets.SSH_HOST }} 
-                username: ${{ secrets.SSH_USERNAME }}
-                password: ${{ secrets.SSH_PASS }}
-                port: ${{ secrets.SSH_PORT }}
-                source: './storybook-static/*'
-                target: '/var/www/html/${{ github.repository }}'
+          - run: node node scripts/publish-package.cjs
+
+
+          - name: 🛠️ Install dependencies
+            run: npm ci
+
+          - name: 🏗️ Build Website
+            run: npm run build-storybook
+
+          - name: 🤝 Deploy on Server 
+          
+            uses: appleboy/scp-action@v0.1.7
+            with:
+              host: ${{ secrets.SSH_HOST }} 
+              username: ${{ secrets.SSH_USERNAME }}
+              password: ${{ secrets.SSH_PASS }}
+              port: ${{ secrets.SSH_PORT }}
+              source: './storybook-static/*'
+              target: '/var/www/html/${{ github.repository }}'

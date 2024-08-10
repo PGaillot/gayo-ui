@@ -8,6 +8,8 @@ const { readFileSync, writeFileSync } = require("fs");
 
 const componentName = process.argv[2];
 
+
+
 if (!componentName) {
   console.error('Please provide a component name');
   process.exit(1);
@@ -59,6 +61,7 @@ export const Simple${camelToPascal(componentName)}:Story = {
     console.log(`Info file created at: ${infoFilePath}`);
     
     await updateStyle(componentName);
+    await fixBaliseName(camelToKebab(componentName));
 
   } catch (error) {
     console.error('An error occurred:', error);
@@ -80,12 +83,18 @@ function camelToPascal(str) {
       .replace(/\s+/g, '');                                          // Supprime tous les espaces
 }
 
+
+
+/**
+ * 
+ * @param {*} componentName 
+ */
 async function updateStyle(componentName) {
-  const filePath = path.join(process.cwd(), 'projects', 'gayo-lib', 'src', 'lib', 'components', 'vault-tec', `${componentName}`);
-  const styleFilePath = path.join(filePath, `${componentName}.component.css`);
-  const newStyleFilePath = path.join(filePath, `${componentName}.component.scss`);
+  const filePath = path.join(process.cwd(), 'projects', 'gayo-lib', 'src', 'lib', 'components', 'vault-tec', `${camelToKebab(componentName)}`);
+  const styleFilePath = path.join(filePath, `${camelToKebab(componentName)}.component.css`);
+  const newStyleFilePath = path.join(filePath, `${camelToKebab(componentName)}.component.scss`);
   const styleContent = 
-  `/* Component ${componentName} was generated on ${new Date()} */
+  `/* Component ${camelToKebab(componentName)} was generated on ${new Date()} */
     
 @import '../../../../lib/styles/vault-tec.scss';
 
@@ -95,10 +104,9 @@ async function updateStyle(componentName) {
     await fs.promises.unlink(styleFilePath);
 
     // Rename the TypeScript file
-    const typeScriptFilePath = path.join(filePath, `${componentName}.component.ts`);
+    const typeScriptFilePath = path.join(filePath, `${camelToKebab(componentName)}.component.ts`);
     const tsContent = fs.readFileSync(typeScriptFilePath, 'utf-8');
-    const marker = `styleUrl: './${componentName}.component.css`
-    const updateTs = tsContent.replace(`styleUrl: './${componentName}.component.css'`, `styleUrl: './${componentName}.component.scss'`); 
+    const updateTs = tsContent.replace(`styleUrl: './${camelToKebab(componentName)}.component.css'`, `styleUrl: './${camelToKebab(componentName)}.component.scss'`); 
     writeFileSync(typeScriptFilePath, updateTs);
 
 
@@ -108,6 +116,12 @@ async function updateStyle(componentName) {
   }
 }
 
+
+/**
+ * 
+ * @param {*} filePath 
+ * @param {*} content 
+ */
 async function createdFile(filePath, content) {  
   try {
     await fs.promises.writeFile(filePath, content);
@@ -117,4 +131,25 @@ async function createdFile(filePath, content) {
   }
 }
 
+/**
+ * 
+ * @param {*} componentName 
+ */
+async function fixBaliseName(componentName) {
 
+  const filePath = path.join(process.cwd(), 'projects', 'gayo-lib', 'src', 'lib', 'components', 'vault-tec', `${componentName}`);
+
+  try {
+    const typeScriptFilePath = path.join(filePath, `${componentName}.component.ts`);
+    const tsContent = fs.readFileSync(typeScriptFilePath, 'utf-8');
+    const updateTs = tsContent.replace(`selector: 'vt-${componentName}',`, `selector: 'vt-${componentName}',`); 
+    writeFileSync(typeScriptFilePath, updateTs);
+
+
+    console.log(`File updated at: ${typeScriptFilePath}`);
+
+  } catch (error) {
+    console.error('❌ An error occurred:', error);
+  }
+
+}
