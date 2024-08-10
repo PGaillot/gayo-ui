@@ -15,6 +15,8 @@ const { readFileSync, writeFileSync } = fs;
     async function publishLib() {
 
         try {
+            console.log('updating version...');
+            await updateVersion();
 
             console.log('build lib...');
             try {
@@ -23,8 +25,6 @@ const { readFileSync, writeFileSync } = fs;
                         stdio: "inherit",
                     });
 
-                console.log('updating version...');
-                await updateVersion();
 
             } catch (error) {
                 console.error('❌ build lib error :', error);
