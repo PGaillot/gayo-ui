@@ -18,17 +18,15 @@ jobs:
             with:
               node-version: 18.x
 
-          - name: 🦑 Install Oktokit
-            run: npm install @octokit/rest
-
           - name: 🚀 Update version
             run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
             env:
              NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-             GH_TOKEN: ${{ secrets.GH_TOKEN }}
             
-          - run: node scripts/publish-package.cjs
-
+          - name: 📦 Publish lib
+            run: node scripts/publish-package.mjs
+            env:
+              GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
           - name: 🛠️ Install dependencies
             run: npm ci
