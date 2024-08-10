@@ -64,12 +64,14 @@ const { readFileSync, writeFileSync } = fs;
 
     async function writeChanges(pullRequest) {
 
+        let version
+
         try {
 
             const packageJsPath = path.join(process.cwd(), 'projects', 'gayo-lib', 'package.json');
             const packageJsContent = fs.readFileSync(packageJsPath, 'utf-8');
             const packageJs = JSON.parse(packageJsContent);
-            const version = packageJs.version;
+            version = packageJs.version;
         } catch (error) {
             console.error('❌ get package version error :', error);
         }
