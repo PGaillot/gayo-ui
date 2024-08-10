@@ -11,6 +11,16 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "Agility",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args:{\n      content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\n      perkName:'agility'\n  }\n}"
+            },
+            {
                 "name": "CheckedCheckbox",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -91,6 +101,16 @@
                 "defaultValue": "{\r\n    args:{\r\n        label:'Subscribe',\r\n        size:'large',\r\n    }\r\n}"
             },
             {
+                "name": "Loading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n    args:{\r\n        label:'Loading',\r\n        loading:true,\r\n    }\r\n}"
+            },
+            {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -154,6 +174,16 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<PerkCardComponent>",
+                "defaultValue": "{\n  title:'Vault-Tec/PerkCard',\n  component:PerkCardComponent,\n  tags: ['autodocs'],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -198,7 +228,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n    args:{\r\n        label:'Super Test 42',\r\n        size:'medium',\r\n        color:undefined,\r\n    }\r\n}"
+                "defaultValue": "{\r\n    args:{\r\n        label:'S.P.E.C.I.A.L',\r\n        size:'medium',\r\n    }\r\n}"
             },
             {
                 "name": "SimpleCheckbox",
@@ -229,6 +259,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args:{\r\n      // vos arguments ici\r\n  }\r\n}"
+            },
+            {
+                "name": "SimplePerkCard",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args:{\n      content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\n      perkName:'strength'\n  }\n}"
             },
             {
                 "name": "SimpleRadio",
@@ -385,6 +425,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<PerkCardComponent>",
+                "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<RadioComponent>",
                 "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
                 "deprecated": false,
@@ -406,6 +457,38 @@
         ],
         "enumerations": [],
         "groupedVariables": {
+            "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts": [
+                {
+                    "name": "Agility",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args:{\n      content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\n      perkName:'agility'\n  }\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<PerkCardComponent>",
+                    "defaultValue": "{\n  title:'Vault-Tec/PerkCard',\n  component:PerkCardComponent,\n  tags: ['autodocs'],\n}"
+                },
+                {
+                    "name": "SimplePerkCard",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args:{\n      content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\n      perkName:'strength'\n  }\n}"
+                }
+            ],
             "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts": [
                 {
                     "name": "CheckedCheckbox",
@@ -564,6 +647,16 @@
                     "defaultValue": "{\r\n    args:{\r\n        label:'Subscribe',\r\n        size:'large',\r\n    }\r\n}"
                 },
                 {
+                    "name": "Loading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    args:{\r\n        label:'Loading',\r\n        loading:true,\r\n    }\r\n}"
+                },
+                {
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -581,7 +674,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n    args:{\r\n        label:'Super Test 42',\r\n        size:'medium',\r\n        color:undefined,\r\n    }\r\n}"
+                    "defaultValue": "{\r\n    args:{\r\n        label:'S.P.E.C.I.A.L',\r\n        size:'medium',\r\n    }\r\n}"
                 },
                 {
                     "name": "Small",
@@ -808,6 +901,19 @@
                     "kind": 183
                 }
             ],
+            "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<PerkCardComponent>",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts": [
                 {
                     "name": "Story",
@@ -917,6 +1023,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Loading",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -1047,6 +1163,36 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "SimpleLoader",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Agility",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SimplePerkCard",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

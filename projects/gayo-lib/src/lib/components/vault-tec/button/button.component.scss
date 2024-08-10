@@ -19,7 +19,7 @@ $color: var(--color, $pipboy);
     cursor: not-allowed;
 
       &::before {
-        content: url('../../../../assets/lock-icon-8.svg');
+        content: url('../../../../../assets/lock-icon-8.svg');
         height: 1rem;
         padding-right: 0.5rem;
       }
