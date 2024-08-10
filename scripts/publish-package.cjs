@@ -96,8 +96,7 @@ const { readFileSync, writeFileSync } = fs;
 author: ${pullRequest.user.login} 
 ${pullRequest.body}
 
----
-            `;
+---`;
             const newChangesLogContent = changesLogContent + newChangeLog;
             await writeFileSync(changesLogPath, newChangesLogContent, "utf8");
         } catch (error) {
