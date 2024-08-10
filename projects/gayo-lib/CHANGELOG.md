@@ -10,3 +10,10 @@
 #### [ 1.1.0 ] - 2024-07-15
 - Nouvelle fonctionnalité A
 - Mise à jour de la dépendance B
+
+    ### [0.0.5] - 2024-08-10
+    author: PGaillot 
+    - modification de `readme.md`
+- ajout du fichier `publish-package.cjs`
+- modification de `main.yml`
+            
