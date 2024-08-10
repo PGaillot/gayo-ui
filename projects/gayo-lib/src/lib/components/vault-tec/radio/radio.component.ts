@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'lib-radio',
+  selector: 'vt-radio',
   standalone: true,
   imports: [],
   template: `
