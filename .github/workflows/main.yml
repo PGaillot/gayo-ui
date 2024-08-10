@@ -47,11 +47,7 @@ jobs:
               GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               OWNER: ${{ env.OWNER }}
               REPO: ${{ env.REPO_NAME }}
-
-          - name: Publish to npm
-            env:
               NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-            run: npm publish
             working-directory: ./projects/gayo-lib/
 
           - name: 🤖 Commit new version.

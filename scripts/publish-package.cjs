@@ -92,7 +92,7 @@ const { readFileSync, writeFileSync } = fs;
             const changesLogContent = fs.readFileSync(changesLogPath, 'utf-8');
             const newChangeLog = `
 
-### [${version}] - ${pullRequest.closed_at.split('T')[0]}
+### [ ${version} ] - ${pullRequest.closed_at.split('T')[0]}
 author: ${pullRequest.user.login} 
 ${pullRequest.body}
             `;
