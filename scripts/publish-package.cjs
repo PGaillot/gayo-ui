@@ -95,9 +95,6 @@ const { readFileSync, writeFileSync } = fs;
             const newChangeLog = getChangesLog(pullRequest);
             const newChangesLogContent = changesLogContent + newChangeLog;
             await writeFileSync(changesLogPath, newChangesLogContent, "utf8");
-            
-            try
-
 
         } catch (error) {
             console.error('❌ write changes error :', error);
