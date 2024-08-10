@@ -58,9 +58,6 @@ const repo = process.env.REPO;
             per_page: 1, 
         });
 
-
-        console.log('data.pullRequests');
-        console.log(data.pullRequests);
         console.log('pullRequests');
         console.log(pullRequests);
         
