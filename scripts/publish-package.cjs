@@ -19,7 +19,13 @@ const { readFileSync, writeFileSync } = fs;
             await updateVersion();
             console.log('publishing lib...');
             const pullRequests = await getPullRequests();
-            writeChanges(pullRequests[0]);
+            await writeChanges(pullRequests[0]);
+            await execSync("npm publish",
+                {
+                    stdio: "inherit",
+                });
+
+            console.log('publishing lib done');
 
         } catch (error) {
             console.error('❌ publish lib error :', error);
@@ -62,6 +68,12 @@ const { readFileSync, writeFileSync } = fs;
     }
 
 
+    /**
+     * Writes changes to the CHANGELOG.md file based on the provided pull request.
+     *
+     * @param {object} pullRequest - The pull request object containing information about the changes.
+     * @return {void}
+     */
     async function writeChanges(pullRequest) {
         console.log(pullRequest)
         let version
@@ -75,15 +87,15 @@ const { readFileSync, writeFileSync } = fs;
         } catch (error) {
             console.error('❌ get package version error :', error);
         }
-        
+
         try {
             const changesLogPath = path.join(process.cwd(), 'projects', 'gayo-lib', 'CHANGELOG.md');
             const changesLogContent = fs.readFileSync(changesLogPath, 'utf-8');
             const newChangeLog = `
 
-    ### [${version}] - ${ pullRequest.closed_at.split('T')[0] }
-    author: ${pullRequest.user.login} 
-    ${pullRequest.body}
+### [${version}] - ${pullRequest.closed_at.split('T')[0]}
+author: ${pullRequest.user.login} 
+${pullRequest.body}
             `;
             const newChangesLogContent = changesLogContent + newChangeLog;
             await writeFileSync(changesLogPath, newChangesLogContent, "utf8");
