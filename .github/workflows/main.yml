@@ -17,6 +17,7 @@ jobs:
             uses: actions/setup-node@v3
             with:
               node-version: 18.x
+              registry-url: 'https://registry.npmjs.org'
 
           - name: 🚀 Update version
             run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
@@ -39,7 +40,7 @@ jobs:
             run: |
                npm ci
                npm install @octokit/rest
-            
+  
           - name: 📦 Publish lib
             run: node scripts/publish-package.cjs
             env:
@@ -47,7 +48,11 @@ jobs:
               OWNER: ${{ env.OWNER }}
               REPO: ${{ env.REPO_NAME }}
 
-          - run: 'cd ../../'
+          - name: Publish to npm
+            env:
+              NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+            run: npm publish
+            working-directory: ./projects/gayo-lib/
 
           - name: 🤖 Commit new version.
             uses: stefanzweifel/git-auto-commit-action@v5
@@ -59,7 +64,6 @@ jobs:
 
           - name: 🛠️ Install dependencies
             run: npm ci
-
 
           - name: 🤝 Deploy on Server 
           
