@@ -35,18 +35,10 @@ const { readFileSync, writeFileSync } = fs;
             }
 
 
-
-
-
-
-
-
             console.log('publishing lib...');
-
-
             try {
 
-                const distPath = path.join(process.cwd(), 'dist');
+                const distPath = path.join(process.cwd(), 'dist', 'gayo-lib');
 
                 await execSync("cd " + distPath + " && npm publish",
                     {
