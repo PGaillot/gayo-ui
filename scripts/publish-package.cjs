@@ -18,8 +18,7 @@ const repo = process.env.REPO;
             await updateVersion();
             console.log('publishing lib...');
             const pullRequests = await getPullRequests();
-            console.log('getPullRequests ...');
-            console.log(pullRequests);
+            writeChanges(pullRequests[0]);
 
         } catch (error) {
             console.error('❌ publish lib error :', error);
@@ -55,9 +54,30 @@ const repo = process.env.REPO;
             base: "master",
             sort: "updated",
             direction: "desc",
-            per_page: 1, 
+            per_page: 1,
         });
 
         return pullRequests;
     }
+
+
+    async function writeChanges(pullRequest) {
+
+
+        try {
+            const changesLogPath = path.join(process.cwd(), 'projects', 'gayo-lib', 'CHANGELOG.md');
+            const changesLogContent = fs.readFileSync(changesLogPath, 'utf-8');
+            const newChangeLog = `
+
+    ### [${version}] - ${date.format(new Date(), 'DD/MM/YYYY - HH:mm')}
+    author: ${author} 
+    ${pullRequest.body}
+            `;
+            const newChangesLogContent = changesLogContent + newChangeLog;
+            await writeFileSync(changesLogPath, newChangesLogContent, "utf8");
+        } catch (error) {
+            console.error('❌ write changes error :', error);
+        }
+    }
+
 })();
