@@ -40,7 +40,7 @@ jobs:
                npm install @octokit/rest
   
           - name: 📦 Publish lib
-            run: node ../../scripts/publish-package.cjs
+            run: node scripts/publish-package.cjs
             env:
               GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               OWNER: ${{ env.OWNER }}
