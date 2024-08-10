@@ -17,7 +17,7 @@ const repo = process.env.REPO;
         try {
             await updateVersion();
             const pullRequests = await getPullRequests();
-            console.table(pullRequests[0]);
+            console.log(pullRequests[0]);
 
         } catch (error) {
             console.error('❌ publish lib error :', error);
