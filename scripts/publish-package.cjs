@@ -20,12 +20,16 @@ const { readFileSync, writeFileSync } = fs;
             console.log('publishing lib...');
             const pullRequests = await getPullRequests();
             await writeChanges(pullRequests[0]);
-            await execSync("cd " + libPath + " npm publish",
-                {
-                    stdio: "inherit",
-                });
+            try {
+                await execSync("cd " + libPath + " npm publish",
+                    {
+                        stdio: "inherit",
+                    });
 
-            console.log('publishing lib done');
+                console.log('🎊 publishing lib done 🎊');
+            } catch (error) {
+                console.error('❌ publish lib error :', error);
+            }
 
         } catch (error) {
             console.error('❌ publish lib error :', error);
