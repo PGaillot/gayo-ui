@@ -33,8 +33,6 @@ jobs:
               REPO_NAME=$(echo $REPO | cut -d'/' -f2)
               echo "OWNER=$OWNER" >> $GITHUB_ENV
               echo "REPO_NAME=$REPO_NAME" >> $GITHUB_ENV
-
-          - run: 'cd projects/gayo-lib'
         
           - name: 🛠️ Install lib dependencies
             run: |
