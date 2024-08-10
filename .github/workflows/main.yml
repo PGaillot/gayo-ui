@@ -24,7 +24,7 @@ jobs:
              NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
             
           - name: 📦 Publish lib
-            run: node scripts/publish-package.mjs
+            run: node scripts/publish-package.cjs
             env:
               GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
