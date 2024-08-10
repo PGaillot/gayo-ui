@@ -64,9 +64,20 @@ const { readFileSync, writeFileSync } = fs;
 
     async function writeChanges(pullRequest) {
 
+        try {
+
+            const changesLogPath = path.join(process.cwd(), 'projects', 'gayo-lib', 'CHANGELOG.md');
+
+        } catch (error) {
+            console.error('❌ get package version error :', error);
+        }
 
         try {
-            const changesLogPath = path.join(process.cwd(), 'projects', 'gayo-lib', 'CHANGELOG.md');
+            const packageJsPath = path.join(process.cwd(), 'projects', 'gayo-lib', 'package.json');
+            const packageJsContent = fs.readFileSync(packageJsPath, 'utf-8');
+            const packageJs = JSON.parse(packageJsContent);
+            const version = packageJs.version;
+
             const changesLogContent = fs.readFileSync(changesLogPath, 'utf-8');
             const newChangeLog = `
 
