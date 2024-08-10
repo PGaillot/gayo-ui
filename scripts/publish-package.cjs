@@ -20,7 +20,7 @@ const { readFileSync, writeFileSync } = fs;
             console.log('publishing lib...');
             const pullRequests = await getPullRequests();
             await writeChanges(pullRequests[0]);
-            await execSync("npm publish",
+            await execSync("cd ../../ &&  npm publish",
                 {
                     stdio: "inherit",
                 });
@@ -75,7 +75,6 @@ const { readFileSync, writeFileSync } = fs;
      * @return {void}
      */
     async function writeChanges(pullRequest) {
-        console.log(pullRequest)
         let version
 
         try {
