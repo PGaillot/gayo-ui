@@ -19,7 +19,7 @@ const repo = process.env.REPO;
             console.log('publishing lib...');
             const pullRequests = await getPullRequests();
             console.log('getPullRequests ...');
-            console.log(pullRequests[0]);
+            console.log(pullRequests);
 
         } catch (error) {
             console.error('❌ publish lib error :', error);
@@ -52,15 +52,11 @@ const repo = process.env.REPO;
             owner,
             repo,
             state: "closed",
-            base: "main",
+            base: "master",
             sort: "updated",
             direction: "desc",
             per_page: 1, 
         });
-
-        console.log('pullRequests');
-        console.log(pullRequests);
-        
 
         return pullRequests;
     }
