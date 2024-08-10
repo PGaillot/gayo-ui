@@ -4,6 +4,7 @@ const githubToken = process.env.GH_TOKEN;
 const path = require('path');
 const owner = process.env.OWNER;
 const repo = process.env.REPO;
+const { readFileSync, writeFileSync } = require("fs");
 
 
 (async () => {
