@@ -22,7 +22,8 @@ jobs:
             run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
             env:
              NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
+             commitmsg: ${{ github.event.head_commit.message }}
+          
           - name: Extract owner and repo
             id: extract
             run: |
@@ -47,6 +48,11 @@ jobs:
               REPO: ${{ env.REPO_NAME }}
 
           - run: 'cd ../../'
+
+          - name: 🤖 Commit new version.
+            uses: stefanzweifel/git-auto-commit-action@v5
+            with:
+              commit_message: 🤖 | ${{ env.commitmsg }}
 
           - name: 🏗️ Build Website
             run: npm run build-storybook
