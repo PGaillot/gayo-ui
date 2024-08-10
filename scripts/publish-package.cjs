@@ -13,23 +13,19 @@ const { readFileSync, writeFileSync } = fs;
     publishLib();
 
     async function publishLib() {
-        
+
         try {
 
             console.log('build lib...');
             try {
                 await execSync("cd " + process.cwd() + " && npm run build",
-                {
-                    stdio: "inherit",
-                });
-                
-                
-                console.log('getting pull requests...');
-                const pullRequests = await getPullRequests();
-                
+                    {
+                        stdio: "inherit",
+                    });
+
                 console.log('updating version...');
                 await updateVersion();
-                
+
             } catch (error) {
                 console.error('❌ build lib error :', error);
             }
@@ -44,6 +40,10 @@ const { readFileSync, writeFileSync } = fs;
                     {
                         stdio: "inherit",
                     });
+
+                console.log('getting pull requests...');
+                const pullRequests = await getPullRequests();
+
                 console.log('writing changes...');
                 await writeChanges(pullRequests[0]);
 
