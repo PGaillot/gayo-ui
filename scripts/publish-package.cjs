@@ -63,7 +63,7 @@ const { readFileSync, writeFileSync } = fs;
 
 
     async function writeChanges(pullRequest) {
-
+        console.log(pullRequest)
         let version
 
         try {
