@@ -13,20 +13,23 @@ const { readFileSync, writeFileSync } = fs;
     publishLib();
 
     async function publishLib() {
-
+        
         try {
-            await updateVersion();
-            const pullRequests = await getPullRequests();
+
             console.log('build lib...');
             try {
                 await execSync("cd " + process.cwd() + " && npm run build",
-                    {
-                        stdio: "inherit",
-                    });
-
-
-
-
+                {
+                    stdio: "inherit",
+                });
+                
+                
+                console.log('getting pull requests...');
+                const pullRequests = await getPullRequests();
+                
+                console.log('updating version...');
+                await updateVersion();
+                
             } catch (error) {
                 console.error('❌ build lib error :', error);
             }
