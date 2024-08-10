@@ -53,7 +53,7 @@ const { readFileSync, writeFileSync } = fs;
             }
 
         } catch (error) {
-            console.error('❌ updateVersion or getPullRequests error :', error);
+            console.error('❌ updateVersion error :', error);
         }
     }
 
@@ -114,7 +114,7 @@ const { readFileSync, writeFileSync } = fs;
         try {
             const changesLogPath = path.join(process.cwd(), 'projects', 'gayo-lib', 'CHANGELOG.md');
             const changesLogContent = fs.readFileSync(changesLogPath, 'utf-8');
-            const newChangeLog = getChangesLog(pullRequest);
+            const newChangeLog = getChangesLog(version, pullRequest);
             const newChangesLogContent = changesLogContent + newChangeLog;
             await writeFileSync(changesLogPath, newChangesLogContent, "utf8");
 
@@ -126,7 +126,7 @@ const { readFileSync, writeFileSync } = fs;
 })();
 
 
-function getChangesLog(pullRequest) {
+function getChangesLog(version, pullRequest) {
     return `
 
     ### [ ${version} ] - ${pullRequest.closed_at.split('T')[0]}
