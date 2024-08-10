@@ -23,6 +23,15 @@ jobs:
             env:
              NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+          - name: Extract owner and repo
+            id: extract
+            run: |
+              REPO=${{ github.repository }}
+              OWNER=$(echo $REPO | cut -d'/' -f1)
+              REPO_NAME=$(echo $REPO | cut -d'/' -f2)
+              echo "OWNER=$OWNER" >> $GITHUB_ENV
+              echo "REPO_NAME=$REPO_NAME" >> $GITHUB_ENV
+
           - run: 'cd projects/gayo-lib'
         
           - name: 🛠️ Install lib dependencies
@@ -34,8 +43,8 @@ jobs:
             run: node scripts/publish-package.cjs
             env:
               GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              OWNER: ${{ github.repository_owner }}
-              REPO: ${{ github.repository }}
+              OWNER: ${{ env.OWNER }}
+              REPO: ${{ env.REPO_NAME }}
 
           - run: 'cd ../../'
 
