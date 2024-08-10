@@ -6,11 +6,12 @@ import { Component, Input } from '@angular/core';
   imports: [],
   styleUrl: './advice-block.component.scss',
   template: `
-    <p id="advice-block" [style.--title]="title">
+    <span id="advice-block">
+      <div id="title">{{ title }}</div>
       <ng-content></ng-content>
-    </p>
+    </span>
   `,
 })
 export class AdviceBlockComponent {
-  @Input() title?: string;
+  @Input() title?: string = 'Advice';
 }

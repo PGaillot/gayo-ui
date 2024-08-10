@@ -18,7 +18,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    ...SimpleCheckbox.args,\n    checked: true,\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    ...SimpleCheckbox.args,\r\n    checked: true,\r\n  },\r\n}"
+            },
+            {
+                "name": "CheckedRadio",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    ...SimpleRadio.args,\r\n    checked: true,\r\n  },\r\n}"
             },
             {
                 "name": "colors",
@@ -31,26 +41,6 @@
                 "defaultValue": "{\r\n  args: {\r\n    ...Default.args,\r\n    colors: ['#f2f7f2', '#d9e6d9', '#c0d6c0', '#a7c5a7', '#8eb58e']\r\n  } \r\n}"
             },
             {
-                "name": "colors",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/gayo-lib/src/stories/user-card.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n    args: {\r\n        userData: {\r\n            username: 'Vanessa',\r\n            email: 'vanessa@nasa.com',\r\n            id: 1,\r\n            avatar_url: 'https://thispersondoesnotexist.com/',\r\n        }\r\n    },\r\n}"
-            },
-            {
-                "name": "colors2",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/gayo-lib/src/stories/user-card.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n    args: {\r\n        userData: {\r\n            username: 'IgorDu59',\r\n            email: 'IgorDu59@fautdetoutpourfaireunmail.com',\r\n            id: 1,\r\n            avatar_url: 'https://thispersondoesnotexist.com/',\r\n        }\r\n    },\r\n}"
-            },
-            {
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -59,16 +49,6 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    tabs: [\r\n      {\r\n        title: 'Histoires',\r\n        content:\r\n          'Histoires laborum maiores mollitia dignissimos dolorum ullam atque. Velit totam explicabo at dignissimos eligendi amet reiciendis, quidem quasi repellendus?',\r\n        id: 0,\r\n      },\r\n      {\r\n        title: 'Secrets',\r\n        content:\r\n          'Secrets molestiae corporis error quas quo sapiente vitae tenetur doloremque sunt suscipit fugit dicta. Perferendis cumque repellendus eaque totam tempore nesciunt nulla reiciendis.',\r\n        id: 1,\r\n      },\r\n      {\r\n        title: 'Paléontologie',\r\n        content:\r\n          'Paléontologie Ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\r\n        id: 2,\r\n      },\r\n    ],\r\n  },\r\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/gayo-lib/src/stories/user-card.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n    args: {\r\n        userData: {\r\n            username: 'pierre',\r\n            email: 'pierre@pierre.net',\r\n            id: 0,\r\n            avatar_url: 'https://avatars.githubusercontent.com/u/0?v=4',\r\n        }\r\n    },\r\n}"
             },
             {
                 "name": "Disabled",
@@ -88,7 +68,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    ...SimpleCheckbox.args,\n    disabled: true,\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    ...SimpleCheckbox.args,\r\n    disabled: true,\r\n  },\r\n}"
+            },
+            {
+                "name": "DisabledRadio",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    ...SimpleRadio.args,\r\n    disabled: true,\r\n  },\r\n}"
             },
             {
                 "name": "Large",
@@ -109,16 +99,6 @@
                 "deprecationMessage": "",
                 "type": "Meta<FolderCardComponent>",
                 "defaultValue": "{\r\n  title: 'FolderApp/FolderCard',\r\n  component: FolderCardComponent,\r\n  tags: ['autodocs'],\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/gayo-lib/src/stories/user-card.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<UserCardComponent>",
-                "defaultValue": "{\r\n    title: 'FolderApp/UserCard',\r\n    component: UserCardComponent,\r\n    tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
@@ -148,7 +128,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<CheckboxComponent>",
-                "defaultValue": "{\n  title: 'Vault-Tec/Checkbox',\n  component: CheckboxComponent,\n  tags: ['autodocs'],\n}"
+                "defaultValue": "{\r\n  title: 'Vault-Tec/Checkbox',\r\n  component: CheckboxComponent,\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
@@ -158,7 +138,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<RadioComponent>",
-                "defaultValue": "{\n  title:'Vault-Tec/Radio',\n  component:RadioComponent,\n  tags: ['autodocs'],\n}"
+                "defaultValue": "{\r\n  title:'Vault-Tec/Radio',\r\n  component:RadioComponent,\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "preview",
@@ -168,7 +148,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Preview",
-                "defaultValue": "{\n  parameters: {\n    backgrounds: {\n      default: 'vault-tec',\n      values: [\n        {\n          name: 'vault-tec',\n          value: '#1a1a1a',\n        },\n      ],\n    },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n}"
+                "defaultValue": "{\r\n  parameters: {\r\n    backgrounds: {\r\n      default: 'vault-tec',\r\n      values: [\r\n        {\r\n          name: 'vault-tec',\r\n          value: '#1a1a1a',\r\n        },\r\n      ],\r\n    },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "SimpleAdviceBlock",
@@ -198,7 +178,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'Simple Checkbox',\n    checked: false,\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    label: 'Simple Checkbox',\r\n    checked: false,\r\n  },\r\n}"
             },
             {
                 "name": "SimpleRadio",
@@ -208,7 +188,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args:{\n      // vos arguments ici\n  }\n}"
+                "defaultValue": "{\r\n  args: {\r\n    label: 'Simple Radio',\r\n    checked: false,\r\n  },\r\n}"
             },
             {
                 "name": "Small",
@@ -238,7 +218,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {},\n}"
+                "defaultValue": "{\r\n  args: {},\r\n}"
+            },
+            {
+                "name": "WitoutLabel",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {},\r\n}"
             }
         ],
         "functions": [],
@@ -271,17 +261,6 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<FolderCardComponent>",
                 "file": "projects/gayo-lib/src/stories/folder-card.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<UserCardComponent>",
-                "file": "projects/gayo-lib/src/stories/user-card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -343,7 +322,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    ...SimpleCheckbox.args,\n    checked: true,\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    ...SimpleCheckbox.args,\r\n    checked: true,\r\n  },\r\n}"
                 },
                 {
                     "name": "DisabledCheckbox",
@@ -353,7 +332,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    ...SimpleCheckbox.args,\n    disabled: true,\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    ...SimpleCheckbox.args,\r\n    disabled: true,\r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -363,7 +342,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<CheckboxComponent>",
-                    "defaultValue": "{\n  title: 'Vault-Tec/Checkbox',\n  component: CheckboxComponent,\n  tags: ['autodocs'],\n}"
+                    "defaultValue": "{\r\n  title: 'Vault-Tec/Checkbox',\r\n  component: CheckboxComponent,\r\n  tags: ['autodocs'],\r\n}"
                 },
                 {
                     "name": "SimpleCheckbox",
@@ -373,7 +352,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'Simple Checkbox',\n    checked: false,\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'Simple Checkbox',\r\n    checked: false,\r\n  },\r\n}"
                 },
                 {
                     "name": "WitoutLabel",
@@ -383,7 +362,59 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {},\n}"
+                    "defaultValue": "{\r\n  args: {},\r\n}"
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts": [
+                {
+                    "name": "CheckedRadio",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    ...SimpleRadio.args,\r\n    checked: true,\r\n  },\r\n}"
+                },
+                {
+                    "name": "DisabledRadio",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    ...SimpleRadio.args,\r\n    disabled: true,\r\n  },\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<RadioComponent>",
+                    "defaultValue": "{\r\n  title:'Vault-Tec/Radio',\r\n  component:RadioComponent,\r\n  tags: ['autodocs'],\r\n}"
+                },
+                {
+                    "name": "SimpleRadio",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'Simple Radio',\r\n    checked: false,\r\n  },\r\n}"
+                },
+                {
+                    "name": "WitoutLabel",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {},\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/folder-card.stories.ts": [
@@ -416,48 +447,6 @@
                     "deprecationMessage": "",
                     "type": "Meta<FolderCardComponent>",
                     "defaultValue": "{\r\n  title: 'FolderApp/FolderCard',\r\n  component: FolderCardComponent,\r\n  tags: ['autodocs'],\r\n}"
-                }
-            ],
-            "projects/gayo-lib/src/stories/user-card.stories.ts": [
-                {
-                    "name": "colors",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/gayo-lib/src/stories/user-card.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n    args: {\r\n        userData: {\r\n            username: 'Vanessa',\r\n            email: 'vanessa@nasa.com',\r\n            id: 1,\r\n            avatar_url: 'https://thispersondoesnotexist.com/',\r\n        }\r\n    },\r\n}"
-                },
-                {
-                    "name": "colors2",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/gayo-lib/src/stories/user-card.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n    args: {\r\n        userData: {\r\n            username: 'IgorDu59',\r\n            email: 'IgorDu59@fautdetoutpourfaireunmail.com',\r\n            id: 1,\r\n            avatar_url: 'https://thispersondoesnotexist.com/',\r\n        }\r\n    },\r\n}"
-                },
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/gayo-lib/src/stories/user-card.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n    args: {\r\n        userData: {\r\n            username: 'pierre',\r\n            email: 'pierre@pierre.net',\r\n            id: 0,\r\n            avatar_url: 'https://avatars.githubusercontent.com/u/0?v=4',\r\n        }\r\n    },\r\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/gayo-lib/src/stories/user-card.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<UserCardComponent>",
-                    "defaultValue": "{\r\n    title: 'FolderApp/UserCard',\r\n    component: UserCardComponent,\r\n    tags: ['autodocs'],\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/vault-tec/button.stories.ts": [
@@ -544,28 +533,6 @@
                     "defaultValue": "{\r\n    args:{\r\n        title:'Super Test 42',\r\n        content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\r\n        // size:'medium',\r\n        // color:undefined,\r\n    }\r\n}"
                 }
             ],
-            "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts": [
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<RadioComponent>",
-                    "defaultValue": "{\n  title:'Vault-Tec/Radio',\n  component:RadioComponent,\n  tags: ['autodocs'],\n}"
-                },
-                {
-                    "name": "SimpleRadio",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args:{\n      // vos arguments ici\n  }\n}"
-                }
-            ],
             "projects/gayo-lib/.storybook/preview.ts": [
                 {
                     "name": "preview",
@@ -575,7 +542,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Preview",
-                    "defaultValue": "{\n  parameters: {\n    backgrounds: {\n      default: 'vault-tec',\n      values: [\n        {\n          name: 'vault-tec',\n          value: '#1a1a1a',\n        },\n      ],\n    },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n}"
+                    "defaultValue": "{\r\n  parameters: {\r\n    backgrounds: {\r\n      default: 'vault-tec',\r\n      values: [\r\n        {\r\n          name: 'vault-tec',\r\n          value: '#1a1a1a',\r\n        },\r\n      ],\r\n    },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  },\r\n}"
                 }
             ]
         },
@@ -637,19 +604,6 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<FolderCardComponent>",
                     "file": "projects/gayo-lib/src/stories/folder-card.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "projects/gayo-lib/src/stories/user-card.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<UserCardComponent>",
-                    "file": "projects/gayo-lib/src/stories/user-card.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -721,46 +675,6 @@
             },
             {
                 "filePath": "projects/gayo-lib/src/stories/folder-card.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/gayo-lib/src/stories/user-card.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "colors",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/gayo-lib/src/stories/user-card.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "colors2",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/gayo-lib/src/stories/user-card.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Default",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/gayo-lib/src/stories/user-card.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -904,6 +818,26 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "CheckedRadio",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DisabledRadio",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -915,6 +849,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "SimpleRadio",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WitoutLabel",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
