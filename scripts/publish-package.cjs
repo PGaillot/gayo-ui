@@ -2,8 +2,6 @@ const { execSync } = require("child_process");
 const { resolve } = require("path");
 const githubToken = process.env.GH_TOKEN;
 const path = require('path');
-const { Octokit } = require("@octokit/rest");
-
 
 
 (async () => {
