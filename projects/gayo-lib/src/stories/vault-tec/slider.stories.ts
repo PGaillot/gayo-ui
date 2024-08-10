@@ -17,7 +17,11 @@ type Story = StoryObj<SliderComponent>;
 
 export const SimpleSlider:Story = {
   args:{
-      // vos arguments ici
+      id:'default',
+      min:0,
+      max:100,
+      value:50,
+      label:'Slider',
   }
 }
     

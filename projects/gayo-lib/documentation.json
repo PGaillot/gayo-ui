@@ -161,6 +161,16 @@
                 "defaultValue": "{\r\n  title:'Vault-Tec/Radio',\r\n  component:RadioComponent,\r\n  tags: ['autodocs'],\r\n}"
             },
             {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/slider.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<SliderComponent>",
+                "defaultValue": "{\r\n  title:'Vault-Tec/Slider',\r\n  component:SliderComponent,\r\n  tags: ['autodocs'],\r\n}"
+            },
+            {
                 "name": "preview",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -229,6 +239,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    label: 'Simple Radio',\r\n    checked: false,\r\n  },\r\n}"
+            },
+            {
+                "name": "SimpleSlider",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/slider.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args:{\r\n      id:'default',\r\n      min:0,\r\n      max:100,\r\n      value:50,\r\n      label:'Slider',\r\n  }\r\n}"
             },
             {
                 "name": "Small",
@@ -367,6 +387,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<RadioComponent>",
                 "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<SliderComponent>",
+                "file": "projects/gayo-lib/src/stories/vault-tec/slider.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -639,6 +670,28 @@
                     "defaultValue": "{\r\n  args:{\r\n      // vos arguments ici\r\n  }\r\n}"
                 }
             ],
+            "projects/gayo-lib/src/stories/vault-tec/slider.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/slider.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<SliderComponent>",
+                    "defaultValue": "{\r\n  title:'Vault-Tec/Slider',\r\n  component:SliderComponent,\r\n  tags: ['autodocs'],\r\n}"
+                },
+                {
+                    "name": "SimpleSlider",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/slider.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args:{\r\n      id:'default',\r\n      min:0,\r\n      max:100,\r\n      value:50,\r\n      label:'Slider',\r\n  }\r\n}"
+                }
+            ],
             "projects/gayo-lib/.storybook/preview.ts": [
                 {
                     "name": "preview",
@@ -762,6 +815,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<RadioComponent>",
                     "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/slider.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<SliderComponent>",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/slider.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1031,6 +1097,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "WitoutLabel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/slider.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/slider.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SimpleSlider",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

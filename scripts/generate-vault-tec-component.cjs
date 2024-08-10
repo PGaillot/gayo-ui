@@ -142,7 +142,7 @@ async function fixBaliseName(componentName) {
   try {
     const typeScriptFilePath = path.join(filePath, `${componentName}.component.ts`);
     const tsContent = fs.readFileSync(typeScriptFilePath, 'utf-8');
-    const updateTs = tsContent.replace(`selector: 'vt-${componentName}',`, `selector: 'vt-${componentName}',`); 
+    const updateTs = tsContent.replace(`selector: 'lib-${componentName}',`, `selector: 'vt-${componentName}',`); 
     writeFileSync(typeScriptFilePath, updateTs);
 
 

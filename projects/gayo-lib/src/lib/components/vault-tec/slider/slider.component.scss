@@ -1,5 +1,50 @@
 /* Component slider was generated on Sat Aug 10 2024 19:43:33 GMT+0200 (heure d’été d’Europe centrale) */
-    
-@import '../../../../lib/styles/vault-tec.scss';
 
-    
+@import "../../../../lib/styles/vault-tec.scss";
+
+$cursor-size: 16px;
+$border-size: 3px;
+
+#input-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+
+  input[type="range"] {
+    overflow: hidden;
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+    outline: $border-size solid $pipboy;
+    margin: 0 $border-size;
+
+    &::-webkit-slider-runnable-track {
+      height: $cursor-size;
+      cursor: pointer;
+    }
+
+    &::-webkit-slider-thumb {
+      height: $cursor-size;
+      width: $cursor-size;
+      background: $pipboy;
+      cursor: pointer;
+      -webkit-appearance: none;
+      box-shadow: calc(-416px + $cursor-size) 0 0 400px $pipboy;
+
+      //   position: relative;
+      &::before {
+        content: "value";
+        display: flex;
+        color: $background;
+        font-weight: 600;
+        font-size: 14px;
+        // position: absolute;
+        // top: 50%;
+        // left: 50%;
+        // z-index: 10;
+        // transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
