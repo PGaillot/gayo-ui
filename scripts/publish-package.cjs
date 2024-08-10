@@ -95,6 +95,8 @@ const { readFileSync, writeFileSync } = fs;
 ### [ ${version} ] - ${pullRequest.closed_at.split('T')[0]}
 author: ${pullRequest.user.login} 
 ${pullRequest.body}
+
+---
             `;
             const newChangesLogContent = changesLogContent + newChangeLog;
             await writeFileSync(changesLogPath, newChangesLogContent, "utf8");
