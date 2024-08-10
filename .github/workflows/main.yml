@@ -24,7 +24,7 @@ jobs:
              NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
              GH_TOKEN: ${{ secrets.GH_TOKEN }}
             
-          - run: node node scripts/publish-package.cjs
+          - run: node scripts/publish-package.cjs
 
 
           - name: 🛠️ Install dependencies
