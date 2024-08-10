@@ -34,6 +34,8 @@ jobs:
             run: node scripts/publish-package.cjs
             env:
               GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              OWNER: ${{ github.repository_owner }}
+              REPO: ${{ github.repository }}
 
           - run: 'cd ../../'
 
