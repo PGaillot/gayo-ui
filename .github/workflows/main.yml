@@ -46,7 +46,7 @@ jobs:
               OWNER: ${{ env.OWNER }}
               REPO: ${{ env.REPO_NAME }}
               NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-            working-directory: ./projects/gayo-lib/
+            # working-directory: ./projects/gayo-lib/
 
           - name: 🤖 Commit new version.
             uses: stefanzweifel/git-auto-commit-action@v5
