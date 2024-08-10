@@ -4,8 +4,8 @@ const githubToken = process.env.GH_TOKEN;
 const path = require('path');
 const owner = process.env.OWNER;
 const repo = process.env.REPO;
-const { readFileSync, writeFileSync } = require("fs");
-
+const fs = require('fs');
+const { readFileSync, writeFileSync } = fs;
 
 (async () => {
     const { Octokit } = await import("octokit");
