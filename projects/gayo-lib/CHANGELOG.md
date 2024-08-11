@@ -51,3 +51,12 @@ author: PGaillot
 - Mise à jour du README.md avec l'ajout des logs.
 
 ---
+
+### [ 0.0.11 ] - 2024-08-11
+author: PGaillot 
+- mis à jour du fichier `README.md` de la lib et du repo.
+- ajout d'une la propriété `stroke` au **Button Component**
+- mis à jour de **Perk Card Component**
+
+
+---
