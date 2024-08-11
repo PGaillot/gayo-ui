@@ -21,9 +21,8 @@ type Story = StoryObj<BtnPropsAndCustomArgs>;
 
 export const SimpleButton:Story = {
     args:{
-        label:'Super Test 42',
+        label:'S.P.E.C.I.A.L',
         size:'medium',
-        color:undefined,
     }
 }
 
@@ -51,5 +50,12 @@ export const Disabled:Story = {
     args:{
         label:'Disabled',
         disabled:true,
+    }
+}
+
+export const Loading:Story = {
+    args:{
+        label:'Loading',
+        loading:true,
     }
 }
