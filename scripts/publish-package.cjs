@@ -100,10 +100,10 @@ const { readFileSync, writeFileSync } = fs;
      */
     async function writeChanges(pullRequest) {
         let version
+        const changesLogPath = path.join(process.cwd(), 'projects', 'gayo-lib', 'CHANGELOG.md');
+        const packageJsPath = path.join(process.cwd(), 'projects', 'gayo-lib', 'package.json');
 
         try {
-
-            const packageJsPath = path.join(process.cwd(), 'projects', 'gayo-lib', 'package.json');
             const packageJsContent = fs.readFileSync(packageJsPath, 'utf-8');
             const packageJs = JSON.parse(packageJsContent);
             version = packageJs.version;
@@ -111,8 +111,8 @@ const { readFileSync, writeFileSync } = fs;
             console.error('❌ get package version error :', error);
         }
 
+
         try {
-            const changesLogPath = path.join(process.cwd(), 'projects', 'gayo-lib', 'CHANGELOG.md');
             const changesLogContent = fs.readFileSync(changesLogPath, 'utf-8');
             const newChangeLog = getChangesLog(version, pullRequest);
             const newChangesLogContent = changesLogContent + newChangeLog;
@@ -120,6 +120,14 @@ const { readFileSync, writeFileSync } = fs;
 
         } catch (error) {
             console.error('❌ write changes error :', error);
+        }
+
+        try {
+            const changesLogContent = fs.readFileSync(changesLogPath, 'utf-8');
+            execSync("node scripts/update-readme.cjs", { stdio: "inherit" });
+
+        } catch (error) {
+            console.log('❌ write changes in README error :', error);
         }
     }
 
@@ -129,9 +137,9 @@ const { readFileSync, writeFileSync } = fs;
 function getChangesLog(version, pullRequest) {
     return `
 
-    ### [ ${version} ] - ${pullRequest.closed_at.split('T')[0]}
-    author: ${pullRequest.user.login} 
-    ${pullRequest.body}
-    
-    ---`;
+### [ ${version} ] - ${pullRequest.closed_at.split('T')[0]}
+author: ${pullRequest.user.login} 
+${pullRequest.body}
+
+---`;
 }
