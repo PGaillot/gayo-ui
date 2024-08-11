@@ -18,7 +18,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args:{\n      content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\n      perkName:'agility'\n  }\n}"
+                "defaultValue": "{\r\n  args:{\r\n      content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\r\n      perkName:'agility'\r\n  }\r\n}"
             },
             {
                 "name": "CheckedCheckbox",
@@ -61,6 +61,16 @@
                 "defaultValue": "{\r\n  args: {\r\n    tabs: [\r\n      {\r\n        title: 'Histoires',\r\n        content:\r\n          'Histoires laborum maiores mollitia dignissimos dolorum ullam atque. Velit totam explicabo at dignissimos eligendi amet reiciendis, quidem quasi repellendus?',\r\n        id: 0,\r\n      },\r\n      {\r\n        title: 'Secrets',\r\n        content:\r\n          'Secrets molestiae corporis error quas quo sapiente vitae tenetur doloremque sunt suscipit fugit dicta. Perferendis cumque repellendus eaque totam tempore nesciunt nulla reiciendis.',\r\n        id: 1,\r\n      },\r\n      {\r\n        title: 'Paléontologie',\r\n        content:\r\n          'Paléontologie Ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\r\n        id: 2,\r\n      },\r\n    ],\r\n  },\r\n}"
             },
             {
+                "name": "Demo",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    size:'small'\r\n  },\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n       <div style=\"display: flex; flex-direction: column; flex-wrap: wrap;  gap: 16px; font-family: Monospace; color: #2dc92d\">\r\n\r\n            <h2>Je veux en savoir plus</h2>\r\n            lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !\r\n\r\n            <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px; font-family: Monospace; color: #2dc92d\">\r\n            <vt-btn ${argsToTemplate(args)}>Je veux en savoir plus</vt-btn>\r\n           <vt-btn ${argsToTemplate(args)} [stroke]=\"true\"]>continuer</vt-btn>\r\n            </div>\r\n        </div>\r\n    `,\r\n  }),\r\n}"
+            },
+            {
                 "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -68,7 +78,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n    args:{\r\n        label:'Disabled',\r\n        disabled:true,\r\n    }\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    label: 'Disabled',\r\n    disabled: true,\r\n  },\r\n}"
             },
             {
                 "name": "DisabledCheckbox",
@@ -98,7 +108,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n    args:{\r\n        label:'Subscribe',\r\n        size:'large',\r\n    }\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    label: 'Subscribe',\r\n    size: 'large',\r\n  },\r\n}"
             },
             {
                 "name": "Loading",
@@ -108,7 +118,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n    args:{\r\n        label:'Loading',\r\n        loading:true,\r\n    }\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    label: 'Loading',\r\n    loading: true,\r\n  },\r\n}"
             },
             {
                 "name": "meta",
@@ -138,7 +148,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<BtnPropsAndCustomArgs>",
-                "defaultValue": "{\r\n    title:'Vault-Tec/Button',\r\n    component:ButtonComponent,\r\n    tags: ['autodocs'],\r\n    render: ({ label, ...args}) => ({\r\n        props:{\r\n            ...args,\r\n        },\r\n        template: `<vt-btn ${argsToTemplate(args)}>${label}</vt-btn>`,\r\n    })\r\n}"
+                "defaultValue": "{\r\n  title: 'Vault-Tec/Button',\r\n  component: ButtonComponent,\r\n  tags: ['autodocs'],\r\n  render: ({ label, ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `<vt-btn ${argsToTemplate(args)}>${label}</vt-btn>`,\r\n  }),\r\n}"
             },
             {
                 "name": "meta",
@@ -178,7 +188,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<PerkCardComponent>",
-                "defaultValue": "{\n  title:'Vault-Tec/PerkCard',\n  component:PerkCardComponent,\n  tags: ['autodocs'],\n}"
+                "defaultValue": "{\r\n  title:'Vault-Tec/PerkCard',\r\n  component:PerkCardComponent,\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
@@ -228,7 +238,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n    args:{\r\n        label:'S.P.E.C.I.A.L',\r\n        size:'medium',\r\n    }\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    label: 'S.P.E.C.I.A.L',\r\n    size: 'medium',\r\n  },\r\n}"
             },
             {
                 "name": "SimpleCheckbox",
@@ -268,7 +278,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args:{\n      content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\n      perkName:'strength'\n  }\n}"
+                "defaultValue": "{\r\n  args:{\r\n      content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\r\n      perkName:'strength'\r\n  }\r\n}"
             },
             {
                 "name": "SimpleRadio",
@@ -298,7 +308,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n    args:{\r\n        label:'Subscribe',\r\n        size:'small',\r\n    }\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    label: 'Subscribe',\r\n    size: 'small',\r\n  },\r\n}"
             },
             {
                 "name": "SubcribeButton",
@@ -308,7 +318,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n    args:{\r\n        label:'Subscribe',\r\n    }\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    label: 'Subscribe',\r\n  },\r\n}"
             },
             {
                 "name": "WitoutLabel",
@@ -466,7 +476,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args:{\n      content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\n      perkName:'agility'\n  }\n}"
+                    "defaultValue": "{\r\n  args:{\r\n      content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\r\n      perkName:'agility'\r\n  }\r\n}"
                 },
                 {
                     "name": "meta",
@@ -476,7 +486,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<PerkCardComponent>",
-                    "defaultValue": "{\n  title:'Vault-Tec/PerkCard',\n  component:PerkCardComponent,\n  tags: ['autodocs'],\n}"
+                    "defaultValue": "{\r\n  title:'Vault-Tec/PerkCard',\r\n  component:PerkCardComponent,\r\n  tags: ['autodocs'],\r\n}"
                 },
                 {
                     "name": "SimplePerkCard",
@@ -486,7 +496,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args:{\n      content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\n      perkName:'strength'\n  }\n}"
+                    "defaultValue": "{\r\n  args:{\r\n      content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\r\n      perkName:'strength'\r\n  }\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts": [
@@ -627,6 +637,16 @@
             ],
             "projects/gayo-lib/src/stories/vault-tec/button.stories.ts": [
                 {
+                    "name": "Demo",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    size:'small'\r\n  },\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n       <div style=\"display: flex; flex-direction: column; flex-wrap: wrap;  gap: 16px; font-family: Monospace; color: #2dc92d\">\r\n\r\n            <h2>Je veux en savoir plus</h2>\r\n            lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !\r\n\r\n            <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px; font-family: Monospace; color: #2dc92d\">\r\n            <vt-btn ${argsToTemplate(args)}>Je veux en savoir plus</vt-btn>\r\n           <vt-btn ${argsToTemplate(args)} [stroke]=\"true\"]>continuer</vt-btn>\r\n            </div>\r\n        </div>\r\n    `,\r\n  }),\r\n}"
+                },
+                {
                     "name": "Disabled",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -634,7 +654,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n    args:{\r\n        label:'Disabled',\r\n        disabled:true,\r\n    }\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'Disabled',\r\n    disabled: true,\r\n  },\r\n}"
                 },
                 {
                     "name": "Large",
@@ -644,7 +664,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n    args:{\r\n        label:'Subscribe',\r\n        size:'large',\r\n    }\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'Subscribe',\r\n    size: 'large',\r\n  },\r\n}"
                 },
                 {
                     "name": "Loading",
@@ -654,7 +674,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n    args:{\r\n        label:'Loading',\r\n        loading:true,\r\n    }\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'Loading',\r\n    loading: true,\r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -664,7 +684,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<BtnPropsAndCustomArgs>",
-                    "defaultValue": "{\r\n    title:'Vault-Tec/Button',\r\n    component:ButtonComponent,\r\n    tags: ['autodocs'],\r\n    render: ({ label, ...args}) => ({\r\n        props:{\r\n            ...args,\r\n        },\r\n        template: `<vt-btn ${argsToTemplate(args)}>${label}</vt-btn>`,\r\n    })\r\n}"
+                    "defaultValue": "{\r\n  title: 'Vault-Tec/Button',\r\n  component: ButtonComponent,\r\n  tags: ['autodocs'],\r\n  render: ({ label, ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `<vt-btn ${argsToTemplate(args)}>${label}</vt-btn>`,\r\n  }),\r\n}"
                 },
                 {
                     "name": "SimpleButton",
@@ -674,7 +694,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n    args:{\r\n        label:'S.P.E.C.I.A.L',\r\n        size:'medium',\r\n    }\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'S.P.E.C.I.A.L',\r\n    size: 'medium',\r\n  },\r\n}"
                 },
                 {
                     "name": "Small",
@@ -684,7 +704,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n    args:{\r\n        label:'Subscribe',\r\n        size:'small',\r\n    }\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'Subscribe',\r\n    size: 'small',\r\n  },\r\n}"
                 },
                 {
                     "name": "SubcribeButton",
@@ -694,7 +714,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n    args:{\r\n        label:'Subscribe',\r\n    }\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'Subscribe',\r\n  },\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/vault-tec/advice-block.stories.ts": [
@@ -1003,6 +1023,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "SimpleAdviceBlock",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Demo",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
