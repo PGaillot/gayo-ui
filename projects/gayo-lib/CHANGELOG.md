@@ -40,3 +40,14 @@ author: PGaillot
 - création du package à partir du build.
     
 ---
+
+### [ 0.0.10 ] - 2024-08-11
+author: PGaillot 
+- Ajout du composant Perk Card.
+- Modification des composants :
+  - Slider
+  - Button
+- Ajout de Chromatic pour les tests.
+- Mise à jour du README.md avec l'ajout des logs.
+
+---
