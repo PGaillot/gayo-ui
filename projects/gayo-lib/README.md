@@ -23,11 +23,33 @@ Run `ng test gayo-lib` to execute the unit tests via [Karma](https://karma-runne
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 
-
 ## 📚 Changelogs
 
+### [ 0.0.9 ] - 2024-08-10
+author: PGaillot 
+- lancement du **build**
+- création du package à partir du build.
+    
+---
 
 
+### [ 0.0.5 ] - 2024-08-10
+author: PGaillot 
+- modification de `readme.md`
+- ajout du fichier `publish-package.cjs`
+- modification de `main.yml`
 
+---
+
+
+### [ 0.0.4 ] - 2024-08-10
+author: PGaillot 
+- modification de `readme.md`
+- ajout du fichier `publish-package.cjs`
+- modification de `main.yml`
+
+---
 
 [Voir plus...](CHANGELOG.md)
+
+apres les readMe

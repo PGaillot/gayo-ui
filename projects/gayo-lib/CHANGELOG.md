@@ -34,9 +34,9 @@ author: PGaillot
 
 ---
 
-    ### [ 0.0.9 ] - 2024-08-10
-    author: PGaillot 
-    - lancement du **build**
+### [ 0.0.9 ] - 2024-08-10
+author: PGaillot 
+- lancement du **build**
 - création du package à partir du build.
     
-    ---
+---
