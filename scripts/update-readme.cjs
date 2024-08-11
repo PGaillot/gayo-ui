@@ -15,7 +15,8 @@ const { readFileSync, writeFileSync } = fs;
 
     const libPath = path.join(process.cwd(), 'projects', 'gayo-lib');
     const changesLogPath = path.join(libPath, 'CHANGELOG.md');
-    const readmePath = path.join(libPath, 'README.md');
+    const readmeLibPath = path.join(libPath, 'README.md');
+    const readmePath = path.join(process.cwd(), 'README.md');
 
     try {
         const changesLogContent = fs.readFileSync(changesLogPath, 'utf-8');
@@ -40,7 +41,7 @@ const { readFileSync, writeFileSync } = fs;
         console.log(logs);
 
         try {
-            const readmeContent = fs.readFileSync(readmePath, 'utf-8');
+            const readmeContent = fs.readFileSync(readmeLibPath, 'utf-8');
             const fisrtReadMeChangesline = '## 📚 Changelogs';
             const lastReadMeChangesline = '[Voir plus...](CHANGELOG.md)'
 
@@ -56,7 +57,8 @@ const { readFileSync, writeFileSync } = fs;
                 lastReadMeChangesline +
                 lastReadme;
 
-            await writeFileSync(readmePath, newReadme, "utf8");
+            writeFileSync(readmeLibPath, newReadme, "utf8");
+            writeFileSync(readmePath, newReadme, "utf8");
 
         } catch (error) {
             console.log('❌ write changes in README error :', error);
