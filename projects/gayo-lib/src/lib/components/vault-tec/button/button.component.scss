@@ -2,30 +2,14 @@
 
 $color: var(--color, $pipboy);
 
+
 .vt-btn{
-    background: $color;
-    color: $background;
-    font-weight: 600;
-    text-transform: uppercase;
     border-color: $color;
     border-style: solid;
-
+    text-transform: uppercase;
     cursor: pointer;
-    &:hover {
-      background: none;
-      color: $color;
-    }
-
-    &:active {
-      background: none;
-      color: $color;
-    }
-
     &:disabled {
-      color: $color;
-      background: none;
       cursor: not-allowed;
-
       &::before {
         content: url('../../../../../assets/lock-icon-8.svg');
         height: 1rem;
@@ -34,8 +18,41 @@ $color: var(--color, $pipboy);
     }
 }
 
+
+.vt-btn--fill{
+  @extend .vt-btn;
+  background: $color;
+  color: $background;
+  font-weight: 600;
+
+  &:hover {
+    background: none;
+    color: $color;
+  }
+
+  &:disabled {
+    color: $color;
+    background: none;
+  }
+}
+
+.vt-btn--stroke{
+  @extend .vt-btn;
+  background: none;
+  font-weight: 800;
+
+  &:hover {
+    background: $color;
+    color: $background;
+  }
+}
+
+
+
+
+
 .loading{
-  .vt-btn{
+  .vt-btn--fill{
     position: relative;
     background: $background;
     color: transparent;
@@ -58,19 +75,16 @@ $color: var(--color, $pipboy);
 }
 
 .vt-btn--small{
-    @extend .vt-btn;
     border-width: 2px ;
     font-size: $font-size-small;
     padding: 4px 18px ;
     height: 32px;
-    ;
     &:active:not(:disabled) {
       border-top-width: 4px;
     }
 }
 
 .vt-btn--medium{    
-    @extend .vt-btn;
     border-width: 3px ;
     padding: 9px 24px ;
     font-size: $font-size-medium;
@@ -81,7 +95,6 @@ $color: var(--color, $pipboy);
 }
 
 .vt-btn--large{
-    @extend .vt-btn;
     border-width: 4px ;
     padding: 8px 28px ;
     font-size: $font-size-large;
@@ -90,6 +103,44 @@ $color: var(--color, $pipboy);
       border-top-width: 8px;
     }
 }
+
+.vt-btn--fill--small, 
+.vt-btn--fill--medium,
+.vt-btn--fill--large{
+  @extend .vt-btn--fill;
+}
+
+.vt-btn--fill--small{
+  @extend .vt-btn--small;
+}
+
+.vt-btn--fill--medium{
+  @extend .vt-btn--medium;
+}
+
+.vt-btn--fill--large{
+  @extend .vt-btn--large;
+}
+
+
+.vt-btn--stroke--small,
+.vt-btn--stroke--medium,
+.vt-btn--stroke--large{
+  @extend .vt-btn--stroke;
+}
+
+.vt-btn--stroke--small{
+  @extend .vt-btn--small;
+}
+
+.vt-btn--stroke--medium{
+  @extend .vt-btn--medium;
+}
+
+.vt-btn--stroke--large{
+  @extend .vt-btn--large;
+}
+
 
 @keyframes loading {
   0% {

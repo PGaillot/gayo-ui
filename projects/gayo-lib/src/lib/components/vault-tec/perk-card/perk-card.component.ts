@@ -24,8 +24,8 @@ const animDuration: number = 300;
         <!--  -->
 
         @if (face === 'front') {
-          <div class="front-card " (click)="face = 'back'">
-            <svg></svg>
+          <div  class="front-card " (click)="face = 'back'">
+            <svg [ngClass]="perkName + '-perk'"></svg>
             <span>{{ perkName.slice(0, 1) }}</span>
           </div>
         } @else {
@@ -53,7 +53,4 @@ export class PerkCardComponent {
   | 'luck' = 'strength';
   face: 'front' | 'back' = 'front';
   
-  getPerkIcon(perkName: string) {
-    return `url('../../../../assets/special/${perkName}.svg')`;
-  }
 }

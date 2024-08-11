@@ -13,28 +13,28 @@ import {
   imports: [NgClass],
   styleUrl: './button.component.scss',
   template: `
-  <div [ngClass]="{'loading': loading}">
-    @defer {
-      <button
-      type="button"
-      [disabled]="disabled"
-      (click)="onClick.emit($event)"
-      [ngClass]="classes"
-      >
-      <ng-content></ng-content>
-    </button>
-  } 
-</div>
+    <div [ngClass]="{ 'loading': loading }">
+      @defer {
+        <button
+          type="button"
+          [disabled]="disabled"
+          (click)="onClick.emit($event)"
+          [ngClass]="classes"
+        >
+          <ng-content></ng-content>
+        </button>
+      }
+    </div>
   `,
 })
 export class ButtonComponent {
   @Input() size: 'small' | 'medium' | 'large' = 'medium';
   @Input() disabled = false;
   @Input() loading = false;
+  @Input() stroke = false;
 
   @Output() onClick: EventEmitter<MouseEvent> = new EventEmitter<MouseEvent>();
   @Output() mouseOver: EventEmitter<MouseEvent> = new EventEmitter<MouseEvent>();
-
 
   @HostListener('mouseover', ['$event'])
   mouseover(event: MouseEvent) {
@@ -42,6 +42,8 @@ export class ButtonComponent {
   }
 
   public get classes(): string[] {
-    return [`vt-btn--${this.size}`];
+   
+
+    return [`vt-btn--${this.stroke ? 'stroke' : 'fill'}--${this.size}`];
   }
 }

@@ -1,27 +1,71 @@
-# GayoLib
+# Gayo UI
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.0.
+![GitHub](https://img.shields.io/github/license/PGaillot/gayo-ui)
+![npm](https://img.shields.io/npm/v/gayo-lib)
+![GitHub last commit](https://img.shields.io/github/last-commit/PGaillot/gayo-ui)
 
-## Code scaffolding
+Gayo UI est une bibliothèque de composants Angular créée pour le plaisir et l'expérimentation. Cette collection de composants est conçue pour être ludique et inspirée, sans but commercial.
 
-Run `ng generate component component-name --project gayo-lib` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project gayo-lib`.
-> Note: Don't forget to add `--project gayo-lib` or else it will be added to the default project in your `angular.json` file. 
+## 🌟 Liens utiles
 
-## Build
+- **GitHub**: [https://github.com/PGaillot/gayo-ui](https://github.com/PGaillot/gayo-ui)
+- **npm**: [https://www.npmjs.com/package/gayo-lib](https://www.npmjs.com/package/gayo-lib)
 
-Run `ng build gayo-lib` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🚀 Compatibilité
 
-## Publishing
+- Angular: ^18.0.0
+- TypeScript: ~5.4.2
 
-After building your library with `ng build gayo-lib`, go to the dist folder `cd dist/gayo-lib` and run `npm publish`.
+## 🛠️ Installation
 
-## Running unit tests
+Pour installer Gayo UI dans votre projet, utilisez la commande suivante :
 
-Run `ng test gayo-lib` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm install gayo-ui
+```
 
-## Further help
+## 🧩 Composants
+Gayo UI inclut actuellement les composants suivants :
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Slider
+- Button
+- Perk Card
+
+Plus de composants sont en cours de développement !
+
+## 🎨 Storybook
+
+Nous utilisons Storybook pour présenter et tester nos composants. Pour lancer Storybook localement :
+
+```bash
+npm run storybook
+```
+
+## 🏗️ Développement
+
+Générer un nouveau composant pour le projet Vault-Tec
+
+```bash
+node scripts/generate-vault-tec-component.cjs nomDuComposant
+```
+
+Pour génerer tout autres composant
+
+```bash
+ng g c components/component-name --project gayo-lib
+```
+
+### Build
+
+Pour construire le projet :
+bashCopyng build gayo-lib
+Les artefacts de build seront stockés dans le répertoire dist/.
+Tests unitaires
+Pour exécuter les tests unitaires :
+
+
+
+
 
 ## 📚 Changelogs
 
@@ -55,4 +99,7 @@ author: PGaillot
 
 [Voir plus...](CHANGELOG.md)
 
-apres les readMe
+## 🤝 Contribution
+Ce projet est un terrain de jeu personnel, mais les retours et suggestions sont toujours les bienvenus !
+
+Créé avec ❤️ par [PGaillot](https://github.com/PGaillot). Amusez-vous bien !
