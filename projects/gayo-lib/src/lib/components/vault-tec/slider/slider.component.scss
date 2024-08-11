@@ -13,6 +13,7 @@ $border-size: 3px;
 
   input[type="range"] {
     overflow: hidden;
+    -webkit-appearance: none;
     width: 100%;
     background: transparent;
     outline: $border-size solid $pipboy;
