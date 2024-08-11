@@ -4,11 +4,6 @@
 
 $width: 13rem;
 $height: 19rem;
-$perk:var(--perk, 'strength');
-
-@function perk-url($name) {
-  @return url(../../../../../assets/#{$name}.svg);
-}
 
 #perk-block {
   cursor: pointer;
@@ -36,7 +31,6 @@ $perk:var(--perk, 'strength');
       svg {
         height: 10rem;
         fill: $pipboy;
-        background-image: url('../../../../../assets/special/luck.svg');
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
@@ -50,7 +44,6 @@ $perk:var(--perk, 'strength');
         font-weight: 900;
         font-size: 1.5rem;
       }
-      
     }
 
     .back-card {
@@ -87,6 +80,34 @@ $perk:var(--perk, 'strength');
     .perk-card {
       animation: reveal 0.5s ease-in-out;
     }
+  }
+
+  .strength-perk {
+    background-image: url("../../../../../assets/special/strength.svg");
+  }
+
+  .perception-perk {
+    background-image: url("../../../../../assets/special/perception.svg");
+  }
+
+  .endurance-perk {
+    background-image: url("../../../../../assets/special/endurance.svg");
+  }
+
+  .charisma-perk {
+    background-image: url("../../../../../assets/special/charisma.svg");
+  }
+
+  .intelligence-perk {
+    background-image: url("../../../../../assets/special/intelligence.svg");
+  }
+
+  .agility-perk {
+    background-image: url("../../../../../assets/special/agility.svg");
+  }
+
+  .luck-perk {
+    background-image: url("../../../../../assets/special/luck.svg");
   }
 
   @keyframes reveal {
