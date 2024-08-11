@@ -69,6 +69,16 @@ Pour exécuter les tests unitaires :
 
 ## 📚 Changelogs
 
+### [ 0.0.11 ] - 2024-08-11
+author: PGaillot 
+- mis à jour du fichier `README.md` de la lib et du repo.
+- ajout d'une la propriété `stroke` au **Button Component**
+- mis à jour de **Perk Card Component**
+
+
+---
+
+
 ### [ 0.0.10 ] - 2024-08-11
 author: PGaillot 
 - Ajout du composant Perk Card.
@@ -86,15 +96,6 @@ author: PGaillot
 - lancement du **build**
 - création du package à partir du build.
     
----
-
-
-### [ 0.0.5 ] - 2024-08-10
-author: PGaillot 
-- modification de `readme.md`
-- ajout du fichier `publish-package.cjs`
-- modification de `main.yml`
-
 ---
 
 [Voir plus...](CHANGELOG.md)
