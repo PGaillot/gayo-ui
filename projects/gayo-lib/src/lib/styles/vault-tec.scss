@@ -16,4 +16,21 @@ $font-size-large: 22px;
   color: $pipboy;
   margin: 0;
   padding: 0;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $pipboy;
+    border-radius: 4px;
+  }
+}
+
+p{
+  line-height: 120%;
 }
