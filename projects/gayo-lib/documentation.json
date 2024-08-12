@@ -18,7 +18,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args:{\r\n      content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\r\n      perkName:'agility'\r\n  }\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    description: \"Vous pratiquez régulièrement des triples saltos arrière, en haut des buildings du coin. Il est aisé pour vous de vous déplacer dans n'importe quel environnement ? Vous êtes Agile, bravo.\",\r\n    perkName: 'agility',\r\n  },\r\n}"
+            },
+            {
+                "name": "Charisma",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    description: \"Don Juan n'a qu'à bien se tenir, vous êtes le poète que Jean de la Fontaine n'a jamais été. Vous obtenez ce que vous voulez par la parole. Charismatique est la qualité qui vous définit c'est certain.\",\r\n    perkName: 'charisma',\r\n  },\r\n}"
             },
             {
                 "name": "CheckedCheckbox",
@@ -101,6 +111,26 @@
                 "defaultValue": "{\r\n  args: {\r\n    ...SimpleRadio.args,\r\n    disabled: true,\r\n  },\r\n}"
             },
             {
+                "name": "Endurance",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    description: \"Les femmes gardent un bon souvenir de vos amplitudes d'effort et/ou un marathon ressemble à une balade de mamie pour digérer le repas du dimanche midi ? L'Endurance c'est votre truc, ça ne fait aucun doute.\",\r\n    perkName: 'endurance',\r\n  },\r\n}"
+            },
+            {
+                "name": "Intelligence",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    description: \"Les plus grands génies des dernières décennies disent avoir tout appris rien qu'en passant du temps avec vous. Vous transpirez des équations et des encyclopédies. Vous êtes quelqu'un d'Intelligent c'est indéniable.\",\r\n    perkName: 'intelligence',\r\n  },\r\n}"
+            },
+            {
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -119,6 +149,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    label: 'Loading',\r\n    loading: true,\r\n  },\r\n}"
+            },
+            {
+                "name": "Luck",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    description: \"Le loto ? Vous l'avez gagné quatre fois le mois dernier. Souvent vous trouvez 50 balles sur le pas de votre porte, ou un accès pour nos abris Vault-Tec. Veinard vous êtes la Chance en personne.\",\r\n    perkName: 'luck',\r\n  },\r\n}"
             },
             {
                 "name": "meta",
@@ -198,7 +238,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<PerkCardComponent>",
-                "defaultValue": "{\r\n  title:'Vault-Tec/PerkCard',\r\n  component:PerkCardComponent,\r\n  tags: ['autodocs'],\r\n}"
+                "defaultValue": "{\r\n  title: 'Vault-Tec/PerkCard',\r\n  component: PerkCardComponent,\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
@@ -219,6 +259,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<SliderComponent>",
                 "defaultValue": "{\r\n  title:'Vault-Tec/Slider',\r\n  component:SliderComponent,\r\n  tags: ['autodocs'],\r\n}"
+            },
+            {
+                "name": "Perception",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    description: 'Toujours un oeil dans le dos, vous sentez les mouvements autour de vous ? Vous avez un 6ème sens ou un troisième oeil, la Perception est votre atout !',\r\n    perkName: 'perception',\r\n  },\r\n}"
             },
             {
                 "name": "preview",
@@ -298,7 +348,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args:{\r\n      content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\r\n      perkName:'strength'\r\n  }\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    description: 'Vous aimez soulever des gros cailloux ou des gens que vous n\\'aimez guère ? La Force est déterminée par la circonférence de votre biceps en contraction.',\r\n    perkName: 'strength',\r\n  },\r\n\r\n  render: ({ description, ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `<vt-perk-card ${argsToTemplate(args)}>${description}</vt-perk-card>`,\r\n  }),\r\n}"
             },
             {
                 "name": "SimpleRadio",
@@ -507,7 +557,47 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args:{\r\n      content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\r\n      perkName:'agility'\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    description: \"Vous pratiquez régulièrement des triples saltos arrière, en haut des buildings du coin. Il est aisé pour vous de vous déplacer dans n'importe quel environnement ? Vous êtes Agile, bravo.\",\r\n    perkName: 'agility',\r\n  },\r\n}"
+                },
+                {
+                    "name": "Charisma",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    description: \"Don Juan n'a qu'à bien se tenir, vous êtes le poète que Jean de la Fontaine n'a jamais été. Vous obtenez ce que vous voulez par la parole. Charismatique est la qualité qui vous définit c'est certain.\",\r\n    perkName: 'charisma',\r\n  },\r\n}"
+                },
+                {
+                    "name": "Endurance",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    description: \"Les femmes gardent un bon souvenir de vos amplitudes d'effort et/ou un marathon ressemble à une balade de mamie pour digérer le repas du dimanche midi ? L'Endurance c'est votre truc, ça ne fait aucun doute.\",\r\n    perkName: 'endurance',\r\n  },\r\n}"
+                },
+                {
+                    "name": "Intelligence",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    description: \"Les plus grands génies des dernières décennies disent avoir tout appris rien qu'en passant du temps avec vous. Vous transpirez des équations et des encyclopédies. Vous êtes quelqu'un d'Intelligent c'est indéniable.\",\r\n    perkName: 'intelligence',\r\n  },\r\n}"
+                },
+                {
+                    "name": "Luck",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    description: \"Le loto ? Vous l'avez gagné quatre fois le mois dernier. Souvent vous trouvez 50 balles sur le pas de votre porte, ou un accès pour nos abris Vault-Tec. Veinard vous êtes la Chance en personne.\",\r\n    perkName: 'luck',\r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -517,7 +607,17 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<PerkCardComponent>",
-                    "defaultValue": "{\r\n  title:'Vault-Tec/PerkCard',\r\n  component:PerkCardComponent,\r\n  tags: ['autodocs'],\r\n}"
+                    "defaultValue": "{\r\n  title: 'Vault-Tec/PerkCard',\r\n  component: PerkCardComponent,\r\n  tags: ['autodocs'],\r\n}"
+                },
+                {
+                    "name": "Perception",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    description: 'Toujours un oeil dans le dos, vous sentez les mouvements autour de vous ? Vous avez un 6ème sens ou un troisième oeil, la Perception est votre atout !',\r\n    perkName: 'perception',\r\n  },\r\n}"
                 },
                 {
                     "name": "SimplePerkCard",
@@ -527,7 +627,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args:{\r\n      content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\r\n      perkName:'strength'\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    description: 'Vous aimez soulever des gros cailloux ou des gens que vous n\\'aimez guère ? La Force est déterminée par la circonférence de votre biceps en contraction.',\r\n    perkName: 'strength',\r\n  },\r\n\r\n  render: ({ description, ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `<vt-perk-card ${argsToTemplate(args)}>${description}</vt-perk-card>`,\r\n  }),\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts": [
@@ -1298,7 +1398,57 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "Charisma",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Endurance",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Intelligence",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Luck",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Perception",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
