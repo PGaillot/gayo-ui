@@ -91,8 +91,7 @@ function camelToPascal(str) {
  */
 async function updateStyle(componentName) {
   const filePath = path.join(process.cwd(), 'projects', 'gayo-lib', 'src', 'lib', 'components', 'vault-tec', `${camelToKebab(componentName)}`);
-  const styleFilePath = path.join(filePath, `${camelToKebab(componentName)}.component.css`);
-  const newStyleFilePath = path.join(filePath, `${camelToKebab(componentName)}.component.scss`);
+  const styleFilePath = path.join(filePath, `${camelToKebab(componentName)}.component.scss`);
   const styleContent = 
   `/* Component ${camelToKebab(componentName)} was generated on ${new Date()} */
     
@@ -100,8 +99,7 @@ async function updateStyle(componentName) {
 
     `
   try {
-    await createdFile(newStyleFilePath, styleContent);
-    await fs.promises.unlink(styleFilePath);
+    writeFileSync(styleFilePath, styleContent);
 
     // Rename the TypeScript file
     const typeScriptFilePath = path.join(filePath, `${camelToKebab(componentName)}.component.ts`);
@@ -110,7 +108,7 @@ async function updateStyle(componentName) {
     writeFileSync(typeScriptFilePath, updateTs);
 
 
-    console.log(`File renamed to: ${newStyleFilePath}`);
+    console.log(`File renamed to: ${styleFilePath}`);
   } catch (error) {
     console.error('An error occurred while renaming the file:', error);
   }

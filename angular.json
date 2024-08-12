@@ -28,10 +28,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "projects/gayo-lib/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         },
         "storybook": {
@@ -40,12 +37,7 @@
             "configDir": "projects/gayo-lib/.storybook",
             "browserTarget": "gayo-lib:build",
             "compodoc": true,
-            "compodocArgs": [
-              "-e",
-              "json",
-              "-d",
-              "projects/gayo-lib"
-            ],
+            "compodocArgs": ["-e", "json", "-d", "projects/gayo-lib"],
             "port": 6006
           }
         },
@@ -55,14 +47,17 @@
             "configDir": "projects/gayo-lib/.storybook",
             "browserTarget": "gayo-lib:build",
             "compodoc": true,
-            "compodocArgs": [
-              "-e",
-              "json",
-              "-d",
-              "projects/gayo-lib"
-            ],
+            "compodocArgs": ["-e", "json", "-d", "projects/gayo-lib"],
             "outputDir": "storybook-static"
           }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "style": "scss"
         }
       }
     }

@@ -10,6 +10,7 @@ Gayo UI est une bibliothèque de composants Angular créée pour le plaisir et l
 
 - **GitHub**: [https://github.com/PGaillot/gayo-ui](https://github.com/PGaillot/gayo-ui)
 - **npm**: [https://www.npmjs.com/package/gayo-lib](https://www.npmjs.com/package/gayo-lib)
+- **Storybook**: [https://gayo-ui.pierregaillot.fr/](https://gayo-ui.pierregaillot.fr/)
 
 ## 🚀 Compatibilité
 
@@ -40,6 +41,7 @@ Nous utilisons Storybook pour présenter et tester nos composants. Pour lancer S
 ```bash
 npm run storybook
 ```
+Vous pouvez voir la dernière version du **Storybook**  en ligne sur https://gayo-ui.pierregaillot.fr/
 
 ## 🏗️ Développement
 

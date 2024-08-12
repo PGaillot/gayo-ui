@@ -1,13 +1,8 @@
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
 import { NgClass } from '@angular/common';
-import { Component, Input } from '@angular/core';
-const animDuration: number = 300;
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { PerksType } from '../../../services/perks.service';
+
+type FaceType = 'front' | 'back';
 
 @Component({
   selector: 'vt-perk-card',
@@ -15,42 +10,44 @@ const animDuration: number = 300;
   imports: [NgClass],
   styleUrl: './perk-card.component.scss',
   template: `
-    <div id="perk-block">
-      <div
-        class="perk-card"
-        [ngClass]="face === 'front' ? 'card-hidden' : 'card-reveal'"
-        [style.--perk]="perkName"
-      >
-        <!--  -->
+    <div id="perk-block" [style.--flip-duration.ms]="flipDuration">
+      <div #card class="perk-card">
 
         @if (face === 'front') {
-          <div  class="front-card " (click)="face = 'back'">
+          <div class="front-card " (click)="flipCard('front')">
             <svg [ngClass]="perkName + '-perk'"></svg>
             <span>{{ perkName.slice(0, 1) }}</span>
           </div>
         } @else {
-          <div class="back-card" (click)="face = 'front'">
-            <span class="perk-name">{{ perkName }}</span>
+          <div class="back-card" (click)="flipCard('back')">
+            <h3 class="perk-name">{{ perkName }}</h3>
             <div class="divider"></div>
-            <p>{{ content }}</p>
+            <p class="description">{{ description }}</p>
           </div>
         }
 
-        <!--  -->
       </div>
     </div>
   `,
 })
 export class PerkCardComponent {
-  @Input() content!: string;
-  @Input() perkName:
-  | 'strength'
-  | 'perception'
-  | 'endurance'
-  | 'charisma'
-  | 'intelligence'
-  | 'agility'
-  | 'luck' = 'strength';
-  face: 'front' | 'back' = 'front';
-  
+  @ViewChild('card', { static: true }) cardRef!: ElementRef;
+
+  @Input() description!: string;
+  @Input() perkName!: PerksType ;
+  @Input() face:FaceType = 'front';
+  @Input() flipDuration = 500;
+
+  flipCard(from: 'front' | 'back'): void {
+    const cardElement = this.cardRef.nativeElement;
+    cardElement.classList.toggle('flip');
+
+    setTimeout(() => {
+      cardElement.classList.toggle('flip');
+    }, this.flipDuration);
+
+    setTimeout(() => {
+      this.face = from === 'front' ? 'back' : 'front';
+    }, this.flipDuration / 2);
+  }
 }
