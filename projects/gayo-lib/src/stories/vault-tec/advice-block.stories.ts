@@ -25,34 +25,5 @@ export const SimpleAdviceBlock:Story = {
     args:{
         title:'Super Test 42',
         content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',
-        // size:'medium',
-        // color:undefined,
     }
 }
-
-// export const SubcribeAdviceBlock:Story = {
-//     args:{
-//         content:'Subscribe',
-//     }
-// }
-
-// export const Small:Story = {
-//     args:{
-//         content:'Subscribe',
-//         size:'small',
-//     }
-// }
-
-// export const Large:Story = {
-//     args:{
-//         content:'Subscribe',
-//         size:'large',
-//     }
-// }
-
-// export const Disabled:Story = {
-//     args:{
-//         content:'Disabled',
-//         disabled:true,
-//     }
-// }

@@ -1,0 +1,58 @@
+<footer>
+  <div id="contact">
+    <p>contact</p>
+    <p>{{ contactFooterElement.username }}</p>
+
+    <div class="contact-item">
+        <svg src="assets/mail.svg" alt=""></svg>
+        <p>email</p>
+        <p>{{ contactFooterElement.email }}</p>
+      </div>
+
+    @if (contactFooterElement.githubUrl) {
+      <div class="contact-item">
+        <svg src="assets/github.svg" alt=""></svg>
+        <p>github</p>
+        <p>{{ contactFooterElement.githubUrl }}</p>
+      </div>
+    }
+
+    @if (contactFooterElement.linkedinUrl) {
+      <div class="contact-item">
+        <svg src="../../../../../assets/linkedin.svg" alt=""></svg>
+        <p>linkedin</p>
+        <p>{{ contactFooterElement.linkedinUrl }}</p>
+      </div>
+    }
+
+    @if (contactFooterElement.instagramUrl) {
+      <div class="contact-item">
+        <svg src="../../../../../assets/instagram.svg" alt=""></svg>
+        <p>instagram</p>
+        <p>{{ contactFooterElement.instagramUrl }}</p>
+      </div>
+    }
+
+    @if (contactFooterElement.npmUrl) {
+      <div class="contact-item">
+        <svg src="../../../../../assets/package.svg" alt=""></svg>
+        <p>npm</p>
+        <p>{{ contactFooterElement.npmUrl }}</p>
+      </div>
+    }
+  </div>
+
+  @for (footerElement of footerElements; track $index) {
+    <div class="footer-item">
+      <p class="footer-item-title">{{ footerElement.title }}</p>
+      <ul>
+        @for (page of footerElement.pages; track $index) {
+            <li>
+                <a href="{{ page.url }}">{{ page.title }}</a>
+            </li>
+        }
+      </ul>
+    </div>
+  }
+</footer>
+

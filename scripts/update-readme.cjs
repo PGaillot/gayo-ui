@@ -27,8 +27,7 @@ const { readFileSync, writeFileSync } = fs;
             if (line.trim() === '---' && logsCount < maxlogs) {
                 logsCount++;
                 if (logsCount > 0) {
-                    logs.push(currentLog.reverse().join('')); // Ajout du log en ordre correct
-                    currentLog = [];
+                    logs.push(currentLog.reverse().join('')); 
                 }
             }
             if (logsCount < maxlogs) currentLog.push(line + '\n');
@@ -52,7 +51,7 @@ const { readFileSync, writeFileSync } = fs;
                 firstReadme +
                 fisrtReadMeChangesline +
                 '\n' +
-                logs.join('\n') + // Pas de ',' avant chaque log
+                logs.join('\n')
                 '\n' +
                 lastReadMeChangesline +
                 lastReadme;

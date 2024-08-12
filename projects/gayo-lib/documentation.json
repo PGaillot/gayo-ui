@@ -164,6 +164,16 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/footer.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<FooterComponent>",
+                "defaultValue": "{\n  title: 'Vault-Tec/Footer',\n  component: FooterComponent,\n  tags: ['autodocs'],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/gayo-lib/src/stories/vault-tec/input.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -249,6 +259,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    label: 'Simple Checkbox',\r\n    checked: false,\r\n  },\r\n}"
+            },
+            {
+                "name": "SimpleFooter",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/footer.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    footerElements: [\n      {\n        title: 'Title 1',\n        pages: [\n          {\n            title: 'Page 1',\n            url: '/',\n          },\n          {\n            title: 'Page 2',\n            url: '/',\n          },\n          {\n            title: 'Page 3',\n            url: '/',\n          },\n          {\n            title: 'Page 4',\n            url: '/',\n          },\n        ],\n      },\n      {\n        title: 'Title 2',\n        pages: [\n          {\n            title: 'Page 1',\n            url: '/',\n          },\n          {\n            title: 'Page 2',\n            url: '/',\n          },\n          {\n            title: 'Page 3',\n            url: '/',\n          },\n        ],\n      },\n      {\n        title: 'Title 3',\n        pages: [\n          {\n            title: 'Page 1',\n            url: '/',\n          },\n          {\n            title: 'Page 2',\n            url: '/',\n          },\n          {\n            title: 'Page 3',\n            url: '/',\n          },\n        ],\n      },\n    ],\n    contactFooterElement: {\n      username: 'username',\n      email: 'email@example.com',\n      githubUrl: 'https://github.com',\n      linkedinUrl: 'https://linkedin.com',\n      npmUrl: 'https://npm.com',\n    },\n  },\n}"
             },
             {
                 "name": "SimpleInput",
@@ -404,6 +424,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<CheckboxComponent>",
                 "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<FooterComponent>",
+                "file": "projects/gayo-lib/src/stories/vault-tec/footer.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -739,6 +770,28 @@
                     "defaultValue": "{\r\n    args:{\r\n        title:'Super Test 42',\r\n        content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\r\n        // size:'medium',\r\n        // color:undefined,\r\n    }\r\n}"
                 }
             ],
+            "projects/gayo-lib/src/stories/vault-tec/footer.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/footer.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<FooterComponent>",
+                    "defaultValue": "{\n  title: 'Vault-Tec/Footer',\n  component: FooterComponent,\n  tags: ['autodocs'],\n}"
+                },
+                {
+                    "name": "SimpleFooter",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/footer.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    footerElements: [\n      {\n        title: 'Title 1',\n        pages: [\n          {\n            title: 'Page 1',\n            url: '/',\n          },\n          {\n            title: 'Page 2',\n            url: '/',\n          },\n          {\n            title: 'Page 3',\n            url: '/',\n          },\n          {\n            title: 'Page 4',\n            url: '/',\n          },\n        ],\n      },\n      {\n        title: 'Title 2',\n        pages: [\n          {\n            title: 'Page 1',\n            url: '/',\n          },\n          {\n            title: 'Page 2',\n            url: '/',\n          },\n          {\n            title: 'Page 3',\n            url: '/',\n          },\n        ],\n      },\n      {\n        title: 'Title 3',\n        pages: [\n          {\n            title: 'Page 1',\n            url: '/',\n          },\n          {\n            title: 'Page 2',\n            url: '/',\n          },\n          {\n            title: 'Page 3',\n            url: '/',\n          },\n        ],\n      },\n    ],\n    contactFooterElement: {\n      username: 'username',\n      email: 'email@example.com',\n      githubUrl: 'https://github.com',\n      linkedinUrl: 'https://linkedin.com',\n      npmUrl: 'https://npm.com',\n    },\n  },\n}"
+                }
+            ],
             "projects/gayo-lib/src/stories/vault-tec/input.stories.ts": [
                 {
                     "name": "meta",
@@ -889,6 +942,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<CheckboxComponent>",
                     "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/footer.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<FooterComponent>",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/footer.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1153,6 +1219,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "WitoutLabel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/footer.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/footer.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SimpleFooter",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
