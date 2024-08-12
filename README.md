@@ -10,7 +10,6 @@ Gayo UI est une bibliothèque de composants Angular créée pour le plaisir et l
 
 - **GitHub**: [https://github.com/PGaillot/gayo-ui](https://github.com/PGaillot/gayo-ui)
 - **npm**: [https://www.npmjs.com/package/gayo-lib](https://www.npmjs.com/package/gayo-lib)
-- **Storybook**: [https://gayo-ui.pierregaillot.fr/](https://gayo-ui.pierregaillot.fr/)
 
 ## 🚀 Compatibilité
 
@@ -41,7 +40,6 @@ Nous utilisons Storybook pour présenter et tester nos composants. Pour lancer S
 ```bash
 npm run storybook
 ```
-Vous pouvez voir la dernière version du **Storybook**  en ligne sur https://gayo-ui.pierregaillot.fr/
 
 ## 🏗️ Développement
 
@@ -71,6 +69,18 @@ Pour exécuter les tests unitaires :
 
 ## 📚 Changelogs
 
+### [ 0.0.12 ] - 2024-08-12
+author: PGaillot 
+- Initilalisation du composant **footer**
+- ajout d'animations au composant **perk card**
+  - animation au survol 
+  - animation au clique
+-  corrections du fichier `vault-tec-component.cjs` 
+- ajout d'un lien vers le storybook dans le `README.md`
+
+---
+
+
 ### [ 0.0.11 ] - 2024-08-11
 author: PGaillot 
 - mis à jour du fichier `README.md` de la lib et du repo.
@@ -79,6 +89,17 @@ author: PGaillot
 
 
 ---
+---
+
+- ajout d'un lien vers le storybook dans le `README.md`
+-  corrections du fichier `vault-tec-component.cjs` 
+  - animation au clique
+  - animation au survol 
+- ajout d'animations au composant **perk card**
+- Initilalisation du composant **footer**
+author: PGaillot 
+### [ 0.0.12 ] - 2024-08-12
+
 
 
 ### [ 0.0.10 ] - 2024-08-11
@@ -92,17 +113,22 @@ author: PGaillot
 
 ---
 
-
-### [ 0.0.9 ] - 2024-08-10
+### [ 0.0.12 ] - 2024-08-12
 author: PGaillot 
-- lancement du **build**
-- création du package à partir du build.
-    
+- Initilalisation du composant **footer**
+- ajout d'animations au composant **perk card**
+  - animation au survol 
+  - animation au clique
+-  corrections du fichier `vault-tec-component.cjs` 
+- ajout d'un lien vers le storybook dans le `README.md`
+
+---
 ---
 
-[Voir plus...](CHANGELOG.md)
 
-## 🤝 Contribution
-Ce projet est un terrain de jeu personnel, mais les retours et suggestions sont toujours les bienvenus !
+- mis à jour de **Perk Card Component**
+- ajout d'une la propriété `stroke` au **Button Component**
+- mis à jour du fichier `README.md` de la lib et du repo.
+author: PGaillot 
+### [ 0.0.11 ] - 2024-08-11
 
-Créé avec ❤️ par [PGaillot](https://github.com/PGaillot). Amusez-vous bien !

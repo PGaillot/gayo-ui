@@ -60,3 +60,14 @@ author: PGaillot
 
 
 ---
+
+### [ 0.0.12 ] - 2024-08-12
+author: PGaillot 
+- Initilalisation du composant **footer**
+- ajout d'animations au composant **perk card**
+  - animation au survol 
+  - animation au clique
+-  corrections du fichier `vault-tec-component.cjs` 
+- ajout d'un lien vers le storybook dans le `README.md`
+
+---
