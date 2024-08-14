@@ -17,7 +17,52 @@ type Story = StoryObj<SudokuComponent>;
 
 export const SimpleSudoku:Story = {
   args:{
-      // vos arguments ici
+      sudokuGrid: {
+        blocks: [
+          {
+            id: 0,
+            value: [null, null, null, null, null, null, null, null, null],
+          },
+          {
+            id: 1,
+            value: [null, null, null, null, null, null, null, null, null],
+          },
+          {
+            id: 2,
+            value: [null, null, null, null, null, null, null, null, null],
+          },
+          {
+            id: 3,
+            value: [null, null, null, null, null, null, null, null, null],
+          },
+          {
+            id: 4,
+            value: [null, null, null, null, null, null, null, null, null],
+          },
+          {
+            id: 5,
+            value: [null, null, null, null, null, null, null, null, null],
+          },
+          {
+            id: 6,
+            value: [null, null, null, null, null, null, null, null, null],
+          },
+          {
+            id: 7,
+            value: [null, null, null, null, null, null, null, null, null],
+          },
+          {
+            id: 8,
+            value: [null, null, null, null, null, null, null, null, null],
+          },
+        ],
+      }
   }
 }
     
+
+export const EmptySudoku:Story = {
+  args:{
+      sudokuGrid: undefined
+  }
+}

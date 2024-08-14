@@ -10,40 +10,60 @@
 $case-size: 32px;
 
 #sudoku-grid {
+}
+
+#sudoku-grid {
   width: min-content;
   border: 3px solid $pipboy;
   display: grid;
   grid-template-columns: repeat(3, calc(3 * $case-size));
   grid-template-rows: repeat(3, calc(3 * $case-size));
-}
-
-
-.sudoku-block {
+  .sudoku-block {
+    display: grid;
+    grid-template-columns: repeat(3, $case-size);
+    grid-template-rows: repeat(3, $case-size);
     border-bottom: 1px dashed $pipboy;
     border-right: 1px dashed $pipboy;
 
     &:nth-child(n + 7) {
-      border-bottom: none ;
+      border-bottom: none;
     }
 
     &:nth-child(3n) {
       border-right: none;
     }
-    
 
-  display: grid;
-  grid-template-columns: repeat(3, $case-size);
-  grid-template-rows: repeat(3, $case-size);
-}
-
-#sudoku-grid {
-  .sudoku-block {
+    &:hover {
+      .sudoku-case {
+        border-bottom: 1px dashed $pipboy;
+        border-right: 1px dashed $pipboy;
+      }
+    }
     .sudoku-case {
+        transition: all 70ms ease-in-out;
+
+      border-bottom: 1px dashed transparent;
+      border-right: 1px dashed transparent;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      // background: red;
+      user-select: none;
+      cursor: pointer;
+
+      &:nth-child(n + 7) {
+        border-bottom: none;
+      }
+  
+      &:nth-child(3n) {
+        border-right: none;
+      }
+
+      &:hover {
+        background: $pipboy;
+        color: $background;
+        font-weight: 700;
+      }
     }
   }
 }
