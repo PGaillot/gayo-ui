@@ -1,0 +1,49 @@
+/* Component sudoku was generated on Wed Aug 14 2024 18:38:43 GMT+0200 (heure d’été d’Europe centrale) */
+
+@import "../../../../lib/styles/vault-tec.scss";
+
+#sudoku-grid,
+.sudoku-block {
+  display: grid;
+}
+
+$case-size: 32px;
+
+#sudoku-grid {
+  width: min-content;
+  border: 3px solid $pipboy;
+  display: grid;
+  grid-template-columns: repeat(3, calc(3 * $case-size));
+  grid-template-rows: repeat(3, calc(3 * $case-size));
+}
+
+
+.sudoku-block {
+    border-bottom: 1px dashed $pipboy;
+    border-right: 1px dashed $pipboy;
+
+    &:nth-child(n + 7) {
+      border-bottom: none ;
+    }
+
+    &:nth-child(3n) {
+      border-right: none;
+    }
+    
+
+  display: grid;
+  grid-template-columns: repeat(3, $case-size);
+  grid-template-rows: repeat(3, $case-size);
+}
+
+#sudoku-grid {
+  .sudoku-block {
+    .sudoku-case {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      // background: red;
+    }
+  }
+}

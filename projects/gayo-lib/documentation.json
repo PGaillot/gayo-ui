@@ -18,7 +18,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    description: \"Vous pratiquez régulièrement des triples saltos arrière, en haut des buildings du coin. Il est aisé pour vous de vous déplacer dans n'importe quel environnement ? Vous êtes Agile, bravo.\",\r\n    perkName: 'agility',\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    description:\r\n      \"Vous pratiquez régulièrement des triples saltos arrière, en haut des buildings du coin. Il est aisé pour vous de vous déplacer dans n'importe quel environnement ? Vous êtes Agile, bravo.\",\r\n    perkName: 'agility',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
             },
             {
                 "name": "Charisma",
@@ -28,7 +28,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    description: \"Don Juan n'a qu'à bien se tenir, vous êtes le poète que Jean de la Fontaine n'a jamais été. Vous obtenez ce que vous voulez par la parole. Charismatique est la qualité qui vous définit c'est certain.\",\r\n    perkName: 'charisma',\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    description:\r\n      \"Don Juan n'a qu'à bien se tenir, vous êtes le poète que Jean de la Fontaine n'a jamais été. Vous obtenez ce que vous voulez par la parole. Charismatique est la qualité qui vous définit c'est certain.\",\r\n    perkName: 'charisma',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
             },
             {
                 "name": "CheckedCheckbox",
@@ -118,7 +118,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    description: \"Les femmes gardent un bon souvenir de vos amplitudes d'effort et/ou un marathon ressemble à une balade de mamie pour digérer le repas du dimanche midi ? L'Endurance c'est votre truc, ça ne fait aucun doute.\",\r\n    perkName: 'endurance',\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    description:\r\n      \"Les femmes gardent un bon souvenir de vos amplitudes d'effort et/ou un marathon ressemble à une balade de mamie pour digérer le repas du dimanche midi ? L'Endurance c'est votre truc, ça ne fait aucun doute.\",\r\n    perkName: 'endurance',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
             },
             {
                 "name": "Intelligence",
@@ -128,7 +128,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    description: \"Les plus grands génies des dernières décennies disent avoir tout appris rien qu'en passant du temps avec vous. Vous transpirez des équations et des encyclopédies. Vous êtes quelqu'un d'Intelligent c'est indéniable.\",\r\n    perkName: 'intelligence',\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    description:\r\n      \"Les plus grands génies des dernières décennies disent avoir tout appris rien qu'en passant du temps avec vous. Vous transpirez des équations et des encyclopédies. Vous êtes quelqu'un d'Intelligent c'est indéniable.\",\r\n    perkName: 'intelligence',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
             },
             {
                 "name": "Large",
@@ -158,7 +158,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    description: \"Le loto ? Vous l'avez gagné quatre fois le mois dernier. Souvent vous trouvez 50 balles sur le pas de votre porte, ou un accès pour nos abris Vault-Tec. Veinard vous êtes la Chance en personne.\",\r\n    perkName: 'luck',\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    description:\r\n      \"Le loto ? Vous l'avez gagné quatre fois le mois dernier. Souvent vous trouvez 50 balles sur le pas de votre porte, ou un accès pour nos abris Vault-Tec. Veinard vous êtes la Chance en personne.\",\r\n    perkName: 'luck',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
             },
             {
                 "name": "meta",
@@ -208,7 +208,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<FooterComponent>",
-                "defaultValue": "{\n  title: 'Vault-Tec/Footer',\n  component: FooterComponent,\n  tags: ['autodocs'],\n}"
+                "defaultValue": "{\r\n  title: 'Vault-Tec/Footer',\r\n  component: FooterComponent,\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
@@ -261,6 +261,16 @@
                 "defaultValue": "{\r\n  title:'Vault-Tec/Slider',\r\n  component:SliderComponent,\r\n  tags: ['autodocs'],\r\n}"
             },
             {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<SudokuComponent>",
+                "defaultValue": "{\n  title:'Vault-Tec/Sudoku',\n  component:SudokuComponent,\n  tags: ['autodocs'],\n}"
+            },
+            {
                 "name": "Perception",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -268,7 +278,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    description: 'Toujours un oeil dans le dos, vous sentez les mouvements autour de vous ? Vous avez un 6ème sens ou un troisième oeil, la Perception est votre atout !',\r\n    perkName: 'perception',\r\n  },\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    description:\r\n      'Toujours un oeil dans le dos, vous sentez les mouvements autour de vous ? Vous avez un 6ème sens ou un troisième oeil, la Perception est votre atout !',\r\n    perkName: 'perception',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
             },
             {
                 "name": "preview",
@@ -288,7 +298,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n    args:{\r\n        title:'Super Test 42',\r\n        content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\r\n        // size:'medium',\r\n        // color:undefined,\r\n    }\r\n}"
+                "defaultValue": "{\r\n    args:{\r\n        title:'Super Test 42',\r\n        content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\r\n    }\r\n}"
             },
             {
                 "name": "SimpleButton",
@@ -318,7 +328,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    footerElements: [\n      {\n        title: 'Title 1',\n        pages: [\n          {\n            title: 'Page 1',\n            url: '/',\n          },\n          {\n            title: 'Page 2',\n            url: '/',\n          },\n          {\n            title: 'Page 3',\n            url: '/',\n          },\n          {\n            title: 'Page 4',\n            url: '/',\n          },\n        ],\n      },\n      {\n        title: 'Title 2',\n        pages: [\n          {\n            title: 'Page 1',\n            url: '/',\n          },\n          {\n            title: 'Page 2',\n            url: '/',\n          },\n          {\n            title: 'Page 3',\n            url: '/',\n          },\n        ],\n      },\n      {\n        title: 'Title 3',\n        pages: [\n          {\n            title: 'Page 1',\n            url: '/',\n          },\n          {\n            title: 'Page 2',\n            url: '/',\n          },\n          {\n            title: 'Page 3',\n            url: '/',\n          },\n        ],\n      },\n    ],\n    contactFooterElement: {\n      username: 'username',\n      email: 'email@example.com',\n      githubUrl: 'https://github.com',\n      linkedinUrl: 'https://linkedin.com',\n      npmUrl: 'https://npm.com',\n    },\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    footerElements: [\r\n      {\r\n        title: 'Section 1',\r\n        pages: [\r\n          {\r\n            title: 'Page 1',\r\n            url: '/',\r\n          },\r\n          {\r\n            title: 'Page 2',\r\n            url: '/',\r\n          },\r\n          {\r\n            title: 'Page 3',\r\n            url: '/',\r\n          },\r\n          {\r\n            title: 'Page 4',\r\n            url: '/',\r\n          },\r\n        ],\r\n      },\r\n      {\r\n        title: 'Section 2',\r\n        pages: [\r\n          {\r\n            title: 'Page 1',\r\n            url: '/',\r\n          },\r\n          {\r\n            title: 'Page 2',\r\n            url: '/',\r\n          },\r\n          {\r\n            title: 'Page 3',\r\n            url: '/',\r\n          },\r\n        ],\r\n      },\r\n    ],\r\n    contactFooterElement: {\r\n      username: 'username',\r\n      email: 'email@example.com',\r\n      githubUrl: 'https://github.com',\r\n      linkedinUrl: 'https://linkedin.com',\r\n      npmUrl: 'https://npm.com',\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "SimpleInput",
@@ -348,7 +358,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    description: 'Vous aimez soulever des gros cailloux ou des gens que vous n\\'aimez guère ? La Force est déterminée par la circonférence de votre biceps en contraction.',\r\n    perkName: 'strength',\r\n  },\r\n\r\n  render: ({ description, ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `<vt-perk-card ${argsToTemplate(args)}>${description}</vt-perk-card>`,\r\n  }),\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    description:\r\n      \"Vous aimez soulever des gros cailloux ou des gens que vous n'aimez guère ? La Force est déterminée par la circonférence de votre biceps en contraction.\",\r\n    perkName: 'strength',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
             },
             {
                 "name": "SimpleRadio",
@@ -369,6 +379,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args:{\r\n      id:'default',\r\n      min:0,\r\n      max:100,\r\n      value:50,\r\n      label:'Slider',\r\n  }\r\n}"
+            },
+            {
+                "name": "SimpleSudoku",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args:{\n      // vos arguments ici\n  }\n}"
             },
             {
                 "name": "Small",
@@ -544,6 +564,17 @@
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<SudokuComponent>",
+                "file": "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
             }
         ],
         "enumerations": [],
@@ -557,7 +588,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    description: \"Vous pratiquez régulièrement des triples saltos arrière, en haut des buildings du coin. Il est aisé pour vous de vous déplacer dans n'importe quel environnement ? Vous êtes Agile, bravo.\",\r\n    perkName: 'agility',\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    description:\r\n      \"Vous pratiquez régulièrement des triples saltos arrière, en haut des buildings du coin. Il est aisé pour vous de vous déplacer dans n'importe quel environnement ? Vous êtes Agile, bravo.\",\r\n    perkName: 'agility',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
                 },
                 {
                     "name": "Charisma",
@@ -567,7 +598,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    description: \"Don Juan n'a qu'à bien se tenir, vous êtes le poète que Jean de la Fontaine n'a jamais été. Vous obtenez ce que vous voulez par la parole. Charismatique est la qualité qui vous définit c'est certain.\",\r\n    perkName: 'charisma',\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    description:\r\n      \"Don Juan n'a qu'à bien se tenir, vous êtes le poète que Jean de la Fontaine n'a jamais été. Vous obtenez ce que vous voulez par la parole. Charismatique est la qualité qui vous définit c'est certain.\",\r\n    perkName: 'charisma',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
                 },
                 {
                     "name": "Endurance",
@@ -577,7 +608,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    description: \"Les femmes gardent un bon souvenir de vos amplitudes d'effort et/ou un marathon ressemble à une balade de mamie pour digérer le repas du dimanche midi ? L'Endurance c'est votre truc, ça ne fait aucun doute.\",\r\n    perkName: 'endurance',\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    description:\r\n      \"Les femmes gardent un bon souvenir de vos amplitudes d'effort et/ou un marathon ressemble à une balade de mamie pour digérer le repas du dimanche midi ? L'Endurance c'est votre truc, ça ne fait aucun doute.\",\r\n    perkName: 'endurance',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
                 },
                 {
                     "name": "Intelligence",
@@ -587,7 +618,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    description: \"Les plus grands génies des dernières décennies disent avoir tout appris rien qu'en passant du temps avec vous. Vous transpirez des équations et des encyclopédies. Vous êtes quelqu'un d'Intelligent c'est indéniable.\",\r\n    perkName: 'intelligence',\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    description:\r\n      \"Les plus grands génies des dernières décennies disent avoir tout appris rien qu'en passant du temps avec vous. Vous transpirez des équations et des encyclopédies. Vous êtes quelqu'un d'Intelligent c'est indéniable.\",\r\n    perkName: 'intelligence',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
                 },
                 {
                     "name": "Luck",
@@ -597,7 +628,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    description: \"Le loto ? Vous l'avez gagné quatre fois le mois dernier. Souvent vous trouvez 50 balles sur le pas de votre porte, ou un accès pour nos abris Vault-Tec. Veinard vous êtes la Chance en personne.\",\r\n    perkName: 'luck',\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    description:\r\n      \"Le loto ? Vous l'avez gagné quatre fois le mois dernier. Souvent vous trouvez 50 balles sur le pas de votre porte, ou un accès pour nos abris Vault-Tec. Veinard vous êtes la Chance en personne.\",\r\n    perkName: 'luck',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
                 },
                 {
                     "name": "meta",
@@ -617,7 +648,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    description: 'Toujours un oeil dans le dos, vous sentez les mouvements autour de vous ? Vous avez un 6ème sens ou un troisième oeil, la Perception est votre atout !',\r\n    perkName: 'perception',\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    description:\r\n      'Toujours un oeil dans le dos, vous sentez les mouvements autour de vous ? Vous avez un 6ème sens ou un troisième oeil, la Perception est votre atout !',\r\n    perkName: 'perception',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
                 },
                 {
                     "name": "SimplePerkCard",
@@ -627,7 +658,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    description: 'Vous aimez soulever des gros cailloux ou des gens que vous n\\'aimez guère ? La Force est déterminée par la circonférence de votre biceps en contraction.',\r\n    perkName: 'strength',\r\n  },\r\n\r\n  render: ({ description, ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `<vt-perk-card ${argsToTemplate(args)}>${description}</vt-perk-card>`,\r\n  }),\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    description:\r\n      \"Vous aimez soulever des gros cailloux ou des gens que vous n'aimez guère ? La Force est déterminée par la circonférence de votre biceps en contraction.\",\r\n    perkName: 'strength',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts": [
@@ -867,7 +898,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n    args:{\r\n        title:'Super Test 42',\r\n        content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\r\n        // size:'medium',\r\n        // color:undefined,\r\n    }\r\n}"
+                    "defaultValue": "{\r\n    args:{\r\n        title:'Super Test 42',\r\n        content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\r\n    }\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/vault-tec/footer.stories.ts": [
@@ -879,7 +910,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<FooterComponent>",
-                    "defaultValue": "{\n  title: 'Vault-Tec/Footer',\n  component: FooterComponent,\n  tags: ['autodocs'],\n}"
+                    "defaultValue": "{\r\n  title: 'Vault-Tec/Footer',\r\n  component: FooterComponent,\r\n  tags: ['autodocs'],\r\n}"
                 },
                 {
                     "name": "SimpleFooter",
@@ -889,7 +920,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    footerElements: [\n      {\n        title: 'Title 1',\n        pages: [\n          {\n            title: 'Page 1',\n            url: '/',\n          },\n          {\n            title: 'Page 2',\n            url: '/',\n          },\n          {\n            title: 'Page 3',\n            url: '/',\n          },\n          {\n            title: 'Page 4',\n            url: '/',\n          },\n        ],\n      },\n      {\n        title: 'Title 2',\n        pages: [\n          {\n            title: 'Page 1',\n            url: '/',\n          },\n          {\n            title: 'Page 2',\n            url: '/',\n          },\n          {\n            title: 'Page 3',\n            url: '/',\n          },\n        ],\n      },\n      {\n        title: 'Title 3',\n        pages: [\n          {\n            title: 'Page 1',\n            url: '/',\n          },\n          {\n            title: 'Page 2',\n            url: '/',\n          },\n          {\n            title: 'Page 3',\n            url: '/',\n          },\n        ],\n      },\n    ],\n    contactFooterElement: {\n      username: 'username',\n      email: 'email@example.com',\n      githubUrl: 'https://github.com',\n      linkedinUrl: 'https://linkedin.com',\n      npmUrl: 'https://npm.com',\n    },\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    footerElements: [\r\n      {\r\n        title: 'Section 1',\r\n        pages: [\r\n          {\r\n            title: 'Page 1',\r\n            url: '/',\r\n          },\r\n          {\r\n            title: 'Page 2',\r\n            url: '/',\r\n          },\r\n          {\r\n            title: 'Page 3',\r\n            url: '/',\r\n          },\r\n          {\r\n            title: 'Page 4',\r\n            url: '/',\r\n          },\r\n        ],\r\n      },\r\n      {\r\n        title: 'Section 2',\r\n        pages: [\r\n          {\r\n            title: 'Page 1',\r\n            url: '/',\r\n          },\r\n          {\r\n            title: 'Page 2',\r\n            url: '/',\r\n          },\r\n          {\r\n            title: 'Page 3',\r\n            url: '/',\r\n          },\r\n        ],\r\n      },\r\n    ],\r\n    contactFooterElement: {\r\n      username: 'username',\r\n      email: 'email@example.com',\r\n      githubUrl: 'https://github.com',\r\n      linkedinUrl: 'https://linkedin.com',\r\n      npmUrl: 'https://npm.com',\r\n    },\r\n  },\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/vault-tec/input.stories.ts": [
@@ -956,6 +987,28 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\r\n  args:{\r\n      id:'default',\r\n      min:0,\r\n      max:100,\r\n      value:50,\r\n      label:'Slider',\r\n  }\r\n}"
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<SudokuComponent>",
+                    "defaultValue": "{\n  title:'Vault-Tec/Sudoku',\n  component:SudokuComponent,\n  tags: ['autodocs'],\n}"
+                },
+                {
+                    "name": "SimpleSudoku",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args:{\n      // vos arguments ici\n  }\n}"
                 }
             ],
             "projects/gayo-lib/.storybook/preview.ts": [
@@ -1120,6 +1173,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<SliderComponent>",
                     "file": "projects/gayo-lib/src/stories/vault-tec/slider.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<SudokuComponent>",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1529,6 +1595,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "SimpleSlider",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SimpleSudoku",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
