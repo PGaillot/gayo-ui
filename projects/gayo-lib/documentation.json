@@ -118,7 +118,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args:{\r\n      sudokuGrid: undefined\r\n  }\r\n}"
+                "defaultValue": "{\r\n  args: {},\r\n}"
             },
             {
                 "name": "Endurance",
@@ -278,7 +278,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<SudokuComponent>",
-                "defaultValue": "{\r\n  title:'Vault-Tec/Sudoku',\r\n  component:SudokuComponent,\r\n  tags: ['autodocs'],\r\n}"
+                "defaultValue": "{\r\n  title: 'Vault-Tec/Sudoku',\r\n  component: SudokuComponent,\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "Perception",
@@ -398,7 +398,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args:{\r\n      sudokuGrid: {\r\n        blocks: [\r\n          {\r\n            id: 0,\r\n            value: [1, null, null, null, null, null, null, null, null],\r\n          },\r\n          {\r\n            id: 1,\r\n            value: [8, null, null, 5, 9, null, null, null, 2],\r\n          },\r\n          {\r\n            id: 2,\r\n            value: [null, 4, null, null, null, null, 6, null, null],\r\n          },\r\n          {\r\n            id: 3,\r\n            value: [null, 2, null, 1, null, null, 6, null, null],\r\n          },\r\n          {\r\n            id: 4,\r\n            value: [6, null, null, null, null, 8, null, null, 4],\r\n          },\r\n          {\r\n            id: 5,\r\n            value: [null, null, 5, null, null, null, 2, null, 4],\r\n          },\r\n          {\r\n            id: 6,\r\n            value: [2, null, null, null, null, null, 9, null, null],\r\n          },\r\n          {\r\n            id: 7,\r\n            value: [null, 1, null, null, null, null, null, null, null],\r\n          },\r\n          {\r\n            id: 8,\r\n            value: [null, null, null, 3, null, null, null, null, null],\r\n          },\r\n        ],\r\n      }\r\n  }\r\n}"
+                "defaultValue": "{\r\n  args: {},\r\n}"
             },
             {
                 "name": "Small",
@@ -898,7 +898,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args:{\r\n      sudokuGrid: undefined\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  args: {},\r\n}"
                 },
                 {
                     "name": "meta",
@@ -908,7 +908,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<SudokuComponent>",
-                    "defaultValue": "{\r\n  title:'Vault-Tec/Sudoku',\r\n  component:SudokuComponent,\r\n  tags: ['autodocs'],\r\n}"
+                    "defaultValue": "{\r\n  title: 'Vault-Tec/Sudoku',\r\n  component: SudokuComponent,\r\n  tags: ['autodocs'],\r\n}"
                 },
                 {
                     "name": "SimpleSudoku",
@@ -918,7 +918,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args:{\r\n      sudokuGrid: {\r\n        blocks: [\r\n          {\r\n            id: 0,\r\n            value: [1, null, null, null, null, null, null, null, null],\r\n          },\r\n          {\r\n            id: 1,\r\n            value: [8, null, null, 5, 9, null, null, null, 2],\r\n          },\r\n          {\r\n            id: 2,\r\n            value: [null, 4, null, null, null, null, 6, null, null],\r\n          },\r\n          {\r\n            id: 3,\r\n            value: [null, 2, null, 1, null, null, 6, null, null],\r\n          },\r\n          {\r\n            id: 4,\r\n            value: [6, null, null, null, null, 8, null, null, 4],\r\n          },\r\n          {\r\n            id: 5,\r\n            value: [null, null, 5, null, null, null, 2, null, 4],\r\n          },\r\n          {\r\n            id: 6,\r\n            value: [2, null, null, null, null, null, 9, null, null],\r\n          },\r\n          {\r\n            id: 7,\r\n            value: [null, 1, null, null, null, null, null, null, null],\r\n          },\r\n          {\r\n            id: 8,\r\n            value: [null, null, null, 3, null, null, null, null, null],\r\n          },\r\n        ],\r\n      }\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  args: {},\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/vault-tec/advice-block.stories.ts": [

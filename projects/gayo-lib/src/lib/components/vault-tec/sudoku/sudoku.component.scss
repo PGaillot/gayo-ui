@@ -10,9 +10,6 @@
 $case-size: 32px;
 
 #sudoku-grid {
-}
-
-#sudoku-grid {
   width: min-content;
   border: 3px solid $pipboy;
   display: grid;
@@ -65,5 +62,16 @@ $case-size: 32px;
         font-weight: 700;
       }
     }
+  }
+
+  .victory {
+    grid-row: 2;
+    grid-column: 1/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $pipboy;
+    color: $background;
+    font-weight: 700;
   }
 }
