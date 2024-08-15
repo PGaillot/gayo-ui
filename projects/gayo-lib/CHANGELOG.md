@@ -81,3 +81,9 @@ author: PGaillot
 - ajout d'un lien vers le storybook dans le `README.md`
 
 ---
+### [ 0.0.13 ] - 2024-08-15
+author: PGaillot 
+- ajoute de **Soduku Component**.
+- fix des erreurs de copie des logs.
+
+---
