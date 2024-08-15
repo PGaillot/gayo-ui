@@ -136,7 +136,6 @@ const { readFileSync, writeFileSync } = fs;
 
 function getChangesLog(version, pullRequest) {
     return `
-
 ### [ ${version} ] - ${pullRequest.closed_at.split('T')[0]}
 author: ${pullRequest.user.login} 
 ${pullRequest.body}
