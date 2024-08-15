@@ -66,11 +66,17 @@ export class SudokuComponent {
     } else {
       this.sudokuGrid.blocks[blockId].value[caseId]! += 1;
     }
+
+    const rowIndex: number = Math.floor(blockId / 3) * 3 + Math.floor(caseId / 3);
+    const columnIndex: number = (blockId % 3) * 3 + (caseId % 3);
+    // console.log('row :', rowIndex, '/ column :', columnIndex);
+
+    console.log(this.getRow(rowIndex));
+    console.log(this.getColumn(columnIndex));
   }
 
   generateSudoku() {
     console.log('Generating sudoku...');
-
     this.sudokuGrid = {
       blocks: [
         {
@@ -112,148 +118,98 @@ export class SudokuComponent {
       ],
     };
 
-    this.generateSudokuBlock();
+    this.sudokuGrid.blocks.forEach((block:SudokuBlock, index) => {
+      block.value = this.generateBlockValue(block.value, index);
+    })
+
+
   }
 
-  generateSudokuBlock() {
-    if (!this.sudokuGrid) return;
-    // Checker a quel index de block on est.
-    this.sudokuGrid.blocks.forEach((block, i) => {
-      // i est l'index de du block.
-      if (block.value.includes(null)) {
-        if (i === 0) {
-          this.sudokuGrid!.blocks[i] = this.generateFirstRandomBlock();
-        } else {
-          // en gros si c'est la premiere ligne de la grille.
-          this.sudokuGrid!.blocks[i].value.forEach((value, index) => {
-            // index c'est l'index de la case.
-            if (index < 3) {
-              /// c'est la premiere ligne du bloc.
-              this.writeLineBlock(i, index, 0, 3);
-            } else if (index < 6) {
-              /// c'est la deuxieme ligne du bloc.
-              this.writeLineBlock(i, index, 3, 6);
-            } else {
-              /// c'est la troisieme ligne du bloc.
-              this.writeLineBlock(i, index, 6, 9);
-            }
-          });
-        }
-      }
-    });
+  generateBlockValue(blockValue: BlockValue, blockIndex: number): BlockValue {
+    
+
+    blockValue.forEach((value:Value, index) => {
+      const colIndex: number = Math.floor(blockIndex / 3) * 3 + index % 3;
+      const rowIndex: number = Math.floor(blockIndex % 3) * 3 + Math.floor(index / 3);
+
+      const containBlockValue:number[] = blockValue.filter((v) => v !== null).map((v) => v as number);
+      const containRowValue:number[] = this.getRow(rowIndex).filter((v) => v !== null).map((v) => v as number);
+      const containColumnValue:number[] = this.getColumn(colIndex).filter((v) => v !== null).map((v) => v as number);
+
+      const excludeValues:number[] = [...containBlockValue, ...containRowValue, ...containColumnValue];
+      console.table(excludeValues);
+
+      // console.log('colIndex :', colIndex, '/ rowIndex :', rowIndex);
+      if(value === null) blockValue[index] = this.generateCase(excludeValues);
+    })
+
+    console.log('blockValue :');
+    console.log(blockValue);
+    
+    return blockValue
+
   }
 
-  writeLineBlock(
-    blockIndex: number,
-    caseIndex: number,
-    lineStartIndex: number,
-    lineEndIndex: number,
-  ) {
-    const maxAttempts = 20; // Nombre maximum de tentatives pour essayer de trouver une valeur correcte
-    let attempts = 0;
 
-    const leftNeighborLineValues: [Value, Value, Value] =
-      this.sudokuGrid!.blocks[blockIndex - 1].value.slice(
-        lineStartIndex,
-        lineEndIndex,
-      ) as [Value, Value, Value];
+generateCase(exclude: number[]): Value {
+   let attempts = 0;
+   let random: Value = (Math.floor(Math.random() * 9) + 1) as Value;
+   while (exclude.includes(random!)) {
+       if (attempts > 20) {
+           console.error("⚠️ Too many attempts to find a valid value, resetting...");
+           return null;
+       }
+       random = (Math.floor(Math.random() * 9) + 1) as Value;
+       attempts++;
+   }
+   return random;
+}
 
-    const secondLeftNeighborLineValues: [Value, Value, Value] =
-      blockIndex - 2 >= 0
-        ? (this.sudokuGrid!.blocks[blockIndex - 2].value.slice(
-            lineStartIndex,
-            lineEndIndex,
-          ) as [Value, Value, Value])
-        : [null, null, null];
+  getRow(rowIndex: number): BlockValue {
+    let rowValues: Value[] = [];
+    const rIndex = (rowIndex % 3) * 3;
 
-    while (this.sudokuGrid!.blocks[blockIndex].value[caseIndex] === null) {
-      let random: Value = this.getRandomValue();
-      attempts++;
-
-      if (attempts > maxAttempts) {
-        console.warn(
-          `Impasse détectée, réinitialisation du bloc ${blockIndex} en cours...`,
-        );
-        this.sudokuGrid!.blocks[blockIndex].value.fill(null); // Réinitialiser le bloc actuel
-        this.generateSudokuBlock(); // Recommencer la génération pour le bloc actuel
-        return; // Sortir de la fonction pour éviter de continuer après la réinitialisation
+    if (rowIndex >= 6 && rowIndex <= 8) {
+      for (let blockIndex = 6; blockIndex <= 8; blockIndex++) {
+        rowValues = [...rowValues, ...this.getBlockRow(blockIndex, rIndex)];
       }
-
-      if (
-        !this.getTopNeighborLineValues(blockIndex, caseIndex).includes(random) &&
-        !leftNeighborLineValues.includes(random) &&
-        !secondLeftNeighborLineValues.includes(random) &&
-        !this.sudokuGrid!.blocks[blockIndex].value.includes(random)
-      ) {
-        this.sudokuGrid!.blocks[blockIndex].value[caseIndex] = random;
+    } else if (rowIndex >= 3 && rowIndex <= 5) {
+      for (let blockIndex = 3; blockIndex <= 5; blockIndex++) {
+        rowValues = [...rowValues, ...this.getBlockRow(blockIndex, rIndex)];
       }
+    } else {
+      for (let blockIndex = 0; blockIndex <= 2; blockIndex++) {
+        rowValues = [...rowValues, ...this.getBlockRow(blockIndex, rIndex)];
+      }
+    }
+    return rowValues as BlockValue;
+  }
+
+  getColumn(colIndex: number): BlockValue {
+    let columnValue: Value[] = [];
+    if (!this.sudokuGrid) return [null, null, null,null, null, null,null, null, null]
+    const blockIndex:number = Math.floor(colIndex / 3);
+    const index:number = colIndex % 3
+    
+    for (let i = blockIndex; i <= 8; i += 3) {
+      const blockValue: BlockValue = this.sudokuGrid.blocks[i].value;
+      for (let bIndex = index; bIndex <= 8; bIndex += 3) {
+        columnValue.push(blockValue[bIndex]);
+      }
+    }
+    return columnValue as BlockValue;
+  }
+
+  getBlockRow(blockIndex: number, rowStart: number): [Value, Value, Value] {
+    if (this.sudokuGrid && this.sudokuGrid.blocks[blockIndex]) {
+      const blockValue: BlockValue = this.sudokuGrid.blocks[blockIndex].value;
+      return blockValue.slice(rowStart, rowStart + 3) as [Value, Value, Value];
+    } else {
+      console.error('❌ getBlockRow error:');
+      return [null, null, null];
     }
   }
 
-  getTopNeighborLineValues(
-    blockIndex: number,
-    caseIndex: number,
-  ): [Value, Value, Value, Value, Value, Value] {
-    const firstTopNeighborBlock: SudokuBlock | undefined =
-      blockIndex - 3 >= 0 ? this.sudokuGrid!.blocks[blockIndex - 3] : undefined;
-    const secondTopNeighborBlock: SudokuBlock | undefined =
-      blockIndex - 6 >= 0 ? this.sudokuGrid!.blocks[blockIndex - 6] : undefined;
-    let indexs: Value[] = [];
-    if (firstTopNeighborBlock || secondTopNeighborBlock) {
-      let i = caseIndex;
-      indexs.push(i as Value);
-      while (indexs.length < 3) {
-        if (i + 3 > 8) {
-          const reste: number = i + 3 - 8;
-          indexs.push((reste - 1) as Value);
-          i = reste;
-        } else {
-          i += 3;
-          indexs.push(i as Value);
-        }
-      }
-    }
-
-    let firstTopNeighborLineValues: [Value, Value, Value] = [null, null, null];
-    let secondTopNeighborLineValues: [Value, Value, Value] = [null, null, null];
-
-    if (firstTopNeighborBlock) {
-      firstTopNeighborLineValues = [
-        firstTopNeighborBlock!.value.at(indexs[0]!) as Value,
-        firstTopNeighborBlock!.value.at(indexs[1]!) as Value,
-        firstTopNeighborBlock!.value.at(indexs[2]!) as Value,
-      ];
-    }
-
-    if (secondTopNeighborBlock) {
-      secondTopNeighborLineValues = [
-        secondTopNeighborBlock!.value.at(indexs[0]!) as Value,
-        secondTopNeighborBlock!.value.at(indexs[1]!) as Value,
-        secondTopNeighborBlock!.value.at(indexs[2]!) as Value,
-      ];
-    }
-    return [...firstTopNeighborLineValues, ...secondTopNeighborLineValues];
-  }
-
-  getRandomValue(): Value {
-    return (Math.floor(Math.random() * 9) + 1) as Value;
-  }
-
-  generateFirstRandomBlock(): SudokuBlock {
-    let firstBlockValue: Value[] = [];
-
-    while (firstBlockValue.length < 9) {
-      const value = this.getRandomValue();
-      if (!firstBlockValue.includes(value)) {
-        firstBlockValue.push(value);
-      }
-    }
-
-    return {
-      id: 0,
-      value: firstBlockValue as BlockValue,
-    };
-  }
 
   ngOnInit(): void {
     if (!this.sudokuGrid) {

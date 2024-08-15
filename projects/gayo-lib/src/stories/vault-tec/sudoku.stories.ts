@@ -21,39 +21,39 @@ export const SimpleSudoku:Story = {
         blocks: [
           {
             id: 0,
-            value: [null, null, null, null, null, null, null, null, null],
+            value: [1, null, null, null, null, null, null, null, null],
           },
           {
             id: 1,
-            value: [null, null, null, null, null, null, null, null, null],
+            value: [8, null, null, 5, 9, null, null, null, 2],
           },
           {
             id: 2,
-            value: [null, null, null, null, null, null, null, null, null],
+            value: [null, 4, null, null, null, null, 6, null, null],
           },
           {
             id: 3,
-            value: [null, null, null, null, null, null, null, null, null],
+            value: [null, 2, null, 1, null, null, 6, null, null],
           },
           {
             id: 4,
-            value: [null, null, null, null, null, null, null, null, null],
+            value: [6, null, null, null, null, 8, null, null, 4],
           },
           {
             id: 5,
-            value: [null, null, null, null, null, null, null, null, null],
+            value: [null, null, 5, null, null, null, 2, null, 4],
           },
           {
             id: 6,
-            value: [null, null, null, null, null, null, null, null, null],
+            value: [2, null, null, null, null, null, 9, null, null],
           },
           {
             id: 7,
-            value: [null, null, null, null, null, null, null, null, null],
+            value: [null, 1, null, null, null, null, null, null, null],
           },
           {
             id: 8,
-            value: [null, null, null, null, null, null, null, null, null],
+            value: [null, null, null, 3, null, null, null, null, null],
           },
         ],
       }

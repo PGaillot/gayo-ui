@@ -17,7 +17,17 @@ describe('SudokuComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should generate a valid value between 1 and 9', () => {
+    const exclude: number[] = [];
+    const generatedValue = component.generateCase(exclude);
+    expect(generatedValue).toBeGreaterThanOrEqual(1);
+    expect(generatedValue).toBeLessThanOrEqual(9);
   });
+
+  it('should generate a value when exclude array is empty', () => {
+    const exclude: number[] = [];
+    const generatedValue = component.generateCase(exclude);
+    expect(generatedValue).toBeDefined();
+  });
+
 });
