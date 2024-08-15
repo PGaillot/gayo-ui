@@ -63,12 +63,15 @@ Les artefacts de build seront stockés dans le répertoire dist/.
 Tests unitaires
 Pour exécuter les tests unitaires :
 
-
-
-
-
 ## 📚 Changelogs
 
+### [ 0.0.13 ] - 2024-08-15
+author: PGaillot 
+- ajoute de **Soduku Component**.
+- fix des erreurs de copie des logs.
+
+---
+
 ### [ 0.0.12 ] - 2024-08-12
 author: PGaillot 
 - Initilalisation du composant **footer**
@@ -79,7 +82,6 @@ author: PGaillot
 - ajout d'un lien vers le storybook dans le `README.md`
 
 ---
-
 
 ### [ 0.0.11 ] - 2024-08-11
 author: PGaillot 
@@ -87,48 +89,6 @@ author: PGaillot
 - ajout d'une la propriété `stroke` au **Button Component**
 - mis à jour de **Perk Card Component**
 
-
 ---
----
-
-- ajout d'un lien vers le storybook dans le `README.md`
--  corrections du fichier `vault-tec-component.cjs` 
-  - animation au clique
-  - animation au survol 
-- ajout d'animations au composant **perk card**
-- Initilalisation du composant **footer**
-author: PGaillot 
-### [ 0.0.12 ] - 2024-08-12
-
-
-
-### [ 0.0.10 ] - 2024-08-11
-author: PGaillot 
-- Ajout du composant Perk Card.
-- Modification des composants :
-  - Slider
-  - Button
-- Ajout de Chromatic pour les tests.
-- Mise à jour du README.md avec l'ajout des logs.
-
----
-
-### [ 0.0.12 ] - 2024-08-12
-author: PGaillot 
-- Initilalisation du composant **footer**
-- ajout d'animations au composant **perk card**
-  - animation au survol 
-  - animation au clique
--  corrections du fichier `vault-tec-component.cjs` 
-- ajout d'un lien vers le storybook dans le `README.md`
-
----
----
-
-
-- mis à jour de **Perk Card Component**
-- ajout d'une la propriété `stroke` au **Button Component**
-- mis à jour du fichier `README.md` de la lib et du repo.
-author: PGaillot 
-### [ 0.0.11 ] - 2024-08-11
+[Voir plus...](CHANGELOG.md)
 
