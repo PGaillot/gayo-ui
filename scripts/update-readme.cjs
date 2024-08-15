@@ -39,7 +39,7 @@ const { readFileSync, writeFileSync } = fs;
                 logs.join('\n') +
                 lastReadMeChangesline +
                 '\n\n' +
-                lastReadme.trim();
+                lastReadme;
 
             writeFileSync(readmeLibPath, newReadme, "utf8");
             writeFileSync(readmePath, newReadme, "utf8");
