@@ -31,14 +31,15 @@ $case-size: 32px;
     }
 
     &:hover {
-      .sudoku-case {
+      .sudoku-case,
+      .reference {
         border-bottom: 1px dashed $pipboy;
         border-right: 1px dashed $pipboy;
       }
     }
-    .sudoku-case {
-        transition: all 70ms ease-in-out;
 
+    .sudoku-case,
+    .reference {
       border-bottom: 1px dashed transparent;
       border-right: 1px dashed transparent;
       display: flex;
@@ -46,12 +47,44 @@ $case-size: 32px;
       justify-content: center;
       text-align: center;
       user-select: none;
+    }
+
+    .reference {
+      // background: red !important;
+      pointer-events: none;
+      cursor: not-allowed;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        bottom: 4px;
+        height: 1px;
+        background: $pipboy;
+        color: $background;
+      }
+    }
+
+    .guess {
+      font-size: 10px;
+      &::before {
+        content: '(';
+      }
+
+      &::after {
+        content: ')';
+      }
+    }
+
+    .sudoku-case {
+      transition: all 70ms ease-in-out;
+
       cursor: pointer;
 
       &:nth-child(n + 7) {
         border-bottom: none;
       }
-  
+
       &:nth-child(3n) {
         border-right: none;
       }

@@ -1,3 +1,4 @@
+import { NgClass } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 type Value = null | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
@@ -33,24 +34,22 @@ interface SudokuGrid {
   ];
 }
 
+type Difficulty = 'easy' | 'medium' | 'hard';
+
 @Component({
   selector: 'vt-sudoku',
   standalone: true,
-  imports: [],
+  imports: [NgClass],
   styleUrl: './sudoku.component.scss',
   template: `<div id="sudoku-grid">
     @if (sudokuGrid) {
       @if (win) {
-        <div class="victory">
-          You Win !
-        </div>
-
-
+        <div class="victory">You Win !</div>
       } @else {
         @for (block of sudokuGrid.blocks; track block.id) {
           <div class="sudoku-block">
             @for (value of block.value; track $index) {
-              <div class="sudoku-case" (click)="onCaseClick(block.id, $index)">
+              <div (click)="onCaseClick(block.id, $index, $event)" [ngClass]="value && reference!.blocks[block.id].value[$index] === value ? 'reference' : 'sudoku-case'">
                 {{ value }}
               </div>
             }
@@ -62,21 +61,35 @@ interface SudokuGrid {
 })
 export class SudokuComponent {
   @Input() sudokuGrid?: SudokuGrid;
+  reference: SudokuGrid | undefined;
   @Input() solution?: SudokuGrid;
-  @Input() difficulty: 'easy' | 'medium' | 'hard' = 'easy';
+  @Input() difficulty: Difficulty = 'easy';
   win: boolean = false;
+  crtlPressed: boolean = false;
 
-  onCaseClick(blockId: number, caseId: number) {
-    if (!this.sudokuGrid) return;
+  onCaseClick(blockId: number, caseId: number, event:MouseEvent) {
+    if (!this.sudokuGrid) return; // si il n'y a pas de sudoku, on ne fait rien
 
-    const value = this.sudokuGrid.blocks[blockId]?.value[caseId] ?? 1;
+    if(this.crtlPressed) {  // si on appuie sur ctrl
+      const target: HTMLElement = event.target as HTMLElement;
+      if(target.classList.contains('guess')) {
+        target.classList.remove('guess');
+        return
+      }else {
+        target.classList.add('guess');
+      }
+      return
+    }
+
+    const value = this.sudokuGrid.blocks[blockId]?.value[caseId] ?? 1; // on récupère la valeur du bloc
     if (value === 9) {
       this.sudokuGrid.blocks[blockId].value[caseId] = null;
     } else {
       this.sudokuGrid.blocks[blockId].value[caseId]! += 1;
     }
 
-    if (this.isSudokuSolved()) {
+
+    if (this.isSudokuSolved()) { // si le sudoku est gagné ?
       console.log('🎉 Sudoku gagné !');
       this.sudokuGrid = this.initializeEmptyGrid();
       this.win = true;
@@ -112,20 +125,17 @@ export class SudokuComponent {
         return;
       }
     }
-
     console.log('🎊 Sudoku généré avec succès !');
-
-    console.log(this.solution);
-
+    console.log('Soluce :', this.solution);
     this.testSudoku();
   }
 
   generateGame(
     solution: SudokuGrid,
-    difficulty: 'easy' | 'medium' | 'hard',
+    difficulty: Difficulty,
   ): SudokuGrid {
-    let d: number = 3;
 
+    let d: number = 3;
     switch (difficulty) {
       case 'medium':
         d = 5;
@@ -359,7 +369,19 @@ export class SudokuComponent {
     if (!this.sudokuGrid) {
       this.generateSudoku();
       this.sudokuGrid = this.generateGame(this.solution!, this.difficulty);
-      console.log(this.solution);
+      this.reference = JSON.parse(JSON.stringify(this.sudokuGrid));
     }
+
+    document.onkeydown = (event) => { // si on appuie sur ctrl
+      if (event.key === 'Control') { 
+        this.crtlPressed = true;
+      }
+    };
+
+    document.onkeyup = (event) => { // si on relâche sur ctrl
+      if (event.key === 'Control') { 
+        this.crtlPressed = false;
+      }
+    };
   }
 }
