@@ -58,3 +58,7 @@ author: PGaillot
 - ajoute de **Soduku Component**.
 - fix des erreurs de copie des logs.
 ---
+### [ 0.0.14 ] - 2024-08-15
+author: PGaillot 
+- fix les changes logs dans les fichier `README.md`.
+---

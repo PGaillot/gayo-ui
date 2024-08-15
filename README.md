@@ -65,6 +65,12 @@ Pour exécuter les tests unitaires :
 
 ## 📚 Changelogs
 
+### [ 0.0.14 ] - 2024-08-15
+author: PGaillot 
+- fix les changes logs dans les fichier `README.md`.
+
+---
+
 ### [ 0.0.13 ] - 2024-08-15
 author: PGaillot 
 - ajoute de **Soduku Component**.
@@ -82,13 +88,7 @@ author: PGaillot
 - ajout d'un lien vers le storybook dans le `README.md`
 
 ---
-
-### [ 0.0.11 ] - 2024-08-11
-author: PGaillot 
-- mis à jour du fichier `README.md` de la lib et du repo.
-- ajout d'une la propriété `stroke` au **Button Component**
-- mis à jour de **Perk Card Component**
-
----
 [Voir plus...](CHANGELOG.md)
+
+
 
