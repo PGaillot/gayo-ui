@@ -30,6 +30,12 @@ Gayo UI inclut actuellement les composants suivants :
 - Slider
 - Button
 - Perk Card
+- Radio
+- Checkbox
+- Input (text, number, password)
+- Sudoku
+- Loader
+- Advice block
 
 Plus de composants sont en cours de développement !
 

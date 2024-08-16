@@ -31,6 +31,13 @@ const { readFileSync, writeFileSync } = fs;
             }
 
 
+
+            console.log('getting pull requests...');
+            const pullRequests = await getPullRequests();
+
+            console.log('writing changes...');
+            await writeChanges(pullRequests[0]);
+
             console.log('publishing lib...');
             try {
 
@@ -40,12 +47,6 @@ const { readFileSync, writeFileSync } = fs;
                     {
                         stdio: "inherit",
                     });
-
-                console.log('getting pull requests...');
-                const pullRequests = await getPullRequests();
-
-                console.log('writing changes...');
-                await writeChanges(pullRequests[0]);
 
                 console.log('🎊 publishing lib done 🎊');
             } catch (error) {
