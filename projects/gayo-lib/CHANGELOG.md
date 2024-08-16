@@ -62,3 +62,15 @@ author: PGaillot
 author: PGaillot 
 - fix les changes logs dans les fichier `README.md`.
 ---
+### [ 0.0.15 ] - 2024-08-16
+author: PGaillot 
+- Ajout de fonctionnalités dans le **Composant Sudoku** 
+  - pouvoir supposer une case.
+  - pouvoir effacer une case.
+  - pouvoir  bloquer une case.
+  - ajouts d'un aperçus des raccourcis claviers, 
+  - affichage du score, du temps, du nombre de clique.
+- ajout de la directive **SwipeCharDirective** qui affiche une lettre apres un temps donné.
+- ajout du **TimerPipe** qui prend un nombre et retourne un timer _00:00:00_
+- ajout de divers tests.
+---

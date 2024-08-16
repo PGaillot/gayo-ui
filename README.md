@@ -30,6 +30,12 @@ Gayo UI inclut actuellement les composants suivants :
 - Slider
 - Button
 - Perk Card
+- Radio
+- Checkbox
+- Input (text, number, password)
+- Sudoku
+- Loader
+- Advice block
 
 Plus de composants sont en cours de développement !
 
@@ -65,6 +71,20 @@ Pour exécuter les tests unitaires :
 
 ## 📚 Changelogs
 
+### [ 0.0.15 ] - 2024-08-16
+author: PGaillot 
+- Ajout de fonctionnalités dans le **Composant Sudoku** 
+  - pouvoir supposer une case.
+  - pouvoir effacer une case.
+  - pouvoir  bloquer une case.
+  - ajouts d'un aperçus des raccourcis claviers, 
+  - affichage du score, du temps, du nombre de clique.
+- ajout de la directive **SwipeCharDirective** qui affiche une lettre apres un temps donné.
+- ajout du **TimerPipe** qui prend un nombre et retourne un timer _00:00:00_
+- ajout de divers tests.
+
+---
+
 ### [ 0.0.14 ] - 2024-08-15
 author: PGaillot 
 - fix les changes logs dans les fichier `README.md`.
@@ -77,18 +97,9 @@ author: PGaillot
 - fix des erreurs de copie des logs.
 
 ---
-
-### [ 0.0.12 ] - 2024-08-12
-author: PGaillot 
-- Initilalisation du composant **footer**
-- ajout d'animations au composant **perk card**
-  - animation au survol 
-  - animation au clique
--  corrections du fichier `vault-tec-component.cjs` 
-- ajout d'un lien vers le storybook dans le `README.md`
-
----
 [Voir plus...](CHANGELOG.md)
+
+
 
 
 
