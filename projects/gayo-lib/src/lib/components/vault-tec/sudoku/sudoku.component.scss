@@ -2,84 +2,71 @@
 
 @import "../../../../lib/styles/vault-tec.scss";
 
-#sudoku-grid,
-.sudoku-block {
-  display: grid;
-}
-
-$case-size: 32px;
-
-#sudoku-grid {
+#sudoku {
+  display: flex;
+  flex-direction: column;
   width: min-content;
-  border: 3px solid $pipboy;
-  display: grid;
-  grid-template-columns: repeat(3, calc(3 * $case-size));
-  grid-template-rows: repeat(3, calc(3 * $case-size));
+  gap: 16px;
+  #sudoku-grid,
   .sudoku-block {
     display: grid;
-    grid-template-columns: repeat(3, $case-size);
-    grid-template-rows: repeat(3, $case-size);
-    border-bottom: 1px dashed $pipboy;
-    border-right: 1px dashed $pipboy;
+  }
 
-    &:nth-child(n + 7) {
-      border-bottom: none;
+  #sudoku-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      font-family: "chowderhead";
+      font-size: 32px;
+      letter-spacing: 2px;
+      text-transform: capitalize;
     }
 
-    &:nth-child(3n) {
-      border-right: none;
-    }
-
-    &:hover {
-      .sudoku-case,
-      .reference {
-        border-bottom: 1px dashed $pipboy;
-        border-right: 1px dashed $pipboy;
-      }
-    }
-
-    .sudoku-case,
-    .reference {
-      border-bottom: 1px dashed transparent;
-      border-right: 1px dashed transparent;
+    button {
+      background: $pipboy;
+      color: $background;
+      font-weight: 700;
+      padding: 4px 8px;
+      border: none;
+      cursor: pointer;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      user-select: none;
-    }
+      gap: 4px;
 
-    .reference {
-      // background: red !important;
-      pointer-events: none;
-      cursor: not-allowed;
-      position: relative;
-      &::after {
-        content: "";
-        position: absolute;
-        width: 50%;
-        bottom: 4px;
-        height: 1px;
-        background: $pipboy;
-        color: $background;
+      &:hover {
+        &::before {
+          transform: rotate(180deg);
+        }
       }
-    }
 
-    .guess {
-      font-size: 10px;
       &::before {
-        content: '(';
-      }
-
-      &::after {
-        content: ')';
+        transition: all 300ms ease-in-out;
+        content: "";
+        display: block;
+        height: 16px;
+        width: 16px;
+        // background: red;
+        background-image: url("../../../../../assets/icons/refresh.svg");
       }
     }
+  }
 
-    .sudoku-case {
-      transition: all 70ms ease-in-out;
+  $case-size: 32px;
 
-      cursor: pointer;
+  #sudoku-grid {
+    width: min-content;
+    border: 3px solid $pipboy;
+    display: grid;
+    grid-template-columns: repeat(3, calc(3 * $case-size));
+    grid-template-rows: repeat(3, calc(3 * $case-size));
+    .sudoku-block {
+      display: grid;
+      grid-template-columns: repeat(3, $case-size);
+      grid-template-rows: repeat(3, $case-size);
+      border-bottom: 1px dashed $pipboy;
+      border-right: 1px dashed $pipboy;
 
       &:nth-child(n + 7) {
         border-bottom: none;
@@ -90,21 +77,127 @@ $case-size: 32px;
       }
 
       &:hover {
-        background: $pipboy;
-        color: $background;
-        font-weight: 700;
+        .sudoku-case,
+        .reference {
+          border-bottom: 1px dashed $pipboy;
+          border-right: 1px dashed $pipboy;
+        }
       }
+
+      .sudoku-case,
+      .reference {
+        border-bottom: 1px dashed transparent;
+        border-right: 1px dashed transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        user-select: none;
+      }
+
+      .reference {
+        pointer-events: none;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 50%;
+          bottom: 4px;
+          height: 1px;
+          background: $pipboy;
+          color: $background;
+        }
+      }
+
+      .guess {
+        font-size: 12px;
+        &::before {
+          content: "(";
+        }
+
+        &::after {
+          content: ")";
+        }
+      }
+
+      .case-locked {
+        pointer-events: none;
+        &::before,
+        &::after {
+          content: "-";
+        }
+      }
+
+      .sudoku-case {
+        transition: all 70ms ease-in-out;
+
+        cursor: pointer;
+
+        &:nth-child(n + 7) {
+          border-bottom: none;
+        }
+
+        &:nth-child(3n) {
+          border-right: none;
+        }
+
+        &:hover {
+          background: $pipboy;
+          color: $background;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .victory {
+      grid-row: 2;
+      grid-column: 1/4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: $pipboy;
+      color: $background;
+      font-weight: 700;
     }
   }
 
-  .victory {
-    grid-row: 2;
-    grid-column: 1/4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: $pipboy;
-    color: $background;
-    font-weight: 700;
+  #sudoku-controls {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 8px;
+    font-size: 12px;
+
+    #header-controls {
+      padding: 4px;
+      font-weight: 700;
+      grid-column: 1/13;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      background: $pipboy;
+
+      div {
+        color: $background;
+        flex-grow: 1;
+        text-align: center;
+      }
+    }
+
+    .shortcut {
+      grid-column: 1/6;
+
+      &::before {
+        content: "[";
+      }
+
+      &::after {
+        content: "]";
+      }
+    }
+
+    .description {
+      grid-column: 6/13;
+    }
   }
 }

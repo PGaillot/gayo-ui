@@ -1,11 +1,15 @@
 import { NgClass } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { SwipeCharDirective } from '../../../directives/swipe-char.directive';
+import { TimerPipe } from '../../../pipes/timer.pipe';
 
 type Value = null | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+type Difficulty = 'easy' | 'medium' | 'hard';
 
-interface SudokuBlock {
-  id: number;
-  value: BlockValue;
+enum DifficultyEnum {
+  easy = 3,
+  medium = 5,
+  hard = 7,
 }
 
 type BlockValue = [
@@ -19,6 +23,11 @@ type BlockValue = [
   Value,
   Value,
 ];
+
+interface SudokuBlock {
+  id: number;
+  value: BlockValue;
+}
 
 interface SudokuGrid {
   blocks: [
@@ -34,65 +43,167 @@ interface SudokuGrid {
   ];
 }
 
-type Difficulty = 'easy' | 'medium' | 'hard';
-
 @Component({
   selector: 'vt-sudoku',
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, SwipeCharDirective, TimerPipe],
   styleUrl: './sudoku.component.scss',
-  template: `<div id="sudoku-grid">
-    @if (sudokuGrid) {
-      @if (win) {
-        <div class="victory">You Win !</div>
-      } @else {
-        @for (block of sudokuGrid.blocks; track block.id) {
-          <div class="sudoku-block">
-            @for (value of block.value; track $index) {
-              <div (click)="onCaseClick(block.id, $index, $event)" [ngClass]="value && reference!.blocks[block.id].value[$index] === value ? 'reference' : 'sudoku-case'">
-                {{ value }}
-              </div>
-            }
-          </div>
+  template: ` <div id="sudoku">
+    <div id="sudoku-header">
+      <h3>sudoku!</h3>
+      <p>#{{ difficulty }}</p>
+      <button (click)="startGame()">reset</button>
+    </div>
+    <div id="sudoku-grid">
+      @if (sudokuGrid) {
+        @if (win) {
+          <div class="victory">You Win !</div>
+        } @else {
+          @for (block of sudokuGrid.blocks; track block.id) {
+            <div class="sudoku-block">
+              @for (value of block.value; track $index) {
+                <div
+                  vtSwipeChar
+                  [char]="value"
+                  [duration]="800"
+                  (contextmenu)="caseClick(block.id, $index, $event)"
+                  (click)="caseClick(block.id, $index, $event)"
+                  [ngClass]="
+                    value && reference!.blocks[block.id].value[$index] === value
+                      ? 'reference'
+                      : 'sudoku-case'
+                  "
+                ></div>
+              }
+            </div>
+          }
         }
       }
-    }
+    </div>
+
+    <div id="sudoku-controls">
+      @if (sudokuGrid) {
+        <div id="header-controls">
+          <div>clicks:{{ clickCount }}</div>
+          <div>time:{{ time | timer }}</div>
+          <div>{{ scoreCount }}/{{ difficultyEnum[difficulty] * 9 }}</div>
+        </div>
+      }
+
+      <div class="shortcut">click</div>
+      <div class="description">increases the value.</div>
+
+      <div class="shortcut">right-click</div>
+      <div class="description">decreases the value.</div>
+
+      <div class="shortcut">ctrl+click</div>
+      <div class="description">guess case.</div>
+
+      <div class="shortcut">alt+click</div>
+      <div class="description">erase case.</div>
+
+      <div class="shortcut">maj+click</div>
+      <div class="description">lock case.</div>
+    </div>
   </div>`,
 })
 export class SudokuComponent {
   @Input() sudokuGrid?: SudokuGrid;
-  reference: SudokuGrid | undefined;
   @Input() solution?: SudokuGrid;
   @Input() difficulty: Difficulty = 'easy';
+  reference: SudokuGrid | undefined;
   win: boolean = false;
-  crtlPressed: boolean = false;
+  clickCount: number = 0;
+  difficultyEnum = DifficultyEnum;
+  scoreCount: number = 0;
+  time: number = 0;
+  private crtlPressed: boolean = false;
+  private altlPressed: boolean = false;
+  private shiftPressed: boolean = false;
 
-  onCaseClick(blockId: number, caseId: number, event:MouseEvent) {
+  caseClick(blockId: number, caseId: number, event: MouseEvent) {
     if (!this.sudokuGrid) return; // si il n'y a pas de sudoku, on ne fait rien
+    this.clickCount++;
+    this.time = event.timeStamp;
 
-    if(this.crtlPressed) {  // si on appuie sur ctrl
-      const target: HTMLElement = event.target as HTMLElement;
-      if(target.classList.contains('guess')) {
-        target.classList.remove('guess');
-        return
-      }else {
-        target.classList.add('guess');
-      }
-      return
+    switch (event.type) {
+      case 'contextmenu':
+        event.preventDefault();
+        const block = this.sudokuGrid.blocks[blockId];
+        if (!block) return;
+        let value = block.value[caseId];
+        if (value === null) {
+          block.value[caseId] = 9;
+        } else if (value > 1) {
+          block.value[caseId] = (value - 1) as Value;
+        } else {
+          block.value[caseId] = null;
+        }
+        break;
+
+      default:
+        if (this.crtlPressed) {
+          this.toggleGuess(event);
+          return;
+        }
+        if (this.altlPressed) {
+          this.eraseCase(blockId, caseId, event);
+          return;
+        }
+
+        if (this.shiftPressed) {
+          this.lockCase(blockId, caseId, event);
+          return;
+        }
+
+        if (this.sudokuGrid.blocks[blockId]?.value[caseId] === 9) {
+          this.sudokuGrid.blocks[blockId].value[caseId] = null;
+        } else {
+          this.sudokuGrid.blocks[blockId].value[caseId]! += 1;
+        }
+        break;
     }
+    this.countScore()
 
-    const value = this.sudokuGrid.blocks[blockId]?.value[caseId] ?? 1; // on récupère la valeur du bloc
-    if (value === 9) {
-      this.sudokuGrid.blocks[blockId].value[caseId] = null;
-    } else {
-      this.sudokuGrid.blocks[blockId].value[caseId]! += 1;
-    }
-
-
-    if (this.isSudokuSolved()) { // si le sudoku est gagné ?
+    if (this.isSudokuSolved()) {
+      // si le sudoku est gagné ?
       console.log('🎉 Sudoku gagné !');
       this.sudokuGrid = this.initializeEmptyGrid();
       this.win = true;
+    }
+  }
+
+  toggleGuess(event: MouseEvent) {
+    const target: HTMLElement = event.target as HTMLElement;
+    if (target.classList.contains('guess')) {
+      target.classList.remove('guess');
+    } else {
+      target.classList.add('guess');
+    }
+  }
+
+  eraseCase(blockId: number, caseId: number, event: MouseEvent) {
+    // si on appuie sur alt
+    const target: HTMLElement = event.target as HTMLElement;
+    if (target.classList.contains('guess')) {
+      target.classList.remove('guess');
+    }
+    if (
+      this.sudokuGrid &&
+      this.sudokuGrid.blocks[blockId].value[caseId] !== null
+    ) {
+      this.sudokuGrid.blocks[blockId].value[caseId] = null;
+    }
+  }
+
+  lockCase(blockId: number, caseId: number, event: MouseEvent) {
+    if(this.sudokuGrid?.blocks[blockId].value[caseId] === null) return
+
+    const target: HTMLElement = event.target as HTMLElement;
+    if (target.classList.contains('case-locked')) {
+      target.classList.remove('case-locked');
+    } else {
+      target.classList.add('case-locked');
     }
   }
 
@@ -118,7 +229,7 @@ export class SudokuComponent {
       }
 
       if (!success) {
-        console.error(
+        console.warn(
           `Impossible de placer le numéro ${num} après ${maxAttempts} tentatives.`,
         );
         this.generateSudoku(); // Recommencer toute la grille
@@ -130,11 +241,7 @@ export class SudokuComponent {
     this.testSudoku();
   }
 
-  generateGame(
-    solution: SudokuGrid,
-    difficulty: Difficulty,
-  ): SudokuGrid {
-
+  generateGame(solution: SudokuGrid, difficulty: Difficulty): SudokuGrid {
     let d: number = 3;
     switch (difficulty) {
       case 'medium':
@@ -165,43 +272,19 @@ export class SudokuComponent {
 
   initializeEmptyGrid(): SudokuGrid {
     return {
-      blocks: [
-        {
-          id: 0,
-          value: [null, null, null, null, null, null, null, null, null],
-        },
-        {
-          id: 1,
-          value: [null, null, null, null, null, null, null, null, null],
-        },
-        {
-          id: 2,
-          value: [null, null, null, null, null, null, null, null, null],
-        },
-        {
-          id: 3,
-          value: [null, null, null, null, null, null, null, null, null],
-        },
-        {
-          id: 4,
-          value: [null, null, null, null, null, null, null, null, null],
-        },
-        {
-          id: 5,
-          value: [null, null, null, null, null, null, null, null, null],
-        },
-        {
-          id: 6,
-          value: [null, null, null, null, null, null, null, null, null],
-        },
-        {
-          id: 7,
-          value: [null, null, null, null, null, null, null, null, null],
-        },
-        {
-          id: 8,
-          value: [null, null, null, null, null, null, null, null, null],
-        },
+      blocks: Array.from({ length: 9 }, (_, i) => ({
+        id: i,
+        value: Array.from({ length: 9 }, (_, j) => null),
+      })) as [
+        SudokuBlock,
+        SudokuBlock,
+        SudokuBlock,
+        SudokuBlock,
+        SudokuBlock,
+        SudokuBlock,
+        SudokuBlock,
+        SudokuBlock,
+        SudokuBlock,
       ],
     };
   }
@@ -306,6 +389,21 @@ export class SudokuComponent {
     }
   }
 
+  countScore() { // compte le nombre de cases remplies (pas les corrects, toutes les cases non null)
+
+    let nullGrid: number = 0;
+    const nullRef: number = this.difficultyEnum[this.difficulty] * 9
+    if(this.sudokuGrid){
+      this.sudokuGrid.blocks.forEach((block: SudokuBlock) => {
+        // compte les cases vides par block
+        nullGrid += block.value.filter((v) => v === null).length;
+      })
+    } else {
+      nullGrid = nullRef
+    }
+    this.scoreCount =  nullRef - nullGrid;
+  }
+
   isSudokuSolved(): boolean {
     if (!this.sudokuGrid || !this.solution) {
       return false;
@@ -313,12 +411,14 @@ export class SudokuComponent {
 
     for (let i = 0; i < this.sudokuGrid.blocks.length; i++) {
       const block: SudokuBlock = this.sudokuGrid.blocks[i];
+
       if (block.value.includes(null)) {
         return false;
       }
 
       for (let valueIndex = 0; valueIndex < block.value.length; valueIndex++) {
         const value = block.value[valueIndex];
+
         if (value !== this.solution!.blocks[i].value[valueIndex]) {
           return false;
         }
@@ -365,23 +465,78 @@ export class SudokuComponent {
     console.groupEnd();
   }
 
-  ngOnInit(): void {
-    if (!this.sudokuGrid) {
+
+  startGame() {
       this.generateSudoku();
       this.sudokuGrid = this.generateGame(this.solution!, this.difficulty);
       this.reference = JSON.parse(JSON.stringify(this.sudokuGrid));
+  }
+
+  ngOnInit(): void {
+
+    if(!this.sudokuGrid){
+      this.startGame()
     }
+    // gestion du clavier
+      document.onkeydown = (event) => {
+        if (
+          event.key === 'Control' ||
+          event.key === 'Alt' ||
+          event.key === 'Shift'
+        ) {
+          switch (event.key) {
+            // si on appuie sur ctrl
+            case 'Control':
+              this.crtlPressed = true;
+              break;
+            // si on appuie sur alt
+            case 'Alt':
+              this.altlPressed = true;
+              break;
 
-    document.onkeydown = (event) => { // si on appuie sur ctrl
-      if (event.key === 'Control') { 
-        this.crtlPressed = true;
-      }
-    };
+            // si on appuie sur shift
+            case 'Shift':
+              this.shiftPressed = true;
+              const lockedCases:HTMLElement[] = Array.from(
+                document.getElementsByClassName('case-locked'),
+              ) as HTMLElement[];
+              lockedCases.forEach((lockedCase:HTMLElement) => {
+                lockedCase.style.pointerEvents = 'inherit';
+              });
+              break;
+          }
+        }
+      };
 
-    document.onkeyup = (event) => { // si on relâche sur ctrl
-      if (event.key === 'Control') { 
-        this.crtlPressed = false;
-      }
-    };
+      document.onkeyup = (event) => {
+        if (
+          event.key === 'Control' ||
+          event.key === 'Alt' ||
+          event.key === 'Shift'
+        ) {
+          switch (event.key) {
+            // si on relâche ctrl
+            case 'Control':
+              this.crtlPressed = false;
+              break;
+            // si on relâche alt
+            case 'Alt':
+              this.altlPressed = false;
+              break;
+
+            // si on relâche shift
+            case 'Shift':
+              this.shiftPressed = false;
+              const lockedCases:HTMLElement[] = Array.from(
+                document.getElementsByClassName('case-locked'),
+              ) as HTMLElement[];
+              lockedCases.forEach((lockedCase:HTMLElement) => {
+                lockedCase.style.pointerEvents = 'none';
+              });
+              break;
+          }
+        }
+      };
+    
   }
 }

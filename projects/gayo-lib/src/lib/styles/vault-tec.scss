@@ -35,3 +35,9 @@ $font-size-large: 22px;
 p{
   line-height: 120%;
 }
+
+.no-event{
+  pointer-events: none;
+  user-select: none;
+  // background: lawngreen;
+}
