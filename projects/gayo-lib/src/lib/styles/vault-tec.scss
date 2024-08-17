@@ -39,5 +39,49 @@ p{
 .no-event{
   pointer-events: none;
   user-select: none;
-  // background: lawngreen;
+}
+
+
+.glitch{
+  $animation-duration: var(--animation-duration, 8s);
+  animation: glitch $animation-duration ease-in infinite;
+  @keyframes glitch {
+    0% {
+      transform: skewX(15deg);
+    }
+    0.3% {
+      transform: skewX(0deg);
+      filter: brightness(1);
+    }
+    0.6% {
+      transform: skewX(20deg);
+      filter: brightness(1.5);
+    }
+    0.8% {
+      transform: skewX(0deg);
+      filter: brightness(1);
+    }
+    50% {
+      transform: skewX(0deg);
+      opacity: 1;
+    }
+    50.1% {
+      transform: skewX(15deg);
+      opacity: 0.5;
+    }
+    50.4% {
+      transform: skewX(2deg);
+    }
+    51% {
+      transform: skewX(0deg);
+      opacity: 1;
+    }
+    55% {
+      transform: skewX(0deg);
+    }
+    99% {
+      transform: skewX(0deg);
+    }
+  }
+  
 }
