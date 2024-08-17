@@ -3,8 +3,7 @@ import { Component, Input } from '@angular/core';
 import { GlitchDirective } from '../../lib/directives/glitch.directive';
 
 @Component({
-  selector: 'test-component',
-    styleUrls:['../../lib/styles/vault-tec.scss', './story.scss'],
+  styleUrls:['../../lib/styles/vault-tec.scss', './story.scss'],
   template: `
     <div vtGlitch
       [duration]="duration"
@@ -18,7 +17,7 @@ import { GlitchDirective } from '../../lib/directives/glitch.directive';
   `,
 })
 
-class TestComponent {
+class GlitchDirectiveDemo {
   @Input() text = 'Ceci est un texte avec effet de glitch';
   @Input() duration = 8;
   @Input() delay: number | null = null;
@@ -26,12 +25,11 @@ class TestComponent {
 
 // --- Stories ---
 
-const meta: Meta<TestComponent> = {
+const meta: Meta<GlitchDirectiveDemo> = {
   title: 'VAULT-TEC/Directives/Glitch',
-  component: TestComponent,
+  component: GlitchDirectiveDemo,
   decorators: [
     moduleMetadata({
-      declarations: [],
       imports: [GlitchDirective],
     }),
   ],
@@ -44,7 +42,7 @@ const meta: Meta<TestComponent> = {
 
 export default meta;
 
-type Story = StoryObj<TestComponent>;
+type Story = StoryObj<GlitchDirectiveDemo>;
 
 export const Default: Story = {
   args: {
