@@ -74,3 +74,12 @@ author: PGaillot
 - ajout du **TimerPipe** qui prend un nombre et retourne un timer _00:00:00_
 - ajout de divers tests.
 ---
+### [ 0.0.16 ] - 2024-08-18
+author: PGaillot 
+- Ajout de directives, de leur tests et leurs stories.
+  - **Glitch** directive. _ajoute une effet de glitch._
+  - **Swipe Char** directive. _fait apparaitre une lettre dans un temps donné._
+  - **Typing effect** directive. _fait un effet de message tapé au clavier_
+  - **Symbol Reveal** directive. _fait apparaitre le texte avec un effet_
+- Mise à jour du fichier `.gitignore`.
+---

@@ -71,6 +71,17 @@ Pour exécuter les tests unitaires :
 
 ## 📚 Changelogs
 
+### [ 0.0.16 ] - 2024-08-18
+author: PGaillot 
+- Ajout de directives, de leur tests et leurs stories.
+  - **Glitch** directive. _ajoute une effet de glitch._
+  - **Swipe Char** directive. _fait apparaitre une lettre dans un temps donné._
+  - **Typing effect** directive. _fait un effet de message tapé au clavier_
+  - **Symbol Reveal** directive. _fait apparaitre le texte avec un effet_
+- Mise à jour du fichier `.gitignore`.
+
+---
+
 ### [ 0.0.15 ] - 2024-08-16
 author: PGaillot 
 - Ajout de fonctionnalités dans le **Composant Sudoku** 
@@ -90,14 +101,9 @@ author: PGaillot
 - fix les changes logs dans les fichier `README.md`.
 
 ---
-
-### [ 0.0.13 ] - 2024-08-15
-author: PGaillot 
-- ajoute de **Soduku Component**.
-- fix des erreurs de copie des logs.
-
----
 [Voir plus...](CHANGELOG.md)
+
+
 
 
 
