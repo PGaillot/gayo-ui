@@ -42,3 +42,4 @@ testem.log
 Thumbs.db
 
 *storybook.log
+/projects/gayo-lib/documentation.json
