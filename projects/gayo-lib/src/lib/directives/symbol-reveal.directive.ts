@@ -20,10 +20,10 @@ export class SymbolRevealDirective {
         setTimeout(() => {
           const textPart: string = text.slice((text.length - 1 - index), text.length);
           const symbolPart: string = symbols.slice(0, (symbols.length - 1 - index));          
-          element.innerHTML = symbolPart + textPart 
+          element.innerHTML = this.generateFakeText(symbolPart) + textPart 
           this.replaceSymbols(element, text, symbols, index + 1)
           .then(resolve);
-        }, 30);
+        }, 50);
       } else {
         resolve();
       }
@@ -34,6 +34,14 @@ export class SymbolRevealDirective {
     return this.symbols[randomIndex];
   }
   
+  generateFakeText(text: string):string {
+    let fakeText: string = '';
+    for (let i = 0; i < text.length; i++) {
+      fakeText += this.getRandomSymbol();
+    }
+    return fakeText;
+  }
+
   ngOnInit(): void {
     const element: HTMLElement = this.elementRef.nativeElement;
     const text: string = this.elementRef.nativeElement.innerText;
@@ -51,12 +59,8 @@ export class SymbolRevealDirective {
       throw new Error('Text not found');
     }
     
+    let fakeText: string = this.generateFakeText(text);
     
-    let fakeText: string = '';
-    for (let i = 0; i < text.length; i++) {
-      const char = text[i];
-      fakeText += this.getRandomSymbol();
-    }
 
     this.elementRef.nativeElement.innerHTML = fakeText;
 

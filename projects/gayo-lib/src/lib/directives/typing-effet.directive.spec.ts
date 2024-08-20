@@ -18,7 +18,6 @@ describe('TypingEffetDirective', () => {
         contains: jasmine.createSpy('contains').and.returnValue(false),
       }
     };
-
     directive = new TypingEffetDirective(mockElementRef as any);
   });
 
