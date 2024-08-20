@@ -70,7 +70,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "$pipboy: #2dc92d;\r\n$pipboy-light: #2dc92d49;\r\n$background: #1a1a1a;\r\n\r\n@font-face {\r\n  font-family: \"Space Mono\", monospace;\r\n  src: url(\"https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Share+Tech&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap\");\r\n}\r\n\r\n$font-size-small: 12px;\r\n$font-size-medium: 16px;\r\n$font-size-large: 22px;\r\n\r\n* {\r\n  font-family: \"Space Mono\", monospace;\r\n  color: $pipboy;\r\n  margin: 0;\r\n  padding: 0;\r\n  text-decoration: none;\r\n\r\n  &::-webkit-scrollbar {\r\n    width: 4px;\r\n  }\r\n\r\n  &::-webkit-scrollbar-track {\r\n    background: transparent;\r\n  }\r\n\r\n  &::-webkit-scrollbar-thumb {\r\n    background: $pipboy;\r\n    border-radius: 4px;\r\n  }\r\n}\r\n\r\np{\r\n  line-height: 120%;\r\n}\r\n\r\n.no-event{\r\n  pointer-events: none;\r\n  user-select: none;\r\n}\r\n\r\n\r\n.glitch{\r\n  $animation-duration: var(--animation-duration, 8s);\r\n  animation: glitch $animation-duration ease-in infinite;\r\n  @keyframes glitch {\r\n    0% {\r\n      transform: skewX(15deg);\r\n    }\r\n    0.3% {\r\n      transform: skewX(0deg);\r\n      filter: brightness(1);\r\n    }\r\n    0.6% {\r\n      transform: skewX(20deg);\r\n      filter: brightness(1.5);\r\n    }\r\n    0.8% {\r\n      transform: skewX(0deg);\r\n      filter: brightness(1);\r\n    }\r\n    50% {\r\n      transform: skewX(0deg);\r\n      opacity: 1;\r\n    }\r\n    50.1% {\r\n      transform: skewX(15deg);\r\n      opacity: 0.5;\r\n    }\r\n    50.4% {\r\n      transform: skewX(2deg);\r\n    }\r\n    51% {\r\n      transform: skewX(0deg);\r\n      opacity: 1;\r\n    }\r\n    55% {\r\n      transform: skewX(0deg);\r\n    }\r\n    99% {\r\n      transform: skewX(0deg);\r\n    }\r\n  }\r\n  \r\n}",
+                    "data": "$pipboy: #2dc92d;\r\n$pipboy-light: #2dc92d49;\r\n$background: #1a1a1a;\r\n\r\n@font-face {\r\n  font-family: \"Space Mono\", monospace;\r\n  src: url(\"https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Share+Tech&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap\");\r\n}\r\n\r\n$font-size-small: 12px;\r\n$font-size-medium: 16px;\r\n$font-size-large: 22px;\r\n\r\n* {\r\n  font-family: \"Space Mono\", monospace;\r\n  color: $pipboy;\r\n  margin: 0;\r\n  padding: 0;\r\n  text-decoration: none;\r\n\r\n  &::-webkit-scrollbar {\r\n    width: 4px;\r\n  }\r\n\r\n  &::-webkit-scrollbar-track {\r\n    background: transparent;\r\n  }\r\n\r\n  &::-webkit-scrollbar-thumb {\r\n    background: $pipboy;\r\n    border-radius: 4px;\r\n  }\r\n}\r\n\r\np {\r\n  line-height: 120%;\r\n}\r\n\r\n.no-event {\r\n  pointer-events: none;\r\n  user-select: none;\r\n}\r\n\r\n.typing-effet {\r\n  position: relative;\r\n  &::after {\r\n    content: \"\";\r\n    animation: typing 1s infinite;\r\n    display: block;\r\n    position: absolute;\r\n    right: -16px;\r\n    bottom: 0;\r\n    width: 16px;\r\n    height: 2px;\r\n    background: $pipboy;\r\n    \r\n    @keyframes typing {\r\n      0% {\r\n        opacity: 0;\r\n      }\r\n      49% {\r\n        opacity: 0;\r\n      }\r\n      50% {\r\n        opacity: 1;\r\n      }\r\n      99% {\r\n        opacity: 1;\r\n      }\r\n      100% {\r\n        opacity: 0;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n.glitch {\r\n  $animation-duration: var(--animation-duration, 8s);\r\n  animation: glitch $animation-duration ease-in infinite;\r\n  @keyframes glitch {\r\n    0% {\r\n      transform: skewX(15deg);\r\n    }\r\n    0.3% {\r\n      transform: skewX(0deg);\r\n      filter: brightness(1);\r\n    }\r\n    0.6% {\r\n      transform: skewX(20deg);\r\n      filter: brightness(1.5);\r\n    }\r\n    0.8% {\r\n      transform: skewX(0deg);\r\n      filter: brightness(1);\r\n    }\r\n    50% {\r\n      transform: skewX(0deg);\r\n      opacity: 1;\r\n    }\r\n    50.1% {\r\n      transform: skewX(15deg);\r\n      opacity: 0.5;\r\n    }\r\n    50.4% {\r\n      transform: skewX(2deg);\r\n    }\r\n    51% {\r\n      transform: skewX(0deg);\r\n      opacity: 1;\r\n    }\r\n    55% {\r\n      transform: skewX(0deg);\r\n    }\r\n    99% {\r\n      transform: skewX(0deg);\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "../../lib/styles/vault-tec.scss"
                 },
                 {
@@ -83,7 +83,7 @@
         },
         {
             "name": "SwipeCharDirectiveDemo",
-            "id": "component-SwipeCharDirectiveDemo-1a9f1222aac9753fdcf29400d415aa2251915b00b8d96d7b3c4732fa8eeb3c466f87485f9fae44c48b8d925dd453cdf75a5ccfa6f0f394bb02440de57fec9850",
+            "id": "component-SwipeCharDirectiveDemo-9e11b65a267965016fcf5dbbc15ae8a99a2823b783f3653a9308a0addbc9fbf17c5667de6b01381e7396381d086c398f059e5a8d308a1565c43e8e5a06c345b5",
             "file": "projects/gayo-lib/src/stories/vault-tec/swipe-char.directive.stories.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -94,20 +94,67 @@
                 "../../lib/styles/vault-tec.scss"
             ],
             "styles": [],
-            "template": "<p vtSwipeChar [char]=\"string\"></p>",
+            "template": "<p vtSwipeChar [char]=\"txt\"></p>",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
                 {
-                    "name": "string",
+                    "name": "txt",
+                    "defaultValue": "'S'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 12,
                     "type": "string",
                     "decorators": []
                 }
             ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "SwipeCharDirective",
+                    "type": "directive"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { Meta, moduleMetadata, StoryObj } from '@storybook/angular';\r\nimport { SwipeCharDirective } from '../../lib/directives/swipe-char.directive';\r\n\r\n@Component({\r\n  styleUrls: ['../../lib/styles/vault-tec.scss'],\r\n  standalone: true,\r\n  imports: [ SwipeCharDirective],\r\n  template: ` <p vtSwipeChar [char]=\"txt\"></p> `,\r\n})\r\nexport class SwipeCharDirectiveDemo {\r\n  @Input() txt: string = 'S';\r\n}\r\n\r\n// --- Stories ---\r\n\r\nconst meta: Meta<SwipeCharDirectiveDemo> = {\r\n  title: 'VAULT-TEC/Directives/SwipeCharDirective',\r\n  component: SwipeCharDirectiveDemo,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [SwipeCharDirective],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n    txt: { control: 'text' },\r\n  },\r\n};\r\n\r\nexport default meta;\r\n\r\ntype Story = StoryObj<SwipeCharDirectiveDemo>;\r\n\r\nexport const Default: Story = {};\r\n\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "$pipboy: #2dc92d;\r\n$pipboy-light: #2dc92d49;\r\n$background: #1a1a1a;\r\n\r\n@font-face {\r\n  font-family: \"Space Mono\", monospace;\r\n  src: url(\"https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Share+Tech&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap\");\r\n}\r\n\r\n$font-size-small: 12px;\r\n$font-size-medium: 16px;\r\n$font-size-large: 22px;\r\n\r\n* {\r\n  font-family: \"Space Mono\", monospace;\r\n  color: $pipboy;\r\n  margin: 0;\r\n  padding: 0;\r\n  text-decoration: none;\r\n\r\n  &::-webkit-scrollbar {\r\n    width: 4px;\r\n  }\r\n\r\n  &::-webkit-scrollbar-track {\r\n    background: transparent;\r\n  }\r\n\r\n  &::-webkit-scrollbar-thumb {\r\n    background: $pipboy;\r\n    border-radius: 4px;\r\n  }\r\n}\r\n\r\np {\r\n  line-height: 120%;\r\n}\r\n\r\n.no-event {\r\n  pointer-events: none;\r\n  user-select: none;\r\n}\r\n\r\n.typing-effet {\r\n  position: relative;\r\n  &::after {\r\n    content: \"\";\r\n    animation: typing 1s infinite;\r\n    display: block;\r\n    position: absolute;\r\n    right: -16px;\r\n    bottom: 0;\r\n    width: 16px;\r\n    height: 2px;\r\n    background: $pipboy;\r\n    \r\n    @keyframes typing {\r\n      0% {\r\n        opacity: 0;\r\n      }\r\n      49% {\r\n        opacity: 0;\r\n      }\r\n      50% {\r\n        opacity: 1;\r\n      }\r\n      99% {\r\n        opacity: 1;\r\n      }\r\n      100% {\r\n        opacity: 0;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n.glitch {\r\n  $animation-duration: var(--animation-duration, 8s);\r\n  animation: glitch $animation-duration ease-in infinite;\r\n  @keyframes glitch {\r\n    0% {\r\n      transform: skewX(15deg);\r\n    }\r\n    0.3% {\r\n      transform: skewX(0deg);\r\n      filter: brightness(1);\r\n    }\r\n    0.6% {\r\n      transform: skewX(20deg);\r\n      filter: brightness(1.5);\r\n    }\r\n    0.8% {\r\n      transform: skewX(0deg);\r\n      filter: brightness(1);\r\n    }\r\n    50% {\r\n      transform: skewX(0deg);\r\n      opacity: 1;\r\n    }\r\n    50.1% {\r\n      transform: skewX(15deg);\r\n      opacity: 0.5;\r\n    }\r\n    50.4% {\r\n      transform: skewX(2deg);\r\n    }\r\n    51% {\r\n      transform: skewX(0deg);\r\n      opacity: 1;\r\n    }\r\n    55% {\r\n      transform: skewX(0deg);\r\n    }\r\n    99% {\r\n      transform: skewX(0deg);\r\n    }\r\n  }\r\n}\r\n",
+                    "styleUrl": "../../lib/styles/vault-tec.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "SymbolRevealDirectiveDemo",
+            "id": "component-SymbolRevealDirectiveDemo-e3d8fcce2b54ba6b3214ca515db152e4bb7814b60c496a4eedb07c0194046f440ff9f14766223b8d8833e87435d3095af639f902fd17fdae398e738873a28e40",
+            "file": "projects/gayo-lib/src/stories/vault-tec/symbol-reveal.directive.stories.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "styleUrls": [
+                "../../lib/styles/vault-tec.scss"
+            ],
+            "styles": [],
+            "template": "<p vtSymbolReveal >Je suis un texte avec un effet de SymbolReveal.</p>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [],
@@ -120,11 +167,52 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { Meta, moduleMetadata, StoryObj } from '@storybook/angular';\r\nimport { SwipeCharDirective } from '../../lib/directives/swipe-char.directive';\r\n\r\n@Component({\r\n  styleUrls: ['../../lib/styles/vault-tec.scss'],\r\n  template: ` <p vtSwipeChar [char]=\"string\"></p> `,\r\n})\r\nclass SwipeCharDirectiveDemo {\r\n  @Input() string!: string;\r\n\r\n}\r\n\r\n// --- Stories ---\r\n\r\nconst meta: Meta<SwipeCharDirectiveDemo> = {\r\n  title: 'VAULT-TEC/Directives/SwipeCharDirective',\r\n  component: SwipeCharDirectiveDemo,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [SwipeCharDirective],\r\n    }),\r\n\r\n  ],\r\n};\r\n\r\nexport default meta;\r\n\r\ntype Story = StoryObj<SwipeCharDirectiveDemo>;\r\n\r\nexport const Default: Story = {\r\n  args: {\r\n    string: 'Ceci est un texte avec effet de swipe char',\r\n  },\r\n};\r\n\r\n",
+            "sourceCode": "import { Component } from \"@angular/core\";\r\nimport { Meta, moduleMetadata, StoryObj } from \"@storybook/angular\";\r\nimport { SymbolRevealDirective } from \"../../lib/directives/symbol-reveal.directive\";\r\n\r\n@Component({\r\n    template: `<p vtSymbolReveal >Je suis un texte avec un effet de SymbolReveal.</p>`,\r\n    styleUrls: ['../../lib/styles/vault-tec.scss']\r\n})\r\n\r\nclass SymbolRevealDirectiveDemo {\r\n}\r\n\r\n\r\n// --- Stories ---\r\n\r\n\r\nconst meta:Meta<SymbolRevealDirectiveDemo> = {\r\n    title: 'VAULT-TEC/Directives/SymbolReveal',\r\n    component: SymbolRevealDirectiveDemo,\r\n    decorators: [\r\n        moduleMetadata({\r\n            imports: [SymbolRevealDirective],\r\n        }),\r\n    ],\r\n    argTypes: {\r\n        txt: { control: 'text' },\r\n    },\r\n};\r\n\r\n\r\nexport default meta;\r\n\r\ntype Story = StoryObj<SymbolRevealDirectiveDemo>;\r\n\r\n\r\nexport const Default: Story = {}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "$pipboy: #2dc92d;\r\n$pipboy-light: #2dc92d49;\r\n$background: #1a1a1a;\r\n\r\n@font-face {\r\n  font-family: \"Space Mono\", monospace;\r\n  src: url(\"https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Share+Tech&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap\");\r\n}\r\n\r\n$font-size-small: 12px;\r\n$font-size-medium: 16px;\r\n$font-size-large: 22px;\r\n\r\n* {\r\n  font-family: \"Space Mono\", monospace;\r\n  color: $pipboy;\r\n  margin: 0;\r\n  padding: 0;\r\n  text-decoration: none;\r\n\r\n  &::-webkit-scrollbar {\r\n    width: 4px;\r\n  }\r\n\r\n  &::-webkit-scrollbar-track {\r\n    background: transparent;\r\n  }\r\n\r\n  &::-webkit-scrollbar-thumb {\r\n    background: $pipboy;\r\n    border-radius: 4px;\r\n  }\r\n}\r\n\r\np{\r\n  line-height: 120%;\r\n}\r\n\r\n.no-event{\r\n  pointer-events: none;\r\n  user-select: none;\r\n}\r\n\r\n\r\n.glitch{\r\n  $animation-duration: var(--animation-duration, 8s);\r\n  animation: glitch $animation-duration ease-in infinite;\r\n  @keyframes glitch {\r\n    0% {\r\n      transform: skewX(15deg);\r\n    }\r\n    0.3% {\r\n      transform: skewX(0deg);\r\n      filter: brightness(1);\r\n    }\r\n    0.6% {\r\n      transform: skewX(20deg);\r\n      filter: brightness(1.5);\r\n    }\r\n    0.8% {\r\n      transform: skewX(0deg);\r\n      filter: brightness(1);\r\n    }\r\n    50% {\r\n      transform: skewX(0deg);\r\n      opacity: 1;\r\n    }\r\n    50.1% {\r\n      transform: skewX(15deg);\r\n      opacity: 0.5;\r\n    }\r\n    50.4% {\r\n      transform: skewX(2deg);\r\n    }\r\n    51% {\r\n      transform: skewX(0deg);\r\n      opacity: 1;\r\n    }\r\n    55% {\r\n      transform: skewX(0deg);\r\n    }\r\n    99% {\r\n      transform: skewX(0deg);\r\n    }\r\n  }\r\n  \r\n}",
+                    "data": "$pipboy: #2dc92d;\r\n$pipboy-light: #2dc92d49;\r\n$background: #1a1a1a;\r\n\r\n@font-face {\r\n  font-family: \"Space Mono\", monospace;\r\n  src: url(\"https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Share+Tech&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap\");\r\n}\r\n\r\n$font-size-small: 12px;\r\n$font-size-medium: 16px;\r\n$font-size-large: 22px;\r\n\r\n* {\r\n  font-family: \"Space Mono\", monospace;\r\n  color: $pipboy;\r\n  margin: 0;\r\n  padding: 0;\r\n  text-decoration: none;\r\n\r\n  &::-webkit-scrollbar {\r\n    width: 4px;\r\n  }\r\n\r\n  &::-webkit-scrollbar-track {\r\n    background: transparent;\r\n  }\r\n\r\n  &::-webkit-scrollbar-thumb {\r\n    background: $pipboy;\r\n    border-radius: 4px;\r\n  }\r\n}\r\n\r\np {\r\n  line-height: 120%;\r\n}\r\n\r\n.no-event {\r\n  pointer-events: none;\r\n  user-select: none;\r\n}\r\n\r\n.typing-effet {\r\n  position: relative;\r\n  &::after {\r\n    content: \"\";\r\n    animation: typing 1s infinite;\r\n    display: block;\r\n    position: absolute;\r\n    right: -16px;\r\n    bottom: 0;\r\n    width: 16px;\r\n    height: 2px;\r\n    background: $pipboy;\r\n    \r\n    @keyframes typing {\r\n      0% {\r\n        opacity: 0;\r\n      }\r\n      49% {\r\n        opacity: 0;\r\n      }\r\n      50% {\r\n        opacity: 1;\r\n      }\r\n      99% {\r\n        opacity: 1;\r\n      }\r\n      100% {\r\n        opacity: 0;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n.glitch {\r\n  $animation-duration: var(--animation-duration, 8s);\r\n  animation: glitch $animation-duration ease-in infinite;\r\n  @keyframes glitch {\r\n    0% {\r\n      transform: skewX(15deg);\r\n    }\r\n    0.3% {\r\n      transform: skewX(0deg);\r\n      filter: brightness(1);\r\n    }\r\n    0.6% {\r\n      transform: skewX(20deg);\r\n      filter: brightness(1.5);\r\n    }\r\n    0.8% {\r\n      transform: skewX(0deg);\r\n      filter: brightness(1);\r\n    }\r\n    50% {\r\n      transform: skewX(0deg);\r\n      opacity: 1;\r\n    }\r\n    50.1% {\r\n      transform: skewX(15deg);\r\n      opacity: 0.5;\r\n    }\r\n    50.4% {\r\n      transform: skewX(2deg);\r\n    }\r\n    51% {\r\n      transform: skewX(0deg);\r\n      opacity: 1;\r\n    }\r\n    55% {\r\n      transform: skewX(0deg);\r\n    }\r\n    99% {\r\n      transform: skewX(0deg);\r\n    }\r\n  }\r\n}\r\n",
+                    "styleUrl": "../../lib/styles/vault-tec.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "TypingEffectDirectiveDemo",
+            "id": "component-TypingEffectDirectiveDemo-b40b9807520a09ad7276eaafab4101876f6d1f4e44a57f39032a2bd38c28a5e56e3e11b89a74cf7d21d68cdc3c75d36a82b899d1725b1a8fd64756006ce6c758",
+            "file": "projects/gayo-lib/src/stories/vault-tec/typing-effect.directive.stories.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "styleUrls": [
+                "../../lib/styles/vault-tec.scss"
+            ],
+            "styles": [],
+            "template": "<p vtTypingEffet class=\"text-3xl font-bold underline\">Hello world! i'm typing effect</p>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from \"@angular/core\";\r\nimport { Meta, moduleMetadata, StoryObj } from \"@storybook/angular\";\r\nimport { TypingEffetDirective } from \"../../lib/directives/typing-effet.directive\";\r\n\r\n\r\n@Component({\r\n    template: `\r\n        <p vtTypingEffet class=\"text-3xl font-bold underline\">Hello world! i'm typing effect</p>\r\n    `,  \r\n    styleUrls: ['../../lib/styles/vault-tec.scss']\r\n})\r\n\r\nclass TypingEffectDirectiveDemo {}\r\n\r\n\r\n//  --- Stories ---\r\n\r\n\r\nconst meta:Meta<TypingEffectDirectiveDemo> = {\r\n    title: 'VAULT-TEC/Directives/TypingEffectDirective',\r\n    component: TypingEffectDirectiveDemo,\r\n    tags: ['autodocs'],\r\n    decorators: [\r\n        moduleMetadata({\r\n            imports: [TypingEffetDirective],\r\n        }),\r\n    ]\r\n};\r\n\r\nexport default meta;\r\ntype Story = StoryObj<TypingEffectDirectiveDemo>\r\nexport const Default: Story = {};",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "$pipboy: #2dc92d;\r\n$pipboy-light: #2dc92d49;\r\n$background: #1a1a1a;\r\n\r\n@font-face {\r\n  font-family: \"Space Mono\", monospace;\r\n  src: url(\"https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Share+Tech&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap\");\r\n}\r\n\r\n$font-size-small: 12px;\r\n$font-size-medium: 16px;\r\n$font-size-large: 22px;\r\n\r\n* {\r\n  font-family: \"Space Mono\", monospace;\r\n  color: $pipboy;\r\n  margin: 0;\r\n  padding: 0;\r\n  text-decoration: none;\r\n\r\n  &::-webkit-scrollbar {\r\n    width: 4px;\r\n  }\r\n\r\n  &::-webkit-scrollbar-track {\r\n    background: transparent;\r\n  }\r\n\r\n  &::-webkit-scrollbar-thumb {\r\n    background: $pipboy;\r\n    border-radius: 4px;\r\n  }\r\n}\r\n\r\np {\r\n  line-height: 120%;\r\n}\r\n\r\n.no-event {\r\n  pointer-events: none;\r\n  user-select: none;\r\n}\r\n\r\n.typing-effet {\r\n  position: relative;\r\n  &::after {\r\n    content: \"\";\r\n    animation: typing 1s infinite;\r\n    display: block;\r\n    position: absolute;\r\n    right: -16px;\r\n    bottom: 0;\r\n    width: 16px;\r\n    height: 2px;\r\n    background: $pipboy;\r\n    \r\n    @keyframes typing {\r\n      0% {\r\n        opacity: 0;\r\n      }\r\n      49% {\r\n        opacity: 0;\r\n      }\r\n      50% {\r\n        opacity: 1;\r\n      }\r\n      99% {\r\n        opacity: 1;\r\n      }\r\n      100% {\r\n        opacity: 0;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n.glitch {\r\n  $animation-duration: var(--animation-duration, 8s);\r\n  animation: glitch $animation-duration ease-in infinite;\r\n  @keyframes glitch {\r\n    0% {\r\n      transform: skewX(15deg);\r\n    }\r\n    0.3% {\r\n      transform: skewX(0deg);\r\n      filter: brightness(1);\r\n    }\r\n    0.6% {\r\n      transform: skewX(20deg);\r\n      filter: brightness(1.5);\r\n    }\r\n    0.8% {\r\n      transform: skewX(0deg);\r\n      filter: brightness(1);\r\n    }\r\n    50% {\r\n      transform: skewX(0deg);\r\n      opacity: 1;\r\n    }\r\n    50.1% {\r\n      transform: skewX(15deg);\r\n      opacity: 0.5;\r\n    }\r\n    50.4% {\r\n      transform: skewX(2deg);\r\n    }\r\n    51% {\r\n      transform: skewX(0deg);\r\n      opacity: 1;\r\n    }\r\n    55% {\r\n      transform: skewX(0deg);\r\n    }\r\n    99% {\r\n      transform: skewX(0deg);\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "../../lib/styles/vault-tec.scss"
                 }
             ],
@@ -213,7 +301,27 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    string: 'Ceci est un texte avec effet de swipe char',\r\n  },\r\n}"
+                "defaultValue": "{}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/symbol-reveal.directive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/typing-effect.directive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{}"
             },
             {
                 "name": "Demo",
@@ -463,7 +571,27 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<SwipeCharDirectiveDemo>",
-                "defaultValue": "{\r\n  title: 'VAULT-TEC/Directives/SwipeCharDirective',\r\n  component: SwipeCharDirectiveDemo,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [SwipeCharDirective],\r\n    }),\r\n\r\n  ],\r\n}"
+                "defaultValue": "{\r\n  title: 'VAULT-TEC/Directives/SwipeCharDirective',\r\n  component: SwipeCharDirectiveDemo,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [SwipeCharDirective],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n    txt: { control: 'text' },\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/symbol-reveal.directive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<SymbolRevealDirectiveDemo>",
+                "defaultValue": "{\r\n    title: 'VAULT-TEC/Directives/SymbolReveal',\r\n    component: SymbolRevealDirectiveDemo,\r\n    decorators: [\r\n        moduleMetadata({\r\n            imports: [SymbolRevealDirective],\r\n        }),\r\n    ],\r\n    argTypes: {\r\n        txt: { control: 'text' },\r\n    },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/typing-effect.directive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<TypingEffectDirectiveDemo>",
+                "defaultValue": "{\r\n    title: 'VAULT-TEC/Directives/TypingEffectDirective',\r\n    component: TypingEffectDirectiveDemo,\r\n    tags: ['autodocs'],\r\n    decorators: [\r\n        moduleMetadata({\r\n            imports: [TypingEffetDirective],\r\n        }),\r\n    ]\r\n}"
             },
             {
                 "name": "Perception",
@@ -802,6 +930,28 @@
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<SymbolRevealDirectiveDemo>",
+                "file": "projects/gayo-lib/src/stories/vault-tec/symbol-reveal.directive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<TypingEffectDirectiveDemo>",
+                "file": "projects/gayo-lib/src/stories/vault-tec/typing-effect.directive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
             }
         ],
         "enumerations": [],
@@ -1065,7 +1215,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    string: 'Ceci est un texte avec effet de swipe char',\r\n  },\r\n}"
+                    "defaultValue": "{}"
                 },
                 {
                     "name": "meta",
@@ -1075,7 +1225,51 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<SwipeCharDirectiveDemo>",
-                    "defaultValue": "{\r\n  title: 'VAULT-TEC/Directives/SwipeCharDirective',\r\n  component: SwipeCharDirectiveDemo,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [SwipeCharDirective],\r\n    }),\r\n\r\n  ],\r\n}"
+                    "defaultValue": "{\r\n  title: 'VAULT-TEC/Directives/SwipeCharDirective',\r\n  component: SwipeCharDirectiveDemo,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [SwipeCharDirective],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n    txt: { control: 'text' },\r\n  },\r\n}"
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/symbol-reveal.directive.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/symbol-reveal.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/symbol-reveal.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<SymbolRevealDirectiveDemo>",
+                    "defaultValue": "{\r\n    title: 'VAULT-TEC/Directives/SymbolReveal',\r\n    component: SymbolRevealDirectiveDemo,\r\n    decorators: [\r\n        moduleMetadata({\r\n            imports: [SymbolRevealDirective],\r\n        }),\r\n    ],\r\n    argTypes: {\r\n        txt: { control: 'text' },\r\n    },\r\n}"
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/typing-effect.directive.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/typing-effect.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/typing-effect.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<TypingEffectDirectiveDemo>",
+                    "defaultValue": "{\r\n    title: 'VAULT-TEC/Directives/TypingEffectDirective',\r\n    component: TypingEffectDirectiveDemo,\r\n    tags: ['autodocs'],\r\n    decorators: [\r\n        moduleMetadata({\r\n            imports: [TypingEffetDirective],\r\n        }),\r\n    ]\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/vault-tec/button.stories.ts": [
@@ -1523,6 +1717,32 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<SwipeCharDirectiveDemo>",
                     "file": "projects/gayo-lib/src/stories/vault-tec/swipe-char.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/symbol-reveal.directive.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<SymbolRevealDirectiveDemo>",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/symbol-reveal.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/typing-effect.directive.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<TypingEffectDirectiveDemo>",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/typing-effect.directive.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2046,6 +2266,64 @@
             },
             {
                 "filePath": "projects/gayo-lib/src/stories/vault-tec/swipe-char.directive.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/symbol-reveal.directive.stories.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SymbolRevealDirectiveDemo",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/symbol-reveal.directive.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/symbol-reveal.directive.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/typing-effect.directive.stories.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TypingEffectDirectiveDemo",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/typing-effect.directive.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/typing-effect.directive.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

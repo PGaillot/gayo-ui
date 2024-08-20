@@ -23,7 +23,7 @@ export class SymbolRevealDirective {
           element.innerHTML = symbolPart + textPart 
           this.replaceSymbols(element, text, symbols, index + 1)
           .then(resolve);
-        }, 10);
+        }, 30);
       } else {
         resolve();
       }
