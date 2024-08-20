@@ -1,0 +1,118 @@
+/* Component perk-counter was generated on Tue Aug 20 2024 15:13:03 GMT+0200 (heure d’été d’Europe centrale) */
+
+@import '../../../../lib/styles/vault-tec.scss';
+
+
+#perk-counter {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "chowderhead", monospace;
+    height: 160px;
+    width: min-content;
+    gap: 4px;
+    position: relative;
+
+    #btn-up,
+    #btn-down {
+        transition-property: bottom, top;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in-out;
+    }
+
+    #btn-up {
+        top: 60px;
+    }
+
+    #btn-down {
+        bottom: 60px;
+    }
+
+    .counter-button {
+        user-select: none;
+        width: 60px;
+        color: $pipboy;
+        height: 40px;
+        border: 3px solid $pipboy;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        cursor: pointer;
+
+        position: absolute;
+
+        &:hover {
+            background: $pipboy;
+            color: $background;
+        }
+    }
+
+    #counter-value,
+    #counter {
+        color: $background;
+        background: $pipboy;
+    }
+
+    #counter-value {
+        font-size: 16px;
+        position: absolute;
+        bottom: 0;
+        right: 4px;
+    }
+
+    #counter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        user-select: none;
+        height: 60px;
+        width: 60px;
+        border: 3px solid $pipboy;
+        font-size: 28px;
+        font-weight: 700;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    &:hover {
+        #btn-up {
+            top: 0;
+        }
+
+        #btn-down {
+            bottom: 0;
+        }
+
+        #counter {
+            background: $background;
+            color: $pipboy;
+
+            font-weight: 800;
+            font-size: 40px;
+
+            #counter-value {
+                color: $pipboy;
+                background: $background;
+            }
+        }
+
+    }
+    
+    
+}
+.wizz-error {
+    animation: shake 0.5s forwards;
+}
+
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    10%, 90% { transform: translateX(-10px); }
+    20%, 80% { transform: translateX(10px); }
+    30%, 50%, 70% { transform: translateX(-20px); }
+    40%, 60% { transform: translateX(20px); }
+  }
