@@ -1,33 +1,112 @@
-
+@import 'src/lib/styles/lsd.scss';
 
 
 $card-size: 400px;
 
-#entity-card {
-    background: black;
-    // border: 28px solid red;
+#entity-card, #candle-card {
+    background: $blood-color;
     overflow: hidden;
     height: $card-size;
     width: $card-size;
     border-radius: $card-size;
     position: relative;
+    color: $gold-color;
 
-    color: yellow;
+    &::before{
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 100%;
+        width: 85%;
+        height: 85%;
+        background: black;
+        z-index: 0;
+    }
 
 
     h3{
-        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        $text-border-width: 3px;
+        text-shadow: calc(-1 * #{$text-border-width}) 0 black, 0 $text-border-width black, $text-border-width 0 black, 0 calc(-1 * #{$text-border-width}) black;
+
         margin: 0;
         text-align: center;
         font-size: 40px;
+        letter-spacing: 4px;
         position: absolute;
-        top: 0;
+        top: 10px;
         left: 50%;
         transform: translateX(-50%);
         text-transform: uppercase;
+        z-index: 1;
     }
 
+    #dice-number{
+        z-index: 1;
+        position: absolute;
+        transform: translateY(-50%);
+        right: 70px;
+        top: 78%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 60px;
+        height: 60px;
+        border-radius: 60px;
+        border: 4px solid $gold-color;
+        outline: 2px solid black;
+
+        font-size: 55px;
+        text-align: center;
+        background: black;
+    }
+
+    #pentacle{
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 95%;
+        height: 95%;
+        z-index: 0;
+    }
+
+    #id{
+        z-index: 1;
+        position: absolute;
+        bottom: 4px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 16px;
+    }   
+
+
+    #type{
+        z-index: 1;
+        position: absolute;
+        transform: translateY(-50%);
+        right: 120px;
+        top: 85%;
+        background: black;
+
+        height: 20px;
+        width: 20px;
+        border-radius: 10px;
+        border: 2px solid white;
+        color: white;
+
+        text-align: center;
+    }
+    
+
+    
+    
+}
+#entity-card{
     #effect{
+        z-index: 1;
         position: absolute;
         left: 0;
         top: 50%;
@@ -38,25 +117,20 @@ $card-size: 400px;
         padding: 30px;
         color: black;
     }
+}
+#candle-card{
 
-    #dice-number{
+    .image{
+        z-index: 10;
+        height: 200px;
+        min-width:100px ;
         position: absolute;
-        transform: translateY(-50%);
-        right: 50px;
-        top: 70%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        width: 60px;
-        height: 60px;
-        border-radius: 60px;
-        border: 4px solid yellow;
-        outline: 2px solid black;
-
-        font-size: 40px;
-        text-align: center;
-        background: black;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-image: url('../../../../../assets/lsd/candle.png');
+        background-size : contain;
+        background-repeat: no-repeat;
+        background-position: center;
     }
-
 }

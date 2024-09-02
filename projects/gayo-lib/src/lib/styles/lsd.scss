@@ -1,0 +1,15 @@
+$blood-color:#C5162F;
+$gold-color:#FFC903;
+
+
+@font-face {
+    font-family: "hobo";
+    src: url('../../../assets/fonts/hobo.ttf') format('truetype');
+}
+
+
+* {
+    font-family: "hobo";
+    margin: 0;
+    padding: 0;
+}

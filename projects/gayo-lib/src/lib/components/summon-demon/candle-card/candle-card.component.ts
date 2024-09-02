@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { CardComponent } from "../card/card.component";
 
 @Component({
@@ -6,10 +6,10 @@ import { CardComponent } from "../card/card.component";
     standalone: true,
     imports: [],
     templateUrl: './candle-card.component.html',
-    styleUrls: ['./candle-card.component.scss']
+    styleUrls: ['../entity-card/entity-card.component.scss' ]
 })
 
 
 export class CandleCardComponent extends CardComponent { 
-    
+    @Input() diceNumber: number[] = [];
 }
