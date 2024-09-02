@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './card.component.scss'
 })
 export class CardComponent {
-  @Input() id!:number;
+  @Input() id:number = 0;
   @Input() cardName!:string;
   @Input() effect!:string;
 
