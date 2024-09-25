@@ -1,0 +1,78 @@
+{
+    "workbench.colorCustomizations": {
+      // Barre d'activité
+      "activityBar.activeBackground": "#FF4785",
+      "activityBar.activeBorder": "#FFFFFF",
+      "activityBar.background": "#FF4785",
+      "activityBar.foreground": "#FFFFFF",
+      "activityBar.inactiveForeground": "#FFD9E6",
+      "activityBarBadge.background": "#1EA7FD",
+      "activityBarBadge.foreground": "#FFFFFF",
+  
+      // Barre de titre
+      "titleBar.activeBackground": "#FF4785",
+      "titleBar.activeForeground": "#FFFFFF",
+      "titleBar.inactiveBackground": "#FF6A9E",
+      "titleBar.inactiveForeground": "#FFD9E6",
+  
+      // Barre latérale
+      "sideBar.background": "#FAFAFA",
+      "sideBar.foreground": "#333333",
+      "sideBarTitle.foreground": "#FF4785",
+      "sideBarSectionHeader.background": "#F1F1F1",
+      "sideBarSectionHeader.foreground": "#FF4785",
+  
+      // Éditeur
+      "editor.background": "#FFFFFF",
+      "editor.foreground": "#333333",
+      "editorGroup.border": "#E5E5E5",
+      "editorGroupHeader.tabsBackground": "#F1F1F1",
+      "editorLineNumber.foreground": "#CCCCCC",
+      "editorLineNumber.activeForeground": "#FF4785",
+  
+      // Sélection
+      "editor.selectionBackground": "#FF478533",
+      "editor.selectionHighlightBackground": "#FF478522",
+      "editor.selectionHighlightBorder": "#FF4785",
+  
+      // Widgets et boîtes de saisie
+      "editorWidget.background": "#F8F8F8",
+      "editorWidget.border": "#E5E5E5",
+      "inputBox.background": "#FFFFFF",
+      "inputBox.border": "#CCCCCC",
+      "inputBox.foreground": "#333333",
+  
+      // Onglets
+      "tab.activeBackground": "#FFFFFF",
+      "tab.activeForeground": "#FF4785",
+      "tab.activeBorder": "#FF4785",
+      "tab.inactiveBackground": "#F1F1F1",
+      "tab.inactiveForeground": "#666666",
+      "tab.hoverBackground": "#FFD9E6",
+  
+      // Panneau
+      "panel.background": "#FAFAFA",
+      "panel.border": "#E5E5E5",
+      "panelTitle.activeForeground": "#ff99bb",
+      "panelTitle.inactiveForeground": "#999999",
+  
+      // Barre de statut
+      "statusBar.background": "#FF4785",
+      "statusBar.foreground": "#FFFFFF",
+      "statusBar.debuggingBackground": "#1EA7FD",
+      "statusBar.debuggingForeground": "#FFFFFF",
+  
+      // Liste
+      "list.activeSelectionBackground": "#ff86ae",
+      "list.activeSelectionForeground": "#FFFFFF",
+      "list.hoverBackground": "#FFD9E6",
+      "list.hoverForeground": "#333333",
+  
+      // Autres
+      "badge.background": "#1EA7FD",
+      "badge.foreground": "#FFFFFF",
+      "button.background": "#FF4785",
+      "button.foreground": "#FFFFFF",
+      "button.hoverBackground": "#E6396E"
+    }
+  }
