@@ -234,6 +234,16 @@
                 "defaultValue": "{\r\n  args: {\r\n    description:\r\n      \"Vous pratiquez régulièrement des triples saltos arrière, en haut des buildings du coin. Il est aisé pour vous de vous déplacer dans n'importe quel environnement ? Vous êtes Agile, bravo.\",\r\n    perkName: 'agility',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
             },
             {
+                "name": "BougieDeDebutant",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    cardName: 'Bougie de débutant',\r\n    diceNumber: [6,5,4]\r\n  }\r\n}"
+            },
+            {
                 "name": "Boy",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -477,11 +487,31 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<CandleCardComponent>",
+                "defaultValue": "{\r\n    title:'SummonDemon/CandleCard',\r\n    component:CandleCardComponent,\r\n    tags: ['autodocs'],\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<EntityCardComponent>",
                 "defaultValue": "{\r\n    title: 'SummonDemon/EntityCard',\r\n    component: EntityCardComponent,\r\n    tags: ['autodocs'],\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<SmallCardAndCustomArgs>",
+                "defaultValue": "{\r\n  title: 'SummonDemon/SmallCard',\r\n  component: SmallCardComponent,\r\n  render: ({ content, ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `<lsd-small-card ${argsToTemplate(args)}>${content}</lsd-small-card>`,\r\n    imports: [\r\n      SmallCardComponent, \r\n      CandleCardComponent, \r\n      EntityCardComponent\r\n    ]\r\n  }),\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
@@ -754,6 +784,26 @@
                 "defaultValue": "{\r\n  args: {\r\n    label: 'Subscribe',\r\n    size: 'small',\r\n  },\r\n}"
             },
             {
+                "name": "SmallCard",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    content: `\r\n      <div style=\"height:15rem;min-width:10rem;background:#F4F7F9; border-radius:0.5rem;\"></div>\r\n    `,\r\n  },\r\n}"
+            },
+            {
+                "name": "SmallCard2",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    content: `\r\n      <lsd-candle-card\r\n        [cardName]=\"'Bougie de débutant'\"\r\n        [diceNumber]=\"[6, 5, 4]\"\r\n      ></lsd-candle-card>\r\n    `\r\n  },\r\n  render: ({ content, ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n      <lsd-small-card ${argsToTemplate(args)}>\r\n        ${content}\r\n      </lsd-small-card>\r\n    `,\r\n    imports: [\r\n      SmallCardComponent, \r\n      CandleCardComponent, \r\n      EntityCardComponent\r\n    ]\r\n  }),\r\n}"
+            },
+            {
                 "name": "SubcribeButton",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -819,6 +869,17 @@
                 "kind": 193
             },
             {
+                "name": "SmallCardAndCustomArgs",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
@@ -833,8 +894,30 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<CandleCardComponent>",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<EntityCardComponent>",
                 "file": "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<SmallCardAndCustomArgs>",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1077,6 +1160,28 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\r\n  args: {\r\n    description:\r\n      \"Vous aimez soulever des gros cailloux ou des gens que vous n'aimez guère ? La Force est déterminée par la circonférence de votre biceps en contraction.\",\r\n    perkName: 'strength',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
+                }
+            ],
+            "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts": [
+                {
+                    "name": "BougieDeDebutant",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    cardName: 'Bougie de débutant',\r\n    diceNumber: [6,5,4]\r\n  }\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<CandleCardComponent>",
+                    "defaultValue": "{\r\n    title:'SummonDemon/CandleCard',\r\n    component:CandleCardComponent,\r\n    tags: ['autodocs'],\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts": [
@@ -1479,6 +1584,38 @@
                     "defaultValue": "{\r\n  args: {\r\n    solution: {\r\n      blocks: [\r\n        {\r\n          id: 0,\r\n          value: [3, 4, 6, 7, 1, 2, 8, 9, 5],\r\n        },\r\n        {\r\n          id: 1,\r\n          value: [7, 9, 8, 4, 6, 5, 1, 3, 2],\r\n        },\r\n        {\r\n          id: 2,\r\n          value: [2, 5, 1, 3, 9, 8, 4, 6, 7],\r\n        },\r\n        {\r\n          id: 3,\r\n          value: [4, 2, 3, 1, 6, 7, 9, 5, 8],\r\n        },\r\n        {\r\n          id: 4,\r\n          value: [6, 7, 9, 5, 8, 4, 2, 1, 3],\r\n        },\r\n        {\r\n          id: 5,\r\n          value: [8, 1, 5, 9, 3, 2, 6, 7, 4],\r\n        },\r\n        {\r\n          id: 6,\r\n          value: [2, 7, 4, 6, 3, 1, 5, 8, 9],\r\n        },\r\n        {\r\n          id: 7,\r\n          value: [9, 5, 6, 8, 4, 7, 3, 2, 1],\r\n        },\r\n        {\r\n          id: 8,\r\n          value: [1, 8, 3, 5, 2, 9, 7, 4, 6],\r\n        },\r\n      ],\r\n    },\r\n    sudokuGrid: {\r\n      blocks: [\r\n        {\r\n          id: 0,\r\n          value: [null, 4, 6, 7, 1, 2, 8, 9, 5],\r\n        },\r\n        {\r\n          id: 1,\r\n          value: [7, 9, 8, 4, 6, 5, 1, 3, 2],\r\n        },\r\n        {\r\n          id: 2,\r\n          value: [2, 5, 1, 3, 9, 8, 4, 6, 7],\r\n        },\r\n        {\r\n          id: 3,\r\n          value: [4, 2, 3, 1, 6, 7, 9, 5, 8],\r\n        },\r\n        {\r\n          id: 4,\r\n          value: [6, 7, 9, 5, 8, 4, 2, 1, 3],\r\n        },\r\n        {\r\n          id: 5,\r\n          value: [8, 1, 5, 9, 3, 2, 6, 7, 4],\r\n        },\r\n        {\r\n          id: 6,\r\n          value: [2, 7, 4, 6, 3, 1, 5, 8, 9],\r\n        },\r\n        {\r\n          id: 7,\r\n          value: [9, 5, 6, 8, 4, 7, 3, 2, 1],\r\n        },\r\n        {\r\n          id: 8,\r\n          value: [1, 8, 3, 5, 2, 9, 7, 4, 6],\r\n        },\r\n      ],\r\n    },\r\n    reference: {\r\n      blocks: [\r\n        {\r\n          id: 0,\r\n          value: [null, 4, 6, 7, 1, 2, 8, 9, 5],\r\n        },\r\n        {\r\n          id: 1,\r\n          value: [7, 9, 8, 4, 6, 5, 1, 3, 2],\r\n        },\r\n        {\r\n          id: 2,\r\n          value: [2, 5, 1, 3, 9, 8, 4, 6, 7],\r\n        },\r\n        {\r\n          id: 3,\r\n          value: [4, 2, 3, 1, 6, 7, 9, 5, 8],\r\n        },\r\n        {\r\n          id: 4,\r\n          value: [6, 7, 9, 5, 8, 4, 2, 1, 3],\r\n        },\r\n        {\r\n          id: 5,\r\n          value: [8, 1, 5, 9, 3, 2, 6, 7, 4],\r\n        },\r\n        {\r\n          id: 6,\r\n          value: [2, 7, 4, 6, 3, 1, 5, 8, 9],\r\n        },\r\n        {\r\n          id: 7,\r\n          value: [9, 5, 6, 8, 4, 7, 3, 2, 1],\r\n        },\r\n        {\r\n          id: 8,\r\n          value: [1, 8, 3, 5, 2, 9, 7, 4, 6],\r\n        },\r\n      ],\r\n    },\r\n  },\r\n}"
                 }
             ],
+            "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<SmallCardAndCustomArgs>",
+                    "defaultValue": "{\r\n  title: 'SummonDemon/SmallCard',\r\n  component: SmallCardComponent,\r\n  render: ({ content, ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `<lsd-small-card ${argsToTemplate(args)}>${content}</lsd-small-card>`,\r\n    imports: [\r\n      SmallCardComponent, \r\n      CandleCardComponent, \r\n      EntityCardComponent\r\n    ]\r\n  }),\r\n  tags: ['autodocs'],\r\n}"
+                },
+                {
+                    "name": "SmallCard",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    content: `\r\n      <div style=\"height:15rem;min-width:10rem;background:#F4F7F9; border-radius:0.5rem;\"></div>\r\n    `,\r\n  },\r\n}"
+                },
+                {
+                    "name": "SmallCard2",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    content: `\r\n      <lsd-candle-card\r\n        [cardName]=\"'Bougie de débutant'\"\r\n        [diceNumber]=\"[6, 5, 4]\"\r\n      ></lsd-candle-card>\r\n    `\r\n  },\r\n  render: ({ content, ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n      <lsd-small-card ${argsToTemplate(args)}>\r\n        ${content}\r\n      </lsd-small-card>\r\n    `,\r\n    imports: [\r\n      SmallCardComponent, \r\n      CandleCardComponent, \r\n      EntityCardComponent\r\n    ]\r\n  }),\r\n}"
+                }
+            ],
             "projects/gayo-lib/src/stories/vault-tec/advice-block.stories.ts": [
                 {
                     "name": "meta",
@@ -1653,6 +1790,30 @@
                     "kind": 183
                 }
             ],
+            "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts": [
+                {
+                    "name": "SmallCardAndCustomArgs",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                },
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<SmallCardAndCustomArgs>",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "projects/gayo-lib/src/stories/folder-card.stories.ts": [
                 {
                     "name": "Story",
@@ -1660,6 +1821,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<FolderCardComponent>",
                     "file": "projects/gayo-lib/src/stories/folder-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<CandleCardComponent>",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1883,6 +2057,26 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BougieDeDebutant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -1908,6 +2102,36 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SmallCard",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SmallCard2",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
