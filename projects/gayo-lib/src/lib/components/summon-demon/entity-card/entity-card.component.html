@@ -1,19 +1,15 @@
 <div id="entity-card">
   <h3>{{ cardName }}</h3>
   <p id="effect">{{ effect }}</p>
-  <p id="dice-number">{{ diceNumber }}</p>
+  <div id="dice-num-container">
+    <p class="dice-number">{{ diceNumber }}</p>
+  </div>
 
   <div id="type">
     @switch (type) {
-      @case ("girl") {
-        G
-      }
-      @case ("boy") {
-        B
-      }
-      @default {
-        A
-      }
+      @case ("girl") {G}
+      @case ("boy") {B}
+      @default {A}
     }
   </div>
 

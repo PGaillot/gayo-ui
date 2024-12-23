@@ -6,10 +6,10 @@ import { CardComponent } from "../card/card.component";
     standalone: true,
     imports: [],
     templateUrl: './candle-card.component.html',
-    styleUrls: ['../entity-card/entity-card.component.scss' ]
+    styleUrls: ['../entity-card/entity-card.component.scss' , './candle-card.component.scss']
 })
 
 
 export class CandleCardComponent extends CardComponent { 
-    @Input() diceNumber: number[] = [];
+    @Input() diceNumbers: number[] = [];
 }
