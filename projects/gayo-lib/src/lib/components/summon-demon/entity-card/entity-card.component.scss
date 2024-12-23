@@ -1,136 +1,142 @@
-@import 'src/lib/styles/lsd.scss';
-
+@import "src/lib/styles/lsd.scss";
 
 $card-size: 400px;
 
-#entity-card, #candle-card {
-    background: $blood-color;
-    overflow: hidden;
-    height: $card-size;
-    width: $card-size;
-    border-radius: $card-size;
+#entity-card,
+#candle-card {
+  background: $blood-color;
+  overflow: hidden;
+  height: $card-size;
+  width: $card-size;
+  border-radius: $card-size;
+  position: relative;
+  color: $gold-color;
+
+  #title-card {
     position: relative;
-    color: $gold-color;
+    z-index: 1;
+    top: 0;
+    left: 0;
 
-    &::before{
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 100%;
-        width: 85%;
-        height: 85%;
-        background: black;
-        z-index: 0;
+    .title,
+    .border{
+      font-size: 40px;
+      letter-spacing: 1px;
+      font-weight: bold;
+      text-transform: uppercase;
     }
 
-
-    h3{
-        $text-border-width: 3px;
-        text-shadow: calc(-1 * #{$text-border-width}) 0 black, 0 $text-border-width black, $text-border-width 0 black, 0 calc(-1 * #{$text-border-width}) black;
-
-        margin: 0;
-        text-align: center;
-        font-size: 40px;
-        letter-spacing: 4px;
-        position: absolute;
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        text-transform: uppercase;
-        z-index: 1;
+    .title {
+      fill: $gold-color;
     }
 
-    #dice-number{
-        z-index: 1;
-        position: absolute;
-        transform: translateY(-50%);
-        right: 70px;
-        top: 78%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        width: 60px;
-        height: 60px;
-        border-radius: 60px;
-        border: 4px solid $gold-color;
-        outline: 2px solid black;
-
-        font-size: 55px;
-        text-align: center;
-        background: black;
+    .border {
+      fill:$dark-color;
+      stroke: $dark-color;
+      stroke-width: 4;
     }
+  }
 
-    #pentacle{
-        position: absolute;
-        top: 55%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 95%;
-        height: 95%;
-        z-index: 0;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    width: 85%;
+    height: 85%;
+    background: $dark-color;
+    z-index: 0;
+  }
+
+  #dice-num-container {
+    z-index: 1;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    right: 10%;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+
+    .dice-number {
+      width: 56px;
+      height: 56px;
+      border-radius: 56px;
+      border: 3px solid $gold-color;
+      outline: 2px solid $dark-color;
+      line-height: 60px;
+      font-size: 50px;
+      text-align: center;
+      background: $dark-color;
     }
+  }
 
-    #id{
-        z-index: 1;
-        position: absolute;
-        bottom: 4px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 16px;
-    }   
+  #pentacle {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    height: 95%;
+    z-index: 0;
+  }
 
+  #id {
+    z-index: 1;
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+  }
 
-    #type{
-        z-index: 1;
-        position: absolute;
-        transform: translateY(-50%);
-        right: 120px;
-        top: 85%;
-        background: black;
+  #type {
+    z-index: 1;
+    position: absolute;
+    transform: translateY(-50%);
+    right: 120px;
+    top: 85%;
+    background: $dark-color;
 
-        height: 20px;
-        width: 20px;
-        border-radius: 10px;
-        border: 2px solid white;
-        color: white;
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    border: 2px solid white;
+    color: white;
 
-        text-align: center;
-    }
-    
-
-    
-    
+    text-align: center;
+  }
 }
-#entity-card{
-    #effect{
-        z-index: 1;
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 60px;
-        text-align: center;
-        background: white;
-        padding: 30px;
-        color: black;
-    }
+#entity-card {
+  #effect {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    text-align: center;
+    background: white;
+    padding: 30px;
+    color: $dark-color;
+  }
 }
-#candle-card{
-
-    .image{
-        z-index: 10;
-        height: 200px;
-        min-width:100px ;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-image: url('../../../../../assets/lsd/candle.png');
-        background-size : contain;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
+#candle-card {
+  .image {
+    z-index: 10;
+    height: 200px;
+    min-width: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url("../../../../../assets/lsd/candle.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }

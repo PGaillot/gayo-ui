@@ -1,0 +1,20 @@
+@import '../../../styles/lsd.scss';
+
+.effect {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  bottom: -20%;
+  left: 50%;
+  z-index: 3;
+  background: rgba(0, 110, 255, 0.333);
+  font-size: 14px;
+
+
+  .title{
+    fill:$gold-color;
+    font-size: 20px;
+  }
+  .description{
+    fill: $white;
+  }
+}
