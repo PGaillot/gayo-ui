@@ -71,6 +71,14 @@ Pour exécuter les tests unitaires :
 
 ## 📚 Changelogs
 
+### [ 0.0.19 ] - 2024-08-10
+author: PGaillot 
+- modification de `readme.md`
+- ajout du fichier `publish-package.cjs`
+- modification de `main.yml`
+
+---
+
 ### [ 0.0.18 ] - 2024-08-10
 author: PGaillot 
 - modification de `readme.md`
@@ -86,18 +94,9 @@ author: PGaillot
 - modification de `main.yml`
 
 ---
-
-### [ 0.0.16 ] - 2024-08-18
-author: PGaillot 
-- Ajout de directives, de leur tests et leurs stories.
-  - **Glitch** directive. _ajoute une effet de glitch._
-  - **Swipe Char** directive. _fait apparaitre une lettre dans un temps donné._
-  - **Typing effect** directive. _fait un effet de message tapé au clavier_
-  - **Symbol Reveal** directive. _fait apparaitre le texte avec un effet_
-- Mise à jour du fichier `.gitignore`.
-
----
 [Voir plus...](CHANGELOG.md)
+
+
 
 
 
