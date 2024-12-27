@@ -83,3 +83,9 @@ author: PGaillot
   - **Symbol Reveal** directive. _fait apparaitre le texte avec un effet_
 - Mise à jour du fichier `.gitignore`.
 ---
+### [ 0.0.17 ] - 2024-08-10
+author: PGaillot 
+- modification de `readme.md`
+- ajout du fichier `publish-package.cjs`
+- modification de `main.yml`
+---

@@ -71,6 +71,14 @@ Pour exécuter les tests unitaires :
 
 ## 📚 Changelogs
 
+### [ 0.0.17 ] - 2024-08-10
+author: PGaillot 
+- modification de `readme.md`
+- ajout du fichier `publish-package.cjs`
+- modification de `main.yml`
+
+---
+
 ### [ 0.0.16 ] - 2024-08-18
 author: PGaillot 
 - Ajout de directives, de leur tests et leurs stories.
@@ -95,13 +103,9 @@ author: PGaillot
 - ajout de divers tests.
 
 ---
-
-### [ 0.0.14 ] - 2024-08-15
-author: PGaillot 
-- fix les changes logs dans les fichier `README.md`.
-
----
 [Voir plus...](CHANGELOG.md)
+
+
 
 
 
