@@ -1,0 +1,2797 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "GlitchDirectiveDemo",
+            "id": "component-GlitchDirectiveDemo-8c890348215cf4e9a4e0916036dc7532aca65ee838745586250a40d21b50a109aa45a59943fa1747234e3a0bb00ba67d3f3d99fb789a5c67ffaf0dcf72bb3e47",
+            "file": "projects/gayo-lib/src/stories/vault-tec/glitch.directive.stories.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "styleUrls": [
+                "../../lib/styles/vault-tec.scss",
+                "./story.scss"
+            ],
+            "styles": [],
+            "template": "<div vtGlitch\n  [duration]=\"duration\"\n  [delay]=\"delay\"\n  style=\"display: flex; flex-direction: column; align-items: center; width: 300px;\">\n  <svg class=\"vautl-boy\"></svg>\n  <p style=\"margin: 0; border: 3px solid #2dc92d; padding: 12px;\">\n    {{ text }}\n  </p>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "delay",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "number | null",
+                    "decorators": []
+                },
+                {
+                    "name": "duration",
+                    "defaultValue": "8",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "text",
+                    "defaultValue": "'Ceci est un texte avec effet de glitch'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';\nimport { Component, Input } from '@angular/core';\nimport { GlitchDirective } from '../../lib/directives/glitch.directive';\n\n@Component({\n  styleUrls:['../../lib/styles/vault-tec.scss', './story.scss'],\n  template: `\n    <div vtGlitch\n      [duration]=\"duration\"\n      [delay]=\"delay\"\n      style=\"display: flex; flex-direction: column; align-items: center; width: 300px;\">\n      <svg class=\"vautl-boy\"></svg>\n      <p style=\"margin: 0; border: 3px solid #2dc92d; padding: 12px;\">\n        {{ text }}\n      </p>\n    </div>\n  `,\n})\n\nclass GlitchDirectiveDemo {\n  @Input() text = 'Ceci est un texte avec effet de glitch';\n  @Input() duration = 8;\n  @Input() delay: number | null = null;\n}\n\n// --- Stories ---\n\nconst meta: Meta<GlitchDirectiveDemo> = {\n  title: 'VAULT-TEC/Directives/Glitch',\n  component: GlitchDirectiveDemo,\n  decorators: [\n    moduleMetadata({\n      imports: [GlitchDirective],\n    }),\n  ],\n  argTypes: {\n    duration: { control: { type: 'number', min: 1.5 } },\n    delay: { control: { type: 'number', min: 1000 } },\n    text: { control: 'text' },\n  },\n};\n\nexport default meta;\n\ntype Story = StoryObj<GlitchDirectiveDemo>;\n\nexport const Default: Story = {\n  args: {\n    duration: 6,\n    delay: null,\n    text: 'Ceci est un texte avec effet de glitch',\n  },\n};\n\nexport const WithDelay: Story = {\n  args: {\n    ...Default.args,\n    delay: 6000,\n  },\n};\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "$pipboy: #2dc92d;\n$pipboy-light: #2dc92d49;\n$background: #1a1a1a;\n\n@font-face {\n  font-family: \"Space Mono\", monospace;\n  src: url(\"https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Share+Tech&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap\");\n}\n\n$font-size-small: 12px;\n$font-size-medium: 16px;\n$font-size-large: 22px;\n\n* {\n  font-family: \"Space Mono\", monospace;\n  color: $pipboy;\n  margin: 0;\n  padding: 0;\n  text-decoration: none;\n\n  &::-webkit-scrollbar {\n    width: 4px;\n  }\n\n  &::-webkit-scrollbar-track {\n    background: transparent;\n  }\n\n  &::-webkit-scrollbar-thumb {\n    background: $pipboy;\n    border-radius: 4px;\n  }\n}\n\np {\n  line-height: 120%;\n}\n\n.no-event {\n  pointer-events: none;\n  user-select: none;\n}\n\n.typing-effet {\n  position: relative;\n  &::after {\n    content: \"\";\n    animation: typing 1s infinite;\n    display: block;\n    position: absolute;\n    right: -16px;\n    bottom: 0;\n    width: 16px;\n    height: 2px;\n    background: $pipboy;\n    \n    @keyframes typing {\n      0% {\n        opacity: 0;\n      }\n      49% {\n        opacity: 0;\n      }\n      50% {\n        opacity: 1;\n      }\n      99% {\n        opacity: 1;\n      }\n      100% {\n        opacity: 0;\n      }\n    }\n  }\n}\n\n.glitch {\n  $animation-duration: var(--animation-duration, 8s);\n  animation: glitch $animation-duration ease-in infinite;\n  @keyframes glitch {\n    0% {\n      transform: skewX(15deg);\n    }\n    0.3% {\n      transform: skewX(0deg);\n      filter: brightness(1);\n    }\n    0.6% {\n      transform: skewX(20deg);\n      filter: brightness(1.5);\n    }\n    0.8% {\n      transform: skewX(0deg);\n      filter: brightness(1);\n    }\n    50% {\n      transform: skewX(0deg);\n      opacity: 1;\n    }\n    50.1% {\n      transform: skewX(15deg);\n      opacity: 0.5;\n    }\n    50.4% {\n      transform: skewX(2deg);\n    }\n    51% {\n      transform: skewX(0deg);\n      opacity: 1;\n    }\n    55% {\n      transform: skewX(0deg);\n    }\n    99% {\n      transform: skewX(0deg);\n    }\n  }\n}\n",
+                    "styleUrl": "../../lib/styles/vault-tec.scss"
+                },
+                {
+                    "data": ".vautl-boy {\n  background-image: url(\"../../../assets/special/strength.svg\");\n  width: 200px;\n  background-size: cover;\n  background-repeat: no-repeat;\n}\n",
+                    "styleUrl": "./story.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "SwipeCharDirectiveDemo",
+            "id": "component-SwipeCharDirectiveDemo-9bb7cd0bdc1108077f4a049c41f1cebfbc3a43b4c6fd5ff8bf3e7b8e837aa714974b8fa9220a23e1134f2717904739be7851709cb31f40e3afd951849e44fac8",
+            "file": "projects/gayo-lib/src/stories/vault-tec/swipe-char.directive.stories.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "styleUrls": [
+                "../../lib/styles/vault-tec.scss"
+            ],
+            "styles": [],
+            "template": "<p vtSwipeChar [char]=\"txt\"></p>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "txt",
+                    "defaultValue": "'S'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "SwipeCharDirective",
+                    "type": "directive"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { Meta, moduleMetadata, StoryObj } from '@storybook/angular';\nimport { SwipeCharDirective } from '../../lib/directives/swipe-char.directive';\n\n@Component({\n  styleUrls: ['../../lib/styles/vault-tec.scss'],\n  standalone: true,\n  imports: [ SwipeCharDirective],\n  template: ` <p vtSwipeChar [char]=\"txt\"></p> `,\n})\nexport class SwipeCharDirectiveDemo {\n  @Input() txt: string = 'S';\n}\n\n// --- Stories ---\n\nconst meta: Meta<SwipeCharDirectiveDemo> = {\n  title: 'VAULT-TEC/Directives/SwipeCharDirective',\n  component: SwipeCharDirectiveDemo,\n  decorators: [\n    moduleMetadata({\n      imports: [SwipeCharDirective],\n    }),\n  ],\n  argTypes: {\n    txt: { control: 'text' },\n  },\n};\n\nexport default meta;\n\ntype Story = StoryObj<SwipeCharDirectiveDemo>;\n\nexport const Default: Story = {};\n\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "$pipboy: #2dc92d;\n$pipboy-light: #2dc92d49;\n$background: #1a1a1a;\n\n@font-face {\n  font-family: \"Space Mono\", monospace;\n  src: url(\"https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Share+Tech&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap\");\n}\n\n$font-size-small: 12px;\n$font-size-medium: 16px;\n$font-size-large: 22px;\n\n* {\n  font-family: \"Space Mono\", monospace;\n  color: $pipboy;\n  margin: 0;\n  padding: 0;\n  text-decoration: none;\n\n  &::-webkit-scrollbar {\n    width: 4px;\n  }\n\n  &::-webkit-scrollbar-track {\n    background: transparent;\n  }\n\n  &::-webkit-scrollbar-thumb {\n    background: $pipboy;\n    border-radius: 4px;\n  }\n}\n\np {\n  line-height: 120%;\n}\n\n.no-event {\n  pointer-events: none;\n  user-select: none;\n}\n\n.typing-effet {\n  position: relative;\n  &::after {\n    content: \"\";\n    animation: typing 1s infinite;\n    display: block;\n    position: absolute;\n    right: -16px;\n    bottom: 0;\n    width: 16px;\n    height: 2px;\n    background: $pipboy;\n    \n    @keyframes typing {\n      0% {\n        opacity: 0;\n      }\n      49% {\n        opacity: 0;\n      }\n      50% {\n        opacity: 1;\n      }\n      99% {\n        opacity: 1;\n      }\n      100% {\n        opacity: 0;\n      }\n    }\n  }\n}\n\n.glitch {\n  $animation-duration: var(--animation-duration, 8s);\n  animation: glitch $animation-duration ease-in infinite;\n  @keyframes glitch {\n    0% {\n      transform: skewX(15deg);\n    }\n    0.3% {\n      transform: skewX(0deg);\n      filter: brightness(1);\n    }\n    0.6% {\n      transform: skewX(20deg);\n      filter: brightness(1.5);\n    }\n    0.8% {\n      transform: skewX(0deg);\n      filter: brightness(1);\n    }\n    50% {\n      transform: skewX(0deg);\n      opacity: 1;\n    }\n    50.1% {\n      transform: skewX(15deg);\n      opacity: 0.5;\n    }\n    50.4% {\n      transform: skewX(2deg);\n    }\n    51% {\n      transform: skewX(0deg);\n      opacity: 1;\n    }\n    55% {\n      transform: skewX(0deg);\n    }\n    99% {\n      transform: skewX(0deg);\n    }\n  }\n}\n",
+                    "styleUrl": "../../lib/styles/vault-tec.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "SymbolRevealDirectiveDemo",
+            "id": "component-SymbolRevealDirectiveDemo-613a91add17028ef5af37edd595821e5ebfc10d9917a8f68483483b2ccaf0712a7fbd3100f13bead7d3a641f94c065e9d98f6c7c07d4852702897f545eda1482",
+            "file": "projects/gayo-lib/src/stories/vault-tec/symbol-reveal.directive.stories.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "styleUrls": [
+                "../../lib/styles/vault-tec.scss"
+            ],
+            "styles": [],
+            "template": "<p vtSymbolReveal >Je suis un texte avec un effet de SymbolReveal.</p>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from \"@angular/core\";\nimport { Meta, moduleMetadata, StoryObj } from \"@storybook/angular\";\nimport { SymbolRevealDirective } from \"../../lib/directives/symbol-reveal.directive\";\n\n@Component({\n    template: `<p vtSymbolReveal >Je suis un texte avec un effet de SymbolReveal.</p>`,\n    styleUrls: ['../../lib/styles/vault-tec.scss']\n})\n\nclass SymbolRevealDirectiveDemo {\n}\n\n\n// --- Stories ---\n\n\nconst meta:Meta<SymbolRevealDirectiveDemo> = {\n    title: 'VAULT-TEC/Directives/SymbolReveal',\n    component: SymbolRevealDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [SymbolRevealDirective],\n        }),\n    ],\n    argTypes: {\n        txt: { control: 'text' },\n    },\n};\n\n\nexport default meta;\n\ntype Story = StoryObj<SymbolRevealDirectiveDemo>;\n\n\nexport const Default: Story = {}",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "$pipboy: #2dc92d;\n$pipboy-light: #2dc92d49;\n$background: #1a1a1a;\n\n@font-face {\n  font-family: \"Space Mono\", monospace;\n  src: url(\"https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Share+Tech&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap\");\n}\n\n$font-size-small: 12px;\n$font-size-medium: 16px;\n$font-size-large: 22px;\n\n* {\n  font-family: \"Space Mono\", monospace;\n  color: $pipboy;\n  margin: 0;\n  padding: 0;\n  text-decoration: none;\n\n  &::-webkit-scrollbar {\n    width: 4px;\n  }\n\n  &::-webkit-scrollbar-track {\n    background: transparent;\n  }\n\n  &::-webkit-scrollbar-thumb {\n    background: $pipboy;\n    border-radius: 4px;\n  }\n}\n\np {\n  line-height: 120%;\n}\n\n.no-event {\n  pointer-events: none;\n  user-select: none;\n}\n\n.typing-effet {\n  position: relative;\n  &::after {\n    content: \"\";\n    animation: typing 1s infinite;\n    display: block;\n    position: absolute;\n    right: -16px;\n    bottom: 0;\n    width: 16px;\n    height: 2px;\n    background: $pipboy;\n    \n    @keyframes typing {\n      0% {\n        opacity: 0;\n      }\n      49% {\n        opacity: 0;\n      }\n      50% {\n        opacity: 1;\n      }\n      99% {\n        opacity: 1;\n      }\n      100% {\n        opacity: 0;\n      }\n    }\n  }\n}\n\n.glitch {\n  $animation-duration: var(--animation-duration, 8s);\n  animation: glitch $animation-duration ease-in infinite;\n  @keyframes glitch {\n    0% {\n      transform: skewX(15deg);\n    }\n    0.3% {\n      transform: skewX(0deg);\n      filter: brightness(1);\n    }\n    0.6% {\n      transform: skewX(20deg);\n      filter: brightness(1.5);\n    }\n    0.8% {\n      transform: skewX(0deg);\n      filter: brightness(1);\n    }\n    50% {\n      transform: skewX(0deg);\n      opacity: 1;\n    }\n    50.1% {\n      transform: skewX(15deg);\n      opacity: 0.5;\n    }\n    50.4% {\n      transform: skewX(2deg);\n    }\n    51% {\n      transform: skewX(0deg);\n      opacity: 1;\n    }\n    55% {\n      transform: skewX(0deg);\n    }\n    99% {\n      transform: skewX(0deg);\n    }\n  }\n}\n",
+                    "styleUrl": "../../lib/styles/vault-tec.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "TypingEffectDirectiveDemo",
+            "id": "component-TypingEffectDirectiveDemo-8aaa77bba5d82e9eec0a82ed00e71daf8f4e928b7e48d92020b504f85313079ca14f65bef1d1454ecae641750c8940681b37bb68e22d580d0808c3c4120bc407",
+            "file": "projects/gayo-lib/src/stories/vault-tec/typing-effect.directive.stories.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "styleUrls": [
+                "../../lib/styles/vault-tec.scss"
+            ],
+            "styles": [],
+            "template": "<p vtTypingEffet class=\"text-3xl font-bold underline\">Hello world! i'm typing effect</p>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from \"@angular/core\";\nimport { Meta, moduleMetadata, StoryObj } from \"@storybook/angular\";\nimport { TypingEffetDirective } from \"../../lib/directives/typing-effet.directive\";\n\n\n@Component({\n    template: `\n        <p vtTypingEffet class=\"text-3xl font-bold underline\">Hello world! i'm typing effect</p>\n    `,  \n    styleUrls: ['../../lib/styles/vault-tec.scss']\n})\n\nclass TypingEffectDirectiveDemo {}\n\n\n//  --- Stories ---\n\n\nconst meta:Meta<TypingEffectDirectiveDemo> = {\n    title: 'VAULT-TEC/Directives/TypingEffectDirective',\n    component: TypingEffectDirectiveDemo,\n    tags: ['autodocs'],\n    decorators: [\n        moduleMetadata({\n            imports: [TypingEffetDirective],\n        }),\n    ]\n};\n\nexport default meta;\ntype Story = StoryObj<TypingEffectDirectiveDemo>\nexport const Default: Story = {};",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "$pipboy: #2dc92d;\n$pipboy-light: #2dc92d49;\n$background: #1a1a1a;\n\n@font-face {\n  font-family: \"Space Mono\", monospace;\n  src: url(\"https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Share+Tech&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap\");\n}\n\n$font-size-small: 12px;\n$font-size-medium: 16px;\n$font-size-large: 22px;\n\n* {\n  font-family: \"Space Mono\", monospace;\n  color: $pipboy;\n  margin: 0;\n  padding: 0;\n  text-decoration: none;\n\n  &::-webkit-scrollbar {\n    width: 4px;\n  }\n\n  &::-webkit-scrollbar-track {\n    background: transparent;\n  }\n\n  &::-webkit-scrollbar-thumb {\n    background: $pipboy;\n    border-radius: 4px;\n  }\n}\n\np {\n  line-height: 120%;\n}\n\n.no-event {\n  pointer-events: none;\n  user-select: none;\n}\n\n.typing-effet {\n  position: relative;\n  &::after {\n    content: \"\";\n    animation: typing 1s infinite;\n    display: block;\n    position: absolute;\n    right: -16px;\n    bottom: 0;\n    width: 16px;\n    height: 2px;\n    background: $pipboy;\n    \n    @keyframes typing {\n      0% {\n        opacity: 0;\n      }\n      49% {\n        opacity: 0;\n      }\n      50% {\n        opacity: 1;\n      }\n      99% {\n        opacity: 1;\n      }\n      100% {\n        opacity: 0;\n      }\n    }\n  }\n}\n\n.glitch {\n  $animation-duration: var(--animation-duration, 8s);\n  animation: glitch $animation-duration ease-in infinite;\n  @keyframes glitch {\n    0% {\n      transform: skewX(15deg);\n    }\n    0.3% {\n      transform: skewX(0deg);\n      filter: brightness(1);\n    }\n    0.6% {\n      transform: skewX(20deg);\n      filter: brightness(1.5);\n    }\n    0.8% {\n      transform: skewX(0deg);\n      filter: brightness(1);\n    }\n    50% {\n      transform: skewX(0deg);\n      opacity: 1;\n    }\n    50.1% {\n      transform: skewX(15deg);\n      opacity: 0.5;\n    }\n    50.4% {\n      transform: skewX(2deg);\n    }\n    51% {\n      transform: skewX(0deg);\n      opacity: 1;\n    }\n    55% {\n      transform: skewX(0deg);\n    }\n    99% {\n      transform: skewX(0deg);\n    }\n  }\n}\n",
+                    "styleUrl": "../../lib/styles/vault-tec.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        }
+    ],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "Agility",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    description:\n      \"Vous pratiquez régulièrement des triples saltos arrière, en haut des buildings du coin. Il est aisé pour vous de vous déplacer dans n'importe quel environnement ? Vous êtes Agile, bravo.\",\n    perkName: 'agility',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "BougieDeDebutant",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    cardName: 'bougie de débutant',\n    diceNumbers: [6,8],\n    id:71\n  }\n}"
+            },
+            {
+                "name": "Boy",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: { \n        cardName: 'roméo',\n        diceNumber: 8,\n        type: 'boy',\n        effect: 'Pour chacune de vos FILLES récoltez une âme.'\n    }\n}"
+            },
+            {
+                "name": "Charisma",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    description:\n      \"Don Juan n'a qu'à bien se tenir, vous êtes le poète que Jean de la Fontaine n'a jamais été. Vous obtenez ce que vous voulez par la parole. Charismatique est la qualité qui vous définit c'est certain.\",\n    perkName: 'charisma',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "CheckedCheckbox",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...SimpleCheckbox.args,\n    checked: true,\n  },\n}"
+            },
+            {
+                "name": "CheckedRadio",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...SimpleRadio.args,\n    checked: true,\n  },\n}"
+            },
+            {
+                "name": "CiergeDiabolique",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    cardName: 'cierge diabolique',\n    diceNumbers: [9,10,11],\n    id:73\n  }\n}"
+            },
+            {
+                "name": "CiergeMalefique",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    cardName: 'cierge maléfique',\n    diceNumbers: [8,9],\n    id:72,\n  }\n}"
+            },
+            {
+                "name": "colors",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/folder-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...Default.args,\n    colors: ['#f2f7f2', '#d9e6d9', '#c0d6c0', '#a7c5a7', '#8eb58e']\n  } \n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/folder-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    tabs: [\n      {\n        title: 'Histoires',\n        content:\n          'Histoires laborum maiores mollitia dignissimos dolorum ullam atque. Velit totam explicabo at dignissimos eligendi amet reiciendis, quidem quasi repellendus?',\n        id: 0,\n      },\n      {\n        title: 'Secrets',\n        content:\n          'Secrets molestiae corporis error quas quo sapiente vitae tenetur doloremque sunt suscipit fugit dicta. Perferendis cumque repellendus eaque totam tempore nesciunt nulla reiciendis.',\n        id: 1,\n      },\n      {\n        title: 'Paléontologie',\n        content:\n          'Paléontologie Ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\n        id: 2,\n      },\n    ],\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/glitch.directive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    duration: 6,\n    delay: null,\n    text: 'Ceci est un texte avec effet de glitch',\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/swipe-char.directive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/symbol-reveal.directive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/typing-effect.directive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "Demo",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    size:'small'\n  },\n  render: (args) => ({\n    props: {\n      ...args,\n    },\n    template: `\n       <div style=\"display: flex; flex-direction: column; flex-wrap: wrap;  gap: 16px; font-family: Monospace; color: #2dc92d\">\n\n            <h2>Je veux en savoir plus</h2>\n            lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !\n\n            <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px; font-family: Monospace; color: #2dc92d\">\n            <vt-btn ${argsToTemplate(args)}>Je veux en savoir plus</vt-btn>\n           <vt-btn ${argsToTemplate(args)} [stroke]=\"true\">continuer</vt-btn>\n            </div>\n        </div>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'Disabled',\n    disabled: true,\n  },\n}"
+            },
+            {
+                "name": "DisabledCheckbox",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...SimpleCheckbox.args,\n    disabled: true,\n  },\n}"
+            },
+            {
+                "name": "DisabledRadio",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...SimpleRadio.args,\n    disabled: true,\n  },\n}"
+            },
+            {
+                "name": "DouceBougie",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    cardName: 'douce bougie',\n    diceNumbers: [5,6],\n    id:70\n  }\n}"
+            },
+            {
+                "name": "EasySudoku",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    difficulty: 'easy',\n  },\n}"
+            },
+            {
+                "name": "Endurance",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    description:\n      \"Les femmes gardent un bon souvenir de vos amplitudes d'effort et/ou un marathon ressemble à une balade de mamie pour digérer le repas du dimanche midi ? L'Endurance c'est votre truc, ça ne fait aucun doute.\",\n    perkName: 'endurance',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "GentilleBougie",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    cardName: 'gentille bougie',\n    diceNumbers: [3,4,5],\n    id:69\n  }\n}"
+            },
+            {
+                "name": "Girl",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: { \n        cardName: 'eve',\n        diceNumber: 2,\n        type: 'girl',\n        effect: 'Récoltez une âme.'\n    }\n}"
+            },
+            {
+                "name": "HardSudoku",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    difficulty: 'hard',\n  },\n}"
+            },
+            {
+                "name": "Intelligence",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    description:\n      \"Les plus grands génies des dernières décennies disent avoir tout appris rien qu'en passant du temps avec vous. Vous transpirez des équations et des encyclopédies. Vous êtes quelqu'un d'Intelligent c'est indéniable.\",\n    perkName: 'intelligence',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "Large",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'Subscribe',\n    size: 'large',\n  },\n}"
+            },
+            {
+                "name": "Loading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'Loading',\n    loading: true,\n  },\n}"
+            },
+            {
+                "name": "Luck",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    description:\n      \"Le loto ? Vous l'avez gagné quatre fois le mois dernier. Souvent vous trouvez 50 balles sur le pas de votre porte, ou un accès pour nos abris Vault-Tec. Veinard vous êtes la Chance en personne.\",\n    perkName: 'luck',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "MediumSudoku",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    difficulty: 'medium',\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/folder-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<FolderCardComponent>",
+                "defaultValue": "{\n  title: 'FolderApp/FolderCard',\n  component: FolderCardComponent,\n  tags: ['autodocs'],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<CandleCardComponent>",
+                "defaultValue": "{\n    title:'SummonDemon/CandleCard',\n    component:CandleCardComponent,\n    tags: ['autodocs'],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<EntityCardComponent>",
+                "defaultValue": "{\n    title: 'SummonDemon/EntityCard',\n    component: EntityCardComponent,\n    tags: ['autodocs'],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<SmallCardAndCustomArgs>",
+                "defaultValue": "{\n  title: 'SummonDemon/SmallCard',\n  component: SmallCardComponent,\n  render: ({ content, ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `<lsd-small-card ${argsToTemplate(args)}>${content}</lsd-small-card>`,\n    imports: [EntityCardComponent]\n  }),\n  tags: ['autodocs'],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/advice-block.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<AdviceBlockCustomArgs>",
+                "defaultValue": "{\n    title:'Vault-Tec/AdviceBlock',\n    component:AdviceBlockComponent,\n    tags: ['autodocs'],\n    render: ({ content, ...args}) => ({\n        props:{\n            ...args,\n        },\n        template: `<vt-advice-block ${argsToTemplate(args)}>${content}</vt-advice-block>`,\n    })\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<BtnPropsAndCustomArgs>",
+                "defaultValue": "{\n  title: 'Vault-Tec/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  render: ({ label, ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `<vt-btn ${argsToTemplate(args)}>${label}</vt-btn>`,\n  }),\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<CheckboxComponent>",
+                "defaultValue": "{\n  title: 'Vault-Tec/Checkbox',\n  component: CheckboxComponent,\n  tags: ['autodocs'],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/footer.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<FooterComponent>",
+                "defaultValue": "{\n  title: 'Vault-Tec/Footer',\n  component: FooterComponent,\n  tags: ['autodocs'],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/glitch.directive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<GlitchDirectiveDemo>",
+                "defaultValue": "{\n  title: 'VAULT-TEC/Directives/Glitch',\n  component: GlitchDirectiveDemo,\n  decorators: [\n    moduleMetadata({\n      imports: [GlitchDirective],\n    }),\n  ],\n  argTypes: {\n    duration: { control: { type: 'number', min: 1.5 } },\n    delay: { control: { type: 'number', min: 1000 } },\n    text: { control: 'text' },\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<InputComponent>",
+                "defaultValue": "{\n  title:'Vault-Tec/Input',\n  component:InputComponent,\n  tags: ['autodocs'],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/loader.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<LoaderComponent>",
+                "defaultValue": "{\n  title:'Vault-Tec/Loader',\n  component:LoaderComponent,\n  tags: ['autodocs'],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<PerkCardComponent>",
+                "defaultValue": "{\n  title: 'Vault-Tec/PerkCard',\n  component: PerkCardComponent,\n  tags: ['autodocs'],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<RadioComponent>",
+                "defaultValue": "{\n  title:'Vault-Tec/Radio',\n  component:RadioComponent,\n  tags: ['autodocs'],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/slider.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<SliderComponent>",
+                "defaultValue": "{\n  title:'Vault-Tec/Slider',\n  component:SliderComponent,\n  tags: ['autodocs'],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<SudokuComponent>",
+                "defaultValue": "{\n  title: 'Vault-Tec/Sudoku',\n  component: SudokuComponent,\n  tags: ['autodocs'],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/swipe-char.directive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<SwipeCharDirectiveDemo>",
+                "defaultValue": "{\n  title: 'VAULT-TEC/Directives/SwipeCharDirective',\n  component: SwipeCharDirectiveDemo,\n  decorators: [\n    moduleMetadata({\n      imports: [SwipeCharDirective],\n    }),\n  ],\n  argTypes: {\n    txt: { control: 'text' },\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/symbol-reveal.directive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<SymbolRevealDirectiveDemo>",
+                "defaultValue": "{\n    title: 'VAULT-TEC/Directives/SymbolReveal',\n    component: SymbolRevealDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [SymbolRevealDirective],\n        }),\n    ],\n    argTypes: {\n        txt: { control: 'text' },\n    },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/typing-effect.directive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<TypingEffectDirectiveDemo>",
+                "defaultValue": "{\n    title: 'VAULT-TEC/Directives/TypingEffectDirective',\n    component: TypingEffectDirectiveDemo,\n    tags: ['autodocs'],\n    decorators: [\n        moduleMetadata({\n            imports: [TypingEffetDirective],\n        }),\n    ]\n}"
+            },
+            {
+                "name": "Perception",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    description:\n      'Toujours un oeil dans le dos, vous sentez les mouvements autour de vous ? Vous avez un 6ème sens ou un troisième oeil, la Perception est votre atout !',\n    perkName: 'perception',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "preview",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/.storybook/preview.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Preview",
+                "defaultValue": "{\n  parameters: {\n    backgrounds: {\n      default: 'vault-tec',\n      values: [\n        {\n          name: 'vault-tec',\n          value: '#1a1a1a',\n        },\n      ],\n    },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n}"
+            },
+            {
+                "name": "SimpleAdviceBlock",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/advice-block.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args:{\n        title:'Super Test 42',\n        content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\n    }\n}"
+            },
+            {
+                "name": "SimpleButton",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'S.P.E.C.I.A.L',\n    size: 'medium',\n  },\n}"
+            },
+            {
+                "name": "SimpleCheckbox",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'Simple Checkbox',\n    checked: false,\n  },\n}"
+            },
+            {
+                "name": "SimpleFooter",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/footer.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    footerElements: [\n      {\n        title: 'Section 1',\n        pages: [\n          {\n            title: 'Page 1',\n            url: '/',\n          },\n          {\n            title: 'Page 2',\n            url: '/',\n          },\n          {\n            title: 'Page 3',\n            url: '/',\n          },\n          {\n            title: 'Page 4',\n            url: '/',\n          },\n        ],\n      },\n      {\n        title: 'Section 2',\n        pages: [\n          {\n            title: 'Page 1',\n            url: '/',\n          },\n          {\n            title: 'Page 2',\n            url: '/',\n          },\n          {\n            title: 'Page 3',\n            url: '/',\n          },\n        ],\n      },\n    ],\n    contactFooterElement: {\n      username: 'username',\n      email: 'email@example.com',\n      githubUrl: 'https://github.com',\n      linkedinUrl: 'https://linkedin.com',\n      npmUrl: 'https://npm.com',\n    },\n  },\n}"
+            },
+            {
+                "name": "SimpleInput",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args:{\n      id:'default',\n      label:'Entrez un texte',\n      inputType:'text',\n  }\n}"
+            },
+            {
+                "name": "SimpleLoader",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/loader.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args:{\n      // vos arguments ici\n  }\n}"
+            },
+            {
+                "name": "SimplePerkCard",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    description:\n      \"Vous aimez soulever des gros cailloux ou des gens que vous n'aimez guère ? La Force est déterminée par la circonférence de votre biceps en contraction.\",\n    perkName: 'strength',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "SimpleRadio",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'Simple Radio',\n    checked: false,\n  },\n}"
+            },
+            {
+                "name": "SimpleSlider",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/slider.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args:{\n      id:'default',\n      min:0,\n      max:100,\n      value:50,\n      label:'Slider',\n  }\n}"
+            },
+            {
+                "name": "SimpleSudoku",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    solution: {\n      blocks: [\n        {\n          id: 0,\n          value: [3, 4, 6, 7, 1, 2, 8, 9, 5],\n        },\n        {\n          id: 1,\n          value: [7, 9, 8, 4, 6, 5, 1, 3, 2],\n        },\n        {\n          id: 2,\n          value: [2, 5, 1, 3, 9, 8, 4, 6, 7],\n        },\n        {\n          id: 3,\n          value: [4, 2, 3, 1, 6, 7, 9, 5, 8],\n        },\n        {\n          id: 4,\n          value: [6, 7, 9, 5, 8, 4, 2, 1, 3],\n        },\n        {\n          id: 5,\n          value: [8, 1, 5, 9, 3, 2, 6, 7, 4],\n        },\n        {\n          id: 6,\n          value: [2, 7, 4, 6, 3, 1, 5, 8, 9],\n        },\n        {\n          id: 7,\n          value: [9, 5, 6, 8, 4, 7, 3, 2, 1],\n        },\n        {\n          id: 8,\n          value: [1, 8, 3, 5, 2, 9, 7, 4, 6],\n        },\n      ],\n    },\n    sudokuGrid: {\n      blocks: [\n        {\n          id: 0,\n          value: [null, 4, 6, 7, 1, 2, 8, 9, 5],\n        },\n        {\n          id: 1,\n          value: [7, 9, 8, 4, 6, 5, 1, 3, 2],\n        },\n        {\n          id: 2,\n          value: [2, 5, 1, 3, 9, 8, 4, 6, 7],\n        },\n        {\n          id: 3,\n          value: [4, 2, 3, 1, 6, 7, 9, 5, 8],\n        },\n        {\n          id: 4,\n          value: [6, 7, 9, 5, 8, 4, 2, 1, 3],\n        },\n        {\n          id: 5,\n          value: [8, 1, 5, 9, 3, 2, 6, 7, 4],\n        },\n        {\n          id: 6,\n          value: [2, 7, 4, 6, 3, 1, 5, 8, 9],\n        },\n        {\n          id: 7,\n          value: [9, 5, 6, 8, 4, 7, 3, 2, 1],\n        },\n        {\n          id: 8,\n          value: [1, 8, 3, 5, 2, 9, 7, 4, 6],\n        },\n      ],\n    },\n    reference: {\n      blocks: [\n        {\n          id: 0,\n          value: [null, 4, 6, 7, 1, 2, 8, 9, 5],\n        },\n        {\n          id: 1,\n          value: [7, 9, 8, 4, 6, 5, 1, 3, 2],\n        },\n        {\n          id: 2,\n          value: [2, 5, 1, 3, 9, 8, 4, 6, 7],\n        },\n        {\n          id: 3,\n          value: [4, 2, 3, 1, 6, 7, 9, 5, 8],\n        },\n        {\n          id: 4,\n          value: [6, 7, 9, 5, 8, 4, 2, 1, 3],\n        },\n        {\n          id: 5,\n          value: [8, 1, 5, 9, 3, 2, 6, 7, 4],\n        },\n        {\n          id: 6,\n          value: [2, 7, 4, 6, 3, 1, 5, 8, 9],\n        },\n        {\n          id: 7,\n          value: [9, 5, 6, 8, 4, 7, 3, 2, 1],\n        },\n        {\n          id: 8,\n          value: [1, 8, 3, 5, 2, 9, 7, 4, 6],\n        },\n      ],\n    },\n  },\n}"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'Subscribe',\n    size: 'small',\n  },\n}"
+            },
+            {
+                "name": "SmallCard",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    content: `\n            <div style=\"height:15rem;min-width:10rem;background:#F4F7F9; border-radius:0.5rem;\"></div>\n        `,\n  },\n}"
+            },
+            {
+                "name": "SmallCard2",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    content: `\n     <lsd-candle-card\n    [cardName]=\"'Bougie de débutant'\"\n    [diceNumber]=\"[6, 5, 4]\"\n    ></lsd-candle-card>\n    `\n  },\n}"
+            },
+            {
+                "name": "SubcribeButton",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'Subscribe',\n  },\n}"
+            },
+            {
+                "name": "WithDelay",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/glitch.directive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ...Default.args,\n    delay: 6000,\n  },\n}"
+            },
+            {
+                "name": "WitoutLabel",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {},\n}"
+            },
+            {
+                "name": "WitoutLabel",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {},\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [
+            {
+                "name": "AdviceBlockCustomArgs",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "projects/gayo-lib/src/stories/vault-tec/advice-block.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "BtnPropsAndCustomArgs",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "SmallCardAndCustomArgs",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<FolderCardComponent>",
+                "file": "projects/gayo-lib/src/stories/folder-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<CandleCardComponent>",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<EntityCardComponent>",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<SmallCardAndCustomArgs>",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<AdviceBlockCustomArgs>",
+                "file": "projects/gayo-lib/src/stories/vault-tec/advice-block.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<BtnPropsAndCustomArgs>",
+                "file": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<CheckboxComponent>",
+                "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<FooterComponent>",
+                "file": "projects/gayo-lib/src/stories/vault-tec/footer.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<GlitchDirectiveDemo>",
+                "file": "projects/gayo-lib/src/stories/vault-tec/glitch.directive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<InputComponent>",
+                "file": "projects/gayo-lib/src/stories/vault-tec/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<LoaderComponent>",
+                "file": "projects/gayo-lib/src/stories/vault-tec/loader.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<PerkCardComponent>",
+                "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<RadioComponent>",
+                "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<SliderComponent>",
+                "file": "projects/gayo-lib/src/stories/vault-tec/slider.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<SudokuComponent>",
+                "file": "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<SwipeCharDirectiveDemo>",
+                "file": "projects/gayo-lib/src/stories/vault-tec/swipe-char.directive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<SymbolRevealDirectiveDemo>",
+                "file": "projects/gayo-lib/src/stories/vault-tec/symbol-reveal.directive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<TypingEffectDirectiveDemo>",
+                "file": "projects/gayo-lib/src/stories/vault-tec/typing-effect.directive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            }
+        ],
+        "enumerations": [],
+        "groupedVariables": {
+            "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts": [
+                {
+                    "name": "Agility",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    description:\n      \"Vous pratiquez régulièrement des triples saltos arrière, en haut des buildings du coin. Il est aisé pour vous de vous déplacer dans n'importe quel environnement ? Vous êtes Agile, bravo.\",\n    perkName: 'agility',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "Charisma",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    description:\n      \"Don Juan n'a qu'à bien se tenir, vous êtes le poète que Jean de la Fontaine n'a jamais été. Vous obtenez ce que vous voulez par la parole. Charismatique est la qualité qui vous définit c'est certain.\",\n    perkName: 'charisma',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "Endurance",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    description:\n      \"Les femmes gardent un bon souvenir de vos amplitudes d'effort et/ou un marathon ressemble à une balade de mamie pour digérer le repas du dimanche midi ? L'Endurance c'est votre truc, ça ne fait aucun doute.\",\n    perkName: 'endurance',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "Intelligence",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    description:\n      \"Les plus grands génies des dernières décennies disent avoir tout appris rien qu'en passant du temps avec vous. Vous transpirez des équations et des encyclopédies. Vous êtes quelqu'un d'Intelligent c'est indéniable.\",\n    perkName: 'intelligence',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "Luck",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    description:\n      \"Le loto ? Vous l'avez gagné quatre fois le mois dernier. Souvent vous trouvez 50 balles sur le pas de votre porte, ou un accès pour nos abris Vault-Tec. Veinard vous êtes la Chance en personne.\",\n    perkName: 'luck',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<PerkCardComponent>",
+                    "defaultValue": "{\n  title: 'Vault-Tec/PerkCard',\n  component: PerkCardComponent,\n  tags: ['autodocs'],\n}"
+                },
+                {
+                    "name": "Perception",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    description:\n      'Toujours un oeil dans le dos, vous sentez les mouvements autour de vous ? Vous avez un 6ème sens ou un troisième oeil, la Perception est votre atout !',\n    perkName: 'perception',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "SimplePerkCard",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    description:\n      \"Vous aimez soulever des gros cailloux ou des gens que vous n'aimez guère ? La Force est déterminée par la circonférence de votre biceps en contraction.\",\n    perkName: 'strength',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+                }
+            ],
+            "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts": [
+                {
+                    "name": "BougieDeDebutant",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    cardName: 'bougie de débutant',\n    diceNumbers: [6,8],\n    id:71\n  }\n}"
+                },
+                {
+                    "name": "CiergeDiabolique",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    cardName: 'cierge diabolique',\n    diceNumbers: [9,10,11],\n    id:73\n  }\n}"
+                },
+                {
+                    "name": "CiergeMalefique",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    cardName: 'cierge maléfique',\n    diceNumbers: [8,9],\n    id:72,\n  }\n}"
+                },
+                {
+                    "name": "DouceBougie",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    cardName: 'douce bougie',\n    diceNumbers: [5,6],\n    id:70\n  }\n}"
+                },
+                {
+                    "name": "GentilleBougie",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    cardName: 'gentille bougie',\n    diceNumbers: [3,4,5],\n    id:69\n  }\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<CandleCardComponent>",
+                    "defaultValue": "{\n    title:'SummonDemon/CandleCard',\n    component:CandleCardComponent,\n    tags: ['autodocs'],\n}"
+                }
+            ],
+            "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts": [
+                {
+                    "name": "Boy",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: { \n        cardName: 'roméo',\n        diceNumber: 8,\n        type: 'boy',\n        effect: 'Pour chacune de vos FILLES récoltez une âme.'\n    }\n}"
+                },
+                {
+                    "name": "Girl",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: { \n        cardName: 'eve',\n        diceNumber: 2,\n        type: 'girl',\n        effect: 'Récoltez une âme.'\n    }\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<EntityCardComponent>",
+                    "defaultValue": "{\n    title: 'SummonDemon/EntityCard',\n    component: EntityCardComponent,\n    tags: ['autodocs'],\n}"
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts": [
+                {
+                    "name": "CheckedCheckbox",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...SimpleCheckbox.args,\n    checked: true,\n  },\n}"
+                },
+                {
+                    "name": "DisabledCheckbox",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...SimpleCheckbox.args,\n    disabled: true,\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<CheckboxComponent>",
+                    "defaultValue": "{\n  title: 'Vault-Tec/Checkbox',\n  component: CheckboxComponent,\n  tags: ['autodocs'],\n}"
+                },
+                {
+                    "name": "SimpleCheckbox",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'Simple Checkbox',\n    checked: false,\n  },\n}"
+                },
+                {
+                    "name": "WitoutLabel",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {},\n}"
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts": [
+                {
+                    "name": "CheckedRadio",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...SimpleRadio.args,\n    checked: true,\n  },\n}"
+                },
+                {
+                    "name": "DisabledRadio",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...SimpleRadio.args,\n    disabled: true,\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<RadioComponent>",
+                    "defaultValue": "{\n  title:'Vault-Tec/Radio',\n  component:RadioComponent,\n  tags: ['autodocs'],\n}"
+                },
+                {
+                    "name": "SimpleRadio",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'Simple Radio',\n    checked: false,\n  },\n}"
+                },
+                {
+                    "name": "WitoutLabel",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {},\n}"
+                }
+            ],
+            "projects/gayo-lib/src/stories/folder-card.stories.ts": [
+                {
+                    "name": "colors",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/folder-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...Default.args,\n    colors: ['#f2f7f2', '#d9e6d9', '#c0d6c0', '#a7c5a7', '#8eb58e']\n  } \n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/folder-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    tabs: [\n      {\n        title: 'Histoires',\n        content:\n          'Histoires laborum maiores mollitia dignissimos dolorum ullam atque. Velit totam explicabo at dignissimos eligendi amet reiciendis, quidem quasi repellendus?',\n        id: 0,\n      },\n      {\n        title: 'Secrets',\n        content:\n          'Secrets molestiae corporis error quas quo sapiente vitae tenetur doloremque sunt suscipit fugit dicta. Perferendis cumque repellendus eaque totam tempore nesciunt nulla reiciendis.',\n        id: 1,\n      },\n      {\n        title: 'Paléontologie',\n        content:\n          'Paléontologie Ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\n        id: 2,\n      },\n    ],\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/folder-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<FolderCardComponent>",
+                    "defaultValue": "{\n  title: 'FolderApp/FolderCard',\n  component: FolderCardComponent,\n  tags: ['autodocs'],\n}"
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/glitch.directive.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/glitch.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    duration: 6,\n    delay: null,\n    text: 'Ceci est un texte avec effet de glitch',\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/glitch.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<GlitchDirectiveDemo>",
+                    "defaultValue": "{\n  title: 'VAULT-TEC/Directives/Glitch',\n  component: GlitchDirectiveDemo,\n  decorators: [\n    moduleMetadata({\n      imports: [GlitchDirective],\n    }),\n  ],\n  argTypes: {\n    duration: { control: { type: 'number', min: 1.5 } },\n    delay: { control: { type: 'number', min: 1000 } },\n    text: { control: 'text' },\n  },\n}"
+                },
+                {
+                    "name": "WithDelay",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/glitch.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ...Default.args,\n    delay: 6000,\n  },\n}"
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/swipe-char.directive.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/swipe-char.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/swipe-char.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<SwipeCharDirectiveDemo>",
+                    "defaultValue": "{\n  title: 'VAULT-TEC/Directives/SwipeCharDirective',\n  component: SwipeCharDirectiveDemo,\n  decorators: [\n    moduleMetadata({\n      imports: [SwipeCharDirective],\n    }),\n  ],\n  argTypes: {\n    txt: { control: 'text' },\n  },\n}"
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/symbol-reveal.directive.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/symbol-reveal.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/symbol-reveal.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<SymbolRevealDirectiveDemo>",
+                    "defaultValue": "{\n    title: 'VAULT-TEC/Directives/SymbolReveal',\n    component: SymbolRevealDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [SymbolRevealDirective],\n        }),\n    ],\n    argTypes: {\n        txt: { control: 'text' },\n    },\n}"
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/typing-effect.directive.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/typing-effect.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/typing-effect.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<TypingEffectDirectiveDemo>",
+                    "defaultValue": "{\n    title: 'VAULT-TEC/Directives/TypingEffectDirective',\n    component: TypingEffectDirectiveDemo,\n    tags: ['autodocs'],\n    decorators: [\n        moduleMetadata({\n            imports: [TypingEffetDirective],\n        }),\n    ]\n}"
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/button.stories.ts": [
+                {
+                    "name": "Demo",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    size:'small'\n  },\n  render: (args) => ({\n    props: {\n      ...args,\n    },\n    template: `\n       <div style=\"display: flex; flex-direction: column; flex-wrap: wrap;  gap: 16px; font-family: Monospace; color: #2dc92d\">\n\n            <h2>Je veux en savoir plus</h2>\n            lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !\n\n            <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px; font-family: Monospace; color: #2dc92d\">\n            <vt-btn ${argsToTemplate(args)}>Je veux en savoir plus</vt-btn>\n           <vt-btn ${argsToTemplate(args)} [stroke]=\"true\">continuer</vt-btn>\n            </div>\n        </div>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'Disabled',\n    disabled: true,\n  },\n}"
+                },
+                {
+                    "name": "Large",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'Subscribe',\n    size: 'large',\n  },\n}"
+                },
+                {
+                    "name": "Loading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'Loading',\n    loading: true,\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<BtnPropsAndCustomArgs>",
+                    "defaultValue": "{\n  title: 'Vault-Tec/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  render: ({ label, ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `<vt-btn ${argsToTemplate(args)}>${label}</vt-btn>`,\n  }),\n}"
+                },
+                {
+                    "name": "SimpleButton",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'S.P.E.C.I.A.L',\n    size: 'medium',\n  },\n}"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'Subscribe',\n    size: 'small',\n  },\n}"
+                },
+                {
+                    "name": "SubcribeButton",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'Subscribe',\n  },\n}"
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts": [
+                {
+                    "name": "EasySudoku",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    difficulty: 'easy',\n  },\n}"
+                },
+                {
+                    "name": "HardSudoku",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    difficulty: 'hard',\n  },\n}"
+                },
+                {
+                    "name": "MediumSudoku",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    difficulty: 'medium',\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<SudokuComponent>",
+                    "defaultValue": "{\n  title: 'Vault-Tec/Sudoku',\n  component: SudokuComponent,\n  tags: ['autodocs'],\n}"
+                },
+                {
+                    "name": "SimpleSudoku",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    solution: {\n      blocks: [\n        {\n          id: 0,\n          value: [3, 4, 6, 7, 1, 2, 8, 9, 5],\n        },\n        {\n          id: 1,\n          value: [7, 9, 8, 4, 6, 5, 1, 3, 2],\n        },\n        {\n          id: 2,\n          value: [2, 5, 1, 3, 9, 8, 4, 6, 7],\n        },\n        {\n          id: 3,\n          value: [4, 2, 3, 1, 6, 7, 9, 5, 8],\n        },\n        {\n          id: 4,\n          value: [6, 7, 9, 5, 8, 4, 2, 1, 3],\n        },\n        {\n          id: 5,\n          value: [8, 1, 5, 9, 3, 2, 6, 7, 4],\n        },\n        {\n          id: 6,\n          value: [2, 7, 4, 6, 3, 1, 5, 8, 9],\n        },\n        {\n          id: 7,\n          value: [9, 5, 6, 8, 4, 7, 3, 2, 1],\n        },\n        {\n          id: 8,\n          value: [1, 8, 3, 5, 2, 9, 7, 4, 6],\n        },\n      ],\n    },\n    sudokuGrid: {\n      blocks: [\n        {\n          id: 0,\n          value: [null, 4, 6, 7, 1, 2, 8, 9, 5],\n        },\n        {\n          id: 1,\n          value: [7, 9, 8, 4, 6, 5, 1, 3, 2],\n        },\n        {\n          id: 2,\n          value: [2, 5, 1, 3, 9, 8, 4, 6, 7],\n        },\n        {\n          id: 3,\n          value: [4, 2, 3, 1, 6, 7, 9, 5, 8],\n        },\n        {\n          id: 4,\n          value: [6, 7, 9, 5, 8, 4, 2, 1, 3],\n        },\n        {\n          id: 5,\n          value: [8, 1, 5, 9, 3, 2, 6, 7, 4],\n        },\n        {\n          id: 6,\n          value: [2, 7, 4, 6, 3, 1, 5, 8, 9],\n        },\n        {\n          id: 7,\n          value: [9, 5, 6, 8, 4, 7, 3, 2, 1],\n        },\n        {\n          id: 8,\n          value: [1, 8, 3, 5, 2, 9, 7, 4, 6],\n        },\n      ],\n    },\n    reference: {\n      blocks: [\n        {\n          id: 0,\n          value: [null, 4, 6, 7, 1, 2, 8, 9, 5],\n        },\n        {\n          id: 1,\n          value: [7, 9, 8, 4, 6, 5, 1, 3, 2],\n        },\n        {\n          id: 2,\n          value: [2, 5, 1, 3, 9, 8, 4, 6, 7],\n        },\n        {\n          id: 3,\n          value: [4, 2, 3, 1, 6, 7, 9, 5, 8],\n        },\n        {\n          id: 4,\n          value: [6, 7, 9, 5, 8, 4, 2, 1, 3],\n        },\n        {\n          id: 5,\n          value: [8, 1, 5, 9, 3, 2, 6, 7, 4],\n        },\n        {\n          id: 6,\n          value: [2, 7, 4, 6, 3, 1, 5, 8, 9],\n        },\n        {\n          id: 7,\n          value: [9, 5, 6, 8, 4, 7, 3, 2, 1],\n        },\n        {\n          id: 8,\n          value: [1, 8, 3, 5, 2, 9, 7, 4, 6],\n        },\n      ],\n    },\n  },\n}"
+                }
+            ],
+            "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<SmallCardAndCustomArgs>",
+                    "defaultValue": "{\n  title: 'SummonDemon/SmallCard',\n  component: SmallCardComponent,\n  render: ({ content, ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `<lsd-small-card ${argsToTemplate(args)}>${content}</lsd-small-card>`,\n    imports: [EntityCardComponent]\n  }),\n  tags: ['autodocs'],\n}"
+                },
+                {
+                    "name": "SmallCard",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    content: `\n            <div style=\"height:15rem;min-width:10rem;background:#F4F7F9; border-radius:0.5rem;\"></div>\n        `,\n  },\n}"
+                },
+                {
+                    "name": "SmallCard2",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    content: `\n     <lsd-candle-card\n    [cardName]=\"'Bougie de débutant'\"\n    [diceNumber]=\"[6, 5, 4]\"\n    ></lsd-candle-card>\n    `\n  },\n}"
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/advice-block.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/advice-block.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<AdviceBlockCustomArgs>",
+                    "defaultValue": "{\n    title:'Vault-Tec/AdviceBlock',\n    component:AdviceBlockComponent,\n    tags: ['autodocs'],\n    render: ({ content, ...args}) => ({\n        props:{\n            ...args,\n        },\n        template: `<vt-advice-block ${argsToTemplate(args)}>${content}</vt-advice-block>`,\n    })\n}"
+                },
+                {
+                    "name": "SimpleAdviceBlock",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/advice-block.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args:{\n        title:'Super Test 42',\n        content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\n    }\n}"
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/footer.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/footer.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<FooterComponent>",
+                    "defaultValue": "{\n  title: 'Vault-Tec/Footer',\n  component: FooterComponent,\n  tags: ['autodocs'],\n}"
+                },
+                {
+                    "name": "SimpleFooter",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/footer.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    footerElements: [\n      {\n        title: 'Section 1',\n        pages: [\n          {\n            title: 'Page 1',\n            url: '/',\n          },\n          {\n            title: 'Page 2',\n            url: '/',\n          },\n          {\n            title: 'Page 3',\n            url: '/',\n          },\n          {\n            title: 'Page 4',\n            url: '/',\n          },\n        ],\n      },\n      {\n        title: 'Section 2',\n        pages: [\n          {\n            title: 'Page 1',\n            url: '/',\n          },\n          {\n            title: 'Page 2',\n            url: '/',\n          },\n          {\n            title: 'Page 3',\n            url: '/',\n          },\n        ],\n      },\n    ],\n    contactFooterElement: {\n      username: 'username',\n      email: 'email@example.com',\n      githubUrl: 'https://github.com',\n      linkedinUrl: 'https://linkedin.com',\n      npmUrl: 'https://npm.com',\n    },\n  },\n}"
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/input.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<InputComponent>",
+                    "defaultValue": "{\n  title:'Vault-Tec/Input',\n  component:InputComponent,\n  tags: ['autodocs'],\n}"
+                },
+                {
+                    "name": "SimpleInput",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args:{\n      id:'default',\n      label:'Entrez un texte',\n      inputType:'text',\n  }\n}"
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/loader.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/loader.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<LoaderComponent>",
+                    "defaultValue": "{\n  title:'Vault-Tec/Loader',\n  component:LoaderComponent,\n  tags: ['autodocs'],\n}"
+                },
+                {
+                    "name": "SimpleLoader",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/loader.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args:{\n      // vos arguments ici\n  }\n}"
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/slider.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/slider.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<SliderComponent>",
+                    "defaultValue": "{\n  title:'Vault-Tec/Slider',\n  component:SliderComponent,\n  tags: ['autodocs'],\n}"
+                },
+                {
+                    "name": "SimpleSlider",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/slider.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args:{\n      id:'default',\n      min:0,\n      max:100,\n      value:50,\n      label:'Slider',\n  }\n}"
+                }
+            ],
+            "projects/gayo-lib/.storybook/preview.ts": [
+                {
+                    "name": "preview",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/.storybook/preview.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Preview",
+                    "defaultValue": "{\n  parameters: {\n    backgrounds: {\n      default: 'vault-tec',\n      values: [\n        {\n          name: 'vault-tec',\n          value: '#1a1a1a',\n        },\n      ],\n    },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {
+            "projects/gayo-lib/src/stories/vault-tec/advice-block.stories.ts": [
+                {
+                    "name": "AdviceBlockCustomArgs",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/advice-block.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                },
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<AdviceBlockCustomArgs>",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/advice-block.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/button.stories.ts": [
+                {
+                    "name": "BtnPropsAndCustomArgs",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                },
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<BtnPropsAndCustomArgs>",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts": [
+                {
+                    "name": "SmallCardAndCustomArgs",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                },
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<SmallCardAndCustomArgs>",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/folder-card.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<FolderCardComponent>",
+                    "file": "projects/gayo-lib/src/stories/folder-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<CandleCardComponent>",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<EntityCardComponent>",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<CheckboxComponent>",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/footer.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<FooterComponent>",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/footer.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/glitch.directive.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<GlitchDirectiveDemo>",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/glitch.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/input.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<InputComponent>",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/loader.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<LoaderComponent>",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/loader.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<PerkCardComponent>",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<RadioComponent>",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/slider.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<SliderComponent>",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/slider.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<SudokuComponent>",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/swipe-char.directive.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<SwipeCharDirectiveDemo>",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/swipe-char.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/symbol-reveal.directive.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<SymbolRevealDirectiveDemo>",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/symbol-reveal.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/vault-tec/typing-effect.directive.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<TypingEffectDirectiveDemo>",
+                    "file": "projects/gayo-lib/src/stories/vault-tec/typing-effect.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ]
+        }
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "projects/gayo-lib/.storybook/preview.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "preview",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/folder-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "colors",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/folder-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/folder-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "BougieDeDebutant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CiergeDiabolique",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CiergeMalefique",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DouceBougie",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "GentilleBougie",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Boy",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Girl",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SmallCard",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SmallCard2",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/advice-block.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/advice-block.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SimpleAdviceBlock",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Demo",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Disabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Loading",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SimpleButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SubcribeButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CheckedCheckbox",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DisabledCheckbox",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SimpleCheckbox",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WitoutLabel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/footer.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/footer.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SimpleFooter",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/glitch.directive.stories.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "GlitchDirectiveDemo",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/glitch.directive.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/glitch.directive.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/glitch.directive.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithDelay",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SimpleInput",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/loader.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/loader.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SimpleLoader",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Agility",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Charisma",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Endurance",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Intelligence",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Luck",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Perception",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/perkCard.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SimplePerkCard",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CheckedRadio",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DisabledRadio",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SimpleRadio",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WitoutLabel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/slider.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/slider.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SimpleSlider",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "EasySudoku",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "HardSudoku",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MediumSudoku",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SimpleSudoku",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/swipe-char.directive.stories.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SwipeCharDirectiveDemo",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/swipe-char.directive.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/swipe-char.directive.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/symbol-reveal.directive.stories.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SymbolRevealDirectiveDemo",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/symbol-reveal.directive.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/symbol-reveal.directive.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/typing-effect.directive.stories.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TypingEffectDirectiveDemo",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/typing-effect.directive.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/vault-tec/typing-effect.directive.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}
