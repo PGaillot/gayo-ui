@@ -2,6 +2,52 @@
 
 $card-size: 400px;
 
+
+.effect, 
+.border{
+  position: absolute;
+  transform: translate(-50%);
+  left: 50%;
+}
+
+.effect {
+  z-index: 5;
+  top: 68%;
+  z-index: 3;
+  font-size: 14px;
+
+  .border{
+    width: 100%;
+    top: 0;
+    z-index: -1;
+    -webkit-text-stroke: 8px $dark-color; 
+    -webkit-text-fill-color: none;
+  }
+
+  .title {
+    color: $gold-color;
+    font-size: 20px;
+  }
+  
+  .hint {
+    font-size: 10px;
+    font-style: italic;
+  }
+
+
+  .description,
+  .hint {
+    color: $white;
+  }
+
+  .title,
+  .description,
+  .hint {
+    position: relative;
+    text-align: center;
+  }
+}
+
 #entity-card,
 #candle-card {
   background: $blood-color;
@@ -133,7 +179,7 @@ $card-size: 400px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -65%);
     background-image: url("../../../../../assets/lsd/candle.png");
     background-size: contain;
     background-repeat: no-repeat;
