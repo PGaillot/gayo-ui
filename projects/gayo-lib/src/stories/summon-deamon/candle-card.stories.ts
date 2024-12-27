@@ -25,7 +25,7 @@ export const CiergeMalefique: Story = {
   args: {
     cardName: 'cierge maléfique',
     diceNumbers: [8,9],
-    id:72
+    id:72,
   }
 }
 

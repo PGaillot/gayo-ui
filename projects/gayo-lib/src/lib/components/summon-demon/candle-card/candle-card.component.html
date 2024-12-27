@@ -1,27 +1,13 @@
 <div id="candle-card">
   <svg id="title-card" viewBox="0 0 400 200" width="400" height="200">
     <defs>
-      <path
-        id="curve"
-        d="M40 200C40 111.634 111.634 40 200 40C288.366 40 360 111.634 360 200"
-        fill="none"
-      />
+      <path id="curve" d="M40 200C40 111.634 111.634 40 200 40C288.366 40 360 111.634 360 200" fill="none" />
     </defs>
     <text>
-      <textPath
-        xlink:href="#curve"
-        startOffset="50%"
-        text-anchor="middle"
-        class="border"
-      >
+      <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle" class="border">
         {{ cardName }}
       </textPath>
-      <textPath
-        xlink:href="#curve"
-        startOffset="50%"
-        text-anchor="middle"
-        class="title"
-      >
+      <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle" class="title">
         {{ cardName }}
       </textPath>
     </text>
@@ -29,31 +15,35 @@
 
   <div id="dice-num-container">
     @for (diceNumber of diceNumbers; track $index) {
-      <p class="dice-number">{{ diceNumber }}</p>
+    <p class="dice-number">{{ diceNumber }}</p>
     }
   </div>
 
-  <svg class="effect" height="150px" width="300px">
-    <text class="title" text-anchor="middle"  y="20" >Récoltez une Âme.</text>
-    <text class="description" text-anchor="middle"  y="40">LES CIERGES ne peuvent JAMAIS être volés ou défaussés</text>
-    <text class="description" text-anchor="middle"  y="90">vous ne pouvez donc pas les sacrifier pour invoquer un Démon.</text>
-  </svg>
-  
+
+  <!-- <div class="effect">
+    <h4 class="title border">Récoltez une Âme.</h4>
+    <p class="description border">LES CIERGES ne peuvent JAMAIS être volés ou défaussés</p>
+    <p class="hint border">vous ne pouvez donc pas les sacrifier pour invoquer un Démon.</p>
+  </div> -->
+
+  <div #effect class="effect">
+    <h4 class="title">{{candleCardEffect.title}}
+      <h4 class="border">{{candleCardEffect.title}}</h4>
+    </h4>
+    <h4 class="description">{{candleCardEffect.description}}
+      <h4 class="border">{{candleCardEffect.description}}</h4>
+    </h4>
+    <h4 class="hint">{{candleCardEffect.hint}}
+      <h4 class="border">{{candleCardEffect.hint}}</h4>
+    </h4>
+  </div>
+
   <div class="image" alt=""></div>
 
   <div id="pentacle">
-    <svg
-      width="100%"
-      height="100%"
-      viewBox="0 0 165 157"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M34.4212 5.39567L82.188 150.309L129.149 5.39567L6.40601 95.2861H158.373L34.4212 5.39567Z"
-        stroke="#C5162F"
-        stroke-width="6"
-      />
+    <svg width="100%" height="100%" viewBox="0 0 165 157" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M34.4212 5.39567L82.188 150.309L129.149 5.39567L6.40601 95.2861H158.373L34.4212 5.39567Z"
+        stroke="#C5162F" stroke-width="6" />
     </svg>
   </div>
   <div id="id">{{ id }}</div>
