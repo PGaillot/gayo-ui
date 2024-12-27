@@ -35,8 +35,11 @@
           "builder": "@storybook/angular:start-storybook",
           "options": {
             "assets": [
-              "src/assets",
-              "src/favicon.ico"
+              {
+                "glob": "**/*",
+                "input": "projects/gayo-lib/src/assets",
+                "output": "assets/"
+              }
             ],
             "configDir": "projects/gayo-lib/.storybook",
             "browserTarget": "gayo-lib:build",
