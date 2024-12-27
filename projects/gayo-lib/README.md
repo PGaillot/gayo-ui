@@ -71,6 +71,14 @@ Pour exécuter les tests unitaires :
 
 ## 📚 Changelogs
 
+### [ 0.0.18 ] - 2024-08-10
+author: PGaillot 
+- modification de `readme.md`
+- ajout du fichier `publish-package.cjs`
+- modification de `main.yml`
+
+---
+
 ### [ 0.0.17 ] - 2024-08-10
 author: PGaillot 
 - modification de `readme.md`
@@ -89,21 +97,9 @@ author: PGaillot
 - Mise à jour du fichier `.gitignore`.
 
 ---
-
-### [ 0.0.15 ] - 2024-08-16
-author: PGaillot 
-- Ajout de fonctionnalités dans le **Composant Sudoku** 
-  - pouvoir supposer une case.
-  - pouvoir effacer une case.
-  - pouvoir  bloquer une case.
-  - ajouts d'un aperçus des raccourcis claviers, 
-  - affichage du score, du temps, du nombre de clique.
-- ajout de la directive **SwipeCharDirective** qui affiche une lettre apres un temps donné.
-- ajout du **TimerPipe** qui prend un nombre et retourne un timer _00:00:00_
-- ajout de divers tests.
-
----
 [Voir plus...](CHANGELOG.md)
+
+
 
 
 
