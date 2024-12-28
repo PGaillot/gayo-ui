@@ -26,11 +26,7 @@ export class DeleteCardDirective {
         Object.assign(burnContainer.style, {
             width: 'min-content',
             height: '100%',
-            // filter: 'contrast(1000%) brightness(1500%) invert(100%) grayscale(100%)',
-            background: `
-                radial-gradient(circle at 50% 50%, rgba(0,0,0,1), rgba(0,0,0,0)),
-                url("data:image/svg+xml,%3Csvg viewBox='0 0 4 4' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")
-            `,
+
             position: 'relative',
             overflow: 'hidden',
             animation: 'burnEffect 2.5s ease-in forwards',
@@ -50,12 +46,12 @@ export class DeleteCardDirective {
 
         const style = document.createElement('style');
         style.textContent = `
-    @keyframes burnEffect {
+        @keyframes burnEffect {
         0% {
-            filter: contrast(0%) brightness(500%) grayscale(100%);
+            filter: contrast(100%) brightness(500%) grayscale(100%); ;
         }
         100% {
-            filter: contrast(1000%) brightness(1500%) grayscale(100%);
+            filter: contrast(1000%) brightness(1500%) grayscale(100%); ;
         }
     }
         `;
@@ -88,6 +84,6 @@ export class DeleteCardDirective {
 
         parent.insertBefore(burnContainer, cardElement);
         burnContainer.appendChild(cardElement);
-        burnContainer.appendChild(burnNoise); // Ajoute le SVG au conteneur
+        burnContainer.appendChild(burnNoise);
     }
 }
