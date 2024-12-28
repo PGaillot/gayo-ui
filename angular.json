@@ -38,7 +38,7 @@
               {
                 "glob": "**/*",
                 "input": "projects/gayo-lib/src/assets",
-                "output": "assets/"
+                "output": "storybook-static/assets"
               }
             ],
             "configDir": "projects/gayo-lib/.storybook",
@@ -55,7 +55,14 @@
             "browserTarget": "gayo-lib:build",
             "compodoc": true,
             "compodocArgs": ["-e", "json", "-d", "projects/gayo-lib"],
-            "outputDir": "storybook-static"
+            "outputDir": "storybook-static",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/gayo-lib/src/assets",
+                "output": "storybook-static/assets"
+              }
+            ]
           }
         }
       },

@@ -82,6 +82,97 @@
             "extends": []
         },
         {
+            "name": "HoverCardDirectiveDemo",
+            "id": "component-HoverCardDirectiveDemo-3ecc6d0fbca709a6ab3ccdd8cac6a2c5accf61500efefcaeb0530d4eb197c8c1b2dacb0e1d221b4399c861db1ffa700bb7cd4d05927df813dda6f1beae52995f",
+            "file": "projects/gayo-lib/src/stories/summon-deamon/hover-card.directive.stories.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lsd-hover-card-demo",
+            "styleUrls": [
+                "../../lib/styles/lsd.scss",
+                "./story.scss"
+            ],
+            "styles": [],
+            "template": "<lsd-candle-card\n    lsdHoverCard\n    [id]=\"id\"\n    [cardName]=\"cardName\"\n    [effect]=\"effect\"\n    [diceNumbers]=\"diceNumbers\">\n</lsd-candle-card>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "cardName",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "diceNumbers",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "number[]",
+                    "decorators": []
+                },
+                {
+                    "name": "effect",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "id",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CandleCardComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HoverCardDirective",
+                    "type": "directive"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';\nimport { Component, Input } from '@angular/core';\nimport { CandleCardComponent } from '../../lib/components/summon-demon/candle-card/candle-card.component';\nimport { HoverCardDirective } from '../../lib/directives/hover-card.directive';\n\n@Component({\n    selector: 'lsd-hover-card-demo',\n    standalone: true,\n    styleUrls: ['../../lib/styles/lsd.scss', './story.scss'],\n    imports: [CandleCardComponent, HoverCardDirective],\n    template: `\n        <lsd-candle-card \n            lsdHoverCard \n            [id]=\"id\" \n            [cardName]=\"cardName\" \n            [effect]=\"effect\" \n            [diceNumbers]=\"diceNumbers\">\n        </lsd-candle-card>\n    `,\n})\nclass HoverCardDirectiveDemo {\n    @Input() id: number = 0;\n    @Input() cardName!: string;\n    @Input() effect!: string;\n    @Input() diceNumbers: number[] = [];\n}\n\nconst meta: Meta<HoverCardDirectiveDemo> = {\n    title: 'SummonDemon/Directives/HoverCard',\n    component: HoverCardDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [\n                CandleCardComponent,\n                HoverCardDirective,\n                HoverCardDirectiveDemo\n            ],\n        }),\n    ],\n    argTypes: {\n        id: { control: 'number' },\n        cardName: { control: 'text' },\n        effect: { control: 'text' },\n        diceNumbers: { control: 'object' },\n    },\n};\n\nexport default meta;\n\ntype Story = StoryObj<HoverCardDirectiveDemo>;\n\nexport const Default: Story = {\n    args: {\n        id: 12,\n        cardName: 'Candle',\n        effect: 'Récoltez une Âme.',\n        diceNumbers: [5, 6],\n    },\n};",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "$blood-color:#C5162F;\n$gold-color:#FFC903;\n$dark-color:#000000;\n$white:#FFFFFF;\n\n@font-face {\n    font-family: \"hobo\";\n    src: url('/assets/fonts/hobo.ttf') format('truetype');\n}\n\n\n* {\n    font-family: \"hobo\";\n    margin: 0;\n    padding: 0;\n}",
+                    "styleUrl": "../../lib/styles/lsd.scss"
+                },
+                {
+                    "data": "",
+                    "styleUrl": "./story.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
             "name": "SwipeCharDirectiveDemo",
             "id": "component-SwipeCharDirectiveDemo-9bb7cd0bdc1108077f4a049c41f1cebfbc3a43b4c6fd5ff8bf3e7b8e837aa714974b8fa9220a23e1134f2717904739be7851709cb31f40e3afd951849e44fac8",
             "file": "projects/gayo-lib/src/stories/vault-tec/swipe-char.directive.stories.ts",
@@ -327,6 +418,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/hover-card.directive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        id: 12,\n        cardName: 'Candle',\n        effect: 'Récoltez une Âme.',\n        diceNumbers: [5, 6],\n    },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/gayo-lib/src/stories/vault-tec/glitch.directive.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -547,11 +648,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/hover-card.directive.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<SmallCardAndCustomArgs>",
-                "defaultValue": "{\n  title: 'SummonDemon/SmallCard',\n  component: SmallCardComponent,\n  render: ({ content, ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `<lsd-small-card ${argsToTemplate(args)}>${content}</lsd-small-card>`,\n    imports: [EntityCardComponent]\n  }),\n  tags: ['autodocs'],\n}"
+                "type": "Meta<HoverCardDirectiveDemo>",
+                "defaultValue": "{\n    title: 'SummonDemon/Directives/HoverCard',\n    component: HoverCardDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [\n                CandleCardComponent,\n                HoverCardDirective,\n                HoverCardDirectiveDemo\n            ],\n        }),\n    ],\n    argTypes: {\n        id: { control: 'number' },\n        cardName: { control: 'text' },\n        effect: { control: 'text' },\n        diceNumbers: { control: 'object' },\n    },\n}"
             },
             {
                 "name": "meta",
@@ -824,26 +925,6 @@
                 "defaultValue": "{\n  args: {\n    label: 'Subscribe',\n    size: 'small',\n  },\n}"
             },
             {
-                "name": "SmallCard",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    content: `\n            <div style=\"height:15rem;min-width:10rem;background:#F4F7F9; border-radius:0.5rem;\"></div>\n        `,\n  },\n}"
-            },
-            {
-                "name": "SmallCard2",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    content: `\n     <lsd-candle-card\n    [cardName]=\"'Bougie de débutant'\"\n    [diceNumber]=\"[6, 5, 4]\"\n    ></lsd-candle-card>\n    `\n  },\n}"
-            },
-            {
                 "name": "SubcribeButton",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -909,17 +990,6 @@
                 "kind": 193
             },
             {
-                "name": "SmallCardAndCustomArgs",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "",
-                "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 193
-            },
-            {
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
@@ -956,8 +1026,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<SmallCardAndCustomArgs>",
-                "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                "rawtype": "StoryObj<HoverCardDirectiveDemo>",
+                "file": "projects/gayo-lib/src/stories/summon-deamon/hover-card.directive.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1432,6 +1502,28 @@
                     "defaultValue": "{\n  title: 'FolderApp/FolderCard',\n  component: FolderCardComponent,\n  tags: ['autodocs'],\n}"
                 }
             ],
+            "projects/gayo-lib/src/stories/summon-deamon/hover-card.directive.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/hover-card.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        id: 12,\n        cardName: 'Candle',\n        effect: 'Récoltez une Âme.',\n        diceNumbers: [5, 6],\n    },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/hover-card.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<HoverCardDirectiveDemo>",
+                    "defaultValue": "{\n    title: 'SummonDemon/Directives/HoverCard',\n    component: HoverCardDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [\n                CandleCardComponent,\n                HoverCardDirective,\n                HoverCardDirectiveDemo\n            ],\n        }),\n    ],\n    argTypes: {\n        id: { control: 'number' },\n        cardName: { control: 'text' },\n        effect: { control: 'text' },\n        diceNumbers: { control: 'object' },\n    },\n}"
+                }
+            ],
             "projects/gayo-lib/src/stories/vault-tec/glitch.directive.stories.ts": [
                 {
                     "name": "Default",
@@ -1664,38 +1756,6 @@
                     "defaultValue": "{\n  args: {\n    solution: {\n      blocks: [\n        {\n          id: 0,\n          value: [3, 4, 6, 7, 1, 2, 8, 9, 5],\n        },\n        {\n          id: 1,\n          value: [7, 9, 8, 4, 6, 5, 1, 3, 2],\n        },\n        {\n          id: 2,\n          value: [2, 5, 1, 3, 9, 8, 4, 6, 7],\n        },\n        {\n          id: 3,\n          value: [4, 2, 3, 1, 6, 7, 9, 5, 8],\n        },\n        {\n          id: 4,\n          value: [6, 7, 9, 5, 8, 4, 2, 1, 3],\n        },\n        {\n          id: 5,\n          value: [8, 1, 5, 9, 3, 2, 6, 7, 4],\n        },\n        {\n          id: 6,\n          value: [2, 7, 4, 6, 3, 1, 5, 8, 9],\n        },\n        {\n          id: 7,\n          value: [9, 5, 6, 8, 4, 7, 3, 2, 1],\n        },\n        {\n          id: 8,\n          value: [1, 8, 3, 5, 2, 9, 7, 4, 6],\n        },\n      ],\n    },\n    sudokuGrid: {\n      blocks: [\n        {\n          id: 0,\n          value: [null, 4, 6, 7, 1, 2, 8, 9, 5],\n        },\n        {\n          id: 1,\n          value: [7, 9, 8, 4, 6, 5, 1, 3, 2],\n        },\n        {\n          id: 2,\n          value: [2, 5, 1, 3, 9, 8, 4, 6, 7],\n        },\n        {\n          id: 3,\n          value: [4, 2, 3, 1, 6, 7, 9, 5, 8],\n        },\n        {\n          id: 4,\n          value: [6, 7, 9, 5, 8, 4, 2, 1, 3],\n        },\n        {\n          id: 5,\n          value: [8, 1, 5, 9, 3, 2, 6, 7, 4],\n        },\n        {\n          id: 6,\n          value: [2, 7, 4, 6, 3, 1, 5, 8, 9],\n        },\n        {\n          id: 7,\n          value: [9, 5, 6, 8, 4, 7, 3, 2, 1],\n        },\n        {\n          id: 8,\n          value: [1, 8, 3, 5, 2, 9, 7, 4, 6],\n        },\n      ],\n    },\n    reference: {\n      blocks: [\n        {\n          id: 0,\n          value: [null, 4, 6, 7, 1, 2, 8, 9, 5],\n        },\n        {\n          id: 1,\n          value: [7, 9, 8, 4, 6, 5, 1, 3, 2],\n        },\n        {\n          id: 2,\n          value: [2, 5, 1, 3, 9, 8, 4, 6, 7],\n        },\n        {\n          id: 3,\n          value: [4, 2, 3, 1, 6, 7, 9, 5, 8],\n        },\n        {\n          id: 4,\n          value: [6, 7, 9, 5, 8, 4, 2, 1, 3],\n        },\n        {\n          id: 5,\n          value: [8, 1, 5, 9, 3, 2, 6, 7, 4],\n        },\n        {\n          id: 6,\n          value: [2, 7, 4, 6, 3, 1, 5, 8, 9],\n        },\n        {\n          id: 7,\n          value: [9, 5, 6, 8, 4, 7, 3, 2, 1],\n        },\n        {\n          id: 8,\n          value: [1, 8, 3, 5, 2, 9, 7, 4, 6],\n        },\n      ],\n    },\n  },\n}"
                 }
             ],
-            "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts": [
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<SmallCardAndCustomArgs>",
-                    "defaultValue": "{\n  title: 'SummonDemon/SmallCard',\n  component: SmallCardComponent,\n  render: ({ content, ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `<lsd-small-card ${argsToTemplate(args)}>${content}</lsd-small-card>`,\n    imports: [EntityCardComponent]\n  }),\n  tags: ['autodocs'],\n}"
-                },
-                {
-                    "name": "SmallCard",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    content: `\n            <div style=\"height:15rem;min-width:10rem;background:#F4F7F9; border-radius:0.5rem;\"></div>\n        `,\n  },\n}"
-                },
-                {
-                    "name": "SmallCard2",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    content: `\n     <lsd-candle-card\n    [cardName]=\"'Bougie de débutant'\"\n    [diceNumber]=\"[6, 5, 4]\"\n    ></lsd-candle-card>\n    `\n  },\n}"
-                }
-            ],
             "projects/gayo-lib/src/stories/vault-tec/advice-block.stories.ts": [
                 {
                     "name": "meta",
@@ -1870,30 +1930,6 @@
                     "kind": 183
                 }
             ],
-            "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts": [
-                {
-                    "name": "SmallCardAndCustomArgs",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "",
-                    "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 193
-                },
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<SmallCardAndCustomArgs>",
-                    "file": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
             "projects/gayo-lib/src/stories/folder-card.stories.ts": [
                 {
                     "name": "Story",
@@ -1927,6 +1963,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<EntityCardComponent>",
                     "file": "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/summon-deamon/hover-card.directive.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<HoverCardDirectiveDemo>",
+                    "file": "projects/gayo-lib/src/stories/summon-deamon/hover-card.directive.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2227,31 +2276,30 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
+                "filePath": "projects/gayo-lib/src/stories/summon-deamon/hover-card.directive.stories.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HoverCardDirectiveDemo",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-deamon/hover-card.directive.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-deamon/hover-card.directive.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "SmallCard",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/gayo-lib/src/stories/summon-deamon/small-card.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "SmallCard2",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
