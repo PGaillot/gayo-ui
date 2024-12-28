@@ -519,6 +519,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-demon/demon-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        dice: 5,\n        id:109,\n        cardName: \"porcus\",\n        effect:\"recoltez 5 âmes.\"\n    }\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/gayo-lib/src/stories/summon-demon/hover-card.directive.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -744,6 +754,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<DeleteCardDirectiveDemo>",
                 "defaultValue": "{\n    title: 'SummonDemon/Directives/DeleteCard',\n    component: DeleteCardDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [\n                CandleCardComponent,\n                DeleteCardDirective,\n                DeleteCardDirectiveDemo\n            ],\n        }),\n    ],\n    argTypes: {\n        id: { control: 'number' },\n        cardName: { control: 'text' },\n        effect: { control: 'text' },\n        diceNumbers: { control: 'object' },\n    },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-demon/demon-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<DemonCardComponent>",
+                "defaultValue": "{\n    title: 'Summon Demon/Demon Card',\n    component: DemonCardComponent,\n    tags: ['autodocs'],\n}"
             },
             {
                 "name": "meta",
@@ -1128,6 +1148,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<DeleteCardDirectiveDemo>",
                 "file": "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<DemonCardComponent>",
+                "file": "projects/gayo-lib/src/stories/summon-demon/demon-card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1646,6 +1677,28 @@
                     "defaultValue": "{\n    title: 'SummonDemon/Directives/DeleteCard',\n    component: DeleteCardDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [\n                CandleCardComponent,\n                DeleteCardDirective,\n                DeleteCardDirectiveDemo\n            ],\n        }),\n    ],\n    argTypes: {\n        id: { control: 'number' },\n        cardName: { control: 'text' },\n        effect: { control: 'text' },\n        diceNumbers: { control: 'object' },\n    },\n}"
                 }
             ],
+            "projects/gayo-lib/src/stories/summon-demon/demon-card.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/demon-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        dice: 5,\n        id:109,\n        cardName: \"porcus\",\n        effect:\"recoltez 5 âmes.\"\n    }\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/demon-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<DemonCardComponent>",
+                    "defaultValue": "{\n    title: 'Summon Demon/Demon Card',\n    component: DemonCardComponent,\n    tags: ['autodocs'],\n}"
+                }
+            ],
             "projects/gayo-lib/src/stories/summon-demon/hover-card.directive.stories.ts": [
                 {
                     "name": "Default",
@@ -2113,6 +2166,19 @@
                     "kind": 183
                 }
             ],
+            "projects/gayo-lib/src/stories/summon-demon/demon-card.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<DemonCardComponent>",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/demon-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "projects/gayo-lib/src/stories/summon-demon/entity-card.stories.ts": [
                 {
                     "name": "Story",
@@ -2423,6 +2489,26 @@
             },
             {
                 "filePath": "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-demon/demon-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-demon/demon-card.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

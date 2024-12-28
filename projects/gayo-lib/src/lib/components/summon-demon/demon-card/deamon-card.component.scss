@@ -1,0 +1,158 @@
+
+@import "../../../styles/lsd.scss";
+
+$card-size: 400px;
+
+
+.effect, 
+.border{
+  position: absolute;
+  transform: translate(-50%);
+  left: 50%;
+}
+
+.effect {
+  z-index: 5;
+  top: 68%;
+  z-index: 3;
+  font-size: 14px;
+
+  .border{
+    width: 100%;
+    top: 0;
+    z-index: -1;
+    -webkit-text-stroke: 8px $dark-color; 
+    -webkit-text-fill-color: none;
+  }
+
+  .title {
+    color: $gold-color;
+    font-size: 20px;
+  }
+  
+  .hint {
+    font-size: 10px;
+    font-style: italic;
+  }
+
+
+  .description,
+  .hint {
+    color: $white;
+  }
+
+  .title,
+  .description,
+  .hint {
+    position: relative;
+    text-align: center;
+  }
+}
+
+#demon-card {
+  background: $gold-color;
+  overflow: hidden;
+  height: $card-size;
+  width: $card-size;
+  border-radius: $card-size;
+  position: relative;
+  color: $blood-color;
+
+  #title-card {
+    position: relative;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    .title,
+    .border{
+      font-size: 40px;
+      letter-spacing: 1px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .title {
+      fill: $blood-color;
+    }
+
+    .border {
+      fill:$dark-color;
+      stroke: $dark-color;
+      stroke-width: 4;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    width: 85%;
+    height: 85%;
+    background: $dark-color;
+    z-index: 0;
+  }
+
+  #demon-dice-num-container {
+    z-index: 1;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    right: 10%;
+    top: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+
+    .dice-number {
+      width: 56px;
+      height: 56px;
+      border-radius: 56px;
+      border: 3px solid $blood-color;
+      outline: 2px solid $dark-color;
+      line-height: 60px;
+      font-size: 50px;
+      text-align: center;
+      background: $dark-color;
+    }
+  }
+
+  #id {
+    z-index: 1;
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+  }
+
+}
+#demon-card {
+  #effect {
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    top: 85%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    text-align: center;
+    padding: 30px;
+    color: $dark-color;
+  }
+}
+
+
+
+#demon-flame {
+    position: absolute;
+    top: 72%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 87%;
+    height: 87%;
+    z-index: 0;
+  }

@@ -1,0 +1,24 @@
+<div id="demon-card">
+    <svg id="title-card" viewBox="0 0 400 200" width="400" height="200">
+        <defs>
+          <path id="curve" d="M40 200C40 111.634 111.634 40 200 40C288.366 40 360 111.634 360 200" fill="none" />
+        </defs>
+        <text>
+          <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle" class="border">
+            {{ cardName }}
+          </textPath>
+          <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle" class="title">
+            {{ cardName }}
+          </textPath>
+        </text>
+      </svg>
+        <p id="effect">{{ effect }}</p>
+    <div id="demon-dice-num-container">
+      <p class="dice-number">{{ dice }}</p>
+    </div>
+    
+    
+    <div id="id">{{ id }}</div>
+    <img id="demon-flame" src="assets/lsd/demon-border.svg" alt="">
+  </div>
+  
