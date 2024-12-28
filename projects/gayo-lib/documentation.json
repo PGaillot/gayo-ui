@@ -8,6 +8,97 @@
     "directives": [],
     "components": [
         {
+            "name": "DeleteCardDirectiveDemo",
+            "id": "component-DeleteCardDirectiveDemo-5c7af8c8a93efd009b8d13945c9d8df616341cd944028bd90acb6ebf03382af3e9a40deffd7d1948dc8ac36584aef00ed81f7e5d752cdf28d3c1a64f64e57ffb",
+            "file": "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lsd-delete-card-demo",
+            "styleUrls": [
+                "../../lib/styles/lsd.scss",
+                "./story.scss"
+            ],
+            "styles": [],
+            "template": "<lsd-candle-card\n    lsdDeleteCard\n    [id]=\"id\"\n    [cardName]=\"cardName\"\n    [effect]=\"effect\"\n    [diceNumbers]=\"diceNumbers\">\n</lsd-candle-card>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "cardName",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "diceNumbers",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "number[]",
+                    "decorators": []
+                },
+                {
+                    "name": "effect",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "id",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CandleCardComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "DeleteCardDirective",
+                    "type": "directive"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';\nimport { Component, Input } from '@angular/core';\nimport { CandleCardComponent } from '../../lib/components/summon-demon/candle-card/candle-card.component';\nimport { DeleteCardDirective } from '../../lib/directives/delete-card.directive';\n\n@Component({\n    selector: 'lsd-delete-card-demo',\n    standalone: true,\n    styleUrls: ['../../lib/styles/lsd.scss', './story.scss'],\n    imports: [CandleCardComponent, DeleteCardDirective],\n    template: `\n        <lsd-candle-card \n            lsdDeleteCard \n            [id]=\"id\" \n            [cardName]=\"cardName\" \n            [effect]=\"effect\" \n            [diceNumbers]=\"diceNumbers\">\n        </lsd-candle-card>\n    `,\n})\nclass DeleteCardDirectiveDemo {\n    @Input() id: number = 0;\n    @Input() cardName!: string;\n    @Input() effect!: string;\n    @Input() diceNumbers: number[] = [];\n}\n\nconst meta: Meta<DeleteCardDirectiveDemo> = {\n    title: 'SummonDemon/Directives/DeleteCard',\n    component: DeleteCardDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [\n                CandleCardComponent,\n                DeleteCardDirective,\n                DeleteCardDirectiveDemo\n            ],\n        }),\n    ],\n    argTypes: {\n        id: { control: 'number' },\n        cardName: { control: 'text' },\n        effect: { control: 'text' },\n        diceNumbers: { control: 'object' },\n    },\n};\n\nexport default meta;\n\ntype Story = StoryObj<DeleteCardDirectiveDemo>;\n\nexport const Default: Story = {\n    args: {\n        id: 12,\n        cardName: 'Candle',\n        effect: 'Récoltez une Âme.',\n        diceNumbers: [5, 6],\n    },\n};",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "$blood-color:#C5162F;\n$gold-color:#FFC903;\n$dark-color:#000000;\n$white:#FFFFFF;\n\n@font-face {\n    font-family: \"hobo\";\n    src: url('/assets/fonts/hobo.ttf') format('truetype');\n}\n\n\n* {\n    font-family: \"hobo\";\n    margin: 0;\n    padding: 0;\n}",
+                    "styleUrl": "../../lib/styles/lsd.scss"
+                },
+                {
+                    "data": "",
+                    "styleUrl": "./story.scss"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
             "name": "GlitchDirectiveDemo",
             "id": "component-GlitchDirectiveDemo-8c890348215cf4e9a4e0916036dc7532aca65ee838745586250a40d21b50a109aa45a59943fa1747234e3a0bb00ba67d3f3d99fb789a5c67ffaf0dcf72bb3e47",
             "file": "projects/gayo-lib/src/stories/vault-tec/glitch.directive.stories.ts",
@@ -84,7 +175,7 @@
         {
             "name": "HoverCardDirectiveDemo",
             "id": "component-HoverCardDirectiveDemo-3ecc6d0fbca709a6ab3ccdd8cac6a2c5accf61500efefcaeb0530d4eb197c8c1b2dacb0e1d221b4399c861db1ffa700bb7cd4d05927df813dda6f1beae52995f",
-            "file": "projects/gayo-lib/src/stories/summon-deamon/hover-card.directive.stories.ts",
+            "file": "projects/gayo-lib/src/stories/summon-demon/hover-card.directive.stories.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -328,7 +419,7 @@
                 "name": "BougieDeDebutant",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "file": "projects/gayo-lib/src/stories/summon-demon/candle-card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -338,7 +429,7 @@
                 "name": "Boy",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts",
+                "file": "projects/gayo-lib/src/stories/summon-demon/entity-card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -378,7 +469,7 @@
                 "name": "CiergeDiabolique",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "file": "projects/gayo-lib/src/stories/summon-demon/candle-card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -388,7 +479,7 @@
                 "name": "CiergeMalefique",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "file": "projects/gayo-lib/src/stories/summon-demon/candle-card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -418,7 +509,17 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/gayo-lib/src/stories/summon-deamon/hover-card.directive.stories.ts",
+                "file": "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        id: 12,\n        cardName: 'Candle',\n        effect: 'Récoltez une Âme.',\n        diceNumbers: [5, 6],\n    },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-demon/hover-card.directive.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -508,7 +609,7 @@
                 "name": "DouceBougie",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "file": "projects/gayo-lib/src/stories/summon-demon/candle-card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -538,7 +639,7 @@
                 "name": "GentilleBougie",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "file": "projects/gayo-lib/src/stories/summon-demon/candle-card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -548,7 +649,7 @@
                 "name": "Girl",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts",
+                "file": "projects/gayo-lib/src/stories/summon-demon/entity-card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -628,7 +729,7 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "file": "projects/gayo-lib/src/stories/summon-demon/candle-card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<CandleCardComponent>",
@@ -638,7 +739,17 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts",
+                "file": "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<DeleteCardDirectiveDemo>",
+                "defaultValue": "{\n    title: 'SummonDemon/Directives/DeleteCard',\n    component: DeleteCardDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [\n                CandleCardComponent,\n                DeleteCardDirective,\n                DeleteCardDirectiveDemo\n            ],\n        }),\n    ],\n    argTypes: {\n        id: { control: 'number' },\n        cardName: { control: 'text' },\n        effect: { control: 'text' },\n        diceNumbers: { control: 'object' },\n    },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-demon/entity-card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<EntityCardComponent>",
@@ -648,7 +759,7 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/gayo-lib/src/stories/summon-deamon/hover-card.directive.stories.ts",
+                "file": "projects/gayo-lib/src/stories/summon-demon/hover-card.directive.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<HoverCardDirectiveDemo>",
@@ -1005,7 +1116,18 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "StoryObj<CandleCardComponent>",
-                "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "file": "projects/gayo-lib/src/stories/summon-demon/candle-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<DeleteCardDirectiveDemo>",
+                "file": "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1016,7 +1138,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "StoryObj<EntityCardComponent>",
-                "file": "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts",
+                "file": "projects/gayo-lib/src/stories/summon-demon/entity-card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1027,7 +1149,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "StoryObj<HoverCardDirectiveDemo>",
-                "file": "projects/gayo-lib/src/stories/summon-deamon/hover-card.directive.stories.ts",
+                "file": "projects/gayo-lib/src/stories/summon-demon/hover-card.directive.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1272,12 +1394,12 @@
                     "defaultValue": "{\n  args: {\n    description:\n      \"Vous aimez soulever des gros cailloux ou des gens que vous n'aimez guère ? La Force est déterminée par la circonférence de votre biceps en contraction.\",\n    perkName: 'strength',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
                 }
             ],
-            "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts": [
+            "projects/gayo-lib/src/stories/summon-demon/candle-card.stories.ts": [
                 {
                     "name": "BougieDeDebutant",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/candle-card.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -1287,7 +1409,7 @@
                     "name": "CiergeDiabolique",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/candle-card.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -1297,7 +1419,7 @@
                     "name": "CiergeMalefique",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/candle-card.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -1307,7 +1429,7 @@
                     "name": "DouceBougie",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/candle-card.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -1317,7 +1439,7 @@
                     "name": "GentilleBougie",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/candle-card.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -1327,19 +1449,19 @@
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/candle-card.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<CandleCardComponent>",
                     "defaultValue": "{\n    title:'SummonDemon/CandleCard',\n    component:CandleCardComponent,\n    tags: ['autodocs'],\n}"
                 }
             ],
-            "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts": [
+            "projects/gayo-lib/src/stories/summon-demon/entity-card.stories.ts": [
                 {
                     "name": "Boy",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/entity-card.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -1349,7 +1471,7 @@
                     "name": "Girl",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/entity-card.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -1359,7 +1481,7 @@
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/entity-card.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<EntityCardComponent>",
@@ -1502,12 +1624,12 @@
                     "defaultValue": "{\n  title: 'FolderApp/FolderCard',\n  component: FolderCardComponent,\n  tags: ['autodocs'],\n}"
                 }
             ],
-            "projects/gayo-lib/src/stories/summon-deamon/hover-card.directive.stories.ts": [
+            "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/gayo-lib/src/stories/summon-deamon/hover-card.directive.stories.ts",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -1517,7 +1639,29 @@
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/gayo-lib/src/stories/summon-deamon/hover-card.directive.stories.ts",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<DeleteCardDirectiveDemo>",
+                    "defaultValue": "{\n    title: 'SummonDemon/Directives/DeleteCard',\n    component: DeleteCardDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [\n                CandleCardComponent,\n                DeleteCardDirective,\n                DeleteCardDirectiveDemo\n            ],\n        }),\n    ],\n    argTypes: {\n        id: { control: 'number' },\n        cardName: { control: 'text' },\n        effect: { control: 'text' },\n        diceNumbers: { control: 'object' },\n    },\n}"
+                }
+            ],
+            "projects/gayo-lib/src/stories/summon-demon/hover-card.directive.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/hover-card.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        id: 12,\n        cardName: 'Candle',\n        effect: 'Récoltez une Âme.',\n        diceNumbers: [5, 6],\n    },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/hover-card.directive.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<HoverCardDirectiveDemo>",
@@ -1943,39 +2087,52 @@
                     "kind": 183
                 }
             ],
-            "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts": [
+            "projects/gayo-lib/src/stories/summon-demon/candle-card.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "StoryObj<CandleCardComponent>",
-                    "file": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/candle-card.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 183
                 }
             ],
-            "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts": [
+            "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<DeleteCardDirectiveDemo>",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/summon-demon/entity-card.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "StoryObj<EntityCardComponent>",
-                    "file": "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/entity-card.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 183
                 }
             ],
-            "projects/gayo-lib/src/stories/summon-deamon/hover-card.directive.stories.ts": [
+            "projects/gayo-lib/src/stories/summon-demon/hover-card.directive.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "StoryObj<HoverCardDirectiveDemo>",
-                    "file": "projects/gayo-lib/src/stories/summon-deamon/hover-card.directive.stories.ts",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/hover-card.directive.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2186,7 +2343,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "filePath": "projects/gayo-lib/src/stories/summon-demon/candle-card.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -2196,7 +2353,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "filePath": "projects/gayo-lib/src/stories/summon-demon/candle-card.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -2206,7 +2363,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "filePath": "projects/gayo-lib/src/stories/summon-demon/candle-card.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -2216,7 +2373,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "filePath": "projects/gayo-lib/src/stories/summon-demon/candle-card.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -2226,7 +2383,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "filePath": "projects/gayo-lib/src/stories/summon-demon/candle-card.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -2236,7 +2393,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/gayo-lib/src/stories/summon-deamon/candle-card.stories.ts",
+                "filePath": "projects/gayo-lib/src/stories/summon-demon/candle-card.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -2246,46 +2403,16 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Boy",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Girl",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/gayo-lib/src/stories/summon-deamon/entity-card.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/gayo-lib/src/stories/summon-deamon/hover-card.directive.stories.ts",
+                "filePath": "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "HoverCardDirectiveDemo",
+                "name": "DeleteCardDirectiveDemo",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
                 "status": "low"
             },
             {
-                "filePath": "projects/gayo-lib/src/stories/summon-deamon/hover-card.directive.stories.ts",
+                "filePath": "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -2295,7 +2422,66 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/gayo-lib/src/stories/summon-deamon/hover-card.directive.stories.ts",
+                "filePath": "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-demon/entity-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Boy",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-demon/entity-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Girl",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-demon/entity-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-demon/hover-card.directive.stories.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HoverCardDirectiveDemo",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-demon/hover-card.directive.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-demon/hover-card.directive.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
