@@ -29,7 +29,8 @@ export class DeleteCardDirective {
 
             position: 'relative',
             overflow: 'hidden',
-            animation: 'burnEffect 2.5s ease-in forwards',
+            visibility: 'hidden',
+            animation: 'burnEffect 2.5s 0.5s ease-out forwards',
         });
 
         // Création du SVG avec un effet de bruit
@@ -48,10 +49,12 @@ export class DeleteCardDirective {
         style.textContent = `
         @keyframes burnEffect {
         0% {
-            filter: contrast(100%) brightness(500%) grayscale(100%); ;
+        visibility: visible;
+        filter: contrast(100%) brightness(1500%) grayscale(100%)  contrast(100%) ;
         }
         100% {
-            filter: contrast(1000%) brightness(1500%) grayscale(100%); ;
+            visibility: visible;
+            filter: contrast(1000%) brightness(1500%) grayscale(100%) contrast(500%) ;
         }
     }
         `;

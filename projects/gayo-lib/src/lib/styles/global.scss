@@ -68,22 +68,3 @@ $dark-gray-600: #424242;
 $dark-gray-700: #303030;
 $dark-gray-800: #212121;
 $dark-gray-900: #121212;
-
-
-
-
-
-
-
-
-
-
-@keyframes burn {
-  0% {
-    filter: contrast(0%) brightness(1500%) invert(100%) grayscale(100%);
-  }
-
-  100% {
-    filter: contrast(1000%) brightness(1500%) invert(100%) grayscale(100%);
-  }
-}
