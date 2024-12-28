@@ -71,6 +71,14 @@ Pour exécuter les tests unitaires :
 
 ## 📚 Changelogs
 
+### [ 0.0.26 ] - 2024-08-10
+author: PGaillot 
+- modification de `readme.md`
+- ajout du fichier `publish-package.cjs`
+- modification de `main.yml`
+
+---
+
 ### [ 0.0.25 ] - 2024-08-10
 author: PGaillot 
 - modification de `readme.md`
@@ -86,15 +94,9 @@ author: PGaillot
 - modification de `main.yml`
 
 ---
-
-### [ 0.0.23 ] - 2024-08-10
-author: PGaillot 
-- modification de `readme.md`
-- ajout du fichier `publish-package.cjs`
-- modification de `main.yml`
-
----
 [Voir plus...](CHANGELOG.md)
+
+
 
 
 
