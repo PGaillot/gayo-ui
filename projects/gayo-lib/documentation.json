@@ -763,7 +763,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<DemonCardComponent>",
-                "defaultValue": "{\n    title: 'Summon Demon/Demon Card',\n    component: DemonCardComponent,\n    tags: ['autodocs'],\n}"
+                "defaultValue": "{\n    title: 'SummonDemon/Demon Card',\n    component: DemonCardComponent,\n    tags: ['autodocs'],\n}"
             },
             {
                 "name": "meta",
@@ -1696,7 +1696,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<DemonCardComponent>",
-                    "defaultValue": "{\n    title: 'Summon Demon/Demon Card',\n    component: DemonCardComponent,\n    tags: ['autodocs'],\n}"
+                    "defaultValue": "{\n    title: 'SummonDemon/Demon Card',\n    component: DemonCardComponent,\n    tags: ['autodocs'],\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/summon-demon/hover-card.directive.stories.ts": [

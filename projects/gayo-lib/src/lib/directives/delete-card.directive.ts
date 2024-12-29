@@ -49,12 +49,10 @@ export class DeleteCardDirective {
         style.textContent = `
         @keyframes burnEffect {
         0% {
-        visibility: visible;
-        filter: contrast(100%) brightness(1500%) grayscale(100%)  contrast(100%) ;
+            filter: contrast(100%) brightness(1500%) grayscale(100%) ;
         }
         100% {
-            visibility: visible;
-            filter: contrast(1000%) brightness(1500%) grayscale(100%) contrast(500%) ;
+            filter: contrast(1000%) brightness(1500%) grayscale(100%);
         }
     }
         `;
