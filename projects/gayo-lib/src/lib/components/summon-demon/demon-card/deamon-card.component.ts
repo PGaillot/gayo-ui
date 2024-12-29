@@ -2,7 +2,7 @@ import { Component, Input } from "@angular/core";
 import { CardComponent } from "../card/card.component";
 
 @Component({
-    selector: 'lsd-deamon-card',
+    selector: 'lsd-demon-card',
     standalone: true,
     imports: [],
     templateUrl: './deamon-card.component.html',

@@ -145,7 +145,16 @@ $card-size: 400px;
   }
 }
 
-
+.card-noise-filter-element{
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: contrast(1000%) invert(1500%) brightness(2000%);
+  mix-blend-mode: difference;
+}
 
 #demon-flame {
     position: absolute;
