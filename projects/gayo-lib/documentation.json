@@ -174,7 +174,7 @@
         },
         {
             "name": "HoverCardDirectiveDemo",
-            "id": "component-HoverCardDirectiveDemo-e7b7a9207ef0147ca89e2faca5b4100dbe046f25daa4ad679354faf16b3a03676eed39f176f5458bf883945dd8520e707716425a0b80a7123124edea4a4059ea",
+            "id": "component-HoverCardDirectiveDemo-d601c81920a811b6ad4b794f42bce567403e3a170dbe662fa829e492d307585af7dec45afb46a96fb8fcaf748fa7a7edc775a42bf58a543416ef3d8ba555bfd8",
             "file": "projects/gayo-lib/src/stories/summon-demon/hover-card.directive.stories.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -187,16 +187,25 @@
                 "./story.scss"
             ],
             "styles": [],
-            "template": "    <div class=\"demo-container\">\n        <!-- Candle Card -->\n\n        @switch(cardType){\n\n            @case('candle'){\n\n                <lsd-candle-card\n                lsdHoverCard\n                [id]=\"id\"\n                [cardName]=\"cardName\"\n                [effect]=\"effect\"\n                [diceNumbers]=\"diceNumbers\">\n            </lsd-candle-card>\n        }\n\n\n        @case('demon'){\n        <!-- Demon Card -->\n        <lsd-demon-card\n        lsdHoverCard\n        [id]=\"id\"\n        [cardName]=\"cardName\"\n        [effect]=\"effect\"\n        [dice]=\"dice\">\n    </lsd-demon-card>\n    }\n}\n</div>\n",
+            "template": "    <div class=\"demo-container\">\n        <!-- Candle Card -->\n\n        @switch(cardType){\n\n        @case('candle'){\n            <lsd-candle-card\n            lsdHoverCard\n            [id]=\"id\"\n            [cardName]=\"cardName\"\n            [effect]=\"effect\"\n            [diceNumbers]=\"diceNumbers\">\n        </lsd-candle-card>\n        }\n\n        @case('demon'){\n        <!-- Demon Card -->\n        <lsd-demon-card\n        lsdHoverCard\n        [id]=\"id\"\n        [cardName]=\"cardName\"\n        [effect]=\"effect\"\n        [dice]=\"dice\">\n        </lsd-demon-card>\n        }\n\n        @case('back-entity'){\n        <!-- Demon Card -->\n        <lsd-back-card\n        lsdHoverCard\n        [backCardType]=\"'entity'\">\n        </lsd-back-card>\n        }\n}\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
                 {
+                    "name": "backCardType",
+                    "defaultValue": "'entity'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 69,
+                    "type": "BackCardType",
+                    "decorators": []
+                },
+                {
                     "name": "cardName",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 52,
+                    "line": 60,
                     "type": "string",
                     "decorators": []
                 },
@@ -205,7 +214,7 @@
                     "defaultValue": "'candle'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 54,
+                    "line": 62,
                     "type": "CardType",
                     "decorators": []
                 },
@@ -214,7 +223,7 @@
                     "defaultValue": "0",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 58,
+                    "line": 66,
                     "type": "number",
                     "decorators": []
                 },
@@ -223,7 +232,7 @@
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 57,
+                    "line": 65,
                     "type": "number[]",
                     "decorators": []
                 },
@@ -231,7 +240,7 @@
                     "name": "effect",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 53,
+                    "line": 61,
                     "type": "string",
                     "decorators": []
                 },
@@ -240,7 +249,7 @@
                     "defaultValue": "0",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 51,
+                    "line": 59,
                     "type": "number",
                     "decorators": []
                 },
@@ -249,7 +258,7 @@
                     "defaultValue": "0",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 60,
+                    "line": 68,
                     "type": "number",
                     "decorators": []
                 },
@@ -258,7 +267,7 @@
                     "defaultValue": "0",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 59,
+                    "line": 67,
                     "type": "number",
                     "decorators": []
                 }
@@ -283,12 +292,16 @@
                 {
                     "name": "HoverCardDirective",
                     "type": "directive"
+                },
+                {
+                    "name": "BackCardComponent",
+                    "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';\nimport { Component, Input } from '@angular/core';\nimport { CandleCardComponent } from '../../lib/components/summon-demon/candle-card/candle-card.component';\nimport { HoverCardDirective } from '../../lib/directives/hover-card.directive';\nimport { DemonCardComponent } from '../../lib/components/summon-demon/demon-card/deamon-card.component';\n\ntype CardType = 'candle' | 'demon' | 'entity'; // Ajoutez vos types ici\n\n@Component({\n    selector: 'lsd-hover-card-demo',\n    standalone: true,\n    styleUrls: ['../../lib/styles/lsd.scss', './story.scss'],\n    imports: [\n        CandleCardComponent,\n        DemonCardComponent,\n        HoverCardDirective\n    ],\n    template: `\n        <div class=\"demo-container\">\n            <!-- Candle Card -->\n\n            @switch(cardType){\n\n                @case('candle'){\n\n                    <lsd-candle-card \n                    lsdHoverCard \n                    [id]=\"id\" \n                    [cardName]=\"cardName\" \n                    [effect]=\"effect\" \n                    [diceNumbers]=\"diceNumbers\">\n                </lsd-candle-card>\n            }\n             \n            \n            @case('demon'){\n            <!-- Demon Card -->\n            <lsd-demon-card \n            lsdHoverCard\n            [id]=\"id\" \n            [cardName]=\"cardName\" \n            [effect]=\"effect\"\n            [dice]=\"dice\">\n        </lsd-demon-card>\n        }\n    }\n    </div>\n    `,\n})\nclass HoverCardDirectiveDemo {\n    @Input() id: number = 0;\n    @Input() cardName!: string;\n    @Input() effect!: string;\n    @Input() cardType: CardType = 'candle';\n\n    // Propriétés spécifiques à chaque type de carte\n    @Input() diceNumbers: number[] = [];\n    @Input() dice: number = 0;\n    @Input() soulValue: number = 0;\n    @Input() ritualCost: number = 0;\n}\n\nconst meta: Meta<HoverCardDirectiveDemo> = {\n    title: 'SummonDemon/Directives/HoverCard',\n    component: HoverCardDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [\n                CandleCardComponent,\n                DemonCardComponent,\n                HoverCardDirective,\n                HoverCardDirectiveDemo\n            ],\n        }),\n    ],\n    argTypes: {\n        cardType: {\n            control: 'select',\n            options: ['candle', 'demon', 'entity'],\n            description: 'Type of card to display'\n        },\n        id: { control: 'number' },\n        cardName: { control: 'text' },\n        effect: { control: 'text' },\n        diceNumbers: { control: 'object', if: { arg: 'cardType', eq: 'candle' } },\n        dice: { control: 'number', if: { arg: 'cardType', eq: 'demon' } },\n    },\n};\n\nexport default meta;\n\ntype Story = StoryObj<HoverCardDirectiveDemo>;\n\n// Stories pour chaque type de carte\nexport const CandleCardStory: Story = {\n    args: {\n        cardType: 'candle',\n        id: 12,\n        cardName: 'Candle',\n        effect: 'Récoltez une Âme.',\n        diceNumbers: [5, 6],\n    },\n};\n\nexport const DemonCardStory: Story = {\n    args: {\n        cardType: 'demon',\n        id: 13,\n        cardName: 'Demon',\n        effect: 'Détruisez une carte.',\n        dice: 5,\n    },\n};",
+            "sourceCode": "import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';\nimport { Component, Input } from '@angular/core';\nimport { CandleCardComponent } from '../../lib/components/summon-demon/candle-card/candle-card.component';\nimport { HoverCardDirective } from '../../lib/directives/hover-card.directive';\nimport { DemonCardComponent } from '../../lib/components/summon-demon/demon-card/deamon-card.component';\nimport { BackCardComponent, BackCardType } from '../../lib/components/summon-demon/back-card/back-card.component';\n\ntype CardType = 'candle' | 'demon' | 'entity' |'back-entity'; // Ajoutez vos types ici\n\n@Component({\n    selector: 'lsd-hover-card-demo',\n    standalone: true,\n    styleUrls: ['../../lib/styles/lsd.scss', './story.scss'],\n    imports: [\n        CandleCardComponent,\n        DemonCardComponent,\n        HoverCardDirective,\n        BackCardComponent,\n    ],\n    template: `\n        <div class=\"demo-container\">\n            <!-- Candle Card -->\n\n            @switch(cardType){\n\n            @case('candle'){\n                <lsd-candle-card \n                lsdHoverCard \n                [id]=\"id\" \n                [cardName]=\"cardName\" \n                [effect]=\"effect\" \n                [diceNumbers]=\"diceNumbers\">\n            </lsd-candle-card>\n            }\n             \n            @case('demon'){\n            <!-- Demon Card -->\n            <lsd-demon-card \n            lsdHoverCard\n            [id]=\"id\" \n            [cardName]=\"cardName\" \n            [effect]=\"effect\"\n            [dice]=\"dice\">\n            </lsd-demon-card>\n            }\n      \n            @case('back-entity'){\n            <!-- Demon Card -->\n            <lsd-back-card \n            lsdHoverCard\n            [backCardType]=\"'entity'\">\n            </lsd-back-card>\n            }\n    }\n    </div>\n    `,\n})\nclass HoverCardDirectiveDemo {\n    @Input() id: number = 0;\n    @Input() cardName!: string;\n    @Input() effect!: string;\n    @Input() cardType: CardType = 'candle';\n\n    // Propriétés spécifiques à chaque type de carte\n    @Input() diceNumbers: number[] = [];\n    @Input() dice: number = 0;\n    @Input() soulValue: number = 0;\n    @Input() ritualCost: number = 0;\n    @Input() backCardType: BackCardType = 'entity'; \n}\n\nconst meta: Meta<HoverCardDirectiveDemo> = {\n    title: 'SummonDemon/Directives/HoverCard',\n    component: HoverCardDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [\n                CandleCardComponent,\n                DemonCardComponent,\n                BackCardComponent,\n                HoverCardDirective,\n                HoverCardDirectiveDemo\n            ],\n        }),\n    ],\n    argTypes: {\n        cardType: {\n            control: 'select',\n            options: ['candle', 'demon', 'entity', 'back-entity'],\n            description: 'Type of card to display'\n        },\n        id: { control: 'number' },\n        cardName: { control: 'text' },\n        effect: { control: 'text' },\n        diceNumbers: { control: 'object', if: { arg: 'cardType', eq: 'candle' } },\n        dice: { control: 'number', if: { arg: 'cardType', eq: 'demon' } },\n        backCardType: { control: 'select', options: ['entity', 'demon', 'candle'], if: { arg: 'cardType', eq: 'back-entity' } },\n    },\n};\n\nexport default meta;\n\ntype Story = StoryObj<HoverCardDirectiveDemo>;\n\n// Stories pour chaque type de carte\nexport const CandleCardStory: Story = {\n    args: {\n        cardType: 'candle',\n        id: 12,\n        cardName: 'Candle',\n        diceNumbers: [5, 6],\n    },\n};\n\nexport const DemonCardStory: Story = {\n    args: {\n        cardType: 'demon',\n        id: 109,\n        cardName: 'porcus',\n        effect: 'recoltez 5 âmes.',\n        dice: 5,\n    },\n};",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -476,6 +489,16 @@
                 "defaultValue": "{\n    args: { \n        cardName: 'roméo',\n        diceNumber: 8,\n        type: 'boy',\n        effect: 'Pour chacune de vos FILLES récoltez une âme.'\n    }\n}"
             },
             {
+                "name": "Candle",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-demon/back-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        backCardType: 'candle'\n    }\n}"
+            },
+            {
                 "name": "CandleCardStory",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -483,7 +506,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n    args: {\n        cardType: 'candle',\n        id: 12,\n        cardName: 'Candle',\n        effect: 'Récoltez une Âme.',\n        diceNumbers: [5, 6],\n    },\n}"
+                "defaultValue": "{\n    args: {\n        cardType: 'candle',\n        id: 12,\n        cardName: 'Candle',\n        diceNumbers: [5, 6],\n    },\n}"
             },
             {
                 "name": "Charisma",
@@ -626,6 +649,16 @@
                 "defaultValue": "{\n  args: {\n    size:'small'\n  },\n  render: (args) => ({\n    props: {\n      ...args,\n    },\n    template: `\n       <div style=\"display: flex; flex-direction: column; flex-wrap: wrap;  gap: 16px; font-family: Monospace; color: #2dc92d\">\n\n            <h2>Je veux en savoir plus</h2>\n            lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !\n\n            <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px; font-family: Monospace; color: #2dc92d\">\n            <vt-btn ${argsToTemplate(args)}>Je veux en savoir plus</vt-btn>\n           <vt-btn ${argsToTemplate(args)} [stroke]=\"true\">continuer</vt-btn>\n            </div>\n        </div>\n    `,\n  }),\n}"
             },
             {
+                "name": "Demon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-demon/back-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        backCardType: 'demon'\n    }\n}"
+            },
+            {
                 "name": "DemonCardStory",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -633,7 +666,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n    args: {\n        cardType: 'demon',\n        id: 13,\n        cardName: 'Demon',\n        effect: 'Détruisez une carte.',\n        dice: 5,\n    },\n}"
+                "defaultValue": "{\n    args: {\n        cardType: 'demon',\n        id: 109,\n        cardName: 'porcus',\n        effect: 'recoltez 5 âmes.',\n        dice: 5,\n    },\n}"
             },
             {
                 "name": "Disabled",
@@ -694,6 +727,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    description:\n      \"Les femmes gardent un bon souvenir de vos amplitudes d'effort et/ou un marathon ressemble à une balade de mamie pour digérer le repas du dimanche midi ? L'Endurance c'est votre truc, ça ne fait aucun doute.\",\n    perkName: 'endurance',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "Entity",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-demon/back-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        backCardType: 'entity'\n    }\n}"
             },
             {
                 "name": "GentilleBougie",
@@ -789,6 +832,16 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-demon/back-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<BackCardComponent>",
+                "defaultValue": "{\n    title: 'SummonDemon/Back Card',\n    component: BackCardComponent,\n    argTypes: {\n        backCardType: {\n            control: {\n                type: 'select',\n                options: ['entity', 'demon', 'candle']\n            }\n        }\n    }\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/gayo-lib/src/stories/summon-demon/candle-card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -833,7 +886,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<HoverCardDirectiveDemo>",
-                "defaultValue": "{\n    title: 'SummonDemon/Directives/HoverCard',\n    component: HoverCardDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [\n                CandleCardComponent,\n                DemonCardComponent,\n                HoverCardDirective,\n                HoverCardDirectiveDemo\n            ],\n        }),\n    ],\n    argTypes: {\n        cardType: {\n            control: 'select',\n            options: ['candle', 'demon', 'entity'],\n            description: 'Type of card to display'\n        },\n        id: { control: 'number' },\n        cardName: { control: 'text' },\n        effect: { control: 'text' },\n        diceNumbers: { control: 'object', if: { arg: 'cardType', eq: 'candle' } },\n        dice: { control: 'number', if: { arg: 'cardType', eq: 'demon' } },\n    },\n}"
+                "defaultValue": "{\n    title: 'SummonDemon/Directives/HoverCard',\n    component: HoverCardDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [\n                CandleCardComponent,\n                DemonCardComponent,\n                BackCardComponent,\n                HoverCardDirective,\n                HoverCardDirectiveDemo\n            ],\n        }),\n    ],\n    argTypes: {\n        cardType: {\n            control: 'select',\n            options: ['candle', 'demon', 'entity', 'back-entity'],\n            description: 'Type of card to display'\n        },\n        id: { control: 'number' },\n        cardName: { control: 'text' },\n        effect: { control: 'text' },\n        diceNumbers: { control: 'object', if: { arg: 'cardType', eq: 'candle' } },\n        dice: { control: 'number', if: { arg: 'cardType', eq: 'demon' } },\n        backCardType: { control: 'select', options: ['entity', 'demon', 'candle'], if: { arg: 'cardType', eq: 'back-entity' } },\n    },\n}"
             },
             {
                 "name": "meta",
@@ -1174,7 +1227,7 @@
                 "name": "CardType",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "\"candle\" | \"demon\" | \"entity\"",
+                "rawtype": "\"candle\" | \"demon\" | \"entity\" | \"back-entity\"",
                 "file": "projects/gayo-lib/src/stories/summon-demon/hover-card.directive.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1187,6 +1240,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<FolderCardComponent>",
                 "file": "projects/gayo-lib/src/stories/folder-card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<BackCardComponent>",
+                "file": "projects/gayo-lib/src/stories/summon-demon/back-card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1580,6 +1644,48 @@
                     "defaultValue": "{\n    title: 'SummonDemon/EntityCard',\n    component: EntityCardComponent,\n    tags: ['autodocs'],\n}"
                 }
             ],
+            "projects/gayo-lib/src/stories/summon-demon/back-card.stories.ts": [
+                {
+                    "name": "Candle",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/back-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        backCardType: 'candle'\n    }\n}"
+                },
+                {
+                    "name": "Demon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/back-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        backCardType: 'demon'\n    }\n}"
+                },
+                {
+                    "name": "Entity",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/back-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        backCardType: 'entity'\n    }\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/back-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<BackCardComponent>",
+                    "defaultValue": "{\n    title: 'SummonDemon/Back Card',\n    component: BackCardComponent,\n    argTypes: {\n        backCardType: {\n            control: {\n                type: 'select',\n                options: ['entity', 'demon', 'candle']\n            }\n        }\n    }\n}"
+                }
+            ],
             "projects/gayo-lib/src/stories/summon-demon/hover-card.directive.stories.ts": [
                 {
                     "name": "CandleCardStory",
@@ -1589,7 +1695,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n    args: {\n        cardType: 'candle',\n        id: 12,\n        cardName: 'Candle',\n        effect: 'Récoltez une Âme.',\n        diceNumbers: [5, 6],\n    },\n}"
+                    "defaultValue": "{\n    args: {\n        cardType: 'candle',\n        id: 12,\n        cardName: 'Candle',\n        diceNumbers: [5, 6],\n    },\n}"
                 },
                 {
                     "name": "DemonCardStory",
@@ -1599,7 +1705,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n    args: {\n        cardType: 'demon',\n        id: 13,\n        cardName: 'Demon',\n        effect: 'Détruisez une carte.',\n        dice: 5,\n    },\n}"
+                    "defaultValue": "{\n    args: {\n        cardType: 'demon',\n        id: 109,\n        cardName: 'porcus',\n        effect: 'recoltez 5 âmes.',\n        dice: 5,\n    },\n}"
                 },
                 {
                     "name": "meta",
@@ -1609,7 +1715,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<HoverCardDirectiveDemo>",
-                    "defaultValue": "{\n    title: 'SummonDemon/Directives/HoverCard',\n    component: HoverCardDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [\n                CandleCardComponent,\n                DemonCardComponent,\n                HoverCardDirective,\n                HoverCardDirectiveDemo\n            ],\n        }),\n    ],\n    argTypes: {\n        cardType: {\n            control: 'select',\n            options: ['candle', 'demon', 'entity'],\n            description: 'Type of card to display'\n        },\n        id: { control: 'number' },\n        cardName: { control: 'text' },\n        effect: { control: 'text' },\n        diceNumbers: { control: 'object', if: { arg: 'cardType', eq: 'candle' } },\n        dice: { control: 'number', if: { arg: 'cardType', eq: 'demon' } },\n    },\n}"
+                    "defaultValue": "{\n    title: 'SummonDemon/Directives/HoverCard',\n    component: HoverCardDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [\n                CandleCardComponent,\n                DemonCardComponent,\n                BackCardComponent,\n                HoverCardDirective,\n                HoverCardDirectiveDemo\n            ],\n        }),\n    ],\n    argTypes: {\n        cardType: {\n            control: 'select',\n            options: ['candle', 'demon', 'entity', 'back-entity'],\n            description: 'Type of card to display'\n        },\n        id: { control: 'number' },\n        cardName: { control: 'text' },\n        effect: { control: 'text' },\n        diceNumbers: { control: 'object', if: { arg: 'cardType', eq: 'candle' } },\n        dice: { control: 'number', if: { arg: 'cardType', eq: 'demon' } },\n        backCardType: { control: 'select', options: ['entity', 'demon', 'candle'], if: { arg: 'cardType', eq: 'back-entity' } },\n    },\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts": [
@@ -2203,7 +2309,7 @@
                     "name": "CardType",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "\"candle\" | \"demon\" | \"entity\"",
+                    "rawtype": "\"candle\" | \"demon\" | \"entity\" | \"back-entity\"",
                     "file": "projects/gayo-lib/src/stories/summon-demon/hover-card.directive.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -2229,6 +2335,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<FolderCardComponent>",
                     "file": "projects/gayo-lib/src/stories/folder-card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/gayo-lib/src/stories/summon-demon/back-card.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<BackCardComponent>",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/back-card.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2491,6 +2610,46 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/gayo-lib/src/stories/summon-demon/back-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Candle",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-demon/back-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Demon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-demon/back-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Entity",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-demon/back-card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/gayo-lib/src/stories/summon-demon/candle-card.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -2635,7 +2794,7 @@
                 "linktype": "component",
                 "name": "HoverCardDirectiveDemo",
                 "coveragePercent": 0,
-                "coverageCount": "0/9",
+                "coverageCount": "0/10",
                 "status": "low"
             },
             {

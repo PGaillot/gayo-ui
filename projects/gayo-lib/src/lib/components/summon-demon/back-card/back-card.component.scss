@@ -1,0 +1,114 @@
+
+@import "../../../styles/lsd.scss";
+$card-size: 400px;
+
+#back-card-circle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: calc( $card-size - 33px ) ;
+    width: calc( $card-size - 33px ) ;
+    border-radius: $card-size;
+    border: solid 4px $blood-color;
+    z-index: 100;
+}
+
+.card-noise-filter-element{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: contrast(1000%) invert(1500%) brightness(2000%);
+    mix-blend-mode: difference;
+}
+.effect, 
+.border{
+  position: absolute;
+  transform: translate(-50%);
+  left: 50%;
+}
+
+.effect {
+  z-index: 5;
+  top: 68%;
+  z-index: 3;
+  font-size: 14px;
+
+  .border{
+    width: 100%;
+    top: 0;
+    z-index: -1;
+    -webkit-text-stroke: 8px $dark-color; 
+    -webkit-text-fill-color: none;
+  }
+}
+
+#entity-card,
+#candle-card {
+  background: rgb(40, 40, 40);
+  overflow: hidden;
+  height: $card-size;
+  width: $card-size;
+  border-radius: $card-size;
+  position: relative;
+  color: $gold-color;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    width: 85%;
+    height: 85%;
+    background: $dark-color;
+    z-index: 0;
+  }
+
+  #pentacle{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    height: 95%;
+    z-index: 0;
+    filter: grayscale(100%) brightness(60%);
+    mix-blend-mode:normal;
+  }
+
+
+}
+#entity-card {
+  #effect {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    text-align: center;
+    background: white;
+    padding: 30px;
+    color: $dark-color;
+  }
+}
+
+    #lsd-logo {
+        z-index: 10;
+        height: 300px;
+        min-width: 320px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-image: url("../../../../../assets/lsd/lets-summon-demon.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+

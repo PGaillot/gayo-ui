@@ -3,8 +3,9 @@ import { Component, Input } from '@angular/core';
 import { CandleCardComponent } from '../../lib/components/summon-demon/candle-card/candle-card.component';
 import { HoverCardDirective } from '../../lib/directives/hover-card.directive';
 import { DemonCardComponent } from '../../lib/components/summon-demon/demon-card/deamon-card.component';
+import { BackCardComponent, BackCardType } from '../../lib/components/summon-demon/back-card/back-card.component';
 
-type CardType = 'candle' | 'demon' | 'entity'; // Ajoutez vos types ici
+type CardType = 'candle' | 'demon' | 'entity' |'back-entity'; // Ajoutez vos types ici
 
 @Component({
     selector: 'lsd-hover-card-demo',
@@ -13,7 +14,8 @@ type CardType = 'candle' | 'demon' | 'entity'; // Ajoutez vos types ici
     imports: [
         CandleCardComponent,
         DemonCardComponent,
-        HoverCardDirective
+        HoverCardDirective,
+        BackCardComponent,
     ],
     template: `
         <div class="demo-container">
@@ -21,18 +23,16 @@ type CardType = 'candle' | 'demon' | 'entity'; // Ajoutez vos types ici
 
             @switch(cardType){
 
-                @case('candle'){
-
-                    <lsd-candle-card 
-                    lsdHoverCard 
-                    [id]="id" 
-                    [cardName]="cardName" 
-                    [effect]="effect" 
-                    [diceNumbers]="diceNumbers">
-                </lsd-candle-card>
+            @case('candle'){
+                <lsd-candle-card 
+                lsdHoverCard 
+                [id]="id" 
+                [cardName]="cardName" 
+                [effect]="effect" 
+                [diceNumbers]="diceNumbers">
+            </lsd-candle-card>
             }
              
-            
             @case('demon'){
             <!-- Demon Card -->
             <lsd-demon-card 
@@ -41,8 +41,16 @@ type CardType = 'candle' | 'demon' | 'entity'; // Ajoutez vos types ici
             [cardName]="cardName" 
             [effect]="effect"
             [dice]="dice">
-        </lsd-demon-card>
-        }
+            </lsd-demon-card>
+            }
+      
+            @case('back-entity'){
+            <!-- Demon Card -->
+            <lsd-back-card 
+            lsdHoverCard
+            [backCardType]="backCardType">
+            </lsd-back-card>
+            }
     }
     </div>
     `,
@@ -58,6 +66,7 @@ class HoverCardDirectiveDemo {
     @Input() dice: number = 0;
     @Input() soulValue: number = 0;
     @Input() ritualCost: number = 0;
+    @Input() backCardType: BackCardType = 'entity'; 
 }
 
 const meta: Meta<HoverCardDirectiveDemo> = {
@@ -68,6 +77,7 @@ const meta: Meta<HoverCardDirectiveDemo> = {
             imports: [
                 CandleCardComponent,
                 DemonCardComponent,
+                BackCardComponent,
                 HoverCardDirective,
                 HoverCardDirectiveDemo
             ],
@@ -76,7 +86,7 @@ const meta: Meta<HoverCardDirectiveDemo> = {
     argTypes: {
         cardType: {
             control: 'select',
-            options: ['candle', 'demon', 'entity'],
+            options: ['candle', 'demon', 'entity', 'back-entity'],
             description: 'Type of card to display'
         },
         id: { control: 'number' },
@@ -84,6 +94,7 @@ const meta: Meta<HoverCardDirectiveDemo> = {
         effect: { control: 'text' },
         diceNumbers: { control: 'object', if: { arg: 'cardType', eq: 'candle' } },
         dice: { control: 'number', if: { arg: 'cardType', eq: 'demon' } },
+        backCardType: { control: 'select', options: ['entity', 'demon', 'candle'], if: { arg: 'cardType', eq: 'back-entity' } },
     },
 };
 
@@ -108,5 +119,12 @@ export const DemonCardStory: Story = {
         cardName: 'porcus',
         effect: 'recoltez 5 âmes.',
         dice: 5,
+    },
+};
+
+export const BackCardStory: Story = {
+    args: {
+        cardType: 'back-entity',
+        backCardType: 'entity',
     },
 };

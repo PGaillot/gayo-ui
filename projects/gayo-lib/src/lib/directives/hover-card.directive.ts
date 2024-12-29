@@ -1,5 +1,4 @@
 import { Directive, ElementRef, Input } from '@angular/core';
-import { filter } from 'rxjs';
 
 @Directive({
     selector: '[lsdHoverCard]',
