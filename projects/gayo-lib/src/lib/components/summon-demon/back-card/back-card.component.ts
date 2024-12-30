@@ -1,3 +1,4 @@
+import { NgStyle } from "@angular/common";
 import { Component, Input } from "@angular/core";
 
 export type BackCardType = 'entity' | 'demon' | 'candle';
@@ -5,7 +6,7 @@ export type BackCardType = 'entity' | 'demon' | 'candle';
 @Component({
     selector: 'lsd-back-card',
     standalone: true,
-    imports: [],
+    imports: [NgStyle],
     templateUrl: './back-card.component.html',
     styleUrls: [ './back-card.component.scss']
 })

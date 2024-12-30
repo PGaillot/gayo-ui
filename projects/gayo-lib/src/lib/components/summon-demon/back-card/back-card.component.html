@@ -11,7 +11,9 @@
       <rect width='100%' height='100%' filter='url(#noiseFilter)'/>
     </svg>
 
-    <div id="back-card-circle"></div>
+    @if(backCardType !== 'demon'){
+        <div id="back-card-circle" [ngStyle]="{'border-color': backCardType === 'entity' ?  '#C5162F' : '#FFC903'}"></div>
+    }
 
     <div id="lsd-logo"> </div>
   

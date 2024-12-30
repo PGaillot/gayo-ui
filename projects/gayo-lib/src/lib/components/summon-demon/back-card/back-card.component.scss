@@ -10,7 +10,8 @@ $card-size: 400px;
     height: calc( $card-size - 33px ) ;
     width: calc( $card-size - 33px ) ;
     border-radius: $card-size;
-    border: solid 4px $blood-color;
+    border-style: solid;
+    border-width: 4px;
     z-index: 100;
 }
 
