@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/angular";
 import { DemonCardComponent } from "../../lib/components/summon-demon";
+import { demonCards } from "../../lib/datas/lsd/cards.data";
 
 
 const meta:Meta<DemonCardComponent> = {
@@ -15,9 +16,6 @@ type Story = StoryObj<DemonCardComponent>;
 
 export const Default : Story =  {
     args: {
-        dice: 5,
-        id:109,
-        cardName: "porcus",
-        effect:"recoltez 5 âmes."
+        demon:demonCards[0]
     }
 }

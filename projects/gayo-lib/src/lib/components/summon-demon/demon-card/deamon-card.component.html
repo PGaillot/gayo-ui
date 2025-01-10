@@ -17,20 +17,28 @@
         </defs>
         <text>
           <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle" class="border">
-            {{ cardName }}
+            {{ demon.name }}
           </textPath>
           <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle" class="title">
-            {{ cardName }}
+            {{ demon.name }}
           </textPath>
         </text>
       </svg>
-        <p id="effect">{{ effect }}</p>
+        <p id="effect">{{ demon.description }}</p>
     <div id="demon-dice-num-container">
-      <p class="dice-number">{{ dice }}</p>
+      @for (dice of demon.dices; track $index) {
+        @if(dice === null){
+          <p class="dice-number">infini</p>
+        }
+        @else {
+          <p class="dice-number">{{ dice }}</p>
+        }
+      }
     </div>
     
-    
-    <div id="id">{{ id }}</div>
+    <div class="image" alt=""></div>
+
+    <div id="id">{{ demon.id }}</div>
     <img id="demon-flame" src="assets/lsd/demon-border.svg" alt="">
   </div>
   

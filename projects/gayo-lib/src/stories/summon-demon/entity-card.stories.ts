@@ -1,5 +1,7 @@
 import { Meta, StoryObj } from "@storybook/angular";
 import { EntityCardComponent } from "../../lib/components/summon-demon/entity-card/entity-card.component";
+import { EntityCard } from "../../lib/models/lsd/card.model";
+import { entityCards } from "../../lib/datas/lsd/cards.data";
 
 const meta:Meta<EntityCardComponent> = {
     title: 'SummonDemon/EntityCard',
@@ -11,21 +13,16 @@ export default meta;
 
 type Story = StoryObj<EntityCardComponent>;
 
+const entityDeck:EntityCard[] = entityCards;
 
 export const Girl: Story = {
-    args: { 
-        cardName: 'eve',
-        diceNumber: 2,
-        type: 'girl',
-        effect: 'Récoltez une âme.'
+    args: {
+        entity:entityCards[4]
     }
 }
 
 export const Boy: Story = {
-    args: { 
-        cardName: 'roméo',
-        diceNumber: 8,
-        type: 'boy',
-        effect: 'Pour chacune de vos FILLES récoltez une âme.'
+    args: {
+        entity:entityCards[14]
     }
 }

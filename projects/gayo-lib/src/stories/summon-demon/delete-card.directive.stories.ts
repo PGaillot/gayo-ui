@@ -18,12 +18,16 @@ import { DeleteCardDirective } from '../../lib/directives/delete-card.directive'
         </lsd-candle-card>
     `,
 })
+
+
 class DeleteCardDirectiveDemo {
     @Input() id: number = 0;
     @Input() cardName!: string;
     @Input() effect!: string;
     @Input() diceNumbers: number[] = [];
 }
+
+//----------------------------------
 
 const meta: Meta<DeleteCardDirectiveDemo> = {
     title: 'SummonDemon/Directives/DeleteCard',

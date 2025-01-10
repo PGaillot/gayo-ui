@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, ViewChild } from "@angular/core";
-import { CardComponent } from "../card/card.component";
+import { CandleCard } from "../../../models/lsd/card.model";
 
 export interface CardEffect {
     title: string;
@@ -12,12 +12,12 @@ export interface CardEffect {
     standalone: true,
     imports: [],
     templateUrl: './candle-card.component.html',
-    styleUrls: ['../entity-card/entity-card.component.scss', './candle-card.component.scss']
+    styleUrls: ['./candle-card.component.scss', '../card/card.component.scss']
 })
 
 
-export class CandleCardComponent extends CardComponent {
-    @Input() diceNumbers: number[] = [];
+export class CandleCardComponent {
+    @Input() candle!: CandleCard;
 
     candleCardEffect: CardEffect = {
         title: `Récoltez une Âme.`,

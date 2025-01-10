@@ -121,6 +121,22 @@ $card-size: 400px;
     }
   }
 
+  .image{
+      z-index:0;
+      height: 350px;
+      min-width: 350px;
+      position: absolute;
+      top: 64%;
+      left: 50%;
+      transform: translate(-50%, -65%);
+      background-image: url("../../../../../assets/lsd/card-img/Frame\ 37.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 100%;
+      overflow: hidden;
+  }
+
   #id {
     z-index: 1;
     position: absolute;
@@ -158,7 +174,7 @@ $card-size: 400px;
 
 #demon-flame {
     position: absolute;
-    top: 72%;
+    top: 72.5%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 87%;

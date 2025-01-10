@@ -1,14 +1,36 @@
 <div id="entity-card">
-  <h3>{{ cardName }}</h3>
-  <p id="effect">{{ effect }}</p>
+  <svg class="card-noise-filter-element" viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg'>
+    <filter id='noiseFilter'>
+      <feTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='3' stitchTiles='stitch' />
+    </filter>
+    <rect width='100%' height='100%' filter='url(#noiseFilter)' />
+  </svg>
+
+  <svg id="title-card" viewBox="0 0 400 200" width="400" height="200">
+    <defs>
+      <path id="curve" d="M40 200C40 111.634 111.634 40 200 40C288.366 40 360 111.634 360 200" fill="none" />
+    </defs>
+    <text>
+      <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle" class="border">
+        {{entity.kindness}} {{ entity.name }}
+      </textPath>
+      <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle" class="title">
+        {{entity.kindness}} {{ entity.name }}
+      </textPath>
+    </text>
+  </svg>
+
+  <p id="effect">{{ entity.description }}</p>
   <div id="dice-num-container">
-    <p class="dice-number">{{ diceNumber }}</p>
+    @for (dice of entity.dices; track $index) {
+    <p class="dice-number">{{ dice }}</p>
+    }
   </div>
 
   <div id="type">
-    @switch (type) {
-    @case ("girl") {G}
-    @case ("boy") {B}
+    @switch (entity.gender) {
+    @case ('garçon') {G}
+    @case ("fille") {F}
     @default {A}
     }
   </div>
@@ -20,5 +42,5 @@
         stroke="#C5162F" stroke-width="6" />
     </svg>
   </div>
-  <div id="id">{{ id }}</div>
+  <div id="id">{{ entity.id }}</div>
 </div>

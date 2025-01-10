@@ -18,17 +18,17 @@
     </defs>
     <text>
       <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle" class="border">
-        {{ cardName }}
+        {{ candle.name }}
       </textPath>
       <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle" class="title">
-        {{ cardName }}
+        {{ candle.name }}
       </textPath>
     </text>
   </svg>
 
   <div id="dice-num-container">
-    @for (diceNumber of diceNumbers; track $index) {
-    <p class="dice-number">{{ diceNumber }}</p>
+    @for (dice of candle.dices; track $index) {
+    <p class="dice-number">{{ dice }}</p>
     }
   </div>
 
@@ -53,5 +53,5 @@
         stroke="#C5162F" stroke-width="6" />
     </svg>
   </div>
-  <div id="id">{{ id }}</div>
+  <div id="id">{{ candle.id }}</div>
 </div>

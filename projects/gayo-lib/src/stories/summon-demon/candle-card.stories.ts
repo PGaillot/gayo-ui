@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/angular";
 import { CandleCardComponent } from "../../lib/components/summon-demon/candle-card/candle-card.component";
+import { candleCards } from "../../lib/datas/lsd/cards.data";
 
 const meta:Meta<CandleCardComponent> = {
     title:'SummonDemon/CandleCard',
@@ -15,40 +16,33 @@ type Story = StoryObj<CandleCardComponent>;
 
 export const BougieDeDebutant: Story = {
   args: {
-    cardName: 'bougie de débutant',
-    diceNumbers: [6,8],
-    id:71
+candle:candleCards[0]
   }
 }
 
 export const CiergeMalefique: Story = {
   args: {
-    cardName: 'cierge maléfique',
-    diceNumbers: [8,9],
-    id:72,
+    candle:candleCards[1]
+
   }
 }
 
 export const DouceBougie: Story = {
   args: {
-    cardName: 'douce bougie',
-    diceNumbers: [5,6],
-    id:70
+    candle:candleCards[2]
   }
 }
 
 export const GentilleBougie: Story = {
   args: {
-    cardName: 'gentille bougie',
-    diceNumbers: [3,4,5],
-    id:69
+    candle:candleCards[3]
+
   }
 }
 
 export const CiergeDiabolique: Story = {
   args: {
-    cardName: 'cierge diabolique',
-    diceNumbers: [9,10,11],
-    id:73
+    candle:candleCards[4]
+
   }
 }

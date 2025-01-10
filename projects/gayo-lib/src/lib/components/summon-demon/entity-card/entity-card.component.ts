@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { CardComponent } from "../card/card.component";
+import { EntityCard } from "../../../models/lsd/card.model";
 
 
 @Component({
@@ -7,10 +7,9 @@ import { CardComponent } from "../card/card.component";
     standalone: true,
     imports: [],
     templateUrl: './entity-card.component.html',
-    styleUrls: ['./entity-card.component.scss']
+    styleUrls: ['./entity-card.component.scss', '../card/card.component.scss']
 })
 
-export class EntityCardComponent extends CardComponent {
-    @Input() type!:'girl' | 'boy' | 'animal';
-    @Input() diceNumber!: number;
+export class EntityCardComponent {
+    @Input() entity!:EntityCard;
 }
