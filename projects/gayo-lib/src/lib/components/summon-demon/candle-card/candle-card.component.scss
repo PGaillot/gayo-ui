@@ -25,3 +25,20 @@
         background: $dark-color;
     }
 }
+
+
+#candle-card {
+    .image {
+        z-index: 10;
+        height: 200px;
+        min-width: 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -65%);
+        background-image: url("../../../../../assets/lsd/candle.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
