@@ -808,10 +808,70 @@ export const entityCards: EntityCard[] = [
  */
 export const demonCards: DemonCard[] = [
     {
+        description: "Gagnez immédiatement la partie.",
+        id: 106,
+        name: "le serpent",
+        dices: [2]
+    },
+    {
+        description: "Parcourez la pioche Démon et invoquez le Démon de votre choix gratuitement. (Il compte parmis vos 3 démons nécessaires à la victoire. Mélangez ensuite la pioche à Démon.)",
+        id: 107,
+        name: "la dégueulivre des démons",
+        dices: [3]
+    },
+    {
+        description: "Obtenez les 2 premières carte de la pioche VOISINAGE.",
+        id: 108,
+        name: "le père fouettard",
+        dices: [4]
+    },
+    {
+        description: "Récoltez 5 Âmes.",
+        id: 109,
+        name: "porcus",
+        dices: [5]
+    },
+    {
+        description: "Récoltez une Âme pour chacune de vos cartes, dont celle-ci.",
+        id: 110,
+        name: "nounou sommes légion",
+        dices: [6]
+    },
+    {
+        description: "Activez toute vos cartes GARÇON et FILLES.",
+        id: 111,
+        name: "belzé'bzz",
+        dices: [7]
+    },
+    {
         id: 112,
         name: "molosse de baël",
         description: "Pour chaqn de vos Animaux, volez une Âme (à vos adversaires et/ou depuis la réserve commune).",
         dices: [8]
+    },
+    {
+        description: "Récoltez une Âme. Rejouez immédiatement. seul vos cartes s'activerons durant ce tour supplémentaire.",
+        id: 113,
+        name: "satange mécanique",
+        dices: [9]
+    },
+    {
+        description: "Volez 5 Âmes. (aux autres joueurs et/ou depuis la réserve commune).",
+        id: 114,
+        name: "antéchrist",
+        dices: [10]
+    },
+    {
+        description: "Volez n'importe quelle carte d'un adversairen dont ses Démons (mais jamais son Cierge).",
+        id: 115,
+        name: "méfilstophélès",
+        dices: [11]
+    },
+    {
+        description: "Volez toutes les cartes d'un adversaire, dont ses Démons (mais jamais son Cierge).",
+        id: 116,
+        name: "le diable",
+        dices: [12]
     },
     {
         id: 117,
@@ -823,6 +883,48 @@ export const demonCards: DemonCard[] = [
         id: 118,
         name: 'démogorguignol',
         description: 'Tout vos GARÇONS et FILLES comptent comme à la fois GARÇONS et FILLES.',
+        dices: []
+    },
+    {
+        description: "Vos GARÇONS et FILLES récoltent le double d'Âmes à votre tour.",
+        id: 119,
+        name: "macabre oni",
+        dices: []
+    },
+    {
+        description: "Chaque fois que vous faîtes un double aux dés, récoltez le nombre d'Âmes indiqué sur la face d'un dé.",
+        id: 120,
+        name: "dédé-zuzu",
+        dices: []
+    },
+    {
+        description: "À votre tour : vous pouvez relancer les 2 dés une fois. (Le précedent résultat est concidéré comme n'ayant jamais existé.)",
+        id: 121,
+        name: "relancifer",
+        dices: []
+    },
+    {
+        description: "Chaque fois que vous obtenez un ANIMAL, récoltez une Âme.",
+        id: 122,
+        name: "âne-modée",
+        dices: []
+    },
+    {
+        description: "Vos adversaire ne peuvent pas vous voler ni vous faire défausser.",
+        id: 123,
+        name: "spectralux",
+        dices: []
+    },
+    {
+        description: "Quand vous invoquez ce Démon, défaussez le immediatement. Regardez les 3 premières cartes de la pioche Démon. Inovoquez l'un d'eux et defaussez les 2 autres.",
+        id: 124,
+        name: "l'œuf de rosemary",
+        dices: []
+    },
+    {
+        description: "Vos adversaires doivent sacrifier une 4e carte pour invoquer un Démon.",
+        id: 125,
+        name: "baphometal",
         dices: []
     },
 ]
