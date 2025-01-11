@@ -52,7 +52,7 @@ type CardType = 'candle' | 'demon' | 'entity' | 'back-card';
             </lsd-entity-card>
             }
       
-            @case('back-entity'){
+            @case('back-card'){
             <!-- Back Card -->
             <lsd-back-card 
             lsdHoverCard
@@ -121,6 +121,6 @@ export const EntityCardStory:Story = {
 export const BackCardStory: Story = {
     args: {
         cardType:'back-card',
-        card: 'entity',
+        card: 'candle',
     },
 };

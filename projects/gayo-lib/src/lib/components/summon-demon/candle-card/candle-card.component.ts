@@ -1,5 +1,6 @@
 import { Component, ElementRef, Input, ViewChild } from "@angular/core";
 import { CandleCard } from "../../../models/lsd/card.model";
+import { IdPipe } from "../../../pipes/lsd/id.pipe";
 
 export interface CardEffect {
     title: string;
@@ -10,7 +11,7 @@ export interface CardEffect {
 @Component({
     selector: 'lsd-candle-card',
     standalone: true,
-    imports: [],
+    imports: [IdPipe],
     templateUrl: './candle-card.component.html',
     styleUrls: ['./candle-card.component.scss', '../card/card.component.scss']
 })
