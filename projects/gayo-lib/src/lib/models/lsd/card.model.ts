@@ -1,4 +1,5 @@
 interface Card {
+    type: 'candle' | 'demon' | 'entity';
     id: number;
     name: string;
     dices: number[];

@@ -1,7 +1,8 @@
 import { EntityCard, DemonCard, CandleCard } from "../../models/lsd/card.model";
 
 export const entityCards: EntityCard[] = [
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "fille",
         id: 1,
@@ -9,7 +10,8 @@ export const entityCards: EntityCard[] = [
         dices: [6],
         description: "Obtenez une carte ANIMAL du VOISINAGE",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "fille",
         id: 2,
@@ -17,7 +19,8 @@ export const entityCards: EntityCard[] = [
         dices: [6],
         description: "Obtenez une carte ANIMAL du VOISINAGE",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "fille",
         id: 3,
@@ -25,7 +28,8 @@ export const entityCards: EntityCard[] = [
         dices: [6],
         description: "Pour chacun de vos GARÇONS : récoltez une Âme.",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "fille",
         id: 4,
@@ -33,7 +37,8 @@ export const entityCards: EntityCard[] = [
         dices: [6],
         description: "Pour chacun de vos GARÇONS : récoltez une Âme.",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "fille",
         id: 5,
@@ -41,7 +46,8 @@ export const entityCards: EntityCard[] = [
         dices: [6],
         description: "Récoltez une Âme.",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "fille",
         id: 6,
@@ -49,7 +55,8 @@ export const entityCards: EntityCard[] = [
         dices: [6],
         description: "Récoltez une Âme.",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "fille",
         id: 7,
@@ -57,7 +64,8 @@ export const entityCards: EntityCard[] = [
         dices: [6],
         description: "Récoltez une Âme.",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "fille",
         id: 8,
@@ -65,7 +73,8 @@ export const entityCards: EntityCard[] = [
         dices: [6],
         description: "Récoltez une Âme.",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "fille",
         id: 9,
@@ -73,7 +82,8 @@ export const entityCards: EntityCard[] = [
         dices: [6],
         description: "Récoltez une Âme.",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "fille",
         id: 10,
@@ -81,7 +91,8 @@ export const entityCards: EntityCard[] = [
         dices: [6],
         description: "Récoltez une Âme.",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "garçon",
         id: 11,
@@ -89,7 +100,8 @@ export const entityCards: EntityCard[] = [
         dices: [8],
         description: "Récoltez une Âme.",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "garçon",
         id: 12,
@@ -97,7 +109,8 @@ export const entityCards: EntityCard[] = [
         dices: [8],
         description: "Récoltez une Âme.",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "garçon",
         id: 13,
@@ -105,7 +118,8 @@ export const entityCards: EntityCard[] = [
         dices: [8],
         description: "Récoltez une Âme.",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "garçon",
         id: 14,
@@ -113,7 +127,8 @@ export const entityCards: EntityCard[] = [
         dices: [8],
         description: "Récoltez une Âme.",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "garçon",
         id: 15,
@@ -121,7 +136,8 @@ export const entityCards: EntityCard[] = [
         dices: [8],
         description: "Récoltez une Âme.",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "garçon",
         id: 16,
@@ -129,7 +145,8 @@ export const entityCards: EntityCard[] = [
         dices: [8],
         description: "Récoltez une Âme.",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "garçon",
         description: "Pour chacune de vos FILLES : récoltez une Âme.",
@@ -137,7 +154,8 @@ export const entityCards: EntityCard[] = [
         name: "roméo",
         dices: [8]
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "garçon",
         description: "Pour chacune de vos FILLES : récoltez une Âme.",
@@ -145,7 +163,8 @@ export const entityCards: EntityCard[] = [
         name: "roméo",
         dices: [8]
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: 'garçon',
         description: "Activez toutes vos cartes ANIMAUX.",
@@ -153,7 +172,8 @@ export const entityCards: EntityCard[] = [
         name: "irwin",
         dices: [8]
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: 'garçon',
         description: "Activez toutes vos cartes ANIMAUX.",
@@ -161,7 +181,8 @@ export const entityCards: EntityCard[] = [
         name: "irwin",
         dices: [8]
     },
-    {
+    { 
+        type:'entity',
         kindness: 'adorable',
         gender: "fille",
         id: 21,
@@ -169,7 +190,8 @@ export const entityCards: EntityCard[] = [
         dices: [2],
         description: "Récoltez 5 Âmes.",
     },
-    {
+    { 
+        type:'entity',
         kindness: 'adorable',
         gender: "fille",
         id: 22,
@@ -177,7 +199,8 @@ export const entityCards: EntityCard[] = [
         dices: [2],
         description: "Récoltez 5 Âmes.",
     },
-    {
+    { 
+        type:'entity',
         kindness: 'adorable',
         gender: "fille",
         id: 23,
@@ -185,7 +208,8 @@ export const entityCards: EntityCard[] = [
         dices: [3],
         description: "Pour chacun de vos ADORABLES GAMINS (dont celui-ci): récoltez une Âme.",
     },
-    {
+    { 
+        type:'entity',
         kindness: 'adorable',
         gender: "fille",
         id: 24,
@@ -193,7 +217,8 @@ export const entityCards: EntityCard[] = [
         dices: [3],
         description: "Pour chacun de vos ADORABLES GAMINS (dont celui-ci): récoltez une Âme.",
     },
-    {
+    { 
+        type:'entity',
         kindness: 'adorable',
         gender: "garçon",
         id: 25,
@@ -201,7 +226,8 @@ export const entityCards: EntityCard[] = [
         dices: [3],
         description: "Récoltez 2 Âmes.",
     },
-    {
+    { 
+        type:'entity',
         kindness: 'adorable',
         gender: "garçon",
         id: 26,
@@ -209,7 +235,8 @@ export const entityCards: EntityCard[] = [
         dices: [3],
         description: "Récoltez 2 Âmes.",
     },
-    {
+    { 
+        type:'entity',
         kindness: 'adorable',
         gender: "garçon",
         id: 27,
@@ -217,7 +244,8 @@ export const entityCards: EntityCard[] = [
         dices: [3],
         description: "Récoltez 2 Âmes.",
     },
-    {
+    { 
+        type:'entity',
         kindness: 'adorable',
         gender: "garçon",
         id: 28,
@@ -225,7 +253,8 @@ export const entityCards: EntityCard[] = [
         dices: [3],
         description: "Récoltez 2 Âmes.",
     },
-    {
+    { 
+        type:'entity',
         kindness: "adorable",
         gender: "fille",
         description: "Défaussez les 2 premières cartes de la PIOCHE VOISINAGE : obtenez chaque carte ADORABLE GAMIN ainsi défaussée.",
@@ -233,7 +262,8 @@ export const entityCards: EntityCard[] = [
         name: "alice",
         dices: [4]
     },
-    {
+    { 
+        type:'entity',
         kindness: "adorable",
         gender: "fille",
         description: "Défaussez les 2 premières cartes de la PIOCHE VOISINAGE : obtenez chaque carte ADORABLE GAMIN ainsi défaussée.",
@@ -241,7 +271,8 @@ export const entityCards: EntityCard[] = [
         name: "alice",
         dices: [4]
     },
-    {
+    { 
+        type:'entity',
         kindness: "adorable",
         gender: 'garçon',
         description: "Si vous avez un autre ADORABLE GAMIN : récolez 2 Âmes.",
@@ -249,7 +280,8 @@ export const entityCards: EntityCard[] = [
         name: "chuck",
         dices: [4]
     },
-    {
+    { 
+        type:'entity',
         kindness: "adorable",
         gender: 'garçon',
         description: "Si vous avez un autre ADORABLE GAMIN : récolez 2 Âmes.",
@@ -257,7 +289,8 @@ export const entityCards: EntityCard[] = [
         name: "chuck",
         dices: [4]
     },
-    {
+    { 
+        type:'entity',
         kindness: "adorable",
         gender: "fille",
         description: "Pour chacun de vos ANIMAUX : récoltez une Âme.",
@@ -265,7 +298,8 @@ export const entityCards: EntityCard[] = [
         name: "fifi",
         dices: [4]
     },
-    {
+    { 
+        type:'entity',
         kindness: "adorable",
         gender: "fille",
         description: "Pour chacun de vos ANIMAUX : récoltez une Âme.",
@@ -273,7 +307,8 @@ export const entityCards: EntityCard[] = [
         name: "fifi",
         dices: [4]
     },
-    {
+    { 
+        type:'entity',
         kindness: 'adorable',
         gender: "fille",
         description: "Obtenez une carte GARÇON du VOISINAGE.",
@@ -281,7 +316,8 @@ export const entityCards: EntityCard[] = [
         name: "marilyn",
         dices: [5]
     },
-    {
+    { 
+        type:'entity',
         kindness: 'adorable',
         gender: "fille",
         description: "Obtenez une carte GARÇON du VOISINAGE.",
@@ -289,7 +325,8 @@ export const entityCards: EntityCard[] = [
         name: "marilyn",
         dices: [5]
     },
-    {
+    { 
+        type:'entity',
         kindness: 'adorable',
         gender: "fille",
         description: "Activez un autre de vos ADORABLES GAMINS.",
@@ -297,7 +334,8 @@ export const entityCards: EntityCard[] = [
         name: "destiny",
         dices: [5]
     },
-    {
+    { 
+        type:'entity',
         kindness: 'adorable',
         gender: "fille",
         description: "Activez un autre de vos ADORABLES GAMINS.",
@@ -305,7 +343,8 @@ export const entityCards: EntityCard[] = [
         name: "destiny",
         dices: [5]
     },
-    {
+    { 
+        type:'entity',
         kindness: 'adorable',
         gender: "garçon",
         description: "Récoltez 2 Âmes et choisissez un adversaire qui recolte une Âme.",
@@ -313,7 +352,8 @@ export const entityCards: EntityCard[] = [
         name: "glen",
         dices: [5]
     },
-    {
+    { 
+        type:'entity',
         kindness: 'adorable',
         gender: "garçon",
         description: "Récoltez 2 Âmes et choisissez un adversaire qui recolte une Âme.",
@@ -321,7 +361,8 @@ export const entityCards: EntityCard[] = [
         name: "glen",
         dices: [5]
     },
-    {
+    { 
+        type:'entity',
         kindness: 'adorable',
         gender: "garçon",
         id: 41,
@@ -329,7 +370,8 @@ export const entityCards: EntityCard[] = [
         dices: [5],
         description: "Récoltez une Âme.",
     },
-    {
+    { 
+        type:'entity',
         kindness: 'adorable',
         gender: "garçon",
         id: 42,
@@ -337,7 +379,8 @@ export const entityCards: EntityCard[] = [
         dices: [5],
         description: "Récoltez une Âme.",
     },
-    {
+    { 
+        type:'entity',
         kindness: 'adorable',
         gender: "garçon",
         id: 43,
@@ -345,7 +388,8 @@ export const entityCards: EntityCard[] = [
         dices: [5],
         description: "Récoltez une Âme.",
     },
-    {
+    { 
+        type:'entity',
         kindness: 'adorable',
         gender: "garçon",
         id: 44,
@@ -353,7 +397,8 @@ export const entityCards: EntityCard[] = [
         dices: [5],
         description: "Récoltez une Âme.",
     },
-    {
+    { 
+        type:'entity',
         kindness: "horrible",
         gender: "fille",
         description: "Récoltez une Âme.",
@@ -361,7 +406,8 @@ export const entityCards: EntityCard[] = [
         name: "regan",
         dices: [9]
     },
-    {
+    { 
+        type:'entity',
         kindness: "horrible",
         gender: "fille",
         description: "Récoltez une Âme.",
@@ -369,7 +415,8 @@ export const entityCards: EntityCard[] = [
         name: "regan",
         dices: [9]
     },
-    {
+    { 
+        type:'entity',
         kindness: "horrible",
         gender: "fille",
         description: "Récoltez une Âme.",
@@ -377,7 +424,8 @@ export const entityCards: EntityCard[] = [
         name: "regan",
         dices: [9]
     },
-    {
+    { 
+        type:'entity',
         kindness: "horrible",
         gender: "fille",
         description: "Récoltez une Âme.",
@@ -385,7 +433,8 @@ export const entityCards: EntityCard[] = [
         name: "regan",
         dices: [9]
     },
-    {
+    { 
+        type:'entity',
         kindness: "horrible",
         gender: "garçon",
         description: "Défaussez la 1er carte de la PIOCHE VOISINAGE : si c'est une FILLE, obtenez-le.",
@@ -393,7 +442,8 @@ export const entityCards: EntityCard[] = [
         name: "tommy",
         dices: [9]
     },
-    {
+    { 
+        type:'entity',
         kindness: "horrible",
         gender: "garçon",
         description: "Défaussez la 1er carte de la PIOCHE VOISINAGE : si c'est une FILLE, obtenez-le.",
@@ -401,7 +451,8 @@ export const entityCards: EntityCard[] = [
         name: "tommy",
         dices: [9]
     },
-    {
+    { 
+        type:'entity',
         kindness: "horrible",
         gender: "garçon",
         description: "Si vous avez au moins 3 HORRIBLES GAMINS : volez 2 âmes (aux autres joueurs et/ou depuis la réserve commune).",
@@ -409,7 +460,8 @@ export const entityCards: EntityCard[] = [
         name: "calvin",
         dices: [9]
     },
-    {
+    { 
+        type:'entity',
         kindness: "horrible",
         gender: "garçon",
         description: "Si vous avez au moins 3 HORRIBLES GAMINS : volez 2 âmes (aux autres joueurs et/ou depuis la réserve commune).",
@@ -417,7 +469,8 @@ export const entityCards: EntityCard[] = [
         name: "calvin",
         dices: [9]
     },
-    {
+    { 
+        type:'entity',
         kindness: "horrible",
         gender: "fille",
         description: "Vous pouvez défausser cette carte : dans ce cas, volez un GAMIN ou optenez en un du VOISINAGE.",
@@ -425,7 +478,8 @@ export const entityCards: EntityCard[] = [
         name: "annie",
         dices: [9]
     },
-    {
+    { 
+        type:'entity',
         kindness: "horrible",
         gender: "fille",
         description: "Vous pouvez défausser cette carte : dans ce cas, volez un GAMIN ou optenez en un du VOISINAGE.",
@@ -433,7 +487,8 @@ export const entityCards: EntityCard[] = [
         name: "annie",
         dices: [9]
     },
-    {
+    { 
+        type:'entity',
         kindness: "horrible",
         gender: "garçon",
         description: "Volez un Âme (à un adversaire et/ou depuis la réserve commune).",
@@ -441,7 +496,8 @@ export const entityCards: EntityCard[] = [
         name: "dillinger",
         dices: [10]
     },
-    {
+    { 
+        type:'entity',
         kindness: "horrible",
         gender: "garçon",
         description: "Volez un Âme (à un adversaire et/ou depuis la réserve commune).",
@@ -449,7 +505,8 @@ export const entityCards: EntityCard[] = [
         name: "dillinger",
         dices: [10]
     },
-    {
+    { 
+        type:'entity',
         kindness: "horrible",
         gender: "garçon",
         description: "Vous pouvez defausser un de vos ANIMAUX : dans ce cas récoltez 6 Âmes.",
@@ -457,7 +514,8 @@ export const entityCards: EntityCard[] = [
         name: "sam",
         dices: [10]
     },
-    {
+    { 
+        type:'entity',
         kindness: "horrible",
         gender: "garçon",
         description: "Vous pouvez defausser un de vos ANIMAUX : dans ce cas récoltez 6 Âmes.",
@@ -465,7 +523,8 @@ export const entityCards: EntityCard[] = [
         name: "sam",
         dices: [10]
     },
-    {
+    { 
+        type:'entity',
         kindness: "horrible",
         gender: 'fille',
         description: "Remplacez tout les ADORABLES GAMINS du VOISINAGE. Obtenez ensuite un HORRIBLE GAMIN du VOISINAGE. (Remplacez veux dire refaussez par une autre carte de la PIOCHE VOISINAGE.)",
@@ -473,7 +532,8 @@ export const entityCards: EntityCard[] = [
         name: "dolores",
         dices: [10]
     },
-    {
+    { 
+        type:'entity',
         kindness: "horrible",
         gender: 'fille',
         description: "Remplacez tout les ADORABLES GAMINS du VOISINAGE. Obtenez ensuite un HORRIBLE GAMIN du VOISINAGE. (Remplacez veux dire refaussez par une autre carte de la PIOCHE VOISINAGE.)",
@@ -481,7 +541,8 @@ export const entityCards: EntityCard[] = [
         name: "dolores",
         dices: [10]
     },
-    {
+    { 
+        type:'entity',
         kindness: 'horrible',
         gender: "fille",
         id: 61,
@@ -489,7 +550,8 @@ export const entityCards: EntityCard[] = [
         dices: [11],
         description: "Récoltez 2 Âmes.",
     },
-    {
+    { 
+        type:'entity',
         kindness: 'horrible',
         gender: "fille",
         id: 62,
@@ -497,7 +559,8 @@ export const entityCards: EntityCard[] = [
         dices: [11],
         description: "Récoltez 2 Âmes.",
     },
-    {
+    { 
+        type:'entity',
         kindness: 'horrible',
         gender: "fille",
         id: 63,
@@ -505,7 +568,8 @@ export const entityCards: EntityCard[] = [
         dices: [11],
         description: "Récoltez 2 Âmes.",
     },
-    {
+    { 
+        type:'entity',
         kindness: 'horrible',
         gender: "fille",
         id: 64,
@@ -513,7 +577,8 @@ export const entityCards: EntityCard[] = [
         dices: [11],
         description: "Récoltez 2 Âmes.",
     },
-    {
+    { 
+        type:'entity',
         kindness: "horrible",
         gender: "garçon",
         description: "Vous pouvez défaussez cette carte : dans ce cas invoquez un démon au hasard de votre main. (Cette action ne compte pas comme une invocation pour ce tour.)",
@@ -521,7 +586,8 @@ export const entityCards: EntityCard[] = [
         name: "damien",
         dices: [11]
     },
-    {
+    { 
+        type:'entity',
         kindness: "horrible",
         gender: "garçon",
         description: "Vous pouvez défaussez cette carte : dans ce cas invoquez un démon au hasard de votre main. (Cette action ne compte pas comme une invocation pour ce tour.)",
@@ -529,7 +595,8 @@ export const entityCards: EntityCard[] = [
         name: "damien",
         dices: [11]
     },
-    {
+    { 
+        type:'entity',
         kindness: "horrible",
         gender: "garçon",
         description: "Pour chacun de vos HORRIBLES GAMINS (dont celui-ci): récoltez une Âme. (aux autres joueurs et/ou depuis la réserve commune).",
@@ -537,7 +604,8 @@ export const entityCards: EntityCard[] = [
         name: "donnie",
         dices: [12]
     },
-    {
+    { 
+        type:'entity',
         kindness: "horrible",
         gender: "garçon",
         description: "Pour chacun de vos HORRIBLES GAMINS (dont celui-ci): récoltez une Âme. (aux autres joueurs et/ou depuis la réserve commune).",
@@ -545,7 +613,8 @@ export const entityCards: EntityCard[] = [
         name: "donnie",
         dices: [12]
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "animal",
         description: "Si vous avez un GARÇON et une FILLE : récoltez une Âme.",
@@ -553,7 +622,8 @@ export const entityCards: EntityCard[] = [
         name: "chien",
         dices: [7]
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "animal",
         description: "Si vous avez un GARÇON et une FILLE : récoltez une Âme.",
@@ -561,7 +631,8 @@ export const entityCards: EntityCard[] = [
         name: "chien",
         dices: [7]
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "animal",
         description: "Si vous avez un GARÇON et une FILLE : récoltez une Âme.",
@@ -569,7 +640,8 @@ export const entityCards: EntityCard[] = [
         name: "chien",
         dices: [7]
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "animal",
         description: "Si vous avez un GARÇON et une FILLE : récoltez une Âme.",
@@ -577,7 +649,8 @@ export const entityCards: EntityCard[] = [
         name: "chien",
         dices: [7]
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "animal",
         description: "Si vous avez un GARÇON et une FILLE : récoltez une Âme.",
@@ -585,7 +658,8 @@ export const entityCards: EntityCard[] = [
         name: "chien",
         dices: [7]
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "animal",
         description: "Si vous avez un GARÇON et une FILLE : récoltez une Âme.",
@@ -593,7 +667,8 @@ export const entityCards: EntityCard[] = [
         name: "chien",
         dices: [7]
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: 'animal',
         id: 80,
@@ -601,7 +676,8 @@ export const entityCards: EntityCard[] = [
         dices: [7],
         description: "Défaussez la 1er carte de la PIOCHE VOISINAGE : si c'est un ANIMAL, obtenez-le.",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: 'animal',
         id: 81,
@@ -609,7 +685,8 @@ export const entityCards: EntityCard[] = [
         dices: [7],
         description: "Défaussez la 1er carte de la PIOCHE VOISINAGE : si c'est un ANIMAL, obtenez-le.",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: 'animal',
         id: 82,
@@ -617,7 +694,8 @@ export const entityCards: EntityCard[] = [
         dices: [7],
         description: "Défaussez la 1er carte de la PIOCHE VOISINAGE : si c'est un ANIMAL, obtenez-le.",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: 'animal',
         id: 83,
@@ -625,7 +703,8 @@ export const entityCards: EntityCard[] = [
         dices: [7],
         description: "Défaussez la 1er carte de la PIOCHE VOISINAGE : si c'est un ANIMAL, obtenez-le.",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: 'animal',
         id: 84,
@@ -633,7 +712,8 @@ export const entityCards: EntityCard[] = [
         dices: [7],
         description: "Défaussez la 1er carte de la PIOCHE VOISINAGE : si c'est un ANIMAL, obtenez-le.",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: 'animal',
         id: 85,
@@ -641,7 +721,8 @@ export const entityCards: EntityCard[] = [
         dices: [7],
         description: "Défaussez la 1er carte de la PIOCHE VOISINAGE : si c'est un ANIMAL, obtenez-le.",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: 'animal',
         id: 86,
@@ -649,7 +730,8 @@ export const entityCards: EntityCard[] = [
         dices: [7],
         description: "Vous pouvez défaussez cette carte : dans ce cas, récoltez 5 Âmes.",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: 'animal',
         id: 87,
@@ -657,7 +739,8 @@ export const entityCards: EntityCard[] = [
         dices: [7],
         description: "Vous pouvez défaussez cette carte : dans ce cas, récoltez 5 Âmes.",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: 'animal',
         id: 88,
@@ -665,7 +748,8 @@ export const entityCards: EntityCard[] = [
         dices: [7],
         description: "Vous pouvez défaussez cette carte : dans ce cas, récoltez 5 Âmes.",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: 'animal',
         id: 89,
@@ -673,7 +757,8 @@ export const entityCards: EntityCard[] = [
         dices: [7],
         description: "Vous pouvez défaussez cette carte : dans ce cas, récoltez 5 Âmes.",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: 'animal',
         id: 90,
@@ -681,7 +766,8 @@ export const entityCards: EntityCard[] = [
         dices: [7],
         description: "Vous pouvez défaussez cette carte : dans ce cas, récoltez 4 Âmes. et remplacez une ou plusieurs cartes du VOISINAGE. (Défaussez-les et remplacez les immédiatement par de nouvelles cartes de la PIOCHE VOISINAGE.)",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: 'animal',
         id: 91,
@@ -689,7 +775,8 @@ export const entityCards: EntityCard[] = [
         dices: [7],
         description: "Vous pouvez défaussez cette carte : dans ce cas, récoltez 4 Âmes. et remplacez une ou plusieurs cartes du VOISINAGE. (Défaussez-les et remplacez les immédiatement par de nouvelles cartes de la PIOCHE VOISINAGE.)",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: 'animal',
         id: 92,
@@ -697,7 +784,8 @@ export const entityCards: EntityCard[] = [
         dices: [7],
         description: "Vous pouvez défaussez cette carte : dans ce cas, récoltez 4 Âmes. et remplacez une ou plusieurs cartes du VOISINAGE. (Défaussez-les et remplacez les immédiatement par de nouvelles cartes de la PIOCHE VOISINAGE.)",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: 'animal',
         id: 93,
@@ -705,7 +793,8 @@ export const entityCards: EntityCard[] = [
         dices: [7],
         description: "Vous pouvez défaussez cette carte : dans ce cas, récoltez 4 Âmes. et remplacez une ou plusieurs cartes du VOISINAGE. (Défaussez-les et remplacez les immédiatement par de nouvelles cartes de la PIOCHE VOISINAGE.)",
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "animal",
         description: "Si vous n'avez ni GARÇON ni FILLE : optenez la carte du dessus de la PIOCHE VOISINAGE.",
@@ -713,7 +802,8 @@ export const entityCards: EntityCard[] = [
         name: "chat errant",
         dices: [7]
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "animal",
         description: "Si vous n'avez ni GARÇON ni FILLE : optenez la carte du dessus de la PIOCHE VOISINAGE.",
@@ -721,7 +811,8 @@ export const entityCards: EntityCard[] = [
         name: "chat errant",
         dices: [7]
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "animal",
         description: "Si vous avez au moins 2 GARÇONS ou 2 FILLES : récoltez 2 Âmes.",
@@ -729,7 +820,8 @@ export const entityCards: EntityCard[] = [
         name: "chat errant",
         dices: [7]
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "animal",
         description: "Si vous avez au moins 2 GARÇONS ou 2 FILLES : récoltez 2 Âmes.",
@@ -737,7 +829,8 @@ export const entityCards: EntityCard[] = [
         name: "chat errant",
         dices: [7]
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "animal",
         description: "Si vous avez au moins 3 ANIMAUX : récoltez 2 Âmes.",
@@ -745,7 +838,8 @@ export const entityCards: EntityCard[] = [
         name: "lapin",
         dices: [7]
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "animal",
         description: "Si vous avez au moins 3 ANIMAUX : récoltez 2 Âmes.",
@@ -753,7 +847,8 @@ export const entityCards: EntityCard[] = [
         name: "lapin",
         dices: [7]
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "animal",
         description: "Si vous n'avez ni GARÇON ni FILLE : récoltez 2 Âmes.",
@@ -761,7 +856,8 @@ export const entityCards: EntityCard[] = [
         name: "chien enragé",
         dices: [7]
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "animal",
         description: "Si vous n'avez ni GARÇON ni FILLE : récoltez 2 Âmes.",
@@ -769,7 +865,8 @@ export const entityCards: EntityCard[] = [
         name: "chien enragé",
         dices: [7]
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "animal",
         description: "Vous pouvez défausser cette carte : dans ce cas, défaussez les 7 premières cartes de la PIOCHE VOISINAGE. optenez chaque carte ANIMAL ainsi défaussée.",
@@ -777,7 +874,8 @@ export const entityCards: EntityCard[] = [
         name: "faucon",
         dices: [7]
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "animal",
         description: "Vous pouvez défaussez exactement 1 GARÇON et 1 FILLE : invoquez le Démon du dessus de la pioche gratuitement. (Il compte parmis vos 3 démons nécessaires à la victoire.)",
@@ -785,7 +883,8 @@ export const entityCards: EntityCard[] = [
         name: "chèvre",
         dices: [7]
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "animal",
         description: "Chaque joueur doit défausser toute ces cartes, sauf ses Démons (y compris celle-ci.)",
@@ -793,7 +892,8 @@ export const entityCards: EntityCard[] = [
         name: "mouflette",
         dices: [7]
     },
-    {
+    { 
+        type:'entity',
         kindness: null,
         gender: "animal",
         description: "Vous pouvez défausser cette carte : dans ce cas, défaussez jusqu'a 3 GAMINS au total parmis les cartes de vos adversaires.",
@@ -808,36 +908,42 @@ export const entityCards: EntityCard[] = [
  */
 export const demonCards: DemonCard[] = [
     {
+        type:'demon',
         description: "Gagnez immédiatement la partie.",
         id: 106,
         name: "le serpent",
         dices: [2]
     },
     {
+        type:'demon',
         description: "Parcourez la pioche Démon et invoquez le Démon de votre choix gratuitement. (Il compte parmis vos 3 démons nécessaires à la victoire. Mélangez ensuite la pioche à Démon.)",
         id: 107,
         name: "la dégueulivre des démons",
         dices: [3]
     },
     {
+        type:'demon',
         description: "Obtenez les 2 premières carte de la pioche VOISINAGE.",
         id: 108,
         name: "le père fouettard",
         dices: [4]
     },
     {
+        type:'demon',
         description: "Récoltez 5 Âmes.",
         id: 109,
         name: "porcus",
         dices: [5]
     },
     {
+        type:'demon',
         description: "Récoltez une Âme pour chacune de vos cartes, dont celle-ci.",
         id: 110,
         name: "nounou sommes légion",
         dices: [6]
     },
     {
+        type:'demon',
         description: "Activez toute vos cartes GARÇON et FILLES.",
         id: 111,
         name: "belzé'bzz",
@@ -845,29 +951,34 @@ export const demonCards: DemonCard[] = [
     },
     {
         id: 112,
-        name: "molosse de baël",
+       
+       type:'demon', name: "molosse de baël",
         description: "Pour chaqn de vos Animaux, volez une Âme (à vos adversaires et/ou depuis la réserve commune).",
         dices: [8]
     },
     {
+        type:'demon',
         description: "Récoltez une Âme. Rejouez immédiatement. seul vos cartes s'activerons durant ce tour supplémentaire.",
         id: 113,
         name: "satange mécanique",
         dices: [9]
     },
     {
+        type:'demon',
         description: "Volez 5 Âmes. (aux autres joueurs et/ou depuis la réserve commune).",
         id: 114,
         name: "antéchrist",
         dices: [10]
     },
     {
+        type:'demon',
         description: "Volez n'importe quelle carte d'un adversairen dont ses Démons (mais jamais son Cierge).",
         id: 115,
         name: "méfilstophélès",
         dices: [11]
     },
     {
+        type:'demon',
         description: "Volez toutes les cartes d'un adversaire, dont ses Démons (mais jamais son Cierge).",
         id: 116,
         name: "le diable",
@@ -875,53 +986,62 @@ export const demonCards: DemonCard[] = [
     },
     {
         id: 117,
-        name: 'démon inceste',
+       
+       type:'demon', name: 'démon inceste',
         description: 'Tout vos GARÇONS et FILLES comptent comme à la fois ADORABLES et HORRIBLES.',
         dices: []
     },
     {
         id: 118,
-        name: 'démogorguignol',
+       
+       type:'demon', name: 'démogorguignol',
         description: 'Tout vos GARÇONS et FILLES comptent comme à la fois GARÇONS et FILLES.',
         dices: []
     },
     {
+        type:'demon',
         description: "Vos GARÇONS et FILLES récoltent le double d'Âmes à votre tour.",
         id: 119,
         name: "macabre oni",
         dices: []
     },
     {
+        type:'demon',
         description: "Chaque fois que vous faîtes un double aux dés, récoltez le nombre d'Âmes indiqué sur la face d'un dé.",
         id: 120,
         name: "dédé-zuzu",
         dices: []
     },
     {
+        type:'demon',
         description: "À votre tour : vous pouvez relancer les 2 dés une fois. (Le précedent résultat est concidéré comme n'ayant jamais existé.)",
         id: 121,
         name: "relancifer",
         dices: []
     },
     {
+        type:'demon',
         description: "Chaque fois que vous obtenez un ANIMAL, récoltez une Âme.",
         id: 122,
         name: "âne-modée",
         dices: []
     },
     {
+        type:'demon',
         description: "Vos adversaire ne peuvent pas vous voler ni vous faire défausser.",
         id: 123,
         name: "spectralux",
         dices: []
     },
     {
+        type:'demon',
         description: "Quand vous invoquez ce Démon, défaussez le immediatement. Regardez les 3 premières cartes de la pioche Démon. Inovoquez l'un d'eux et defaussez les 2 autres.",
         id: 124,
         name: "l'œuf de rosemary",
         dices: []
     },
     {
+        type:'demon',
         description: "Vos adversaires doivent sacrifier une 4e carte pour invoquer un Démon.",
         id: 125,
         name: "baphometal",
@@ -935,26 +1055,31 @@ export const demonCards: DemonCard[] = [
  */
 export const candleCards: CandleCard[] = [
     {
+        type:'candle',
         id: 69,
         name: 'gentille bougie',
         dices: [3, 4, 5]
     },
     {
+        type:'candle',
         id: 70,
         name: 'douce bougie',
         dices: [5, 6]
     },
     {
+        type:'candle',
         id: 71,
         name: 'bougie de débutant',
         dices: [6, 8]
     },
     {
+        type:'candle',
         id: 72,
         name: 'cierge maléfique',
         dices: [8, 9]
     },
     {
+        type:'candle',
         id: 73,
         name: 'cierge diabolique',
         dices: [9, 10, 11]
