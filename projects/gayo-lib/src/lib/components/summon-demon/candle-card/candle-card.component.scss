@@ -1,0 +1,27 @@
+@import '../../../styles/lsd.scss';
+
+
+#dice-num-container {
+    z-index: 1;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    right: 10%;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+
+    .dice-number {
+        width: 56px;
+        height: 56px;
+        border-radius: 56px;
+        border: 3px solid $gold-color;
+        outline: 2px solid $dark-color;
+        line-height: 60px;
+        font-size: 50px;
+        text-align: center;
+        background: $dark-color;
+    }
+}
