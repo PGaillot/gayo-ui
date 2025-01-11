@@ -5,8 +5,8 @@ import { DemonCard } from "../../../models/lsd/card.model";
     selector: 'lsd-demon-card',
     standalone: true,
     imports: [],
-    templateUrl: './deamon-card.component.html',
-    styleUrls: ['./deamon-card.component.scss', '../card/card.component.scss']
+    templateUrl: './demon-card.component.html',
+    styleUrls: ['./demon-card.component.scss', '../card/card.component.scss']
 })
 
 export class DemonCardComponent {

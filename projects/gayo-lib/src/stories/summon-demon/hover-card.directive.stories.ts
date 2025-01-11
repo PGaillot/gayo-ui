@@ -2,10 +2,14 @@ import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';
 import { Component, Input } from '@angular/core';
 import { CandleCardComponent } from '../../lib/components/summon-demon/candle-card/candle-card.component';
 import { HoverCardDirective } from '../../lib/directives/hover-card.directive';
-import { DemonCardComponent } from '../../lib/components/summon-demon/demon-card/deamon-card.component';
+import { DemonCardComponent } from '../../lib/components/summon-demon/demon-card/demon-card.component';
 import { BackCardComponent, BackCardType } from '../../lib/components/summon-demon/back-card/back-card.component';
+import { CandleCard, DemonCard, EntityCard } from '../../lib/models/lsd/card.model';
+import { candleCards, demonCards, entityCards } from '../../lib/datas/lsd/cards.data';
+import { EntityCardComponent } from '../../lib/components/summon-demon/entity-card/entity-card.component';
 
-type CardType = 'candle' | 'demon' | 'entity' |'back-entity'; // Ajoutez vos types ici
+type Card = CandleCard | DemonCard | EntityCard | BackCardType; // Ajoutez vos types ici
+type CardType = 'candle' | 'demon' | 'entity' | 'back-card';
 
 @Component({
     selector: 'lsd-hover-card-demo',
@@ -14,6 +18,7 @@ type CardType = 'candle' | 'demon' | 'entity' |'back-entity'; // Ajoutez vos typ
     imports: [
         CandleCardComponent,
         DemonCardComponent,
+        EntityCardComponent,
         HoverCardDirective,
         BackCardComponent,
     ],
@@ -26,10 +31,8 @@ type CardType = 'candle' | 'demon' | 'entity' |'back-entity'; // Ajoutez vos typ
             @case('candle'){
                 <lsd-candle-card 
                 lsdHoverCard 
-                [id]="id" 
-                [cardName]="cardName" 
-                [effect]="effect" 
-                [diceNumbers]="diceNumbers">
+                [candle]="card"
+                >
             </lsd-candle-card>
             }
              
@@ -37,18 +40,23 @@ type CardType = 'candle' | 'demon' | 'entity' |'back-entity'; // Ajoutez vos typ
             <!-- Demon Card -->
             <lsd-demon-card 
             lsdHoverCard
-            [id]="id" 
-            [cardName]="cardName" 
-            [effect]="effect"
-            [dice]="dice">
+            [demon]="card">
             </lsd-demon-card>
+            }
+             
+            @case('entity'){
+            <!-- Demon Card -->
+            <lsd-entity-card 
+            lsdHoverCard
+            [entity]="card">
+            </lsd-entity-card>
             }
       
             @case('back-entity'){
-            <!-- Demon Card -->
+            <!-- Back Card -->
             <lsd-back-card 
             lsdHoverCard
-            [backCardType]="backCardType">
+            [backCardType]="card">
             </lsd-back-card>
             }
     }
@@ -56,17 +64,8 @@ type CardType = 'candle' | 'demon' | 'entity' |'back-entity'; // Ajoutez vos typ
     `,
 })
 class HoverCardDirectiveDemo {
-    @Input() id: number = 0;
-    @Input() cardName!: string;
-    @Input() effect!: string;
-    @Input() cardType: CardType = 'candle';
-
-    // Propriétés spécifiques à chaque type de carte
-    @Input() diceNumbers: number[] = [];
-    @Input() dice: number = 0;
-    @Input() soulValue: number = 0;
-    @Input() ritualCost: number = 0;
-    @Input() backCardType: BackCardType = 'entity'; 
+    @Input() card: Card = candleCards[0];
+    @Input() cardType!:CardType;
 }
 
 const meta: Meta<HoverCardDirectiveDemo> = {
@@ -78,23 +77,18 @@ const meta: Meta<HoverCardDirectiveDemo> = {
                 CandleCardComponent,
                 DemonCardComponent,
                 BackCardComponent,
+                EntityCardComponent,
                 HoverCardDirective,
                 HoverCardDirectiveDemo
             ],
         }),
     ],
     argTypes: {
-        cardType: {
+        card: {
             control: 'select',
             options: ['candle', 'demon', 'entity', 'back-entity'],
             description: 'Type of card to display'
         },
-        id: { control: 'number' },
-        cardName: { control: 'text' },
-        effect: { control: 'text' },
-        diceNumbers: { control: 'object', if: { arg: 'cardType', eq: 'candle' } },
-        dice: { control: 'number', if: { arg: 'cardType', eq: 'demon' } },
-        backCardType: { control: 'select', options: ['entity', 'demon', 'candle'], if: { arg: 'cardType', eq: 'back-entity' } },
     },
 };
 
@@ -105,26 +99,28 @@ type Story = StoryObj<HoverCardDirectiveDemo>;
 // Stories pour chaque type de carte
 export const CandleCardStory: Story = {
     args: {
-        cardType: 'candle',
-        id: 12,
-        cardName: 'Candle',
-        diceNumbers: [5, 6],
+        cardType:'candle',
+        card:candleCards[0] 
     },
 };
 
 export const DemonCardStory: Story = {
     args: {
-        cardType: 'demon',
-        id: 109,
-        cardName: 'porcus',
-        effect: 'recoltez 5 âmes.',
-        dice: 5,
+        cardType:'demon',
+        card: demonCards[0]
     },
 };
 
+export const EntityCardStory:Story = {
+    args:{
+        cardType:'entity',
+        card: entityCards[0]
+    }
+}
+
 export const BackCardStory: Story = {
     args: {
-        cardType: 'back-entity',
-        backCardType: 'entity',
+        cardType:'back-card',
+        card: 'entity',
     },
 };

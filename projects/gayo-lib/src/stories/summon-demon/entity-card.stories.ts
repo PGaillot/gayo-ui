@@ -26,3 +26,9 @@ export const Boy: Story = {
         entity:entityCards[14]
     }
 }
+
+export const Animal: Story = {
+    args: {
+        entity:entityCards[70]
+    }
+}

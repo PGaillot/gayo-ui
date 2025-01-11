@@ -29,12 +29,21 @@
 
   <div id="type">
     @switch (entity.gender) {
-    @case ('garçon') {G}
-    @case ("fille") {F}
-    @default {A}
+      @case ('garçon') {
+      <img [src]="'assets/lsd/icons/man.svg'" alt="">
+      }
+      @case ("fille") { 
+        <img [src]="'assets/lsd/icons/woman.svg'" alt="">
+      }
+      @default {
+        <img [src]="'assets/lsd/icons/animal.svg'" alt="">
+      }
     }
   </div>
 
+  <img class="entity-candle candle-1" src="assets/lsd/entity-candle-1.png" alt="">
+  <img class="entity-candle candle-2" src="assets/lsd/entity-candle-2.png" alt="">
+  <img class="entity-candle candle-3" src="assets/lsd/entity-candle-3.png" alt="">
 
   <div id="pentacle">
     <svg width="100%" height="100%" viewBox="0 0 165 157" fill="none" xmlns="http://www.w3.org/2000/svg">

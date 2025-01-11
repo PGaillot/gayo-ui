@@ -24,8 +24,4 @@ export class CandleCardComponent {
         description: `LES CIERGES ne peuvent JAMAIS être volés ou défaussés`,
         hint: `vous ne pouvez donc pas les sacrifier pour invoquer un Démon.`
     }
-
-    ngOnInit(): void {
-
-    }
 }
