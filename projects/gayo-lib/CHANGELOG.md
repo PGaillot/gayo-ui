@@ -239,3 +239,9 @@ author: PGaillot
 - ajout du fichier `publish-package.cjs`
 - modification de `main.yml`
 ---
+### [ 0.0.43 ] - 2024-08-10
+author: PGaillot 
+- modification de `readme.md`
+- ajout du fichier `publish-package.cjs`
+- modification de `main.yml`
+---
