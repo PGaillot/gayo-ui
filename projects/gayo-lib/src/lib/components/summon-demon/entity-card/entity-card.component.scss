@@ -6,6 +6,22 @@ $card-size: var(--card-size);
     height: $card-size;
     width: $card-size;
     border-radius: $card-size;
+
+    .image{
+        z-index:0;
+        height: 350px;
+        min-width: 350px;
+        position: absolute;
+        top: 64%;
+        left: 50%;
+        transform: translate(-50%, -65%);
+        background-image: url("../../../../../assets/lsd/card-img/00004-3656696267-removebg-preview.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 100%;
+        overflow: hidden;
+    }
 }
 
 #type {

@@ -107,14 +107,26 @@ export const CandleCardStory: Story = {
 export const DemonCardStory: Story = {
     args: {
         cardType:'demon',
-        card: demonCards[0]
+        card: {
+            id:414,
+            name:'roi mangeboule',
+            type: 'demon',
+            dices: [4],
+            description:' Les MANGEBOULLES récoltent 2 Âmes.'
+        }
     },
 };
 
 export const EntityCardStory:Story = {
     args:{
         cardType:'entity',
-        card: entityCards[0]
+        card: {
+            id:414,
+            name:'roi mangeboule',
+            type: 'demon',
+            dices: [4],
+            description:' Tout les MGB récoltent 2 Âmes.'
+        }
     }
 }
 
