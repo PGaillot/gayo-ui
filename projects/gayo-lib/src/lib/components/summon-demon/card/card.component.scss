@@ -11,7 +11,7 @@
     mix-blend-mode: difference;
 }
 
-$card-size: 400px;
+// $card-size: 400px;
 
 .effect,
 .border {
@@ -62,9 +62,9 @@ $card-size: 400px;
 #candle-card {
     background: $blood-color;
     overflow: hidden;
-    height: $card-size;
-    width: $card-size;
-    border-radius: $card-size;
+    // height: $card-size;
+    // width: $card-size;
+    // border-radius: $card-size;
     position: relative;
     color: $gold-color;
 

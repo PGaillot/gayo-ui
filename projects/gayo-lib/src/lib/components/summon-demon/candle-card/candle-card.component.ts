@@ -19,6 +19,7 @@ export interface CardEffect {
 
 export class CandleCardComponent {
     @Input() candle!: CandleCard;
+    @Input() size: number = 400;// la taille de la carte en pixel.
 
     candleCardEffect: CardEffect = {
         title: `Récoltez une Âme.`,

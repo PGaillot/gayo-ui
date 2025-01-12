@@ -9,7 +9,7 @@
     "components": [
         {
             "name": "DeleteCardDirectiveDemo",
-            "id": "component-DeleteCardDirectiveDemo-9bd94845a67876f0363040a5e8df7073f630c90bfefd17ea3daa8642ed3c23fe5d98f034286d18f47e303d2c1d6caed4d0eabb77cebb95ae47a0b7cad123aa11",
+            "id": "component-DeleteCardDirectiveDemo-45bf532bb80beeb114b7ac913680775b72f14cb6ce419f4ab1687bf08a97321268382366eb0c647e4acc2ba2be15e48744203b5c52a8509e208a8fd45e6dff51",
             "file": "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -22,43 +22,25 @@
                 "./story.scss"
             ],
             "styles": [],
-            "template": "<lsd-candle-card\n    lsdDeleteCard\n    [id]=\"id\"\n    [cardName]=\"cardName\"\n    [effect]=\"effect\"\n    [diceNumbers]=\"diceNumbers\">\n</lsd-candle-card>\n",
+            "template": "\n@switch(cardType){\n    @case('candle'){\n        <lsd-candle-card\n            lsdDeleteCard\n            [candle]=\"card\">\n        </lsd-candle-card>\n    }\n    @case('demon'){\n        <lsd-demon-card\n            lsdDeleteCard\n            [demon]=\"card\">\n        </lsd-demon-card>\n    }\n    @case('entity'){\n        <lsd-entity-card\n            lsdDeleteCard\n            [entity]=\"card\">\n        </lsd-entity-card>\n    }\n}\n\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
                 {
-                    "name": "cardName",
+                    "name": "card",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 25,
-                    "type": "string",
+                    "line": 43,
+                    "type": "CardType",
                     "decorators": []
                 },
                 {
-                    "name": "diceNumbers",
-                    "defaultValue": "[]",
+                    "name": "cardType",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 27,
-                    "type": "number[]",
-                    "decorators": []
-                },
-                {
-                    "name": "effect",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 26,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "id",
-                    "defaultValue": "0",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 24,
-                    "type": "number",
+                    "line": 42,
+                    "type": "\"candle\" | \"demon\" | \"entity\"",
                     "decorators": []
                 }
             ],
@@ -76,6 +58,14 @@
                     "type": "component"
                 },
                 {
+                    "name": "DemonCardComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "EntityCardComponent",
+                    "type": "component"
+                },
+                {
                     "name": "DeleteCardDirective",
                     "type": "directive"
                 }
@@ -83,7 +73,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';\nimport { Component, Input } from '@angular/core';\nimport { CandleCardComponent } from '../../lib/components/summon-demon/candle-card/candle-card.component';\nimport { DeleteCardDirective } from '../../lib/directives/delete-card.directive';\n\n@Component({\n    selector: 'lsd-delete-card-demo',\n    standalone: true,\n    styleUrls: ['../../lib/styles/lsd.scss', './story.scss'],\n    imports: [CandleCardComponent, DeleteCardDirective],\n    template: `\n        <lsd-candle-card \n            lsdDeleteCard \n            [id]=\"id\" \n            [cardName]=\"cardName\" \n            [effect]=\"effect\" \n            [diceNumbers]=\"diceNumbers\">\n        </lsd-candle-card>\n    `,\n})\n\n\nclass DeleteCardDirectiveDemo {\n    @Input() id: number = 0;\n    @Input() cardName!: string;\n    @Input() effect!: string;\n    @Input() diceNumbers: number[] = [];\n}\n\n//----------------------------------\n\nconst meta: Meta<DeleteCardDirectiveDemo> = {\n    title: 'SummonDemon/Directives/DeleteCard',\n    component: DeleteCardDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [\n                CandleCardComponent,\n                DeleteCardDirective,\n                DeleteCardDirectiveDemo\n            ],\n        }),\n    ],\n    argTypes: {\n        id: { control: 'number' },\n        cardName: { control: 'text' },\n        effect: { control: 'text' },\n        diceNumbers: { control: 'object' },\n    },\n};\n\nexport default meta;\n\ntype Story = StoryObj<DeleteCardDirectiveDemo>;\n\nexport const Default: Story = {\n    args: {\n        id: 12,\n        cardName: 'Candle',\n        effect: 'Récoltez une Âme.',\n        diceNumbers: [5, 6],\n    },\n};",
+            "sourceCode": "import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';\nimport { Component, Input } from '@angular/core';\nimport { CandleCardComponent } from '../../lib/components/summon-demon/candle-card/candle-card.component';\nimport { DeleteCardDirective } from '../../lib/directives/delete-card.directive';\nimport { CardType } from '../../lib/models/lsd/card.model';\nimport { candleCards, demonCards, entityCards } from '../../lib/datas/lsd/cards.data';\nimport { EntityCardComponent , DemonCardComponent} from '../../public-api';\n\n@Component({\n    selector: 'lsd-delete-card-demo',\n    standalone: true,\n    styleUrls: ['../../lib/styles/lsd.scss', './story.scss'],\n    imports: [CandleCardComponent,DemonCardComponent, EntityCardComponent, DeleteCardDirective],\n    template: `\n\n        @switch(cardType){\n            @case('candle'){\n                <lsd-candle-card \n                    lsdDeleteCard \n                    [candle]=\"card\">\n                </lsd-candle-card>\n            }\n            @case('demon'){\n                <lsd-demon-card \n                    lsdDeleteCard \n                    [demon]=\"card\">\n                </lsd-demon-card>\n            }\n            @case('entity'){\n                <lsd-entity-card \n                    lsdDeleteCard \n                    [entity]=\"card\">\n                </lsd-entity-card>\n            }\n        }\n\n    `,\n})\n\n\nclass DeleteCardDirectiveDemo {\n    @Input() cardType!: 'candle' | 'demon' | 'entity';\n    @Input() card!: CardType;\n}\n\n//----------------------------------\n\nconst meta: Meta<DeleteCardDirectiveDemo> = {\n    title: 'SummonDemon/Directives/DeleteCard',\n    component: DeleteCardDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [\n                CandleCardComponent,\n                DemonCardComponent, \n                EntityCardComponent,\n                DeleteCardDirective,\n                DeleteCardDirectiveDemo\n            ],\n        }),\n    ],\n    argTypes: {\n        card: { control: 'number' },\n    },\n};\n\nexport default meta;\n\ntype Story = StoryObj<DeleteCardDirectiveDemo>;\n\nexport const Candle: Story = {\n    args: {\n        cardType:'candle',\n        card: candleCards[0]\n    },\n};\n\nexport const Entity: Story = {\n    args: {\n        cardType:'entity',\n        card: entityCards[0]\n    },\n};\n\nexport const Demon: Story = {\n    args: {\n        cardType:'demon',\n        card: demonCards[0]\n    },\n};",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -461,6 +451,16 @@
                 "defaultValue": "{\n    args: {\n        backCardType: 'candle'\n    }\n}"
             },
             {
+                "name": "Candle",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        cardType:'candle',\n        card: candleCards[0]\n    },\n}"
+            },
+            {
                 "name": "CandleCardStory",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -544,16 +544,6 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n    args: {\n        id: 12,\n        cardName: 'Candle',\n        effect: 'Récoltez une Âme.',\n        diceNumbers: [5, 6],\n    },\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/gayo-lib/src/stories/summon-demon/demon-card.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -619,6 +609,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n    args: {\n        backCardType: 'demon'\n    }\n}"
+            },
+            {
+                "name": "Demon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        cardType:'demon',\n        card: demonCards[0]\n    },\n}"
             },
             {
                 "name": "DemonCardStory",
@@ -699,6 +699,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n    args: {\n        backCardType: 'entity'\n    }\n}"
+            },
+            {
+                "name": "Entity",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n    args: {\n        cardType:'entity',\n        card: entityCards[0]\n    },\n}"
             },
             {
                 "name": "EntityCardStory",
@@ -838,7 +848,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<DeleteCardDirectiveDemo>",
-                "defaultValue": "{\n    title: 'SummonDemon/Directives/DeleteCard',\n    component: DeleteCardDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [\n                CandleCardComponent,\n                DeleteCardDirective,\n                DeleteCardDirectiveDemo\n            ],\n        }),\n    ],\n    argTypes: {\n        id: { control: 'number' },\n        cardName: { control: 'text' },\n        effect: { control: 'text' },\n        diceNumbers: { control: 'object' },\n    },\n}"
+                "defaultValue": "{\n    title: 'SummonDemon/Directives/DeleteCard',\n    component: DeleteCardDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [\n                CandleCardComponent,\n                DemonCardComponent, \n                EntityCardComponent,\n                DeleteCardDirective,\n                DeleteCardDirectiveDemo\n            ],\n        }),\n    ],\n    argTypes: {\n        card: { control: 'number' },\n    },\n}"
             },
             {
                 "name": "meta",
@@ -1751,6 +1761,48 @@
                     "defaultValue": "{\n    title: 'SummonDemon/Back Card',\n    component: BackCardComponent,\n    argTypes: {\n        backCardType: {\n            control: {\n                type: 'select',\n                options: ['entity', 'demon', 'candle']\n            }\n        }\n    }\n}"
                 }
             ],
+            "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts": [
+                {
+                    "name": "Candle",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        cardType:'candle',\n        card: candleCards[0]\n    },\n}"
+                },
+                {
+                    "name": "Demon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        cardType:'demon',\n        card: demonCards[0]\n    },\n}"
+                },
+                {
+                    "name": "Entity",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n    args: {\n        cardType:'entity',\n        card: entityCards[0]\n    },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<DeleteCardDirectiveDemo>",
+                    "defaultValue": "{\n    title: 'SummonDemon/Directives/DeleteCard',\n    component: DeleteCardDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [\n                CandleCardComponent,\n                DemonCardComponent, \n                EntityCardComponent,\n                DeleteCardDirective,\n                DeleteCardDirectiveDemo\n            ],\n        }),\n    ],\n    argTypes: {\n        card: { control: 'number' },\n    },\n}"
+                }
+            ],
             "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts": [
                 {
                     "name": "CheckedCheckbox",
@@ -1885,28 +1937,6 @@
                     "deprecationMessage": "",
                     "type": "Meta<FolderCardComponent>",
                     "defaultValue": "{\n  title: 'FolderApp/FolderCard',\n  component: FolderCardComponent,\n  tags: ['autodocs'],\n}"
-                }
-            ],
-            "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n    args: {\n        id: 12,\n        cardName: 'Candle',\n        effect: 'Récoltez une Âme.',\n        diceNumbers: [5, 6],\n    },\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<DeleteCardDirectiveDemo>",
-                    "defaultValue": "{\n    title: 'SummonDemon/Directives/DeleteCard',\n    component: DeleteCardDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [\n                CandleCardComponent,\n                DeleteCardDirective,\n                DeleteCardDirectiveDemo\n            ],\n        }),\n    ],\n    argTypes: {\n        id: { control: 'number' },\n        cardName: { control: 'text' },\n        effect: { control: 'text' },\n        diceNumbers: { control: 'object' },\n    },\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/summon-demon/demon-card.stories.ts": [
@@ -2759,7 +2789,7 @@
                 "linktype": "component",
                 "name": "DeleteCardDirectiveDemo",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -2767,7 +2797,27 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Default",
+                "name": "Candle",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Demon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Entity",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

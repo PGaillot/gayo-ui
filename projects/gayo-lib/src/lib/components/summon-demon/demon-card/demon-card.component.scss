@@ -118,7 +118,11 @@ $card-size: 400px;
       font-size: 50px;
       text-align: center;
       background: $dark-color;
+      &.infinite {
+        transform: rotate(90deg);
+      }
     }
+
   }
 
   .image{

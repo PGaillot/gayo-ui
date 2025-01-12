@@ -26,13 +26,13 @@
       </svg>
         <p id="effect">{{ demon.description }}</p>
     <div id="demon-dice-num-container">
+
+      @if(demon.dices.length === 0){
+        <p class="infinite dice-number">8</p>
+      }
+
       @for (dice of demon.dices; track $index) {
-        @if(dice === null){
-          <p class="dice-number">infini</p>
-        }
-        @else {
           <p class="dice-number">{{ dice }}</p>
-        }
       }
     </div>
     

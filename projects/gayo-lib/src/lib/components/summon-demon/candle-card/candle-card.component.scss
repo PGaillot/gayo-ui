@@ -1,6 +1,14 @@
 @import '../../../styles/lsd.scss';
 
 
+$card-size: var(--card-size) ;
+
+#candle-card{
+    height: $card-size;
+    width: $card-size;
+    border-radius: $card-size;
+}
+
 #dice-num-container {
     z-index: 1;
     position: absolute;
