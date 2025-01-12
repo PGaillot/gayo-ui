@@ -16,6 +16,12 @@ type Story = StoryObj<DemonCardComponent>;
 
 export const Default : Story =  {
     args: {
-        demon:demonCards[0]
+        demon:{
+            description: "Le Roi MGB avale ses grosses boules.",
+            type: "demon",
+            id: 414,
+            name: "mgb ultime",
+            dices: []
+        }
     }
 }
