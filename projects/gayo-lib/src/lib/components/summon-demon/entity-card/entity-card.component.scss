@@ -8,14 +8,14 @@ $card-size: var(--card-size);
     border-radius: $card-size;
 
     .image{
-        z-index:0;
+        z-index:1;
         height: 350px;
         min-width: 350px;
         position: absolute;
         top: 64%;
         left: 50%;
         transform: translate(-50%, -65%);
-        background-image: url("../../../../../assets/lsd/card-img/00004-3656696267-removebg-preview.png");
+        background-image: url("../../../../../assets/lsd/card-img/00004-3656696267-Photoroom.png");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -65,9 +65,9 @@ $card-size: var(--card-size);
 }
 
 #effect {
-    z-index: 1;
+    z-index: 2;
     position: absolute;
-    height: 220px;
+    height: 200px;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
@@ -84,7 +84,7 @@ $card-size: var(--card-size);
 }
 
 #dice-num-container {
-    z-index: 1;
+    z-index: 2;
     position: absolute;
     transform: translate(-50%, -50%);
     right: 10%;
@@ -111,7 +111,7 @@ $card-size: var(--card-size);
 .entity-candle {
     height: 55px;
     width: 40px;
-    z-index: 1;
+    z-index: 2;
     position: absolute;
     transform: translate(-50%, -50%);
     background-position: center;
