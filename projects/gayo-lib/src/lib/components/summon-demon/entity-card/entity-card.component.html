@@ -1,4 +1,4 @@
-<div id="entity-card">
+<div id="entity-card" [style]="{'--card-size':size + 'px'}">
   <svg class="card-noise-filter-element" viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg'>
     <filter id='noiseFilter'>
       <feTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='3' stitchTiles='stitch' />
@@ -30,13 +30,13 @@
   <div id="type">
     @switch (entity.gender) {
     @case ('garçon') {
-    <div class="icon man"></div> 
+    <div class="icon man"></div>
     }
     @case ("fille") {
-    <div class="icon woman"></div> 
+    <div class="icon woman"></div>
     }
     @default {
-    <div class="icon animal"></div>  
+    <div class="icon animal"></div>
     }
     }
   </div>

@@ -1,5 +1,13 @@
 @import "../../../styles/lsd.scss";
 
+$card-size: var(--card-size);
+
+#entity-card{
+    height: $card-size;
+    width: $card-size;
+    border-radius: $card-size;
+}
+
 #type {
     z-index: 1;
     position: absolute;

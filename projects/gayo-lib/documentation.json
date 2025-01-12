@@ -9,7 +9,7 @@
     "components": [
         {
             "name": "DeleteCardDirectiveDemo",
-            "id": "component-DeleteCardDirectiveDemo-45bf532bb80beeb114b7ac913680775b72f14cb6ce419f4ab1687bf08a97321268382366eb0c647e4acc2ba2be15e48744203b5c52a8509e208a8fd45e6dff51",
+            "id": "component-DeleteCardDirectiveDemo-8b5e55688b5549c2df324ca1f5bbbb84930c0e28b7c5bb004ba330476f4b157c35b8f3952c2c70c1713dde34bc8f86aae8c8f449931266640d143ae0536880c5",
             "file": "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -73,11 +73,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';\nimport { Component, Input } from '@angular/core';\nimport { CandleCardComponent } from '../../lib/components/summon-demon/candle-card/candle-card.component';\nimport { DeleteCardDirective } from '../../lib/directives/delete-card.directive';\nimport { CardType } from '../../lib/models/lsd/card.model';\nimport { candleCards, demonCards, entityCards } from '../../lib/datas/lsd/cards.data';\nimport { EntityCardComponent , DemonCardComponent} from '../../public-api';\n\n@Component({\n    selector: 'lsd-delete-card-demo',\n    standalone: true,\n    styleUrls: ['../../lib/styles/lsd.scss', './story.scss'],\n    imports: [CandleCardComponent,DemonCardComponent, EntityCardComponent, DeleteCardDirective],\n    template: `\n\n        @switch(cardType){\n            @case('candle'){\n                <lsd-candle-card \n                    lsdDeleteCard \n                    [candle]=\"card\">\n                </lsd-candle-card>\n            }\n            @case('demon'){\n                <lsd-demon-card \n                    lsdDeleteCard \n                    [demon]=\"card\">\n                </lsd-demon-card>\n            }\n            @case('entity'){\n                <lsd-entity-card \n                    lsdDeleteCard \n                    [entity]=\"card\">\n                </lsd-entity-card>\n            }\n        }\n\n    `,\n})\n\n\nclass DeleteCardDirectiveDemo {\n    @Input() cardType!: 'candle' | 'demon' | 'entity';\n    @Input() card!: CardType;\n}\n\n//----------------------------------\n\nconst meta: Meta<DeleteCardDirectiveDemo> = {\n    title: 'SummonDemon/Directives/DeleteCard',\n    component: DeleteCardDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [\n                CandleCardComponent,\n                DemonCardComponent, \n                EntityCardComponent,\n                DeleteCardDirective,\n                DeleteCardDirectiveDemo\n            ],\n        }),\n    ],\n    argTypes: {\n        card: { control: 'number' },\n    },\n};\n\nexport default meta;\n\ntype Story = StoryObj<DeleteCardDirectiveDemo>;\n\nexport const Candle: Story = {\n    args: {\n        cardType:'candle',\n        card: candleCards[0]\n    },\n};\n\nexport const Entity: Story = {\n    args: {\n        cardType:'entity',\n        card: entityCards[0]\n    },\n};\n\nexport const Demon: Story = {\n    args: {\n        cardType:'demon',\n        card: demonCards[0]\n    },\n};",
+            "sourceCode": "import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';\r\nimport { Component, Input } from '@angular/core';\r\nimport { CandleCardComponent } from '../../lib/components/summon-demon/candle-card/candle-card.component';\r\nimport { DeleteCardDirective } from '../../lib/directives/delete-card.directive';\r\nimport { CardType } from '../../lib/models/lsd/card.model';\r\nimport { candleCards, demonCards, entityCards } from '../../lib/datas/lsd/cards.data';\r\nimport { EntityCardComponent , DemonCardComponent} from '../../public-api';\r\n\r\n@Component({\r\n    selector: 'lsd-delete-card-demo',\r\n    standalone: true,\r\n    styleUrls: ['../../lib/styles/lsd.scss', './story.scss'],\r\n    imports: [CandleCardComponent,DemonCardComponent, EntityCardComponent, DeleteCardDirective],\r\n    template: `\r\n\r\n        @switch(cardType){\r\n            @case('candle'){\r\n                <lsd-candle-card \r\n                    lsdDeleteCard \r\n                    [candle]=\"card\">\r\n                </lsd-candle-card>\r\n            }\r\n            @case('demon'){\r\n                <lsd-demon-card \r\n                    lsdDeleteCard \r\n                    [demon]=\"card\">\r\n                </lsd-demon-card>\r\n            }\r\n            @case('entity'){\r\n                <lsd-entity-card \r\n                    lsdDeleteCard \r\n                    [entity]=\"card\">\r\n                </lsd-entity-card>\r\n            }\r\n        }\r\n\r\n    `,\r\n})\r\n\r\n\r\nclass DeleteCardDirectiveDemo {\r\n    @Input() cardType!: 'candle' | 'demon' | 'entity';\r\n    @Input() card!: CardType;\r\n}\r\n\r\n//----------------------------------\r\n\r\nconst meta: Meta<DeleteCardDirectiveDemo> = {\r\n    title: 'SummonDemon/Directives/DeleteCard',\r\n    component: DeleteCardDirectiveDemo,\r\n    decorators: [\r\n        moduleMetadata({\r\n            imports: [\r\n                CandleCardComponent,\r\n                DemonCardComponent, \r\n                EntityCardComponent,\r\n                DeleteCardDirective,\r\n                DeleteCardDirectiveDemo\r\n            ],\r\n        }),\r\n    ],\r\n    argTypes: {\r\n        card: { control: 'number' },\r\n    },\r\n};\r\n\r\nexport default meta;\r\n\r\ntype Story = StoryObj<DeleteCardDirectiveDemo>;\r\n\r\nexport const Candle: Story = {\r\n    args: {\r\n        cardType:'candle',\r\n        card: candleCards[0]\r\n    },\r\n};\r\n\r\nexport const Entity: Story = {\r\n    args: {\r\n        cardType:'entity',\r\n        card: entityCards[0]\r\n    },\r\n};\r\n\r\nexport const Demon: Story = {\r\n    args: {\r\n        cardType:'demon',\r\n        card: demonCards[0]\r\n    },\r\n};",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "$blood-color:#C5162F;\n$gold-color:#FFC903;\n$dark-color:#000000;\n$white:#FFFFFF;\n\n@font-face {\n    font-family: \"hobo\";\n    src: url('/assets/fonts/hobo.ttf') format('truetype');\n}\n\n\n* {\n    font-family: \"hobo\";\n    margin: 0;\n    padding: 0;\n}",
+                    "data": "$blood-color:#C5162F;\r\n$gold-color:#FFC903;\r\n$dark-color:#000000;\r\n$white:#FFFFFF;\r\n\r\n@font-face {\r\n    font-family: \"hobo\";\r\n    src: url('/assets/fonts/hobo.ttf') format('truetype');\r\n}\r\n\r\n\r\n* {\r\n    font-family: \"hobo\";\r\n    margin: 0;\r\n    padding: 0;\r\n}",
                     "styleUrl": "../../lib/styles/lsd.scss"
                 },
                 {
@@ -90,7 +90,7 @@
         },
         {
             "name": "GlitchDirectiveDemo",
-            "id": "component-GlitchDirectiveDemo-8c890348215cf4e9a4e0916036dc7532aca65ee838745586250a40d21b50a109aa45a59943fa1747234e3a0bb00ba67d3f3d99fb789a5c67ffaf0dcf72bb3e47",
+            "id": "component-GlitchDirectiveDemo-e85c6add3a923cd319d1f6eaf6d7448df9070ff626065acb937401efa0666973c535abe6f9e7b4ffcc9334723fcc9f2d3b81b69543dc043c7db64bd13aea9e1e",
             "file": "projects/gayo-lib/src/stories/vault-tec/glitch.directive.stories.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -147,15 +147,15 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';\nimport { Component, Input } from '@angular/core';\nimport { GlitchDirective } from '../../lib/directives/glitch.directive';\n\n@Component({\n  styleUrls:['../../lib/styles/vault-tec.scss', './story.scss'],\n  template: `\n    <div vtGlitch\n      [duration]=\"duration\"\n      [delay]=\"delay\"\n      style=\"display: flex; flex-direction: column; align-items: center; width: 300px;\">\n      <svg class=\"vautl-boy\"></svg>\n      <p style=\"margin: 0; border: 3px solid #2dc92d; padding: 12px;\">\n        {{ text }}\n      </p>\n    </div>\n  `,\n})\n\nclass GlitchDirectiveDemo {\n  @Input() text = 'Ceci est un texte avec effet de glitch';\n  @Input() duration = 8;\n  @Input() delay: number | null = null;\n}\n\n// --- Stories ---\n\nconst meta: Meta<GlitchDirectiveDemo> = {\n  title: 'VAULT-TEC/Directives/Glitch',\n  component: GlitchDirectiveDemo,\n  decorators: [\n    moduleMetadata({\n      imports: [GlitchDirective],\n    }),\n  ],\n  argTypes: {\n    duration: { control: { type: 'number', min: 1.5 } },\n    delay: { control: { type: 'number', min: 1000 } },\n    text: { control: 'text' },\n  },\n};\n\nexport default meta;\n\ntype Story = StoryObj<GlitchDirectiveDemo>;\n\nexport const Default: Story = {\n  args: {\n    duration: 6,\n    delay: null,\n    text: 'Ceci est un texte avec effet de glitch',\n  },\n};\n\nexport const WithDelay: Story = {\n  args: {\n    ...Default.args,\n    delay: 6000,\n  },\n};\n",
+            "sourceCode": "import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';\r\nimport { Component, Input } from '@angular/core';\r\nimport { GlitchDirective } from '../../lib/directives/glitch.directive';\r\n\r\n@Component({\r\n  styleUrls:['../../lib/styles/vault-tec.scss', './story.scss'],\r\n  template: `\r\n    <div vtGlitch\r\n      [duration]=\"duration\"\r\n      [delay]=\"delay\"\r\n      style=\"display: flex; flex-direction: column; align-items: center; width: 300px;\">\r\n      <svg class=\"vautl-boy\"></svg>\r\n      <p style=\"margin: 0; border: 3px solid #2dc92d; padding: 12px;\">\r\n        {{ text }}\r\n      </p>\r\n    </div>\r\n  `,\r\n})\r\n\r\nclass GlitchDirectiveDemo {\r\n  @Input() text = 'Ceci est un texte avec effet de glitch';\r\n  @Input() duration = 8;\r\n  @Input() delay: number | null = null;\r\n}\r\n\r\n// --- Stories ---\r\n\r\nconst meta: Meta<GlitchDirectiveDemo> = {\r\n  title: 'VAULT-TEC/Directives/Glitch',\r\n  component: GlitchDirectiveDemo,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [GlitchDirective],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n    duration: { control: { type: 'number', min: 1.5 } },\r\n    delay: { control: { type: 'number', min: 1000 } },\r\n    text: { control: 'text' },\r\n  },\r\n};\r\n\r\nexport default meta;\r\n\r\ntype Story = StoryObj<GlitchDirectiveDemo>;\r\n\r\nexport const Default: Story = {\r\n  args: {\r\n    duration: 6,\r\n    delay: null,\r\n    text: 'Ceci est un texte avec effet de glitch',\r\n  },\r\n};\r\n\r\nexport const WithDelay: Story = {\r\n  args: {\r\n    ...Default.args,\r\n    delay: 6000,\r\n  },\r\n};\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "$pipboy: #2dc92d;\n$pipboy-light: #2dc92d49;\n$background: #1a1a1a;\n\n@font-face {\n  font-family: \"Space Mono\", monospace;\n  src: url(\"https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Share+Tech&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap\");\n}\n\n$font-size-small: 12px;\n$font-size-medium: 16px;\n$font-size-large: 22px;\n\n* {\n  font-family: \"Space Mono\", monospace;\n  color: $pipboy;\n  margin: 0;\n  padding: 0;\n  text-decoration: none;\n\n  &::-webkit-scrollbar {\n    width: 4px;\n  }\n\n  &::-webkit-scrollbar-track {\n    background: transparent;\n  }\n\n  &::-webkit-scrollbar-thumb {\n    background: $pipboy;\n    border-radius: 4px;\n  }\n}\n\np {\n  line-height: 120%;\n}\n\n.no-event {\n  pointer-events: none;\n  user-select: none;\n}\n\n.typing-effet {\n  position: relative;\n  &::after {\n    content: \"\";\n    animation: typing 1s infinite;\n    display: block;\n    position: absolute;\n    right: -16px;\n    bottom: 0;\n    width: 16px;\n    height: 2px;\n    background: $pipboy;\n    \n    @keyframes typing {\n      0% {\n        opacity: 0;\n      }\n      49% {\n        opacity: 0;\n      }\n      50% {\n        opacity: 1;\n      }\n      99% {\n        opacity: 1;\n      }\n      100% {\n        opacity: 0;\n      }\n    }\n  }\n}\n\n.glitch {\n  $animation-duration: var(--animation-duration, 8s);\n  animation: glitch $animation-duration ease-in infinite;\n  @keyframes glitch {\n    0% {\n      transform: skewX(15deg);\n    }\n    0.3% {\n      transform: skewX(0deg);\n      filter: brightness(1);\n    }\n    0.6% {\n      transform: skewX(20deg);\n      filter: brightness(1.5);\n    }\n    0.8% {\n      transform: skewX(0deg);\n      filter: brightness(1);\n    }\n    50% {\n      transform: skewX(0deg);\n      opacity: 1;\n    }\n    50.1% {\n      transform: skewX(15deg);\n      opacity: 0.5;\n    }\n    50.4% {\n      transform: skewX(2deg);\n    }\n    51% {\n      transform: skewX(0deg);\n      opacity: 1;\n    }\n    55% {\n      transform: skewX(0deg);\n    }\n    99% {\n      transform: skewX(0deg);\n    }\n  }\n}\n",
+                    "data": "$pipboy: #2dc92d;\r\n$pipboy-light: #2dc92d49;\r\n$background: #1a1a1a;\r\n\r\n@font-face {\r\n  font-family: \"Space Mono\", monospace;\r\n  src: url(\"https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Share+Tech&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap\");\r\n}\r\n\r\n$font-size-small: 12px;\r\n$font-size-medium: 16px;\r\n$font-size-large: 22px;\r\n\r\n* {\r\n  font-family: \"Space Mono\", monospace;\r\n  color: $pipboy;\r\n  margin: 0;\r\n  padding: 0;\r\n  text-decoration: none;\r\n\r\n  &::-webkit-scrollbar {\r\n    width: 4px;\r\n  }\r\n\r\n  &::-webkit-scrollbar-track {\r\n    background: transparent;\r\n  }\r\n\r\n  &::-webkit-scrollbar-thumb {\r\n    background: $pipboy;\r\n    border-radius: 4px;\r\n  }\r\n}\r\n\r\np {\r\n  line-height: 120%;\r\n}\r\n\r\n.no-event {\r\n  pointer-events: none;\r\n  user-select: none;\r\n}\r\n\r\n.typing-effet {\r\n  position: relative;\r\n  &::after {\r\n    content: \"\";\r\n    animation: typing 1s infinite;\r\n    display: block;\r\n    position: absolute;\r\n    right: -16px;\r\n    bottom: 0;\r\n    width: 16px;\r\n    height: 2px;\r\n    background: $pipboy;\r\n    \r\n    @keyframes typing {\r\n      0% {\r\n        opacity: 0;\r\n      }\r\n      49% {\r\n        opacity: 0;\r\n      }\r\n      50% {\r\n        opacity: 1;\r\n      }\r\n      99% {\r\n        opacity: 1;\r\n      }\r\n      100% {\r\n        opacity: 0;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n.glitch {\r\n  $animation-duration: var(--animation-duration, 8s);\r\n  animation: glitch $animation-duration ease-in infinite;\r\n  @keyframes glitch {\r\n    0% {\r\n      transform: skewX(15deg);\r\n    }\r\n    0.3% {\r\n      transform: skewX(0deg);\r\n      filter: brightness(1);\r\n    }\r\n    0.6% {\r\n      transform: skewX(20deg);\r\n      filter: brightness(1.5);\r\n    }\r\n    0.8% {\r\n      transform: skewX(0deg);\r\n      filter: brightness(1);\r\n    }\r\n    50% {\r\n      transform: skewX(0deg);\r\n      opacity: 1;\r\n    }\r\n    50.1% {\r\n      transform: skewX(15deg);\r\n      opacity: 0.5;\r\n    }\r\n    50.4% {\r\n      transform: skewX(2deg);\r\n    }\r\n    51% {\r\n      transform: skewX(0deg);\r\n      opacity: 1;\r\n    }\r\n    55% {\r\n      transform: skewX(0deg);\r\n    }\r\n    99% {\r\n      transform: skewX(0deg);\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "../../lib/styles/vault-tec.scss"
                 },
                 {
-                    "data": ".vautl-boy {\n  background-image: url(\"../../../assets/special/strength.svg\");\n  width: 200px;\n  background-size: cover;\n  background-repeat: no-repeat;\n}\n",
+                    "data": ".vautl-boy {\r\n  background-image: url(\"../../../assets/special/strength.svg\");\r\n  width: 200px;\r\n  background-size: cover;\r\n  background-repeat: no-repeat;\r\n}\r\n",
                     "styleUrl": "./story.scss"
                 }
             ],
@@ -164,7 +164,7 @@
         },
         {
             "name": "HoverCardDirectiveDemo",
-            "id": "component-HoverCardDirectiveDemo-728c6f97a40a2ba8b8337d8302fbacf3741eb3f9b6ffe3a4c6bd0908d950bb41e50978aa2e92caeb4f8631b9b91eed65410d4d5ff42045225606547141229147",
+            "id": "component-HoverCardDirectiveDemo-d7dd387c73cb697dda2b1728b000c08ca4ed689757f70464c8b55ab198b3ebae1d1127ece443b2db31fd2397bd634679bbb4b85bed8cbca5c86c1f4ea0c6e06e",
             "file": "projects/gayo-lib/src/stories/summon-demon/hover-card.directive.stories.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -233,11 +233,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';\nimport { Component, Input } from '@angular/core';\nimport { CandleCardComponent } from '../../lib/components/summon-demon/candle-card/candle-card.component';\nimport { HoverCardDirective } from '../../lib/directives/hover-card.directive';\nimport { DemonCardComponent } from '../../lib/components/summon-demon/demon-card/demon-card.component';\nimport { BackCardComponent, BackCardType } from '../../lib/components/summon-demon/back-card/back-card.component';\nimport { CandleCard, DemonCard, EntityCard } from '../../lib/models/lsd/card.model';\nimport { candleCards, demonCards, entityCards } from '../../lib/datas/lsd/cards.data';\nimport { EntityCardComponent } from '../../lib/components/summon-demon/entity-card/entity-card.component';\n\ntype Card = CandleCard | DemonCard | EntityCard | BackCardType; // Ajoutez vos types ici\ntype CardType = 'candle' | 'demon' | 'entity' | 'back-card';\n\n@Component({\n    selector: 'lsd-hover-card-demo',\n    standalone: true,\n    styleUrls: ['../../lib/styles/lsd.scss', './story.scss'],\n    imports: [\n        CandleCardComponent,\n        DemonCardComponent,\n        EntityCardComponent,\n        HoverCardDirective,\n        BackCardComponent,\n    ],\n    template: `\n        <div class=\"demo-container\">\n            <!-- Candle Card -->\n\n            @switch(cardType){\n\n            @case('candle'){\n                <lsd-candle-card \n                lsdHoverCard \n                [candle]=\"card\"\n                >\n            </lsd-candle-card>\n            }\n             \n            @case('demon'){\n            <!-- Demon Card -->\n            <lsd-demon-card \n            lsdHoverCard\n            [demon]=\"card\">\n            </lsd-demon-card>\n            }\n             \n            @case('entity'){\n            <!-- Demon Card -->\n            <lsd-entity-card \n            lsdHoverCard\n            [entity]=\"card\">\n            </lsd-entity-card>\n            }\n      \n            @case('back-card'){\n            <!-- Back Card -->\n            <lsd-back-card \n            lsdHoverCard\n            [backCardType]=\"card\">\n            </lsd-back-card>\n            }\n    }\n    </div>\n    `,\n})\nclass HoverCardDirectiveDemo {\n    @Input() card: Card = candleCards[0];\n    @Input() cardType!:CardType;\n}\n\nconst meta: Meta<HoverCardDirectiveDemo> = {\n    title: 'SummonDemon/Directives/HoverCard',\n    component: HoverCardDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [\n                CandleCardComponent,\n                DemonCardComponent,\n                BackCardComponent,\n                EntityCardComponent,\n                HoverCardDirective,\n                HoverCardDirectiveDemo\n            ],\n        }),\n    ],\n    argTypes: {\n        card: {\n            control: 'select',\n            options: ['candle', 'demon', 'entity', 'back-entity'],\n            description: 'Type of card to display'\n        },\n    },\n};\n\nexport default meta;\n\ntype Story = StoryObj<HoverCardDirectiveDemo>;\n\n// Stories pour chaque type de carte\nexport const CandleCardStory: Story = {\n    args: {\n        cardType:'candle',\n        card:candleCards[0] \n    },\n};\n\nexport const DemonCardStory: Story = {\n    args: {\n        cardType:'demon',\n        card: demonCards[0]\n    },\n};\n\nexport const EntityCardStory:Story = {\n    args:{\n        cardType:'entity',\n        card: entityCards[0]\n    }\n}\n\nexport const BackCardStory: Story = {\n    args: {\n        cardType:'back-card',\n        card: 'candle',\n    },\n};",
+            "sourceCode": "import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';\r\nimport { Component, Input } from '@angular/core';\r\nimport { CandleCardComponent } from '../../lib/components/summon-demon/candle-card/candle-card.component';\r\nimport { HoverCardDirective } from '../../lib/directives/hover-card.directive';\r\nimport { DemonCardComponent } from '../../lib/components/summon-demon/demon-card/demon-card.component';\r\nimport { BackCardComponent, BackCardType } from '../../lib/components/summon-demon/back-card/back-card.component';\r\nimport { CandleCard, DemonCard, EntityCard } from '../../lib/models/lsd/card.model';\r\nimport { candleCards, demonCards, entityCards } from '../../lib/datas/lsd/cards.data';\r\nimport { EntityCardComponent } from '../../lib/components/summon-demon/entity-card/entity-card.component';\r\n\r\ntype Card = CandleCard | DemonCard | EntityCard | BackCardType; // Ajoutez vos types ici\r\ntype CardType = 'candle' | 'demon' | 'entity' | 'back-card';\r\n\r\n@Component({\r\n    selector: 'lsd-hover-card-demo',\r\n    standalone: true,\r\n    styleUrls: ['../../lib/styles/lsd.scss', './story.scss'],\r\n    imports: [\r\n        CandleCardComponent,\r\n        DemonCardComponent,\r\n        EntityCardComponent,\r\n        HoverCardDirective,\r\n        BackCardComponent,\r\n    ],\r\n    template: `\r\n        <div class=\"demo-container\">\r\n            <!-- Candle Card -->\r\n\r\n            @switch(cardType){\r\n\r\n            @case('candle'){\r\n                <lsd-candle-card \r\n                lsdHoverCard \r\n                [candle]=\"card\"\r\n                >\r\n            </lsd-candle-card>\r\n            }\r\n             \r\n            @case('demon'){\r\n            <!-- Demon Card -->\r\n            <lsd-demon-card \r\n            lsdHoverCard\r\n            [demon]=\"card\">\r\n            </lsd-demon-card>\r\n            }\r\n             \r\n            @case('entity'){\r\n            <!-- Demon Card -->\r\n            <lsd-entity-card \r\n            lsdHoverCard\r\n            [entity]=\"card\">\r\n            </lsd-entity-card>\r\n            }\r\n      \r\n            @case('back-card'){\r\n            <!-- Back Card -->\r\n            <lsd-back-card \r\n            lsdHoverCard\r\n            [backCardType]=\"card\">\r\n            </lsd-back-card>\r\n            }\r\n    }\r\n    </div>\r\n    `,\r\n})\r\nclass HoverCardDirectiveDemo {\r\n    @Input() card: Card = candleCards[0];\r\n    @Input() cardType!:CardType;\r\n}\r\n\r\nconst meta: Meta<HoverCardDirectiveDemo> = {\r\n    title: 'SummonDemon/Directives/HoverCard',\r\n    component: HoverCardDirectiveDemo,\r\n    decorators: [\r\n        moduleMetadata({\r\n            imports: [\r\n                CandleCardComponent,\r\n                DemonCardComponent,\r\n                BackCardComponent,\r\n                EntityCardComponent,\r\n                HoverCardDirective,\r\n                HoverCardDirectiveDemo\r\n            ],\r\n        }),\r\n    ],\r\n    argTypes: {\r\n        card: {\r\n            control: 'select',\r\n            options: ['candle', 'demon', 'entity', 'back-entity'],\r\n            description: 'Type of card to display'\r\n        },\r\n    },\r\n};\r\n\r\nexport default meta;\r\n\r\ntype Story = StoryObj<HoverCardDirectiveDemo>;\r\n\r\n// Stories pour chaque type de carte\r\nexport const CandleCardStory: Story = {\r\n    args: {\r\n        cardType:'candle',\r\n        card:candleCards[0] \r\n    },\r\n};\r\n\r\nexport const DemonCardStory: Story = {\r\n    args: {\r\n        cardType:'demon',\r\n        card: demonCards[0]\r\n    },\r\n};\r\n\r\nexport const EntityCardStory:Story = {\r\n    args:{\r\n        cardType:'entity',\r\n        card: entityCards[0]\r\n    }\r\n}\r\n\r\nexport const BackCardStory: Story = {\r\n    args: {\r\n        cardType:'back-card',\r\n        card: 'candle',\r\n    },\r\n};",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "$blood-color:#C5162F;\n$gold-color:#FFC903;\n$dark-color:#000000;\n$white:#FFFFFF;\n\n@font-face {\n    font-family: \"hobo\";\n    src: url('/assets/fonts/hobo.ttf') format('truetype');\n}\n\n\n* {\n    font-family: \"hobo\";\n    margin: 0;\n    padding: 0;\n}",
+                    "data": "$blood-color:#C5162F;\r\n$gold-color:#FFC903;\r\n$dark-color:#000000;\r\n$white:#FFFFFF;\r\n\r\n@font-face {\r\n    font-family: \"hobo\";\r\n    src: url('/assets/fonts/hobo.ttf') format('truetype');\r\n}\r\n\r\n\r\n* {\r\n    font-family: \"hobo\";\r\n    margin: 0;\r\n    padding: 0;\r\n}",
                     "styleUrl": "../../lib/styles/lsd.scss"
                 },
                 {
@@ -250,7 +250,7 @@
         },
         {
             "name": "SwipeCharDirectiveDemo",
-            "id": "component-SwipeCharDirectiveDemo-9bb7cd0bdc1108077f4a049c41f1cebfbc3a43b4c6fd5ff8bf3e7b8e837aa714974b8fa9220a23e1134f2717904739be7851709cb31f40e3afd951849e44fac8",
+            "id": "component-SwipeCharDirectiveDemo-9e11b65a267965016fcf5dbbc15ae8a99a2823b783f3653a9308a0addbc9fbf17c5667de6b01381e7396381d086c398f059e5a8d308a1565c43e8e5a06c345b5",
             "file": "projects/gayo-lib/src/stories/vault-tec/swipe-char.directive.stories.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -293,11 +293,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { Meta, moduleMetadata, StoryObj } from '@storybook/angular';\nimport { SwipeCharDirective } from '../../lib/directives/swipe-char.directive';\n\n@Component({\n  styleUrls: ['../../lib/styles/vault-tec.scss'],\n  standalone: true,\n  imports: [ SwipeCharDirective],\n  template: ` <p vtSwipeChar [char]=\"txt\"></p> `,\n})\nexport class SwipeCharDirectiveDemo {\n  @Input() txt: string = 'S';\n}\n\n// --- Stories ---\n\nconst meta: Meta<SwipeCharDirectiveDemo> = {\n  title: 'VAULT-TEC/Directives/SwipeCharDirective',\n  component: SwipeCharDirectiveDemo,\n  decorators: [\n    moduleMetadata({\n      imports: [SwipeCharDirective],\n    }),\n  ],\n  argTypes: {\n    txt: { control: 'text' },\n  },\n};\n\nexport default meta;\n\ntype Story = StoryObj<SwipeCharDirectiveDemo>;\n\nexport const Default: Story = {};\n\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { Meta, moduleMetadata, StoryObj } from '@storybook/angular';\r\nimport { SwipeCharDirective } from '../../lib/directives/swipe-char.directive';\r\n\r\n@Component({\r\n  styleUrls: ['../../lib/styles/vault-tec.scss'],\r\n  standalone: true,\r\n  imports: [ SwipeCharDirective],\r\n  template: ` <p vtSwipeChar [char]=\"txt\"></p> `,\r\n})\r\nexport class SwipeCharDirectiveDemo {\r\n  @Input() txt: string = 'S';\r\n}\r\n\r\n// --- Stories ---\r\n\r\nconst meta: Meta<SwipeCharDirectiveDemo> = {\r\n  title: 'VAULT-TEC/Directives/SwipeCharDirective',\r\n  component: SwipeCharDirectiveDemo,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [SwipeCharDirective],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n    txt: { control: 'text' },\r\n  },\r\n};\r\n\r\nexport default meta;\r\n\r\ntype Story = StoryObj<SwipeCharDirectiveDemo>;\r\n\r\nexport const Default: Story = {};\r\n\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "$pipboy: #2dc92d;\n$pipboy-light: #2dc92d49;\n$background: #1a1a1a;\n\n@font-face {\n  font-family: \"Space Mono\", monospace;\n  src: url(\"https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Share+Tech&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap\");\n}\n\n$font-size-small: 12px;\n$font-size-medium: 16px;\n$font-size-large: 22px;\n\n* {\n  font-family: \"Space Mono\", monospace;\n  color: $pipboy;\n  margin: 0;\n  padding: 0;\n  text-decoration: none;\n\n  &::-webkit-scrollbar {\n    width: 4px;\n  }\n\n  &::-webkit-scrollbar-track {\n    background: transparent;\n  }\n\n  &::-webkit-scrollbar-thumb {\n    background: $pipboy;\n    border-radius: 4px;\n  }\n}\n\np {\n  line-height: 120%;\n}\n\n.no-event {\n  pointer-events: none;\n  user-select: none;\n}\n\n.typing-effet {\n  position: relative;\n  &::after {\n    content: \"\";\n    animation: typing 1s infinite;\n    display: block;\n    position: absolute;\n    right: -16px;\n    bottom: 0;\n    width: 16px;\n    height: 2px;\n    background: $pipboy;\n    \n    @keyframes typing {\n      0% {\n        opacity: 0;\n      }\n      49% {\n        opacity: 0;\n      }\n      50% {\n        opacity: 1;\n      }\n      99% {\n        opacity: 1;\n      }\n      100% {\n        opacity: 0;\n      }\n    }\n  }\n}\n\n.glitch {\n  $animation-duration: var(--animation-duration, 8s);\n  animation: glitch $animation-duration ease-in infinite;\n  @keyframes glitch {\n    0% {\n      transform: skewX(15deg);\n    }\n    0.3% {\n      transform: skewX(0deg);\n      filter: brightness(1);\n    }\n    0.6% {\n      transform: skewX(20deg);\n      filter: brightness(1.5);\n    }\n    0.8% {\n      transform: skewX(0deg);\n      filter: brightness(1);\n    }\n    50% {\n      transform: skewX(0deg);\n      opacity: 1;\n    }\n    50.1% {\n      transform: skewX(15deg);\n      opacity: 0.5;\n    }\n    50.4% {\n      transform: skewX(2deg);\n    }\n    51% {\n      transform: skewX(0deg);\n      opacity: 1;\n    }\n    55% {\n      transform: skewX(0deg);\n    }\n    99% {\n      transform: skewX(0deg);\n    }\n  }\n}\n",
+                    "data": "$pipboy: #2dc92d;\r\n$pipboy-light: #2dc92d49;\r\n$background: #1a1a1a;\r\n\r\n@font-face {\r\n  font-family: \"Space Mono\", monospace;\r\n  src: url(\"https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Share+Tech&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap\");\r\n}\r\n\r\n$font-size-small: 12px;\r\n$font-size-medium: 16px;\r\n$font-size-large: 22px;\r\n\r\n* {\r\n  font-family: \"Space Mono\", monospace;\r\n  color: $pipboy;\r\n  margin: 0;\r\n  padding: 0;\r\n  text-decoration: none;\r\n\r\n  &::-webkit-scrollbar {\r\n    width: 4px;\r\n  }\r\n\r\n  &::-webkit-scrollbar-track {\r\n    background: transparent;\r\n  }\r\n\r\n  &::-webkit-scrollbar-thumb {\r\n    background: $pipboy;\r\n    border-radius: 4px;\r\n  }\r\n}\r\n\r\np {\r\n  line-height: 120%;\r\n}\r\n\r\n.no-event {\r\n  pointer-events: none;\r\n  user-select: none;\r\n}\r\n\r\n.typing-effet {\r\n  position: relative;\r\n  &::after {\r\n    content: \"\";\r\n    animation: typing 1s infinite;\r\n    display: block;\r\n    position: absolute;\r\n    right: -16px;\r\n    bottom: 0;\r\n    width: 16px;\r\n    height: 2px;\r\n    background: $pipboy;\r\n    \r\n    @keyframes typing {\r\n      0% {\r\n        opacity: 0;\r\n      }\r\n      49% {\r\n        opacity: 0;\r\n      }\r\n      50% {\r\n        opacity: 1;\r\n      }\r\n      99% {\r\n        opacity: 1;\r\n      }\r\n      100% {\r\n        opacity: 0;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n.glitch {\r\n  $animation-duration: var(--animation-duration, 8s);\r\n  animation: glitch $animation-duration ease-in infinite;\r\n  @keyframes glitch {\r\n    0% {\r\n      transform: skewX(15deg);\r\n    }\r\n    0.3% {\r\n      transform: skewX(0deg);\r\n      filter: brightness(1);\r\n    }\r\n    0.6% {\r\n      transform: skewX(20deg);\r\n      filter: brightness(1.5);\r\n    }\r\n    0.8% {\r\n      transform: skewX(0deg);\r\n      filter: brightness(1);\r\n    }\r\n    50% {\r\n      transform: skewX(0deg);\r\n      opacity: 1;\r\n    }\r\n    50.1% {\r\n      transform: skewX(15deg);\r\n      opacity: 0.5;\r\n    }\r\n    50.4% {\r\n      transform: skewX(2deg);\r\n    }\r\n    51% {\r\n      transform: skewX(0deg);\r\n      opacity: 1;\r\n    }\r\n    55% {\r\n      transform: skewX(0deg);\r\n    }\r\n    99% {\r\n      transform: skewX(0deg);\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "../../lib/styles/vault-tec.scss"
                 }
             ],
@@ -306,7 +306,7 @@
         },
         {
             "name": "SymbolRevealDirectiveDemo",
-            "id": "component-SymbolRevealDirectiveDemo-613a91add17028ef5af37edd595821e5ebfc10d9917a8f68483483b2ccaf0712a7fbd3100f13bead7d3a641f94c065e9d98f6c7c07d4852702897f545eda1482",
+            "id": "component-SymbolRevealDirectiveDemo-e3d8fcce2b54ba6b3214ca515db152e4bb7814b60c496a4eedb07c0194046f440ff9f14766223b8d8833e87435d3095af639f902fd17fdae398e738873a28e40",
             "file": "projects/gayo-lib/src/stories/vault-tec/symbol-reveal.directive.stories.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -334,11 +334,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from \"@angular/core\";\nimport { Meta, moduleMetadata, StoryObj } from \"@storybook/angular\";\nimport { SymbolRevealDirective } from \"../../lib/directives/symbol-reveal.directive\";\n\n@Component({\n    template: `<p vtSymbolReveal >Je suis un texte avec un effet de SymbolReveal.</p>`,\n    styleUrls: ['../../lib/styles/vault-tec.scss']\n})\n\nclass SymbolRevealDirectiveDemo {\n}\n\n\n// --- Stories ---\n\n\nconst meta:Meta<SymbolRevealDirectiveDemo> = {\n    title: 'VAULT-TEC/Directives/SymbolReveal',\n    component: SymbolRevealDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [SymbolRevealDirective],\n        }),\n    ],\n    argTypes: {\n        txt: { control: 'text' },\n    },\n};\n\n\nexport default meta;\n\ntype Story = StoryObj<SymbolRevealDirectiveDemo>;\n\n\nexport const Default: Story = {}",
+            "sourceCode": "import { Component } from \"@angular/core\";\r\nimport { Meta, moduleMetadata, StoryObj } from \"@storybook/angular\";\r\nimport { SymbolRevealDirective } from \"../../lib/directives/symbol-reveal.directive\";\r\n\r\n@Component({\r\n    template: `<p vtSymbolReveal >Je suis un texte avec un effet de SymbolReveal.</p>`,\r\n    styleUrls: ['../../lib/styles/vault-tec.scss']\r\n})\r\n\r\nclass SymbolRevealDirectiveDemo {\r\n}\r\n\r\n\r\n// --- Stories ---\r\n\r\n\r\nconst meta:Meta<SymbolRevealDirectiveDemo> = {\r\n    title: 'VAULT-TEC/Directives/SymbolReveal',\r\n    component: SymbolRevealDirectiveDemo,\r\n    decorators: [\r\n        moduleMetadata({\r\n            imports: [SymbolRevealDirective],\r\n        }),\r\n    ],\r\n    argTypes: {\r\n        txt: { control: 'text' },\r\n    },\r\n};\r\n\r\n\r\nexport default meta;\r\n\r\ntype Story = StoryObj<SymbolRevealDirectiveDemo>;\r\n\r\n\r\nexport const Default: Story = {}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "$pipboy: #2dc92d;\n$pipboy-light: #2dc92d49;\n$background: #1a1a1a;\n\n@font-face {\n  font-family: \"Space Mono\", monospace;\n  src: url(\"https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Share+Tech&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap\");\n}\n\n$font-size-small: 12px;\n$font-size-medium: 16px;\n$font-size-large: 22px;\n\n* {\n  font-family: \"Space Mono\", monospace;\n  color: $pipboy;\n  margin: 0;\n  padding: 0;\n  text-decoration: none;\n\n  &::-webkit-scrollbar {\n    width: 4px;\n  }\n\n  &::-webkit-scrollbar-track {\n    background: transparent;\n  }\n\n  &::-webkit-scrollbar-thumb {\n    background: $pipboy;\n    border-radius: 4px;\n  }\n}\n\np {\n  line-height: 120%;\n}\n\n.no-event {\n  pointer-events: none;\n  user-select: none;\n}\n\n.typing-effet {\n  position: relative;\n  &::after {\n    content: \"\";\n    animation: typing 1s infinite;\n    display: block;\n    position: absolute;\n    right: -16px;\n    bottom: 0;\n    width: 16px;\n    height: 2px;\n    background: $pipboy;\n    \n    @keyframes typing {\n      0% {\n        opacity: 0;\n      }\n      49% {\n        opacity: 0;\n      }\n      50% {\n        opacity: 1;\n      }\n      99% {\n        opacity: 1;\n      }\n      100% {\n        opacity: 0;\n      }\n    }\n  }\n}\n\n.glitch {\n  $animation-duration: var(--animation-duration, 8s);\n  animation: glitch $animation-duration ease-in infinite;\n  @keyframes glitch {\n    0% {\n      transform: skewX(15deg);\n    }\n    0.3% {\n      transform: skewX(0deg);\n      filter: brightness(1);\n    }\n    0.6% {\n      transform: skewX(20deg);\n      filter: brightness(1.5);\n    }\n    0.8% {\n      transform: skewX(0deg);\n      filter: brightness(1);\n    }\n    50% {\n      transform: skewX(0deg);\n      opacity: 1;\n    }\n    50.1% {\n      transform: skewX(15deg);\n      opacity: 0.5;\n    }\n    50.4% {\n      transform: skewX(2deg);\n    }\n    51% {\n      transform: skewX(0deg);\n      opacity: 1;\n    }\n    55% {\n      transform: skewX(0deg);\n    }\n    99% {\n      transform: skewX(0deg);\n    }\n  }\n}\n",
+                    "data": "$pipboy: #2dc92d;\r\n$pipboy-light: #2dc92d49;\r\n$background: #1a1a1a;\r\n\r\n@font-face {\r\n  font-family: \"Space Mono\", monospace;\r\n  src: url(\"https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Share+Tech&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap\");\r\n}\r\n\r\n$font-size-small: 12px;\r\n$font-size-medium: 16px;\r\n$font-size-large: 22px;\r\n\r\n* {\r\n  font-family: \"Space Mono\", monospace;\r\n  color: $pipboy;\r\n  margin: 0;\r\n  padding: 0;\r\n  text-decoration: none;\r\n\r\n  &::-webkit-scrollbar {\r\n    width: 4px;\r\n  }\r\n\r\n  &::-webkit-scrollbar-track {\r\n    background: transparent;\r\n  }\r\n\r\n  &::-webkit-scrollbar-thumb {\r\n    background: $pipboy;\r\n    border-radius: 4px;\r\n  }\r\n}\r\n\r\np {\r\n  line-height: 120%;\r\n}\r\n\r\n.no-event {\r\n  pointer-events: none;\r\n  user-select: none;\r\n}\r\n\r\n.typing-effet {\r\n  position: relative;\r\n  &::after {\r\n    content: \"\";\r\n    animation: typing 1s infinite;\r\n    display: block;\r\n    position: absolute;\r\n    right: -16px;\r\n    bottom: 0;\r\n    width: 16px;\r\n    height: 2px;\r\n    background: $pipboy;\r\n    \r\n    @keyframes typing {\r\n      0% {\r\n        opacity: 0;\r\n      }\r\n      49% {\r\n        opacity: 0;\r\n      }\r\n      50% {\r\n        opacity: 1;\r\n      }\r\n      99% {\r\n        opacity: 1;\r\n      }\r\n      100% {\r\n        opacity: 0;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n.glitch {\r\n  $animation-duration: var(--animation-duration, 8s);\r\n  animation: glitch $animation-duration ease-in infinite;\r\n  @keyframes glitch {\r\n    0% {\r\n      transform: skewX(15deg);\r\n    }\r\n    0.3% {\r\n      transform: skewX(0deg);\r\n      filter: brightness(1);\r\n    }\r\n    0.6% {\r\n      transform: skewX(20deg);\r\n      filter: brightness(1.5);\r\n    }\r\n    0.8% {\r\n      transform: skewX(0deg);\r\n      filter: brightness(1);\r\n    }\r\n    50% {\r\n      transform: skewX(0deg);\r\n      opacity: 1;\r\n    }\r\n    50.1% {\r\n      transform: skewX(15deg);\r\n      opacity: 0.5;\r\n    }\r\n    50.4% {\r\n      transform: skewX(2deg);\r\n    }\r\n    51% {\r\n      transform: skewX(0deg);\r\n      opacity: 1;\r\n    }\r\n    55% {\r\n      transform: skewX(0deg);\r\n    }\r\n    99% {\r\n      transform: skewX(0deg);\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "../../lib/styles/vault-tec.scss"
                 }
             ],
@@ -347,7 +347,7 @@
         },
         {
             "name": "TypingEffectDirectiveDemo",
-            "id": "component-TypingEffectDirectiveDemo-8aaa77bba5d82e9eec0a82ed00e71daf8f4e928b7e48d92020b504f85313079ca14f65bef1d1454ecae641750c8940681b37bb68e22d580d0808c3c4120bc407",
+            "id": "component-TypingEffectDirectiveDemo-b40b9807520a09ad7276eaafab4101876f6d1f4e44a57f39032a2bd38c28a5e56e3e11b89a74cf7d21d68cdc3c75d36a82b899d1725b1a8fd64756006ce6c758",
             "file": "projects/gayo-lib/src/stories/vault-tec/typing-effect.directive.stories.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -375,11 +375,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from \"@angular/core\";\nimport { Meta, moduleMetadata, StoryObj } from \"@storybook/angular\";\nimport { TypingEffetDirective } from \"../../lib/directives/typing-effet.directive\";\n\n\n@Component({\n    template: `\n        <p vtTypingEffet class=\"text-3xl font-bold underline\">Hello world! i'm typing effect</p>\n    `,  \n    styleUrls: ['../../lib/styles/vault-tec.scss']\n})\n\nclass TypingEffectDirectiveDemo {}\n\n\n//  --- Stories ---\n\n\nconst meta:Meta<TypingEffectDirectiveDemo> = {\n    title: 'VAULT-TEC/Directives/TypingEffectDirective',\n    component: TypingEffectDirectiveDemo,\n    tags: ['autodocs'],\n    decorators: [\n        moduleMetadata({\n            imports: [TypingEffetDirective],\n        }),\n    ]\n};\n\nexport default meta;\ntype Story = StoryObj<TypingEffectDirectiveDemo>\nexport const Default: Story = {};",
+            "sourceCode": "import { Component } from \"@angular/core\";\r\nimport { Meta, moduleMetadata, StoryObj } from \"@storybook/angular\";\r\nimport { TypingEffetDirective } from \"../../lib/directives/typing-effet.directive\";\r\n\r\n\r\n@Component({\r\n    template: `\r\n        <p vtTypingEffet class=\"text-3xl font-bold underline\">Hello world! i'm typing effect</p>\r\n    `,  \r\n    styleUrls: ['../../lib/styles/vault-tec.scss']\r\n})\r\n\r\nclass TypingEffectDirectiveDemo {}\r\n\r\n\r\n//  --- Stories ---\r\n\r\n\r\nconst meta:Meta<TypingEffectDirectiveDemo> = {\r\n    title: 'VAULT-TEC/Directives/TypingEffectDirective',\r\n    component: TypingEffectDirectiveDemo,\r\n    tags: ['autodocs'],\r\n    decorators: [\r\n        moduleMetadata({\r\n            imports: [TypingEffetDirective],\r\n        }),\r\n    ]\r\n};\r\n\r\nexport default meta;\r\ntype Story = StoryObj<TypingEffectDirectiveDemo>\r\nexport const Default: Story = {};",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "$pipboy: #2dc92d;\n$pipboy-light: #2dc92d49;\n$background: #1a1a1a;\n\n@font-face {\n  font-family: \"Space Mono\", monospace;\n  src: url(\"https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Share+Tech&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap\");\n}\n\n$font-size-small: 12px;\n$font-size-medium: 16px;\n$font-size-large: 22px;\n\n* {\n  font-family: \"Space Mono\", monospace;\n  color: $pipboy;\n  margin: 0;\n  padding: 0;\n  text-decoration: none;\n\n  &::-webkit-scrollbar {\n    width: 4px;\n  }\n\n  &::-webkit-scrollbar-track {\n    background: transparent;\n  }\n\n  &::-webkit-scrollbar-thumb {\n    background: $pipboy;\n    border-radius: 4px;\n  }\n}\n\np {\n  line-height: 120%;\n}\n\n.no-event {\n  pointer-events: none;\n  user-select: none;\n}\n\n.typing-effet {\n  position: relative;\n  &::after {\n    content: \"\";\n    animation: typing 1s infinite;\n    display: block;\n    position: absolute;\n    right: -16px;\n    bottom: 0;\n    width: 16px;\n    height: 2px;\n    background: $pipboy;\n    \n    @keyframes typing {\n      0% {\n        opacity: 0;\n      }\n      49% {\n        opacity: 0;\n      }\n      50% {\n        opacity: 1;\n      }\n      99% {\n        opacity: 1;\n      }\n      100% {\n        opacity: 0;\n      }\n    }\n  }\n}\n\n.glitch {\n  $animation-duration: var(--animation-duration, 8s);\n  animation: glitch $animation-duration ease-in infinite;\n  @keyframes glitch {\n    0% {\n      transform: skewX(15deg);\n    }\n    0.3% {\n      transform: skewX(0deg);\n      filter: brightness(1);\n    }\n    0.6% {\n      transform: skewX(20deg);\n      filter: brightness(1.5);\n    }\n    0.8% {\n      transform: skewX(0deg);\n      filter: brightness(1);\n    }\n    50% {\n      transform: skewX(0deg);\n      opacity: 1;\n    }\n    50.1% {\n      transform: skewX(15deg);\n      opacity: 0.5;\n    }\n    50.4% {\n      transform: skewX(2deg);\n    }\n    51% {\n      transform: skewX(0deg);\n      opacity: 1;\n    }\n    55% {\n      transform: skewX(0deg);\n    }\n    99% {\n      transform: skewX(0deg);\n    }\n  }\n}\n",
+                    "data": "$pipboy: #2dc92d;\r\n$pipboy-light: #2dc92d49;\r\n$background: #1a1a1a;\r\n\r\n@font-face {\r\n  font-family: \"Space Mono\", monospace;\r\n  src: url(\"https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Share+Tech&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap\");\r\n}\r\n\r\n$font-size-small: 12px;\r\n$font-size-medium: 16px;\r\n$font-size-large: 22px;\r\n\r\n* {\r\n  font-family: \"Space Mono\", monospace;\r\n  color: $pipboy;\r\n  margin: 0;\r\n  padding: 0;\r\n  text-decoration: none;\r\n\r\n  &::-webkit-scrollbar {\r\n    width: 4px;\r\n  }\r\n\r\n  &::-webkit-scrollbar-track {\r\n    background: transparent;\r\n  }\r\n\r\n  &::-webkit-scrollbar-thumb {\r\n    background: $pipboy;\r\n    border-radius: 4px;\r\n  }\r\n}\r\n\r\np {\r\n  line-height: 120%;\r\n}\r\n\r\n.no-event {\r\n  pointer-events: none;\r\n  user-select: none;\r\n}\r\n\r\n.typing-effet {\r\n  position: relative;\r\n  &::after {\r\n    content: \"\";\r\n    animation: typing 1s infinite;\r\n    display: block;\r\n    position: absolute;\r\n    right: -16px;\r\n    bottom: 0;\r\n    width: 16px;\r\n    height: 2px;\r\n    background: $pipboy;\r\n    \r\n    @keyframes typing {\r\n      0% {\r\n        opacity: 0;\r\n      }\r\n      49% {\r\n        opacity: 0;\r\n      }\r\n      50% {\r\n        opacity: 1;\r\n      }\r\n      99% {\r\n        opacity: 1;\r\n      }\r\n      100% {\r\n        opacity: 0;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n.glitch {\r\n  $animation-duration: var(--animation-duration, 8s);\r\n  animation: glitch $animation-duration ease-in infinite;\r\n  @keyframes glitch {\r\n    0% {\r\n      transform: skewX(15deg);\r\n    }\r\n    0.3% {\r\n      transform: skewX(0deg);\r\n      filter: brightness(1);\r\n    }\r\n    0.6% {\r\n      transform: skewX(20deg);\r\n      filter: brightness(1.5);\r\n    }\r\n    0.8% {\r\n      transform: skewX(0deg);\r\n      filter: brightness(1);\r\n    }\r\n    50% {\r\n      transform: skewX(0deg);\r\n      opacity: 1;\r\n    }\r\n    50.1% {\r\n      transform: skewX(15deg);\r\n      opacity: 0.5;\r\n    }\r\n    50.4% {\r\n      transform: skewX(2deg);\r\n    }\r\n    51% {\r\n      transform: skewX(0deg);\r\n      opacity: 1;\r\n    }\r\n    55% {\r\n      transform: skewX(0deg);\r\n    }\r\n    99% {\r\n      transform: skewX(0deg);\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "../../lib/styles/vault-tec.scss"
                 }
             ],
@@ -398,7 +398,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    description:\n      \"Vous pratiquez régulièrement des triples saltos arrière, en haut des buildings du coin. Il est aisé pour vous de vous déplacer dans n'importe quel environnement ? Vous êtes Agile, bravo.\",\n    perkName: 'agility',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+                "defaultValue": "{\r\n  args: {\r\n    description:\r\n      \"Vous pratiquez régulièrement des triples saltos arrière, en haut des buildings du coin. Il est aisé pour vous de vous déplacer dans n'importe quel environnement ? Vous êtes Agile, bravo.\",\r\n    perkName: 'agility',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
             },
             {
                 "name": "Animal",
@@ -408,7 +408,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n    args: {\n        entity:entityCards[70]\n    }\n}"
+                "defaultValue": "{\r\n    args: {\r\n        entity:entityCards[70]\r\n    }\r\n}"
             },
             {
                 "name": "BackCardStory",
@@ -418,7 +418,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n    args: {\n        cardType:'back-card',\n        card: 'candle',\n    },\n}"
+                "defaultValue": "{\r\n    args: {\r\n        cardType:'back-card',\r\n        card: 'candle',\r\n    },\r\n}"
             },
             {
                 "name": "BougieDeDebutant",
@@ -428,7 +428,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\ncandle:candleCards[0]\n  }\n}"
+                "defaultValue": "{\r\n  args: {\r\ncandle:candleCards[0]\r\n  }\r\n}"
             },
             {
                 "name": "Boy",
@@ -438,7 +438,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n    args: {\n        entity:entityCards[14]\n    }\n}"
+                "defaultValue": "{\r\n    args: {\r\n        entity:entityCards[14]\r\n    }\r\n}"
             },
             {
                 "name": "Candle",
@@ -448,7 +448,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n    args: {\n        backCardType: 'candle'\n    }\n}"
+                "defaultValue": "{\r\n    args: {\r\n        backCardType: 'candle'\r\n    }\r\n}"
             },
             {
                 "name": "Candle",
@@ -458,7 +458,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n    args: {\n        cardType:'candle',\n        card: candleCards[0]\n    },\n}"
+                "defaultValue": "{\r\n    args: {\r\n        cardType:'candle',\r\n        card: candleCards[0]\r\n    },\r\n}"
             },
             {
                 "name": "CandleCardStory",
@@ -468,7 +468,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n    args: {\n        cardType:'candle',\n        card:candleCards[0] \n    },\n}"
+                "defaultValue": "{\r\n    args: {\r\n        cardType:'candle',\r\n        card:candleCards[0] \r\n    },\r\n}"
             },
             {
                 "name": "Charisma",
@@ -478,7 +478,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    description:\n      \"Don Juan n'a qu'à bien se tenir, vous êtes le poète que Jean de la Fontaine n'a jamais été. Vous obtenez ce que vous voulez par la parole. Charismatique est la qualité qui vous définit c'est certain.\",\n    perkName: 'charisma',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+                "defaultValue": "{\r\n  args: {\r\n    description:\r\n      \"Don Juan n'a qu'à bien se tenir, vous êtes le poète que Jean de la Fontaine n'a jamais été. Vous obtenez ce que vous voulez par la parole. Charismatique est la qualité qui vous définit c'est certain.\",\r\n    perkName: 'charisma',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
             },
             {
                 "name": "CheckedCheckbox",
@@ -488,7 +488,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    ...SimpleCheckbox.args,\n    checked: true,\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    ...SimpleCheckbox.args,\r\n    checked: true,\r\n  },\r\n}"
             },
             {
                 "name": "CheckedRadio",
@@ -498,7 +498,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    ...SimpleRadio.args,\n    checked: true,\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    ...SimpleRadio.args,\r\n    checked: true,\r\n  },\r\n}"
             },
             {
                 "name": "CiergeDiabolique",
@@ -508,7 +508,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    candle:candleCards[4]\n\n  }\n}"
+                "defaultValue": "{\r\n  args: {\r\n    candle:candleCards[4]\r\n\r\n  }\r\n}"
             },
             {
                 "name": "CiergeMalefique",
@@ -518,7 +518,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    candle:candleCards[1]\n\n  }\n}"
+                "defaultValue": "{\r\n  args: {\r\n    candle:candleCards[1]\r\n\r\n  }\r\n}"
             },
             {
                 "name": "colors",
@@ -528,7 +528,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    ...Default.args,\n    colors: ['#f2f7f2', '#d9e6d9', '#c0d6c0', '#a7c5a7', '#8eb58e']\n  } \n}"
+                "defaultValue": "{\r\n  args: {\r\n    ...Default.args,\r\n    colors: ['#f2f7f2', '#d9e6d9', '#c0d6c0', '#a7c5a7', '#8eb58e']\r\n  } \r\n}"
             },
             {
                 "name": "Default",
@@ -538,7 +538,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    tabs: [\n      {\n        title: 'Histoires',\n        content:\n          'Histoires laborum maiores mollitia dignissimos dolorum ullam atque. Velit totam explicabo at dignissimos eligendi amet reiciendis, quidem quasi repellendus?',\n        id: 0,\n      },\n      {\n        title: 'Secrets',\n        content:\n          'Secrets molestiae corporis error quas quo sapiente vitae tenetur doloremque sunt suscipit fugit dicta. Perferendis cumque repellendus eaque totam tempore nesciunt nulla reiciendis.',\n        id: 1,\n      },\n      {\n        title: 'Paléontologie',\n        content:\n          'Paléontologie Ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\n        id: 2,\n      },\n    ],\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    tabs: [\r\n      {\r\n        title: 'Histoires',\r\n        content:\r\n          'Histoires laborum maiores mollitia dignissimos dolorum ullam atque. Velit totam explicabo at dignissimos eligendi amet reiciendis, quidem quasi repellendus?',\r\n        id: 0,\r\n      },\r\n      {\r\n        title: 'Secrets',\r\n        content:\r\n          'Secrets molestiae corporis error quas quo sapiente vitae tenetur doloremque sunt suscipit fugit dicta. Perferendis cumque repellendus eaque totam tempore nesciunt nulla reiciendis.',\r\n        id: 1,\r\n      },\r\n      {\r\n        title: 'Paléontologie',\r\n        content:\r\n          'Paléontologie Ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\r\n        id: 2,\r\n      },\r\n    ],\r\n  },\r\n}"
             },
             {
                 "name": "Default",
@@ -548,7 +548,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n    args: {\n        demon:demonCards[0]\n    }\n}"
+                "defaultValue": "{\r\n    args: {\r\n        demon:demonCards[0]\r\n    }\r\n}"
             },
             {
                 "name": "Default",
@@ -558,7 +558,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    duration: 6,\n    delay: null,\n    text: 'Ceci est un texte avec effet de glitch',\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    duration: 6,\r\n    delay: null,\r\n    text: 'Ceci est un texte avec effet de glitch',\r\n  },\r\n}"
             },
             {
                 "name": "Default",
@@ -598,7 +598,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    size:'small'\n  },\n  render: (args) => ({\n    props: {\n      ...args,\n    },\n    template: `\n       <div style=\"display: flex; flex-direction: column; flex-wrap: wrap;  gap: 16px; font-family: Monospace; color: #2dc92d\">\n\n            <h2>Je veux en savoir plus</h2>\n            lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !\n\n            <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px; font-family: Monospace; color: #2dc92d\">\n            <vt-btn ${argsToTemplate(args)}>Je veux en savoir plus</vt-btn>\n           <vt-btn ${argsToTemplate(args)} [stroke]=\"true\">continuer</vt-btn>\n            </div>\n        </div>\n    `,\n  }),\n}"
+                "defaultValue": "{\r\n  args: {\r\n    size:'small'\r\n  },\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n       <div style=\"display: flex; flex-direction: column; flex-wrap: wrap;  gap: 16px; font-family: Monospace; color: #2dc92d\">\r\n\r\n            <h2>Je veux en savoir plus</h2>\r\n            lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !\r\n\r\n            <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px; font-family: Monospace; color: #2dc92d\">\r\n            <vt-btn ${argsToTemplate(args)}>Je veux en savoir plus</vt-btn>\r\n           <vt-btn ${argsToTemplate(args)} [stroke]=\"true\">continuer</vt-btn>\r\n            </div>\r\n        </div>\r\n    `,\r\n  }),\r\n}"
             },
             {
                 "name": "Demon",
@@ -608,7 +608,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n    args: {\n        backCardType: 'demon'\n    }\n}"
+                "defaultValue": "{\r\n    args: {\r\n        backCardType: 'demon'\r\n    }\r\n}"
             },
             {
                 "name": "Demon",
@@ -618,7 +618,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n    args: {\n        cardType:'demon',\n        card: demonCards[0]\n    },\n}"
+                "defaultValue": "{\r\n    args: {\r\n        cardType:'demon',\r\n        card: demonCards[0]\r\n    },\r\n}"
             },
             {
                 "name": "DemonCardStory",
@@ -628,7 +628,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n    args: {\n        cardType:'demon',\n        card: demonCards[0]\n    },\n}"
+                "defaultValue": "{\r\n    args: {\r\n        cardType:'demon',\r\n        card: demonCards[0]\r\n    },\r\n}"
             },
             {
                 "name": "Disabled",
@@ -638,7 +638,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'Disabled',\n    disabled: true,\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    label: 'Disabled',\r\n    disabled: true,\r\n  },\r\n}"
             },
             {
                 "name": "DisabledCheckbox",
@@ -648,7 +648,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    ...SimpleCheckbox.args,\n    disabled: true,\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    ...SimpleCheckbox.args,\r\n    disabled: true,\r\n  },\r\n}"
             },
             {
                 "name": "DisabledRadio",
@@ -658,7 +658,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    ...SimpleRadio.args,\n    disabled: true,\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    ...SimpleRadio.args,\r\n    disabled: true,\r\n  },\r\n}"
             },
             {
                 "name": "DouceBougie",
@@ -668,7 +668,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    candle:candleCards[2]\n  }\n}"
+                "defaultValue": "{\r\n  args: {\r\n    candle:candleCards[2]\r\n  }\r\n}"
             },
             {
                 "name": "EasySudoku",
@@ -678,7 +678,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    difficulty: 'easy',\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    difficulty: 'easy',\r\n  },\r\n}"
             },
             {
                 "name": "Endurance",
@@ -688,7 +688,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    description:\n      \"Les femmes gardent un bon souvenir de vos amplitudes d'effort et/ou un marathon ressemble à une balade de mamie pour digérer le repas du dimanche midi ? L'Endurance c'est votre truc, ça ne fait aucun doute.\",\n    perkName: 'endurance',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+                "defaultValue": "{\r\n  args: {\r\n    description:\r\n      \"Les femmes gardent un bon souvenir de vos amplitudes d'effort et/ou un marathon ressemble à une balade de mamie pour digérer le repas du dimanche midi ? L'Endurance c'est votre truc, ça ne fait aucun doute.\",\r\n    perkName: 'endurance',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
             },
             {
                 "name": "Entity",
@@ -698,7 +698,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n    args: {\n        backCardType: 'entity'\n    }\n}"
+                "defaultValue": "{\r\n    args: {\r\n        backCardType: 'entity'\r\n    }\r\n}"
             },
             {
                 "name": "Entity",
@@ -708,7 +708,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n    args: {\n        cardType:'entity',\n        card: entityCards[0]\n    },\n}"
+                "defaultValue": "{\r\n    args: {\r\n        cardType:'entity',\r\n        card: entityCards[0]\r\n    },\r\n}"
             },
             {
                 "name": "EntityCardStory",
@@ -718,7 +718,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n    args:{\n        cardType:'entity',\n        card: entityCards[0]\n    }\n}"
+                "defaultValue": "{\r\n    args:{\r\n        cardType:'entity',\r\n        card: entityCards[0]\r\n    }\r\n}"
             },
             {
                 "name": "entityDeck",
@@ -738,7 +738,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    candle:candleCards[3]\n\n  }\n}"
+                "defaultValue": "{\r\n  args: {\r\n    candle:candleCards[3]\r\n\r\n  }\r\n}"
             },
             {
                 "name": "Girl",
@@ -748,7 +748,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n    args: {\n        entity:entityCards[4]\n    }\n}"
+                "defaultValue": "{\r\n    args: {\r\n        entity:entityCards[4]\r\n    }\r\n}"
             },
             {
                 "name": "HardSudoku",
@@ -758,7 +758,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    difficulty: 'hard',\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    difficulty: 'hard',\r\n  },\r\n}"
             },
             {
                 "name": "Intelligence",
@@ -768,7 +768,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    description:\n      \"Les plus grands génies des dernières décennies disent avoir tout appris rien qu'en passant du temps avec vous. Vous transpirez des équations et des encyclopédies. Vous êtes quelqu'un d'Intelligent c'est indéniable.\",\n    perkName: 'intelligence',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+                "defaultValue": "{\r\n  args: {\r\n    description:\r\n      \"Les plus grands génies des dernières décennies disent avoir tout appris rien qu'en passant du temps avec vous. Vous transpirez des équations et des encyclopédies. Vous êtes quelqu'un d'Intelligent c'est indéniable.\",\r\n    perkName: 'intelligence',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
             },
             {
                 "name": "Large",
@@ -778,7 +778,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'Subscribe',\n    size: 'large',\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    label: 'Subscribe',\r\n    size: 'large',\r\n  },\r\n}"
             },
             {
                 "name": "Loading",
@@ -788,7 +788,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'Loading',\n    loading: true,\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    label: 'Loading',\r\n    loading: true,\r\n  },\r\n}"
             },
             {
                 "name": "Luck",
@@ -798,7 +798,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    description:\n      \"Le loto ? Vous l'avez gagné quatre fois le mois dernier. Souvent vous trouvez 50 balles sur le pas de votre porte, ou un accès pour nos abris Vault-Tec. Veinard vous êtes la Chance en personne.\",\n    perkName: 'luck',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+                "defaultValue": "{\r\n  args: {\r\n    description:\r\n      \"Le loto ? Vous l'avez gagné quatre fois le mois dernier. Souvent vous trouvez 50 balles sur le pas de votre porte, ou un accès pour nos abris Vault-Tec. Veinard vous êtes la Chance en personne.\",\r\n    perkName: 'luck',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
             },
             {
                 "name": "MediumSudoku",
@@ -808,7 +808,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    difficulty: 'medium',\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    difficulty: 'medium',\r\n  },\r\n}"
             },
             {
                 "name": "meta",
@@ -818,7 +818,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<FolderCardComponent>",
-                "defaultValue": "{\n  title: 'FolderApp/FolderCard',\n  component: FolderCardComponent,\n  tags: ['autodocs'],\n}"
+                "defaultValue": "{\r\n  title: 'FolderApp/FolderCard',\r\n  component: FolderCardComponent,\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
@@ -828,7 +828,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<BackCardComponent>",
-                "defaultValue": "{\n    title: 'SummonDemon/Back Card',\n    component: BackCardComponent,\n    argTypes: {\n        backCardType: {\n            control: {\n                type: 'select',\n                options: ['entity', 'demon', 'candle']\n            }\n        }\n    }\n}"
+                "defaultValue": "{\r\n    title: 'SummonDemon/Back Card',\r\n    component: BackCardComponent,\r\n    argTypes: {\r\n        backCardType: {\r\n            control: {\r\n                type: 'select',\r\n                options: ['entity', 'demon', 'candle']\r\n            }\r\n        }\r\n    }\r\n}"
             },
             {
                 "name": "meta",
@@ -838,7 +838,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<CandleCardComponent>",
-                "defaultValue": "{\n    title:'SummonDemon/CandleCard',\n    component:CandleCardComponent,\n    tags: ['autodocs'],\n}"
+                "defaultValue": "{\r\n    title:'SummonDemon/CandleCard',\r\n    component:CandleCardComponent,\r\n    tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
@@ -848,7 +848,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<DeleteCardDirectiveDemo>",
-                "defaultValue": "{\n    title: 'SummonDemon/Directives/DeleteCard',\n    component: DeleteCardDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [\n                CandleCardComponent,\n                DemonCardComponent, \n                EntityCardComponent,\n                DeleteCardDirective,\n                DeleteCardDirectiveDemo\n            ],\n        }),\n    ],\n    argTypes: {\n        card: { control: 'number' },\n    },\n}"
+                "defaultValue": "{\r\n    title: 'SummonDemon/Directives/DeleteCard',\r\n    component: DeleteCardDirectiveDemo,\r\n    decorators: [\r\n        moduleMetadata({\r\n            imports: [\r\n                CandleCardComponent,\r\n                DemonCardComponent, \r\n                EntityCardComponent,\r\n                DeleteCardDirective,\r\n                DeleteCardDirectiveDemo\r\n            ],\r\n        }),\r\n    ],\r\n    argTypes: {\r\n        card: { control: 'number' },\r\n    },\r\n}"
             },
             {
                 "name": "meta",
@@ -858,7 +858,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<DemonCardComponent>",
-                "defaultValue": "{\n    title: 'SummonDemon/Demon Card',\n    component: DemonCardComponent,\n    tags: ['autodocs'],\n}"
+                "defaultValue": "{\r\n    title: 'SummonDemon/Demon Card',\r\n    component: DemonCardComponent,\r\n    tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
@@ -868,7 +868,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<EntityCardComponent>",
-                "defaultValue": "{\n    title: 'SummonDemon/EntityCard',\n    component: EntityCardComponent,\n    tags: ['autodocs'],\n}"
+                "defaultValue": "{\r\n    title: 'SummonDemon/EntityCard',\r\n    component: EntityCardComponent,\r\n    tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
@@ -878,7 +878,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<HoverCardDirectiveDemo>",
-                "defaultValue": "{\n    title: 'SummonDemon/Directives/HoverCard',\n    component: HoverCardDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [\n                CandleCardComponent,\n                DemonCardComponent,\n                BackCardComponent,\n                EntityCardComponent,\n                HoverCardDirective,\n                HoverCardDirectiveDemo\n            ],\n        }),\n    ],\n    argTypes: {\n        card: {\n            control: 'select',\n            options: ['candle', 'demon', 'entity', 'back-entity'],\n            description: 'Type of card to display'\n        },\n    },\n}"
+                "defaultValue": "{\r\n    title: 'SummonDemon/Directives/HoverCard',\r\n    component: HoverCardDirectiveDemo,\r\n    decorators: [\r\n        moduleMetadata({\r\n            imports: [\r\n                CandleCardComponent,\r\n                DemonCardComponent,\r\n                BackCardComponent,\r\n                EntityCardComponent,\r\n                HoverCardDirective,\r\n                HoverCardDirectiveDemo\r\n            ],\r\n        }),\r\n    ],\r\n    argTypes: {\r\n        card: {\r\n            control: 'select',\r\n            options: ['candle', 'demon', 'entity', 'back-entity'],\r\n            description: 'Type of card to display'\r\n        },\r\n    },\r\n}"
             },
             {
                 "name": "meta",
@@ -888,7 +888,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<AdviceBlockCustomArgs>",
-                "defaultValue": "{\n    title:'Vault-Tec/AdviceBlock',\n    component:AdviceBlockComponent,\n    tags: ['autodocs'],\n    render: ({ content, ...args}) => ({\n        props:{\n            ...args,\n        },\n        template: `<vt-advice-block ${argsToTemplate(args)}>${content}</vt-advice-block>`,\n    })\n}"
+                "defaultValue": "{\r\n    title:'Vault-Tec/AdviceBlock',\r\n    component:AdviceBlockComponent,\r\n    tags: ['autodocs'],\r\n    render: ({ content, ...args}) => ({\r\n        props:{\r\n            ...args,\r\n        },\r\n        template: `<vt-advice-block ${argsToTemplate(args)}>${content}</vt-advice-block>`,\r\n    })\r\n}"
             },
             {
                 "name": "meta",
@@ -898,7 +898,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<BtnPropsAndCustomArgs>",
-                "defaultValue": "{\n  title: 'Vault-Tec/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  render: ({ label, ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `<vt-btn ${argsToTemplate(args)}>${label}</vt-btn>`,\n  }),\n}"
+                "defaultValue": "{\r\n  title: 'Vault-Tec/Button',\r\n  component: ButtonComponent,\r\n  tags: ['autodocs'],\r\n  render: ({ label, ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `<vt-btn ${argsToTemplate(args)}>${label}</vt-btn>`,\r\n  }),\r\n}"
             },
             {
                 "name": "meta",
@@ -908,7 +908,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<CheckboxComponent>",
-                "defaultValue": "{\n  title: 'Vault-Tec/Checkbox',\n  component: CheckboxComponent,\n  tags: ['autodocs'],\n}"
+                "defaultValue": "{\r\n  title: 'Vault-Tec/Checkbox',\r\n  component: CheckboxComponent,\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
@@ -918,7 +918,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<FooterComponent>",
-                "defaultValue": "{\n  title: 'Vault-Tec/Footer',\n  component: FooterComponent,\n  tags: ['autodocs'],\n}"
+                "defaultValue": "{\r\n  title: 'Vault-Tec/Footer',\r\n  component: FooterComponent,\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
@@ -928,7 +928,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<GlitchDirectiveDemo>",
-                "defaultValue": "{\n  title: 'VAULT-TEC/Directives/Glitch',\n  component: GlitchDirectiveDemo,\n  decorators: [\n    moduleMetadata({\n      imports: [GlitchDirective],\n    }),\n  ],\n  argTypes: {\n    duration: { control: { type: 'number', min: 1.5 } },\n    delay: { control: { type: 'number', min: 1000 } },\n    text: { control: 'text' },\n  },\n}"
+                "defaultValue": "{\r\n  title: 'VAULT-TEC/Directives/Glitch',\r\n  component: GlitchDirectiveDemo,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [GlitchDirective],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n    duration: { control: { type: 'number', min: 1.5 } },\r\n    delay: { control: { type: 'number', min: 1000 } },\r\n    text: { control: 'text' },\r\n  },\r\n}"
             },
             {
                 "name": "meta",
@@ -938,7 +938,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<InputComponent>",
-                "defaultValue": "{\n  title:'Vault-Tec/Input',\n  component:InputComponent,\n  tags: ['autodocs'],\n}"
+                "defaultValue": "{\r\n  title:'Vault-Tec/Input',\r\n  component:InputComponent,\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
@@ -948,7 +948,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<LoaderComponent>",
-                "defaultValue": "{\n  title:'Vault-Tec/Loader',\n  component:LoaderComponent,\n  tags: ['autodocs'],\n}"
+                "defaultValue": "{\r\n  title:'Vault-Tec/Loader',\r\n  component:LoaderComponent,\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
@@ -958,7 +958,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<PerkCardComponent>",
-                "defaultValue": "{\n  title: 'Vault-Tec/PerkCard',\n  component: PerkCardComponent,\n  tags: ['autodocs'],\n}"
+                "defaultValue": "{\r\n  title: 'Vault-Tec/PerkCard',\r\n  component: PerkCardComponent,\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
@@ -968,7 +968,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<RadioComponent>",
-                "defaultValue": "{\n  title:'Vault-Tec/Radio',\n  component:RadioComponent,\n  tags: ['autodocs'],\n}"
+                "defaultValue": "{\r\n  title:'Vault-Tec/Radio',\r\n  component:RadioComponent,\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
@@ -978,7 +978,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<SliderComponent>",
-                "defaultValue": "{\n  title:'Vault-Tec/Slider',\n  component:SliderComponent,\n  tags: ['autodocs'],\n}"
+                "defaultValue": "{\r\n  title:'Vault-Tec/Slider',\r\n  component:SliderComponent,\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
@@ -988,7 +988,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<SudokuComponent>",
-                "defaultValue": "{\n  title: 'Vault-Tec/Sudoku',\n  component: SudokuComponent,\n  tags: ['autodocs'],\n}"
+                "defaultValue": "{\r\n  title: 'Vault-Tec/Sudoku',\r\n  component: SudokuComponent,\r\n  tags: ['autodocs'],\r\n}"
             },
             {
                 "name": "meta",
@@ -998,7 +998,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<SwipeCharDirectiveDemo>",
-                "defaultValue": "{\n  title: 'VAULT-TEC/Directives/SwipeCharDirective',\n  component: SwipeCharDirectiveDemo,\n  decorators: [\n    moduleMetadata({\n      imports: [SwipeCharDirective],\n    }),\n  ],\n  argTypes: {\n    txt: { control: 'text' },\n  },\n}"
+                "defaultValue": "{\r\n  title: 'VAULT-TEC/Directives/SwipeCharDirective',\r\n  component: SwipeCharDirectiveDemo,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [SwipeCharDirective],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n    txt: { control: 'text' },\r\n  },\r\n}"
             },
             {
                 "name": "meta",
@@ -1008,7 +1008,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<SymbolRevealDirectiveDemo>",
-                "defaultValue": "{\n    title: 'VAULT-TEC/Directives/SymbolReveal',\n    component: SymbolRevealDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [SymbolRevealDirective],\n        }),\n    ],\n    argTypes: {\n        txt: { control: 'text' },\n    },\n}"
+                "defaultValue": "{\r\n    title: 'VAULT-TEC/Directives/SymbolReveal',\r\n    component: SymbolRevealDirectiveDemo,\r\n    decorators: [\r\n        moduleMetadata({\r\n            imports: [SymbolRevealDirective],\r\n        }),\r\n    ],\r\n    argTypes: {\r\n        txt: { control: 'text' },\r\n    },\r\n}"
             },
             {
                 "name": "meta",
@@ -1018,7 +1018,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<TypingEffectDirectiveDemo>",
-                "defaultValue": "{\n    title: 'VAULT-TEC/Directives/TypingEffectDirective',\n    component: TypingEffectDirectiveDemo,\n    tags: ['autodocs'],\n    decorators: [\n        moduleMetadata({\n            imports: [TypingEffetDirective],\n        }),\n    ]\n}"
+                "defaultValue": "{\r\n    title: 'VAULT-TEC/Directives/TypingEffectDirective',\r\n    component: TypingEffectDirectiveDemo,\r\n    tags: ['autodocs'],\r\n    decorators: [\r\n        moduleMetadata({\r\n            imports: [TypingEffetDirective],\r\n        }),\r\n    ]\r\n}"
             },
             {
                 "name": "Perception",
@@ -1028,7 +1028,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    description:\n      'Toujours un oeil dans le dos, vous sentez les mouvements autour de vous ? Vous avez un 6ème sens ou un troisième oeil, la Perception est votre atout !',\n    perkName: 'perception',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+                "defaultValue": "{\r\n  args: {\r\n    description:\r\n      'Toujours un oeil dans le dos, vous sentez les mouvements autour de vous ? Vous avez un 6ème sens ou un troisième oeil, la Perception est votre atout !',\r\n    perkName: 'perception',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
             },
             {
                 "name": "preview",
@@ -1038,7 +1038,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Preview",
-                "defaultValue": "{\n  parameters: {\n    backgrounds: {\n      default: 'vault-tec',\n      values: [\n        {\n          name: 'vault-tec',\n          value: '#1a1a1a',\n        },\n      ],\n    },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n}"
+                "defaultValue": "{\r\n  parameters: {\r\n    backgrounds: {\r\n      default: 'vault-tec',\r\n      values: [\r\n        {\r\n          name: 'vault-tec',\r\n          value: '#1a1a1a',\r\n        },\r\n      ],\r\n    },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "SimpleAdviceBlock",
@@ -1048,7 +1048,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n    args:{\n        title:'Super Test 42',\n        content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\n    }\n}"
+                "defaultValue": "{\r\n    args:{\r\n        title:'Super Test 42',\r\n        content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\r\n    }\r\n}"
             },
             {
                 "name": "SimpleButton",
@@ -1058,7 +1058,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'S.P.E.C.I.A.L',\n    size: 'medium',\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    label: 'S.P.E.C.I.A.L',\r\n    size: 'medium',\r\n  },\r\n}"
             },
             {
                 "name": "SimpleCheckbox",
@@ -1068,7 +1068,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'Simple Checkbox',\n    checked: false,\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    label: 'Simple Checkbox',\r\n    checked: false,\r\n  },\r\n}"
             },
             {
                 "name": "SimpleFooter",
@@ -1078,7 +1078,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    footerElements: [\n      {\n        title: 'Section 1',\n        pages: [\n          {\n            title: 'Page 1',\n            url: '/',\n          },\n          {\n            title: 'Page 2',\n            url: '/',\n          },\n          {\n            title: 'Page 3',\n            url: '/',\n          },\n          {\n            title: 'Page 4',\n            url: '/',\n          },\n        ],\n      },\n      {\n        title: 'Section 2',\n        pages: [\n          {\n            title: 'Page 1',\n            url: '/',\n          },\n          {\n            title: 'Page 2',\n            url: '/',\n          },\n          {\n            title: 'Page 3',\n            url: '/',\n          },\n        ],\n      },\n    ],\n    contactFooterElement: {\n      username: 'username',\n      email: 'email@example.com',\n      githubUrl: 'https://github.com',\n      linkedinUrl: 'https://linkedin.com',\n      npmUrl: 'https://npm.com',\n    },\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    footerElements: [\r\n      {\r\n        title: 'Section 1',\r\n        pages: [\r\n          {\r\n            title: 'Page 1',\r\n            url: '/',\r\n          },\r\n          {\r\n            title: 'Page 2',\r\n            url: '/',\r\n          },\r\n          {\r\n            title: 'Page 3',\r\n            url: '/',\r\n          },\r\n          {\r\n            title: 'Page 4',\r\n            url: '/',\r\n          },\r\n        ],\r\n      },\r\n      {\r\n        title: 'Section 2',\r\n        pages: [\r\n          {\r\n            title: 'Page 1',\r\n            url: '/',\r\n          },\r\n          {\r\n            title: 'Page 2',\r\n            url: '/',\r\n          },\r\n          {\r\n            title: 'Page 3',\r\n            url: '/',\r\n          },\r\n        ],\r\n      },\r\n    ],\r\n    contactFooterElement: {\r\n      username: 'username',\r\n      email: 'email@example.com',\r\n      githubUrl: 'https://github.com',\r\n      linkedinUrl: 'https://linkedin.com',\r\n      npmUrl: 'https://npm.com',\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "SimpleInput",
@@ -1088,7 +1088,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args:{\n      id:'default',\n      label:'Entrez un texte',\n      inputType:'text',\n  }\n}"
+                "defaultValue": "{\r\n  args:{\r\n      id:'default',\r\n      label:'Entrez un texte',\r\n      inputType:'text',\r\n  }\r\n}"
             },
             {
                 "name": "SimpleLoader",
@@ -1098,7 +1098,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args:{\n      // vos arguments ici\n  }\n}"
+                "defaultValue": "{\r\n  args:{\r\n      // vos arguments ici\r\n  }\r\n}"
             },
             {
                 "name": "SimplePerkCard",
@@ -1108,7 +1108,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    description:\n      \"Vous aimez soulever des gros cailloux ou des gens que vous n'aimez guère ? La Force est déterminée par la circonférence de votre biceps en contraction.\",\n    perkName: 'strength',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+                "defaultValue": "{\r\n  args: {\r\n    description:\r\n      \"Vous aimez soulever des gros cailloux ou des gens que vous n'aimez guère ? La Force est déterminée par la circonférence de votre biceps en contraction.\",\r\n    perkName: 'strength',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
             },
             {
                 "name": "SimpleRadio",
@@ -1118,7 +1118,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'Simple Radio',\n    checked: false,\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    label: 'Simple Radio',\r\n    checked: false,\r\n  },\r\n}"
             },
             {
                 "name": "SimpleSlider",
@@ -1128,7 +1128,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args:{\n      id:'default',\n      min:0,\n      max:100,\n      value:50,\n      label:'Slider',\n  }\n}"
+                "defaultValue": "{\r\n  args:{\r\n      id:'default',\r\n      min:0,\r\n      max:100,\r\n      value:50,\r\n      label:'Slider',\r\n  }\r\n}"
             },
             {
                 "name": "SimpleSudoku",
@@ -1138,7 +1138,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    solution: {\n      blocks: [\n        {\n          id: 0,\n          value: [3, 4, 6, 7, 1, 2, 8, 9, 5],\n        },\n        {\n          id: 1,\n          value: [7, 9, 8, 4, 6, 5, 1, 3, 2],\n        },\n        {\n          id: 2,\n          value: [2, 5, 1, 3, 9, 8, 4, 6, 7],\n        },\n        {\n          id: 3,\n          value: [4, 2, 3, 1, 6, 7, 9, 5, 8],\n        },\n        {\n          id: 4,\n          value: [6, 7, 9, 5, 8, 4, 2, 1, 3],\n        },\n        {\n          id: 5,\n          value: [8, 1, 5, 9, 3, 2, 6, 7, 4],\n        },\n        {\n          id: 6,\n          value: [2, 7, 4, 6, 3, 1, 5, 8, 9],\n        },\n        {\n          id: 7,\n          value: [9, 5, 6, 8, 4, 7, 3, 2, 1],\n        },\n        {\n          id: 8,\n          value: [1, 8, 3, 5, 2, 9, 7, 4, 6],\n        },\n      ],\n    },\n    sudokuGrid: {\n      blocks: [\n        {\n          id: 0,\n          value: [null, 4, 6, 7, 1, 2, 8, 9, 5],\n        },\n        {\n          id: 1,\n          value: [7, 9, 8, 4, 6, 5, 1, 3, 2],\n        },\n        {\n          id: 2,\n          value: [2, 5, 1, 3, 9, 8, 4, 6, 7],\n        },\n        {\n          id: 3,\n          value: [4, 2, 3, 1, 6, 7, 9, 5, 8],\n        },\n        {\n          id: 4,\n          value: [6, 7, 9, 5, 8, 4, 2, 1, 3],\n        },\n        {\n          id: 5,\n          value: [8, 1, 5, 9, 3, 2, 6, 7, 4],\n        },\n        {\n          id: 6,\n          value: [2, 7, 4, 6, 3, 1, 5, 8, 9],\n        },\n        {\n          id: 7,\n          value: [9, 5, 6, 8, 4, 7, 3, 2, 1],\n        },\n        {\n          id: 8,\n          value: [1, 8, 3, 5, 2, 9, 7, 4, 6],\n        },\n      ],\n    },\n    reference: {\n      blocks: [\n        {\n          id: 0,\n          value: [null, 4, 6, 7, 1, 2, 8, 9, 5],\n        },\n        {\n          id: 1,\n          value: [7, 9, 8, 4, 6, 5, 1, 3, 2],\n        },\n        {\n          id: 2,\n          value: [2, 5, 1, 3, 9, 8, 4, 6, 7],\n        },\n        {\n          id: 3,\n          value: [4, 2, 3, 1, 6, 7, 9, 5, 8],\n        },\n        {\n          id: 4,\n          value: [6, 7, 9, 5, 8, 4, 2, 1, 3],\n        },\n        {\n          id: 5,\n          value: [8, 1, 5, 9, 3, 2, 6, 7, 4],\n        },\n        {\n          id: 6,\n          value: [2, 7, 4, 6, 3, 1, 5, 8, 9],\n        },\n        {\n          id: 7,\n          value: [9, 5, 6, 8, 4, 7, 3, 2, 1],\n        },\n        {\n          id: 8,\n          value: [1, 8, 3, 5, 2, 9, 7, 4, 6],\n        },\n      ],\n    },\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    solution: {\r\n      blocks: [\r\n        {\r\n          id: 0,\r\n          value: [3, 4, 6, 7, 1, 2, 8, 9, 5],\r\n        },\r\n        {\r\n          id: 1,\r\n          value: [7, 9, 8, 4, 6, 5, 1, 3, 2],\r\n        },\r\n        {\r\n          id: 2,\r\n          value: [2, 5, 1, 3, 9, 8, 4, 6, 7],\r\n        },\r\n        {\r\n          id: 3,\r\n          value: [4, 2, 3, 1, 6, 7, 9, 5, 8],\r\n        },\r\n        {\r\n          id: 4,\r\n          value: [6, 7, 9, 5, 8, 4, 2, 1, 3],\r\n        },\r\n        {\r\n          id: 5,\r\n          value: [8, 1, 5, 9, 3, 2, 6, 7, 4],\r\n        },\r\n        {\r\n          id: 6,\r\n          value: [2, 7, 4, 6, 3, 1, 5, 8, 9],\r\n        },\r\n        {\r\n          id: 7,\r\n          value: [9, 5, 6, 8, 4, 7, 3, 2, 1],\r\n        },\r\n        {\r\n          id: 8,\r\n          value: [1, 8, 3, 5, 2, 9, 7, 4, 6],\r\n        },\r\n      ],\r\n    },\r\n    sudokuGrid: {\r\n      blocks: [\r\n        {\r\n          id: 0,\r\n          value: [null, 4, 6, 7, 1, 2, 8, 9, 5],\r\n        },\r\n        {\r\n          id: 1,\r\n          value: [7, 9, 8, 4, 6, 5, 1, 3, 2],\r\n        },\r\n        {\r\n          id: 2,\r\n          value: [2, 5, 1, 3, 9, 8, 4, 6, 7],\r\n        },\r\n        {\r\n          id: 3,\r\n          value: [4, 2, 3, 1, 6, 7, 9, 5, 8],\r\n        },\r\n        {\r\n          id: 4,\r\n          value: [6, 7, 9, 5, 8, 4, 2, 1, 3],\r\n        },\r\n        {\r\n          id: 5,\r\n          value: [8, 1, 5, 9, 3, 2, 6, 7, 4],\r\n        },\r\n        {\r\n          id: 6,\r\n          value: [2, 7, 4, 6, 3, 1, 5, 8, 9],\r\n        },\r\n        {\r\n          id: 7,\r\n          value: [9, 5, 6, 8, 4, 7, 3, 2, 1],\r\n        },\r\n        {\r\n          id: 8,\r\n          value: [1, 8, 3, 5, 2, 9, 7, 4, 6],\r\n        },\r\n      ],\r\n    },\r\n    reference: {\r\n      blocks: [\r\n        {\r\n          id: 0,\r\n          value: [null, 4, 6, 7, 1, 2, 8, 9, 5],\r\n        },\r\n        {\r\n          id: 1,\r\n          value: [7, 9, 8, 4, 6, 5, 1, 3, 2],\r\n        },\r\n        {\r\n          id: 2,\r\n          value: [2, 5, 1, 3, 9, 8, 4, 6, 7],\r\n        },\r\n        {\r\n          id: 3,\r\n          value: [4, 2, 3, 1, 6, 7, 9, 5, 8],\r\n        },\r\n        {\r\n          id: 4,\r\n          value: [6, 7, 9, 5, 8, 4, 2, 1, 3],\r\n        },\r\n        {\r\n          id: 5,\r\n          value: [8, 1, 5, 9, 3, 2, 6, 7, 4],\r\n        },\r\n        {\r\n          id: 6,\r\n          value: [2, 7, 4, 6, 3, 1, 5, 8, 9],\r\n        },\r\n        {\r\n          id: 7,\r\n          value: [9, 5, 6, 8, 4, 7, 3, 2, 1],\r\n        },\r\n        {\r\n          id: 8,\r\n          value: [1, 8, 3, 5, 2, 9, 7, 4, 6],\r\n        },\r\n      ],\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "Small",
@@ -1148,7 +1148,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'Subscribe',\n    size: 'small',\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    label: 'Subscribe',\r\n    size: 'small',\r\n  },\r\n}"
             },
             {
                 "name": "SubcribeButton",
@@ -1158,7 +1158,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'Subscribe',\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    label: 'Subscribe',\r\n  },\r\n}"
             },
             {
                 "name": "WithDelay",
@@ -1168,7 +1168,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    ...Default.args,\n    delay: 6000,\n  },\n}"
+                "defaultValue": "{\r\n  args: {\r\n    ...Default.args,\r\n    delay: 6000,\r\n  },\r\n}"
             },
             {
                 "name": "WitoutLabel",
@@ -1178,7 +1178,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {},\n}"
+                "defaultValue": "{\r\n  args: {},\r\n}"
             },
             {
                 "name": "WitoutLabel",
@@ -1188,7 +1188,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {},\n}"
+                "defaultValue": "{\r\n  args: {},\r\n}"
             }
         ],
         "functions": [],
@@ -1480,7 +1480,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    description:\n      \"Vous pratiquez régulièrement des triples saltos arrière, en haut des buildings du coin. Il est aisé pour vous de vous déplacer dans n'importe quel environnement ? Vous êtes Agile, bravo.\",\n    perkName: 'agility',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    description:\r\n      \"Vous pratiquez régulièrement des triples saltos arrière, en haut des buildings du coin. Il est aisé pour vous de vous déplacer dans n'importe quel environnement ? Vous êtes Agile, bravo.\",\r\n    perkName: 'agility',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
                 },
                 {
                     "name": "Charisma",
@@ -1490,7 +1490,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    description:\n      \"Don Juan n'a qu'à bien se tenir, vous êtes le poète que Jean de la Fontaine n'a jamais été. Vous obtenez ce que vous voulez par la parole. Charismatique est la qualité qui vous définit c'est certain.\",\n    perkName: 'charisma',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    description:\r\n      \"Don Juan n'a qu'à bien se tenir, vous êtes le poète que Jean de la Fontaine n'a jamais été. Vous obtenez ce que vous voulez par la parole. Charismatique est la qualité qui vous définit c'est certain.\",\r\n    perkName: 'charisma',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
                 },
                 {
                     "name": "Endurance",
@@ -1500,7 +1500,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    description:\n      \"Les femmes gardent un bon souvenir de vos amplitudes d'effort et/ou un marathon ressemble à une balade de mamie pour digérer le repas du dimanche midi ? L'Endurance c'est votre truc, ça ne fait aucun doute.\",\n    perkName: 'endurance',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    description:\r\n      \"Les femmes gardent un bon souvenir de vos amplitudes d'effort et/ou un marathon ressemble à une balade de mamie pour digérer le repas du dimanche midi ? L'Endurance c'est votre truc, ça ne fait aucun doute.\",\r\n    perkName: 'endurance',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
                 },
                 {
                     "name": "Intelligence",
@@ -1510,7 +1510,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    description:\n      \"Les plus grands génies des dernières décennies disent avoir tout appris rien qu'en passant du temps avec vous. Vous transpirez des équations et des encyclopédies. Vous êtes quelqu'un d'Intelligent c'est indéniable.\",\n    perkName: 'intelligence',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    description:\r\n      \"Les plus grands génies des dernières décennies disent avoir tout appris rien qu'en passant du temps avec vous. Vous transpirez des équations et des encyclopédies. Vous êtes quelqu'un d'Intelligent c'est indéniable.\",\r\n    perkName: 'intelligence',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
                 },
                 {
                     "name": "Luck",
@@ -1520,7 +1520,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    description:\n      \"Le loto ? Vous l'avez gagné quatre fois le mois dernier. Souvent vous trouvez 50 balles sur le pas de votre porte, ou un accès pour nos abris Vault-Tec. Veinard vous êtes la Chance en personne.\",\n    perkName: 'luck',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    description:\r\n      \"Le loto ? Vous l'avez gagné quatre fois le mois dernier. Souvent vous trouvez 50 balles sur le pas de votre porte, ou un accès pour nos abris Vault-Tec. Veinard vous êtes la Chance en personne.\",\r\n    perkName: 'luck',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
                 },
                 {
                     "name": "meta",
@@ -1530,7 +1530,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<PerkCardComponent>",
-                    "defaultValue": "{\n  title: 'Vault-Tec/PerkCard',\n  component: PerkCardComponent,\n  tags: ['autodocs'],\n}"
+                    "defaultValue": "{\r\n  title: 'Vault-Tec/PerkCard',\r\n  component: PerkCardComponent,\r\n  tags: ['autodocs'],\r\n}"
                 },
                 {
                     "name": "Perception",
@@ -1540,7 +1540,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    description:\n      'Toujours un oeil dans le dos, vous sentez les mouvements autour de vous ? Vous avez un 6ème sens ou un troisième oeil, la Perception est votre atout !',\n    perkName: 'perception',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    description:\r\n      'Toujours un oeil dans le dos, vous sentez les mouvements autour de vous ? Vous avez un 6ème sens ou un troisième oeil, la Perception est votre atout !',\r\n    perkName: 'perception',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
                 },
                 {
                     "name": "SimplePerkCard",
@@ -1550,7 +1550,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    description:\n      \"Vous aimez soulever des gros cailloux ou des gens que vous n'aimez guère ? La Force est déterminée par la circonférence de votre biceps en contraction.\",\n    perkName: 'strength',\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\n    </div>\n    `,\n  }),\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    description:\r\n      \"Vous aimez soulever des gros cailloux ou des gens que vous n'aimez guère ? La Force est déterminée par la circonférence de votre biceps en contraction.\",\r\n    perkName: 'strength',\r\n  },\r\n  render: ({ ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n    <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px;\">\r\n      <vt-perk-card ${argsToTemplate(args)}></vt-perk-card>\r\n      <vt-perk-card ${argsToTemplate(args)} face=\"back\"></vt-perk-card>\r\n    </div>\r\n    `,\r\n  }),\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/summon-demon/entity-card.stories.ts": [
@@ -1562,7 +1562,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n    args: {\n        entity:entityCards[70]\n    }\n}"
+                    "defaultValue": "{\r\n    args: {\r\n        entity:entityCards[70]\r\n    }\r\n}"
                 },
                 {
                     "name": "Boy",
@@ -1572,7 +1572,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n    args: {\n        entity:entityCards[14]\n    }\n}"
+                    "defaultValue": "{\r\n    args: {\r\n        entity:entityCards[14]\r\n    }\r\n}"
                 },
                 {
                     "name": "entityDeck",
@@ -1592,7 +1592,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n    args: {\n        entity:entityCards[4]\n    }\n}"
+                    "defaultValue": "{\r\n    args: {\r\n        entity:entityCards[4]\r\n    }\r\n}"
                 },
                 {
                     "name": "meta",
@@ -1602,7 +1602,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<EntityCardComponent>",
-                    "defaultValue": "{\n    title: 'SummonDemon/EntityCard',\n    component: EntityCardComponent,\n    tags: ['autodocs'],\n}"
+                    "defaultValue": "{\r\n    title: 'SummonDemon/EntityCard',\r\n    component: EntityCardComponent,\r\n    tags: ['autodocs'],\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/summon-demon/hover-card.directive.stories.ts": [
@@ -1614,7 +1614,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n    args: {\n        cardType:'back-card',\n        card: 'candle',\n    },\n}"
+                    "defaultValue": "{\r\n    args: {\r\n        cardType:'back-card',\r\n        card: 'candle',\r\n    },\r\n}"
                 },
                 {
                     "name": "CandleCardStory",
@@ -1624,7 +1624,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n    args: {\n        cardType:'candle',\n        card:candleCards[0] \n    },\n}"
+                    "defaultValue": "{\r\n    args: {\r\n        cardType:'candle',\r\n        card:candleCards[0] \r\n    },\r\n}"
                 },
                 {
                     "name": "DemonCardStory",
@@ -1634,7 +1634,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n    args: {\n        cardType:'demon',\n        card: demonCards[0]\n    },\n}"
+                    "defaultValue": "{\r\n    args: {\r\n        cardType:'demon',\r\n        card: demonCards[0]\r\n    },\r\n}"
                 },
                 {
                     "name": "EntityCardStory",
@@ -1644,7 +1644,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n    args:{\n        cardType:'entity',\n        card: entityCards[0]\n    }\n}"
+                    "defaultValue": "{\r\n    args:{\r\n        cardType:'entity',\r\n        card: entityCards[0]\r\n    }\r\n}"
                 },
                 {
                     "name": "meta",
@@ -1654,7 +1654,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<HoverCardDirectiveDemo>",
-                    "defaultValue": "{\n    title: 'SummonDemon/Directives/HoverCard',\n    component: HoverCardDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [\n                CandleCardComponent,\n                DemonCardComponent,\n                BackCardComponent,\n                EntityCardComponent,\n                HoverCardDirective,\n                HoverCardDirectiveDemo\n            ],\n        }),\n    ],\n    argTypes: {\n        card: {\n            control: 'select',\n            options: ['candle', 'demon', 'entity', 'back-entity'],\n            description: 'Type of card to display'\n        },\n    },\n}"
+                    "defaultValue": "{\r\n    title: 'SummonDemon/Directives/HoverCard',\r\n    component: HoverCardDirectiveDemo,\r\n    decorators: [\r\n        moduleMetadata({\r\n            imports: [\r\n                CandleCardComponent,\r\n                DemonCardComponent,\r\n                BackCardComponent,\r\n                EntityCardComponent,\r\n                HoverCardDirective,\r\n                HoverCardDirectiveDemo\r\n            ],\r\n        }),\r\n    ],\r\n    argTypes: {\r\n        card: {\r\n            control: 'select',\r\n            options: ['candle', 'demon', 'entity', 'back-entity'],\r\n            description: 'Type of card to display'\r\n        },\r\n    },\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/summon-demon/candle-card.stories.ts": [
@@ -1666,7 +1666,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\ncandle:candleCards[0]\n  }\n}"
+                    "defaultValue": "{\r\n  args: {\r\ncandle:candleCards[0]\r\n  }\r\n}"
                 },
                 {
                     "name": "CiergeDiabolique",
@@ -1676,7 +1676,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    candle:candleCards[4]\n\n  }\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    candle:candleCards[4]\r\n\r\n  }\r\n}"
                 },
                 {
                     "name": "CiergeMalefique",
@@ -1686,7 +1686,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    candle:candleCards[1]\n\n  }\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    candle:candleCards[1]\r\n\r\n  }\r\n}"
                 },
                 {
                     "name": "DouceBougie",
@@ -1696,7 +1696,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    candle:candleCards[2]\n  }\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    candle:candleCards[2]\r\n  }\r\n}"
                 },
                 {
                     "name": "GentilleBougie",
@@ -1706,7 +1706,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    candle:candleCards[3]\n\n  }\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    candle:candleCards[3]\r\n\r\n  }\r\n}"
                 },
                 {
                     "name": "meta",
@@ -1716,7 +1716,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<CandleCardComponent>",
-                    "defaultValue": "{\n    title:'SummonDemon/CandleCard',\n    component:CandleCardComponent,\n    tags: ['autodocs'],\n}"
+                    "defaultValue": "{\r\n    title:'SummonDemon/CandleCard',\r\n    component:CandleCardComponent,\r\n    tags: ['autodocs'],\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/summon-demon/back-card.stories.ts": [
@@ -1728,7 +1728,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n    args: {\n        backCardType: 'candle'\n    }\n}"
+                    "defaultValue": "{\r\n    args: {\r\n        backCardType: 'candle'\r\n    }\r\n}"
                 },
                 {
                     "name": "Demon",
@@ -1738,7 +1738,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n    args: {\n        backCardType: 'demon'\n    }\n}"
+                    "defaultValue": "{\r\n    args: {\r\n        backCardType: 'demon'\r\n    }\r\n}"
                 },
                 {
                     "name": "Entity",
@@ -1748,7 +1748,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n    args: {\n        backCardType: 'entity'\n    }\n}"
+                    "defaultValue": "{\r\n    args: {\r\n        backCardType: 'entity'\r\n    }\r\n}"
                 },
                 {
                     "name": "meta",
@@ -1758,7 +1758,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<BackCardComponent>",
-                    "defaultValue": "{\n    title: 'SummonDemon/Back Card',\n    component: BackCardComponent,\n    argTypes: {\n        backCardType: {\n            control: {\n                type: 'select',\n                options: ['entity', 'demon', 'candle']\n            }\n        }\n    }\n}"
+                    "defaultValue": "{\r\n    title: 'SummonDemon/Back Card',\r\n    component: BackCardComponent,\r\n    argTypes: {\r\n        backCardType: {\r\n            control: {\r\n                type: 'select',\r\n                options: ['entity', 'demon', 'candle']\r\n            }\r\n        }\r\n    }\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/summon-demon/delete-card.directive.stories.ts": [
@@ -1770,7 +1770,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n    args: {\n        cardType:'candle',\n        card: candleCards[0]\n    },\n}"
+                    "defaultValue": "{\r\n    args: {\r\n        cardType:'candle',\r\n        card: candleCards[0]\r\n    },\r\n}"
                 },
                 {
                     "name": "Demon",
@@ -1780,7 +1780,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n    args: {\n        cardType:'demon',\n        card: demonCards[0]\n    },\n}"
+                    "defaultValue": "{\r\n    args: {\r\n        cardType:'demon',\r\n        card: demonCards[0]\r\n    },\r\n}"
                 },
                 {
                     "name": "Entity",
@@ -1790,7 +1790,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n    args: {\n        cardType:'entity',\n        card: entityCards[0]\n    },\n}"
+                    "defaultValue": "{\r\n    args: {\r\n        cardType:'entity',\r\n        card: entityCards[0]\r\n    },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -1800,7 +1800,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<DeleteCardDirectiveDemo>",
-                    "defaultValue": "{\n    title: 'SummonDemon/Directives/DeleteCard',\n    component: DeleteCardDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [\n                CandleCardComponent,\n                DemonCardComponent, \n                EntityCardComponent,\n                DeleteCardDirective,\n                DeleteCardDirectiveDemo\n            ],\n        }),\n    ],\n    argTypes: {\n        card: { control: 'number' },\n    },\n}"
+                    "defaultValue": "{\r\n    title: 'SummonDemon/Directives/DeleteCard',\r\n    component: DeleteCardDirectiveDemo,\r\n    decorators: [\r\n        moduleMetadata({\r\n            imports: [\r\n                CandleCardComponent,\r\n                DemonCardComponent, \r\n                EntityCardComponent,\r\n                DeleteCardDirective,\r\n                DeleteCardDirectiveDemo\r\n            ],\r\n        }),\r\n    ],\r\n    argTypes: {\r\n        card: { control: 'number' },\r\n    },\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/vault-tec/checkbox.stories.ts": [
@@ -1812,7 +1812,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    ...SimpleCheckbox.args,\n    checked: true,\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    ...SimpleCheckbox.args,\r\n    checked: true,\r\n  },\r\n}"
                 },
                 {
                     "name": "DisabledCheckbox",
@@ -1822,7 +1822,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    ...SimpleCheckbox.args,\n    disabled: true,\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    ...SimpleCheckbox.args,\r\n    disabled: true,\r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -1832,7 +1832,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<CheckboxComponent>",
-                    "defaultValue": "{\n  title: 'Vault-Tec/Checkbox',\n  component: CheckboxComponent,\n  tags: ['autodocs'],\n}"
+                    "defaultValue": "{\r\n  title: 'Vault-Tec/Checkbox',\r\n  component: CheckboxComponent,\r\n  tags: ['autodocs'],\r\n}"
                 },
                 {
                     "name": "SimpleCheckbox",
@@ -1842,7 +1842,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'Simple Checkbox',\n    checked: false,\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'Simple Checkbox',\r\n    checked: false,\r\n  },\r\n}"
                 },
                 {
                     "name": "WitoutLabel",
@@ -1852,7 +1852,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {},\n}"
+                    "defaultValue": "{\r\n  args: {},\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/vault-tec/radio.stories.ts": [
@@ -1864,7 +1864,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    ...SimpleRadio.args,\n    checked: true,\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    ...SimpleRadio.args,\r\n    checked: true,\r\n  },\r\n}"
                 },
                 {
                     "name": "DisabledRadio",
@@ -1874,7 +1874,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    ...SimpleRadio.args,\n    disabled: true,\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    ...SimpleRadio.args,\r\n    disabled: true,\r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -1884,7 +1884,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<RadioComponent>",
-                    "defaultValue": "{\n  title:'Vault-Tec/Radio',\n  component:RadioComponent,\n  tags: ['autodocs'],\n}"
+                    "defaultValue": "{\r\n  title:'Vault-Tec/Radio',\r\n  component:RadioComponent,\r\n  tags: ['autodocs'],\r\n}"
                 },
                 {
                     "name": "SimpleRadio",
@@ -1894,7 +1894,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'Simple Radio',\n    checked: false,\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'Simple Radio',\r\n    checked: false,\r\n  },\r\n}"
                 },
                 {
                     "name": "WitoutLabel",
@@ -1904,7 +1904,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {},\n}"
+                    "defaultValue": "{\r\n  args: {},\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/folder-card.stories.ts": [
@@ -1916,7 +1916,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    ...Default.args,\n    colors: ['#f2f7f2', '#d9e6d9', '#c0d6c0', '#a7c5a7', '#8eb58e']\n  } \n}"
+                    "defaultValue": "{\r\n  args: {\r\n    ...Default.args,\r\n    colors: ['#f2f7f2', '#d9e6d9', '#c0d6c0', '#a7c5a7', '#8eb58e']\r\n  } \r\n}"
                 },
                 {
                     "name": "Default",
@@ -1926,7 +1926,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    tabs: [\n      {\n        title: 'Histoires',\n        content:\n          'Histoires laborum maiores mollitia dignissimos dolorum ullam atque. Velit totam explicabo at dignissimos eligendi amet reiciendis, quidem quasi repellendus?',\n        id: 0,\n      },\n      {\n        title: 'Secrets',\n        content:\n          'Secrets molestiae corporis error quas quo sapiente vitae tenetur doloremque sunt suscipit fugit dicta. Perferendis cumque repellendus eaque totam tempore nesciunt nulla reiciendis.',\n        id: 1,\n      },\n      {\n        title: 'Paléontologie',\n        content:\n          'Paléontologie Ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\n        id: 2,\n      },\n    ],\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    tabs: [\r\n      {\r\n        title: 'Histoires',\r\n        content:\r\n          'Histoires laborum maiores mollitia dignissimos dolorum ullam atque. Velit totam explicabo at dignissimos eligendi amet reiciendis, quidem quasi repellendus?',\r\n        id: 0,\r\n      },\r\n      {\r\n        title: 'Secrets',\r\n        content:\r\n          'Secrets molestiae corporis error quas quo sapiente vitae tenetur doloremque sunt suscipit fugit dicta. Perferendis cumque repellendus eaque totam tempore nesciunt nulla reiciendis.',\r\n        id: 1,\r\n      },\r\n      {\r\n        title: 'Paléontologie',\r\n        content:\r\n          'Paléontologie Ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\r\n        id: 2,\r\n      },\r\n    ],\r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -1936,7 +1936,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<FolderCardComponent>",
-                    "defaultValue": "{\n  title: 'FolderApp/FolderCard',\n  component: FolderCardComponent,\n  tags: ['autodocs'],\n}"
+                    "defaultValue": "{\r\n  title: 'FolderApp/FolderCard',\r\n  component: FolderCardComponent,\r\n  tags: ['autodocs'],\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/summon-demon/demon-card.stories.ts": [
@@ -1948,7 +1948,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n    args: {\n        demon:demonCards[0]\n    }\n}"
+                    "defaultValue": "{\r\n    args: {\r\n        demon:demonCards[0]\r\n    }\r\n}"
                 },
                 {
                     "name": "meta",
@@ -1958,7 +1958,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<DemonCardComponent>",
-                    "defaultValue": "{\n    title: 'SummonDemon/Demon Card',\n    component: DemonCardComponent,\n    tags: ['autodocs'],\n}"
+                    "defaultValue": "{\r\n    title: 'SummonDemon/Demon Card',\r\n    component: DemonCardComponent,\r\n    tags: ['autodocs'],\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/vault-tec/glitch.directive.stories.ts": [
@@ -1970,7 +1970,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    duration: 6,\n    delay: null,\n    text: 'Ceci est un texte avec effet de glitch',\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    duration: 6,\r\n    delay: null,\r\n    text: 'Ceci est un texte avec effet de glitch',\r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -1980,7 +1980,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<GlitchDirectiveDemo>",
-                    "defaultValue": "{\n  title: 'VAULT-TEC/Directives/Glitch',\n  component: GlitchDirectiveDemo,\n  decorators: [\n    moduleMetadata({\n      imports: [GlitchDirective],\n    }),\n  ],\n  argTypes: {\n    duration: { control: { type: 'number', min: 1.5 } },\n    delay: { control: { type: 'number', min: 1000 } },\n    text: { control: 'text' },\n  },\n}"
+                    "defaultValue": "{\r\n  title: 'VAULT-TEC/Directives/Glitch',\r\n  component: GlitchDirectiveDemo,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [GlitchDirective],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n    duration: { control: { type: 'number', min: 1.5 } },\r\n    delay: { control: { type: 'number', min: 1000 } },\r\n    text: { control: 'text' },\r\n  },\r\n}"
                 },
                 {
                     "name": "WithDelay",
@@ -1990,7 +1990,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    ...Default.args,\n    delay: 6000,\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    ...Default.args,\r\n    delay: 6000,\r\n  },\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/vault-tec/swipe-char.directive.stories.ts": [
@@ -2012,7 +2012,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<SwipeCharDirectiveDemo>",
-                    "defaultValue": "{\n  title: 'VAULT-TEC/Directives/SwipeCharDirective',\n  component: SwipeCharDirectiveDemo,\n  decorators: [\n    moduleMetadata({\n      imports: [SwipeCharDirective],\n    }),\n  ],\n  argTypes: {\n    txt: { control: 'text' },\n  },\n}"
+                    "defaultValue": "{\r\n  title: 'VAULT-TEC/Directives/SwipeCharDirective',\r\n  component: SwipeCharDirectiveDemo,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [SwipeCharDirective],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n    txt: { control: 'text' },\r\n  },\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/vault-tec/symbol-reveal.directive.stories.ts": [
@@ -2034,7 +2034,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<SymbolRevealDirectiveDemo>",
-                    "defaultValue": "{\n    title: 'VAULT-TEC/Directives/SymbolReveal',\n    component: SymbolRevealDirectiveDemo,\n    decorators: [\n        moduleMetadata({\n            imports: [SymbolRevealDirective],\n        }),\n    ],\n    argTypes: {\n        txt: { control: 'text' },\n    },\n}"
+                    "defaultValue": "{\r\n    title: 'VAULT-TEC/Directives/SymbolReveal',\r\n    component: SymbolRevealDirectiveDemo,\r\n    decorators: [\r\n        moduleMetadata({\r\n            imports: [SymbolRevealDirective],\r\n        }),\r\n    ],\r\n    argTypes: {\r\n        txt: { control: 'text' },\r\n    },\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/vault-tec/typing-effect.directive.stories.ts": [
@@ -2056,7 +2056,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<TypingEffectDirectiveDemo>",
-                    "defaultValue": "{\n    title: 'VAULT-TEC/Directives/TypingEffectDirective',\n    component: TypingEffectDirectiveDemo,\n    tags: ['autodocs'],\n    decorators: [\n        moduleMetadata({\n            imports: [TypingEffetDirective],\n        }),\n    ]\n}"
+                    "defaultValue": "{\r\n    title: 'VAULT-TEC/Directives/TypingEffectDirective',\r\n    component: TypingEffectDirectiveDemo,\r\n    tags: ['autodocs'],\r\n    decorators: [\r\n        moduleMetadata({\r\n            imports: [TypingEffetDirective],\r\n        }),\r\n    ]\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/vault-tec/button.stories.ts": [
@@ -2068,7 +2068,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    size:'small'\n  },\n  render: (args) => ({\n    props: {\n      ...args,\n    },\n    template: `\n       <div style=\"display: flex; flex-direction: column; flex-wrap: wrap;  gap: 16px; font-family: Monospace; color: #2dc92d\">\n\n            <h2>Je veux en savoir plus</h2>\n            lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !\n\n            <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px; font-family: Monospace; color: #2dc92d\">\n            <vt-btn ${argsToTemplate(args)}>Je veux en savoir plus</vt-btn>\n           <vt-btn ${argsToTemplate(args)} [stroke]=\"true\">continuer</vt-btn>\n            </div>\n        </div>\n    `,\n  }),\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    size:'small'\r\n  },\r\n  render: (args) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `\r\n       <div style=\"display: flex; flex-direction: column; flex-wrap: wrap;  gap: 16px; font-family: Monospace; color: #2dc92d\">\r\n\r\n            <h2>Je veux en savoir plus</h2>\r\n            lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !\r\n\r\n            <div style=\"display: flex; flex-direction: row; flex-wrap: wrap;  gap: 16px; font-family: Monospace; color: #2dc92d\">\r\n            <vt-btn ${argsToTemplate(args)}>Je veux en savoir plus</vt-btn>\r\n           <vt-btn ${argsToTemplate(args)} [stroke]=\"true\">continuer</vt-btn>\r\n            </div>\r\n        </div>\r\n    `,\r\n  }),\r\n}"
                 },
                 {
                     "name": "Disabled",
@@ -2078,7 +2078,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'Disabled',\n    disabled: true,\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'Disabled',\r\n    disabled: true,\r\n  },\r\n}"
                 },
                 {
                     "name": "Large",
@@ -2088,7 +2088,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'Subscribe',\n    size: 'large',\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'Subscribe',\r\n    size: 'large',\r\n  },\r\n}"
                 },
                 {
                     "name": "Loading",
@@ -2098,7 +2098,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'Loading',\n    loading: true,\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'Loading',\r\n    loading: true,\r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -2108,7 +2108,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<BtnPropsAndCustomArgs>",
-                    "defaultValue": "{\n  title: 'Vault-Tec/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  render: ({ label, ...args }) => ({\n    props: {\n      ...args,\n    },\n    template: `<vt-btn ${argsToTemplate(args)}>${label}</vt-btn>`,\n  }),\n}"
+                    "defaultValue": "{\r\n  title: 'Vault-Tec/Button',\r\n  component: ButtonComponent,\r\n  tags: ['autodocs'],\r\n  render: ({ label, ...args }) => ({\r\n    props: {\r\n      ...args,\r\n    },\r\n    template: `<vt-btn ${argsToTemplate(args)}>${label}</vt-btn>`,\r\n  }),\r\n}"
                 },
                 {
                     "name": "SimpleButton",
@@ -2118,7 +2118,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'S.P.E.C.I.A.L',\n    size: 'medium',\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'S.P.E.C.I.A.L',\r\n    size: 'medium',\r\n  },\r\n}"
                 },
                 {
                     "name": "Small",
@@ -2128,7 +2128,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'Subscribe',\n    size: 'small',\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'Subscribe',\r\n    size: 'small',\r\n  },\r\n}"
                 },
                 {
                     "name": "SubcribeButton",
@@ -2138,7 +2138,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'Subscribe',\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'Subscribe',\r\n  },\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/vault-tec/sudoku.stories.ts": [
@@ -2150,7 +2150,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    difficulty: 'easy',\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    difficulty: 'easy',\r\n  },\r\n}"
                 },
                 {
                     "name": "HardSudoku",
@@ -2160,7 +2160,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    difficulty: 'hard',\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    difficulty: 'hard',\r\n  },\r\n}"
                 },
                 {
                     "name": "MediumSudoku",
@@ -2170,7 +2170,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    difficulty: 'medium',\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    difficulty: 'medium',\r\n  },\r\n}"
                 },
                 {
                     "name": "meta",
@@ -2180,7 +2180,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<SudokuComponent>",
-                    "defaultValue": "{\n  title: 'Vault-Tec/Sudoku',\n  component: SudokuComponent,\n  tags: ['autodocs'],\n}"
+                    "defaultValue": "{\r\n  title: 'Vault-Tec/Sudoku',\r\n  component: SudokuComponent,\r\n  tags: ['autodocs'],\r\n}"
                 },
                 {
                     "name": "SimpleSudoku",
@@ -2190,7 +2190,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    solution: {\n      blocks: [\n        {\n          id: 0,\n          value: [3, 4, 6, 7, 1, 2, 8, 9, 5],\n        },\n        {\n          id: 1,\n          value: [7, 9, 8, 4, 6, 5, 1, 3, 2],\n        },\n        {\n          id: 2,\n          value: [2, 5, 1, 3, 9, 8, 4, 6, 7],\n        },\n        {\n          id: 3,\n          value: [4, 2, 3, 1, 6, 7, 9, 5, 8],\n        },\n        {\n          id: 4,\n          value: [6, 7, 9, 5, 8, 4, 2, 1, 3],\n        },\n        {\n          id: 5,\n          value: [8, 1, 5, 9, 3, 2, 6, 7, 4],\n        },\n        {\n          id: 6,\n          value: [2, 7, 4, 6, 3, 1, 5, 8, 9],\n        },\n        {\n          id: 7,\n          value: [9, 5, 6, 8, 4, 7, 3, 2, 1],\n        },\n        {\n          id: 8,\n          value: [1, 8, 3, 5, 2, 9, 7, 4, 6],\n        },\n      ],\n    },\n    sudokuGrid: {\n      blocks: [\n        {\n          id: 0,\n          value: [null, 4, 6, 7, 1, 2, 8, 9, 5],\n        },\n        {\n          id: 1,\n          value: [7, 9, 8, 4, 6, 5, 1, 3, 2],\n        },\n        {\n          id: 2,\n          value: [2, 5, 1, 3, 9, 8, 4, 6, 7],\n        },\n        {\n          id: 3,\n          value: [4, 2, 3, 1, 6, 7, 9, 5, 8],\n        },\n        {\n          id: 4,\n          value: [6, 7, 9, 5, 8, 4, 2, 1, 3],\n        },\n        {\n          id: 5,\n          value: [8, 1, 5, 9, 3, 2, 6, 7, 4],\n        },\n        {\n          id: 6,\n          value: [2, 7, 4, 6, 3, 1, 5, 8, 9],\n        },\n        {\n          id: 7,\n          value: [9, 5, 6, 8, 4, 7, 3, 2, 1],\n        },\n        {\n          id: 8,\n          value: [1, 8, 3, 5, 2, 9, 7, 4, 6],\n        },\n      ],\n    },\n    reference: {\n      blocks: [\n        {\n          id: 0,\n          value: [null, 4, 6, 7, 1, 2, 8, 9, 5],\n        },\n        {\n          id: 1,\n          value: [7, 9, 8, 4, 6, 5, 1, 3, 2],\n        },\n        {\n          id: 2,\n          value: [2, 5, 1, 3, 9, 8, 4, 6, 7],\n        },\n        {\n          id: 3,\n          value: [4, 2, 3, 1, 6, 7, 9, 5, 8],\n        },\n        {\n          id: 4,\n          value: [6, 7, 9, 5, 8, 4, 2, 1, 3],\n        },\n        {\n          id: 5,\n          value: [8, 1, 5, 9, 3, 2, 6, 7, 4],\n        },\n        {\n          id: 6,\n          value: [2, 7, 4, 6, 3, 1, 5, 8, 9],\n        },\n        {\n          id: 7,\n          value: [9, 5, 6, 8, 4, 7, 3, 2, 1],\n        },\n        {\n          id: 8,\n          value: [1, 8, 3, 5, 2, 9, 7, 4, 6],\n        },\n      ],\n    },\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    solution: {\r\n      blocks: [\r\n        {\r\n          id: 0,\r\n          value: [3, 4, 6, 7, 1, 2, 8, 9, 5],\r\n        },\r\n        {\r\n          id: 1,\r\n          value: [7, 9, 8, 4, 6, 5, 1, 3, 2],\r\n        },\r\n        {\r\n          id: 2,\r\n          value: [2, 5, 1, 3, 9, 8, 4, 6, 7],\r\n        },\r\n        {\r\n          id: 3,\r\n          value: [4, 2, 3, 1, 6, 7, 9, 5, 8],\r\n        },\r\n        {\r\n          id: 4,\r\n          value: [6, 7, 9, 5, 8, 4, 2, 1, 3],\r\n        },\r\n        {\r\n          id: 5,\r\n          value: [8, 1, 5, 9, 3, 2, 6, 7, 4],\r\n        },\r\n        {\r\n          id: 6,\r\n          value: [2, 7, 4, 6, 3, 1, 5, 8, 9],\r\n        },\r\n        {\r\n          id: 7,\r\n          value: [9, 5, 6, 8, 4, 7, 3, 2, 1],\r\n        },\r\n        {\r\n          id: 8,\r\n          value: [1, 8, 3, 5, 2, 9, 7, 4, 6],\r\n        },\r\n      ],\r\n    },\r\n    sudokuGrid: {\r\n      blocks: [\r\n        {\r\n          id: 0,\r\n          value: [null, 4, 6, 7, 1, 2, 8, 9, 5],\r\n        },\r\n        {\r\n          id: 1,\r\n          value: [7, 9, 8, 4, 6, 5, 1, 3, 2],\r\n        },\r\n        {\r\n          id: 2,\r\n          value: [2, 5, 1, 3, 9, 8, 4, 6, 7],\r\n        },\r\n        {\r\n          id: 3,\r\n          value: [4, 2, 3, 1, 6, 7, 9, 5, 8],\r\n        },\r\n        {\r\n          id: 4,\r\n          value: [6, 7, 9, 5, 8, 4, 2, 1, 3],\r\n        },\r\n        {\r\n          id: 5,\r\n          value: [8, 1, 5, 9, 3, 2, 6, 7, 4],\r\n        },\r\n        {\r\n          id: 6,\r\n          value: [2, 7, 4, 6, 3, 1, 5, 8, 9],\r\n        },\r\n        {\r\n          id: 7,\r\n          value: [9, 5, 6, 8, 4, 7, 3, 2, 1],\r\n        },\r\n        {\r\n          id: 8,\r\n          value: [1, 8, 3, 5, 2, 9, 7, 4, 6],\r\n        },\r\n      ],\r\n    },\r\n    reference: {\r\n      blocks: [\r\n        {\r\n          id: 0,\r\n          value: [null, 4, 6, 7, 1, 2, 8, 9, 5],\r\n        },\r\n        {\r\n          id: 1,\r\n          value: [7, 9, 8, 4, 6, 5, 1, 3, 2],\r\n        },\r\n        {\r\n          id: 2,\r\n          value: [2, 5, 1, 3, 9, 8, 4, 6, 7],\r\n        },\r\n        {\r\n          id: 3,\r\n          value: [4, 2, 3, 1, 6, 7, 9, 5, 8],\r\n        },\r\n        {\r\n          id: 4,\r\n          value: [6, 7, 9, 5, 8, 4, 2, 1, 3],\r\n        },\r\n        {\r\n          id: 5,\r\n          value: [8, 1, 5, 9, 3, 2, 6, 7, 4],\r\n        },\r\n        {\r\n          id: 6,\r\n          value: [2, 7, 4, 6, 3, 1, 5, 8, 9],\r\n        },\r\n        {\r\n          id: 7,\r\n          value: [9, 5, 6, 8, 4, 7, 3, 2, 1],\r\n        },\r\n        {\r\n          id: 8,\r\n          value: [1, 8, 3, 5, 2, 9, 7, 4, 6],\r\n        },\r\n      ],\r\n    },\r\n  },\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/vault-tec/advice-block.stories.ts": [
@@ -2202,7 +2202,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<AdviceBlockCustomArgs>",
-                    "defaultValue": "{\n    title:'Vault-Tec/AdviceBlock',\n    component:AdviceBlockComponent,\n    tags: ['autodocs'],\n    render: ({ content, ...args}) => ({\n        props:{\n            ...args,\n        },\n        template: `<vt-advice-block ${argsToTemplate(args)}>${content}</vt-advice-block>`,\n    })\n}"
+                    "defaultValue": "{\r\n    title:'Vault-Tec/AdviceBlock',\r\n    component:AdviceBlockComponent,\r\n    tags: ['autodocs'],\r\n    render: ({ content, ...args}) => ({\r\n        props:{\r\n            ...args,\r\n        },\r\n        template: `<vt-advice-block ${argsToTemplate(args)}>${content}</vt-advice-block>`,\r\n    })\r\n}"
                 },
                 {
                     "name": "SimpleAdviceBlock",
@@ -2212,7 +2212,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n    args:{\n        title:'Super Test 42',\n        content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\n    }\n}"
+                    "defaultValue": "{\r\n    args:{\r\n        title:'Super Test 42',\r\n        content:'lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium amet, iusto ducimus qui ea at sequi quisquam nihil incidunt !',\r\n    }\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/vault-tec/footer.stories.ts": [
@@ -2224,7 +2224,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<FooterComponent>",
-                    "defaultValue": "{\n  title: 'Vault-Tec/Footer',\n  component: FooterComponent,\n  tags: ['autodocs'],\n}"
+                    "defaultValue": "{\r\n  title: 'Vault-Tec/Footer',\r\n  component: FooterComponent,\r\n  tags: ['autodocs'],\r\n}"
                 },
                 {
                     "name": "SimpleFooter",
@@ -2234,7 +2234,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    footerElements: [\n      {\n        title: 'Section 1',\n        pages: [\n          {\n            title: 'Page 1',\n            url: '/',\n          },\n          {\n            title: 'Page 2',\n            url: '/',\n          },\n          {\n            title: 'Page 3',\n            url: '/',\n          },\n          {\n            title: 'Page 4',\n            url: '/',\n          },\n        ],\n      },\n      {\n        title: 'Section 2',\n        pages: [\n          {\n            title: 'Page 1',\n            url: '/',\n          },\n          {\n            title: 'Page 2',\n            url: '/',\n          },\n          {\n            title: 'Page 3',\n            url: '/',\n          },\n        ],\n      },\n    ],\n    contactFooterElement: {\n      username: 'username',\n      email: 'email@example.com',\n      githubUrl: 'https://github.com',\n      linkedinUrl: 'https://linkedin.com',\n      npmUrl: 'https://npm.com',\n    },\n  },\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    footerElements: [\r\n      {\r\n        title: 'Section 1',\r\n        pages: [\r\n          {\r\n            title: 'Page 1',\r\n            url: '/',\r\n          },\r\n          {\r\n            title: 'Page 2',\r\n            url: '/',\r\n          },\r\n          {\r\n            title: 'Page 3',\r\n            url: '/',\r\n          },\r\n          {\r\n            title: 'Page 4',\r\n            url: '/',\r\n          },\r\n        ],\r\n      },\r\n      {\r\n        title: 'Section 2',\r\n        pages: [\r\n          {\r\n            title: 'Page 1',\r\n            url: '/',\r\n          },\r\n          {\r\n            title: 'Page 2',\r\n            url: '/',\r\n          },\r\n          {\r\n            title: 'Page 3',\r\n            url: '/',\r\n          },\r\n        ],\r\n      },\r\n    ],\r\n    contactFooterElement: {\r\n      username: 'username',\r\n      email: 'email@example.com',\r\n      githubUrl: 'https://github.com',\r\n      linkedinUrl: 'https://linkedin.com',\r\n      npmUrl: 'https://npm.com',\r\n    },\r\n  },\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/vault-tec/input.stories.ts": [
@@ -2246,7 +2246,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<InputComponent>",
-                    "defaultValue": "{\n  title:'Vault-Tec/Input',\n  component:InputComponent,\n  tags: ['autodocs'],\n}"
+                    "defaultValue": "{\r\n  title:'Vault-Tec/Input',\r\n  component:InputComponent,\r\n  tags: ['autodocs'],\r\n}"
                 },
                 {
                     "name": "SimpleInput",
@@ -2256,7 +2256,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args:{\n      id:'default',\n      label:'Entrez un texte',\n      inputType:'text',\n  }\n}"
+                    "defaultValue": "{\r\n  args:{\r\n      id:'default',\r\n      label:'Entrez un texte',\r\n      inputType:'text',\r\n  }\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/vault-tec/loader.stories.ts": [
@@ -2268,7 +2268,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<LoaderComponent>",
-                    "defaultValue": "{\n  title:'Vault-Tec/Loader',\n  component:LoaderComponent,\n  tags: ['autodocs'],\n}"
+                    "defaultValue": "{\r\n  title:'Vault-Tec/Loader',\r\n  component:LoaderComponent,\r\n  tags: ['autodocs'],\r\n}"
                 },
                 {
                     "name": "SimpleLoader",
@@ -2278,7 +2278,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args:{\n      // vos arguments ici\n  }\n}"
+                    "defaultValue": "{\r\n  args:{\r\n      // vos arguments ici\r\n  }\r\n}"
                 }
             ],
             "projects/gayo-lib/src/stories/vault-tec/slider.stories.ts": [
@@ -2290,7 +2290,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<SliderComponent>",
-                    "defaultValue": "{\n  title:'Vault-Tec/Slider',\n  component:SliderComponent,\n  tags: ['autodocs'],\n}"
+                    "defaultValue": "{\r\n  title:'Vault-Tec/Slider',\r\n  component:SliderComponent,\r\n  tags: ['autodocs'],\r\n}"
                 },
                 {
                     "name": "SimpleSlider",
@@ -2300,7 +2300,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args:{\n      id:'default',\n      min:0,\n      max:100,\n      value:50,\n      label:'Slider',\n  }\n}"
+                    "defaultValue": "{\r\n  args:{\r\n      id:'default',\r\n      min:0,\r\n      max:100,\r\n      value:50,\r\n      label:'Slider',\r\n  }\r\n}"
                 }
             ],
             "projects/gayo-lib/.storybook/preview.ts": [
@@ -2312,7 +2312,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Preview",
-                    "defaultValue": "{\n  parameters: {\n    backgrounds: {\n      default: 'vault-tec',\n      values: [\n        {\n          name: 'vault-tec',\n          value: '#1a1a1a',\n        },\n      ],\n    },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n}"
+                    "defaultValue": "{\r\n  parameters: {\r\n    backgrounds: {\r\n      default: 'vault-tec',\r\n      values: [\r\n        {\r\n          name: 'vault-tec',\r\n          value: '#1a1a1a',\r\n        },\r\n      ],\r\n    },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  },\r\n}"
                 }
             ]
         },

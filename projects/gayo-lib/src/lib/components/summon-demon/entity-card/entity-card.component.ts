@@ -13,4 +13,5 @@ import { IdPipe } from "../../../pipes/lsd/id.pipe";
 
 export class EntityCardComponent {
     @Input() entity!:EntityCard;
+    @Input() size:number = 400;
 }
