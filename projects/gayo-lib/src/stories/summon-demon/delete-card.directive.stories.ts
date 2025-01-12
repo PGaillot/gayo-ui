@@ -2,29 +2,45 @@ import { moduleMetadata, Meta, StoryObj } from '@storybook/angular';
 import { Component, Input } from '@angular/core';
 import { CandleCardComponent } from '../../lib/components/summon-demon/candle-card/candle-card.component';
 import { DeleteCardDirective } from '../../lib/directives/delete-card.directive';
+import { CardType } from '../../lib/models/lsd/card.model';
+import { candleCards, demonCards, entityCards } from '../../lib/datas/lsd/cards.data';
+import { EntityCardComponent , DemonCardComponent} from '../../public-api';
 
 @Component({
     selector: 'lsd-delete-card-demo',
     standalone: true,
     styleUrls: ['../../lib/styles/lsd.scss', './story.scss'],
-    imports: [CandleCardComponent, DeleteCardDirective],
+    imports: [CandleCardComponent,DemonCardComponent, EntityCardComponent, DeleteCardDirective],
     template: `
-        <lsd-candle-card 
-            lsdDeleteCard 
-            [id]="id" 
-            [cardName]="cardName" 
-            [effect]="effect" 
-            [diceNumbers]="diceNumbers">
-        </lsd-candle-card>
+
+        @switch(cardType){
+            @case('candle'){
+                <lsd-candle-card 
+                    lsdDeleteCard 
+                    [candle]="card">
+                </lsd-candle-card>
+            }
+            @case('demon'){
+                <lsd-demon-card 
+                    lsdDeleteCard 
+                    [demon]="card">
+                </lsd-demon-card>
+            }
+            @case('entity'){
+                <lsd-entity-card 
+                    lsdDeleteCard 
+                    [entity]="card">
+                </lsd-entity-card>
+            }
+        }
+
     `,
 })
 
 
 class DeleteCardDirectiveDemo {
-    @Input() id: number = 0;
-    @Input() cardName!: string;
-    @Input() effect!: string;
-    @Input() diceNumbers: number[] = [];
+    @Input() cardType!: 'candle' | 'demon' | 'entity';
+    @Input() card!: CardType;
 }
 
 //----------------------------------
@@ -36,16 +52,15 @@ const meta: Meta<DeleteCardDirectiveDemo> = {
         moduleMetadata({
             imports: [
                 CandleCardComponent,
+                DemonCardComponent, 
+                EntityCardComponent,
                 DeleteCardDirective,
                 DeleteCardDirectiveDemo
             ],
         }),
     ],
     argTypes: {
-        id: { control: 'number' },
-        cardName: { control: 'text' },
-        effect: { control: 'text' },
-        diceNumbers: { control: 'object' },
+        card: { control: 'number' },
     },
 };
 
@@ -53,11 +68,23 @@ export default meta;
 
 type Story = StoryObj<DeleteCardDirectiveDemo>;
 
-export const Default: Story = {
+export const Candle: Story = {
     args: {
-        id: 12,
-        cardName: 'Candle',
-        effect: 'Récoltez une Âme.',
-        diceNumbers: [5, 6],
+        cardType:'candle',
+        card: candleCards[0]
+    },
+};
+
+export const Entity: Story = {
+    args: {
+        cardType:'entity',
+        card: entityCards[0]
+    },
+};
+
+export const Demon: Story = {
+    args: {
+        cardType:'demon',
+        card: demonCards[0]
     },
 };
