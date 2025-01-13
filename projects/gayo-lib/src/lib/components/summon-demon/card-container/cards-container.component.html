@@ -1,0 +1,15 @@
+<div class="card-container" [ngStyle]="{'flex-direction':orientation === 'ver' ?  'column' : 'row'}">
+
+    @if(candle){
+    <lsd-candle-card [candle]="candle"></lsd-candle-card>
+    }
+
+    @for(entity of entities;track $index){
+    <lsd-entity-card [entity]="entity"></lsd-entity-card>
+    }
+
+    @for(demon of demons;track $index){
+    <lsd-demon-card [demon]="demon"></lsd-demon-card>
+    }
+
+</div>
