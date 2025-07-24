@@ -18,11 +18,10 @@ export interface ContactFooterElement {
 
 
 @Component({
-  selector: 'vt-footer',
-  standalone: true,
-  imports: [],
-  templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss'
+    selector: 'vt-footer',
+    imports: [],
+    templateUrl: './footer.component.html',
+    styleUrl: './footer.component.scss'
 })
 
 

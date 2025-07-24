@@ -5,11 +5,10 @@ import { PerksType } from '../../../services/perks.service';
 type FaceType = 'front' | 'back';
 
 @Component({
-  selector: 'vt-perk-card',
-  standalone: true,
-  imports: [NgClass],
-  styleUrl: './perk-card.component.scss',
-  template: `
+    selector: 'vt-perk-card',
+    imports: [NgClass],
+    styleUrl: './perk-card.component.scss',
+    template: `
     <div id="perk-block" [style.--flip-duration.ms]="flipDuration">
       <div #card class="perk-card">
 
@@ -28,7 +27,7 @@ type FaceType = 'front' | 'back';
 
       </div>
     </div>
-  `,
+  `
 })
 export class PerkCardComponent {
   @ViewChild('card', { static: true }) cardRef!: ElementRef;

@@ -10,7 +10,6 @@ export interface CardEffect {
 
 @Component({
     selector: 'lsd-candle-card',
-    standalone: true,
     imports: [IdPipe],
     templateUrl: './candle-card.component.html',
     styleUrls: ['./candle-card.component.scss', '../card/card.component.scss']

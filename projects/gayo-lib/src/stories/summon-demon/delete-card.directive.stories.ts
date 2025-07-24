@@ -8,9 +8,8 @@ import { EntityCardComponent , DemonCardComponent} from '../../public-api';
 
 @Component({
     selector: 'lsd-delete-card-demo',
-    standalone: true,
     styleUrls: ['../../lib/styles/lsd.scss', './story.scss'],
-    imports: [CandleCardComponent,DemonCardComponent, EntityCardComponent, DeleteCardDirective],
+    imports: [CandleCardComponent, DemonCardComponent, EntityCardComponent, DeleteCardDirective],
     template: `
 
         @switch(cardType){
@@ -34,7 +33,7 @@ import { EntityCardComponent , DemonCardComponent} from '../../public-api';
             }
         }
 
-    `,
+    `
 })
 
 

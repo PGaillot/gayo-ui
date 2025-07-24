@@ -5,10 +5,9 @@ export type BackCardType = 'entity' | 'demon' | 'candle';
 
 @Component({
     selector: 'lsd-back-card',
-    standalone: true,
     imports: [NgStyle],
     templateUrl: './back-card.component.html',
-    styleUrls: [ './back-card.component.scss', '../card/card.component.scss']
+    styleUrls: ['./back-card.component.scss', '../card/card.component.scss']
 })
 
 export class BackCardComponent {

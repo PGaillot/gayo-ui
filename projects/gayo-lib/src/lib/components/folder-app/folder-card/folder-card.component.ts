@@ -9,11 +9,10 @@ export interface FolderTab {
 }
 
 @Component({
-  selector: 'gayo-folder-card',
-  standalone: true,
-  imports: [NgStyle],
-  templateUrl: './folder-card.component.html',
-  styleUrl: './folder-card.component.scss',
+    selector: 'gayo-folder-card',
+    imports: [NgStyle],
+    templateUrl: './folder-card.component.html',
+    styleUrl: './folder-card.component.scss'
 })
 export class FolderCardComponent {
   @Input() tabs!: FolderTab[];

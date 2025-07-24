@@ -44,11 +44,10 @@ interface SudokuGrid {
 }
 
 @Component({
-  selector: 'vt-sudoku',
-  standalone: true,
-  imports: [NgClass, SwipeCharDirective, TimerPipe],
-  styleUrl: './sudoku.component.scss',
-  template: ` <div id="sudoku">
+    selector: 'vt-sudoku',
+    imports: [NgClass, SwipeCharDirective, TimerPipe],
+    styleUrl: './sudoku.component.scss',
+    template: ` <div id="sudoku">
     <div id="sudoku-header">
       <h3>sudoku!</h3>
       <p>#{{ difficulty }}</p>
@@ -105,7 +104,7 @@ interface SudokuGrid {
       <div class="shortcut">maj+click</div>
       <div class="description">lock case.</div>
     </div>
-  </div>`,
+  </div>`
 })
 export class SudokuComponent {
   @Input() sudokuGrid?: SudokuGrid;

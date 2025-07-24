@@ -8,11 +8,10 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'vt-btn',
-  standalone: true,
-  imports: [NgClass],
-  styleUrl: './button.component.scss',
-  template: `
+    selector: 'vt-btn',
+    imports: [NgClass],
+    styleUrl: './button.component.scss',
+    template: `
     <div [ngClass]="{ 'loading': loading }">
       @defer {
         <button
@@ -25,7 +24,7 @@ import {
         </button>
       }
     </div>
-  `,
+  `
 })
 export class ButtonComponent {
   @Input() size: 'small' | 'medium' | 'large' = 'medium';

@@ -3,10 +3,9 @@ import { Meta, moduleMetadata, StoryObj } from '@storybook/angular';
 import { SwipeCharDirective } from '../../lib/directives/swipe-char.directive';
 
 @Component({
-  styleUrls: ['../../lib/styles/vault-tec.scss'],
-  standalone: true,
-  imports: [ SwipeCharDirective],
-  template: ` <p vtSwipeChar [char]="txt"></p> `,
+    styleUrls: ['../../lib/styles/vault-tec.scss'],
+    imports: [SwipeCharDirective],
+    template: ` <p vtSwipeChar [char]="txt"></p> `
 })
 export class SwipeCharDirectiveDemo {
   @Input() txt: string = 'S';

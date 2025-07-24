@@ -3,8 +3,8 @@ import { Component, Input } from '@angular/core';
 import { GlitchDirective } from '../../lib/directives/glitch.directive';
 
 @Component({
-  styleUrls:['../../lib/styles/vault-tec.scss', './story.scss'],
-  template: `
+    styleUrls: ['../../lib/styles/vault-tec.scss', './story.scss'],
+    template: `
     <div vtGlitch
       [duration]="duration"
       [delay]="delay"
@@ -15,6 +15,7 @@ import { GlitchDirective } from '../../lib/directives/glitch.directive';
       </p>
     </div>
   `,
+    standalone: false
 })
 
 class GlitchDirectiveDemo {

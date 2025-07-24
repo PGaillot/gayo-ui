@@ -6,8 +6,9 @@ import { TypingEffetDirective } from "../../lib/directives/typing-effet.directiv
 @Component({
     template: `
         <p vtTypingEffet class="text-3xl font-bold underline">Hello world! i'm typing effect</p>
-    `,  
-    styleUrls: ['../../lib/styles/vault-tec.scss']
+    `,
+    styleUrls: ['../../lib/styles/vault-tec.scss'],
+    standalone: false
 })
 
 class TypingEffectDirectiveDemo {}

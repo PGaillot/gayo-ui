@@ -1,11 +1,10 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'vt-checkbox',
-  standalone: true,
-  imports: [],
-  styleUrl: './checkbox.component.scss',
-  template: `
+    selector: 'vt-checkbox',
+    imports: [],
+    styleUrl: './checkbox.component.scss',
+    template: `
     <div
       id="checkbox-container"
       [class.checked]="checked"
@@ -21,7 +20,7 @@ import { Component, Input } from '@angular/core';
         <label for="checkbox" [class.disabled]="disabled">{{ label }}</label>
       }
     </div>
-  `,
+  `
 })
 export class CheckboxComponent {
   @Input() label?: string;

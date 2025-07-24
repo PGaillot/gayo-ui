@@ -1,18 +1,17 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'vt-input',
-  standalone: true,
-  imports: [],
-  styleUrl: './input.component.scss',
-  template: `
+    selector: 'vt-input',
+    imports: [],
+    styleUrl: './input.component.scss',
+    template: `
     <div id="input-container">
       @if (label) {
         <label [for]="id">{{ label }}</label>
       }
       <input [type]="inputType" [id]="id" [min]="min" [max]="max" />
     </div>
-  `,
+  `
 })
 export class InputComponent {
   @Input() id!: string;

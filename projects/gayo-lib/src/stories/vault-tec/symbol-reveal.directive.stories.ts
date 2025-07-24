@@ -4,7 +4,8 @@ import { SymbolRevealDirective } from "../../lib/directives/symbol-reveal.direct
 
 @Component({
     template: `<p vtSymbolReveal >Je suis un texte avec un effet de SymbolReveal.</p>`,
-    styleUrls: ['../../lib/styles/vault-tec.scss']
+    styleUrls: ['../../lib/styles/vault-tec.scss'],
+    standalone: false
 })
 
 class SymbolRevealDirectiveDemo {

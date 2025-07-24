@@ -1,10 +1,9 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'vt-radio',
-  standalone: true,
-  imports: [],
-  template: `
+    selector: 'vt-radio',
+    imports: [],
+    template: `
       <div
       id="radio-container"
       [class.checked]="checked"
@@ -21,7 +20,7 @@ import { Component, Input } from '@angular/core';
       }
     </div>
   `,
-  styleUrl: './radio.component.scss'
+    styleUrl: './radio.component.scss'
 })
 export class RadioComponent {
   @Input() label?: string;

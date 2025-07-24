@@ -4,7 +4,6 @@ import { IdPipe } from "../../../pipes/lsd/id.pipe";
 
 @Component({
     selector: 'lsd-demon-card',
-    standalone: true,
     imports: [IdPipe],
     templateUrl: './demon-card.component.html',
     styleUrls: ['./demon-card.component.scss', '../card/card.component.scss']

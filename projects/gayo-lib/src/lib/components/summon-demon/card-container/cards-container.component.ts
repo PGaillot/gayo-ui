@@ -5,7 +5,6 @@ import { CandleCardComponent, DemonCardComponent, EntityCardComponent } from "ga
 
 @Component({
     selector: 'lsd-cards-container',
-    standalone: true,
     templateUrl: './cards-container.component.html',
     styleUrl: './cards-container.component.scss',
     imports: [NgStyle, DemonCardComponent, EntityCardComponent, CandleCardComponent]

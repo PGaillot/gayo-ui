@@ -13,7 +13,6 @@ type CardType = 'candle' | 'demon' | 'entity' | 'back-card';
 
 @Component({
     selector: 'lsd-hover-card-demo',
-    standalone: true,
     styleUrls: ['../../lib/styles/lsd.scss', './story.scss'],
     imports: [
         CandleCardComponent,
@@ -61,7 +60,7 @@ type CardType = 'candle' | 'demon' | 'entity' | 'back-card';
             }
     }
     </div>
-    `,
+    `
 })
 class HoverCardDirectiveDemo {
     @Input() card: Card = candleCards[0];

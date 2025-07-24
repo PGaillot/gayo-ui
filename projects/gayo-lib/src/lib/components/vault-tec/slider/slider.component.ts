@@ -1,16 +1,15 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'vt-slider',
-  standalone: true,
-  imports: [],
-  template: `
+    selector: 'vt-slider',
+    imports: [],
+    template: `
     <div id="input-slider">
       <label [for]="id">{{ label }}</label>
       <input type="range" [id]="id" [min]="min" [max]="max" [value]="value" />
     </div>
   `,
-  styleUrl: './slider.component.scss',
+    styleUrl: './slider.component.scss'
 })
 
 export class SliderComponent {
